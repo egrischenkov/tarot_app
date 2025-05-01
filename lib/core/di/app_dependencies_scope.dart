@@ -3,7 +3,6 @@ import 'package:flutter/widgets.dart';
 import 'package:taro/core/di/app_dependencies_container.dart';
 import 'package:taro/core/extensions/context_extension.dart';
 
-/// {@template dependencies_scope}
 /// A scope that provides composed [AppDependenciesContainer].
 ///
 /// **Testing**:
@@ -20,11 +19,9 @@ import 'package:taro/core/extensions/context_extension.dart';
 ///   final MockAuthRepository authRepository = MockAuthRepository();
 /// }
 /// ```
-/// {@endtemplate}
 class AppDependenciesScope extends InheritedWidget {
   final AppDependenciesContainer dependencies;
 
-  /// {@macro dependencies_scope}
   const AppDependenciesScope({
     required super.child,
     required this.dependencies,
