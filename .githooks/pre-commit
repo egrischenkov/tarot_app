@@ -1,0 +1,7 @@
+#!/bin/sh
+
+echo "pre-commit started"
+
+fvm dart format .
+
+echo "pre-commit finished"

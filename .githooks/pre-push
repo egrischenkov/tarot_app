@@ -1,0 +1,9 @@
+#!/bin/sh
+
+set -e  # Abort the script if any command fails (returns a non-zero exit code)
+
+echo "pre-push started"
+
+fvm flutter analyze --no-fatal-infos
+
+echo "pre-push finished"
