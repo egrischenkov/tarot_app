@@ -1,4 +1,4 @@
 {
-    "dart.flutterSdkPath": "/Users/egor/StudioProjects/auto_spot/autospot-app/.fvm/versions/3.29.3",
-    "dart.lineLength": 120
+  "dart.flutterSdkPath": ".fvm/versions/3.29.3",
+  "dart.lineLength": 120
 }
