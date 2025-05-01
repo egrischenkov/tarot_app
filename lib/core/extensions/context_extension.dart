@@ -1,6 +1,17 @@
 import 'package:flutter/material.dart';
+import 'package:taro/core/localization/gen/app_localizations.g.dart';
 
 extension ContextExtension on BuildContext {
+  /// Get the localization instance for the current context
+  /// using the [AppLocalizations] class.
+  /// This allows you to access localized strings and resources
+  /// defined in your app's localization files.
+  /// Example usage:
+  /// ```dart
+  /// final localizedString = context.l10n.someLocalizedString;
+  /// ```
+  AppLocalizations get l10n => AppLocalizations.of(this)!;
+
   /// Obtain the nearest widget of the given type T,
   /// which must be the type of a concrete [InheritedWidget] subclass,
   /// and register this build context with that widget such that

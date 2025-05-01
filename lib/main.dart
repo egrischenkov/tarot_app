@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:taro/core/localization/gen/app_localizations.g.dart';
 
 void main() {
   runApp(const Taro());
@@ -9,6 +10,10 @@ class Taro extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const Placeholder();
+    return const MaterialApp(
+      localizationsDelegates: AppLocalizations.localizationsDelegates,
+      supportedLocales: AppLocalizations.supportedLocales,
+      home: Placeholder(),
+    );
   }
 }
