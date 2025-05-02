@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:taro/core/assets/gen/assets.gen.dart';
 import 'package:taro/core/localization/gen/app_localizations.g.dart';
 
 void main() {
@@ -10,10 +11,10 @@ class Taro extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const MaterialApp(
+    return MaterialApp(
       localizationsDelegates: AppLocalizations.localizationsDelegates,
       supportedLocales: AppLocalizations.supportedLocales,
-      home: Placeholder(),
+      home: Center(child: Assets.tarotMeets.image(width: 200, height: 200, fit: BoxFit.cover)),
     );
   }
 }

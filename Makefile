@@ -21,6 +21,9 @@ pods:
 fmt:
 	fvm dart format -l 120 .
 	
+get: 
+	fvm flutter clean; fvm flutter pub get
+	
 help:
 	@echo "Available tasks:"
 	@echo " - codegen: build_runner build & dart format 80"
@@ -28,3 +31,4 @@ help:
 	@echo " - l10n: generates l10n code"
 	@echo " - pods: updates pods"
 	@echo " - fmt: formats the code with dart format"
+	@echo " - get: cleans and gets dependencies"
