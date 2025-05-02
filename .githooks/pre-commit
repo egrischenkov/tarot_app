@@ -2,6 +2,6 @@
 
 echo "pre-commit started"
 
-fvm dart format .
+sh "$(dirname "$0")"/../scripts/dart_format.sh
 
 echo "pre-commit finished"
