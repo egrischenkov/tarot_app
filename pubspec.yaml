@@ -40,3 +40,9 @@ flutter:
   generate: true
   assets:
     - assets/TarotMeets.png
+
+workspace:
+  - packages/analytics
+  - packages/logger
+  - packages/ui_kit
+  - packages/rest_client

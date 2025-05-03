@@ -1,4 +1,4 @@
-package com.example.taro
+package ru.taro.app
 
 import io.flutter.embedding.android.FlutterActivity
 
