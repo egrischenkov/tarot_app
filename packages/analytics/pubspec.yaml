@@ -1,8 +1,0 @@
-name: taro_analytics
-version: 0.0.1
-
-environment:
-  sdk: ^3.7.2
-  flutter: ^3.29.3
-
-resolution: workspace

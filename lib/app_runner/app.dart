@@ -7,14 +7,17 @@ import 'package:taro/core/routing/app_router.dart';
 class App extends StatelessWidget {
   final AppDependenciesContainer dependenciesContainer;
 
-  App({required this.dependenciesContainer, super.key});
+  App({
+    required this.dependenciesContainer,
+    super.key,
+  });
 
   final _router = AppRouter(navigatorKey: AppRouter.rootRouterGlobalKey);
 
   @override
   Widget build(BuildContext context) {
     return AppDependenciesScope(
-      dependencies: const AppDependenciesContainer(),
+      dependencies: dependenciesContainer,
       child: MaterialApp.router(
         localizationsDelegates: AppLocalizations.localizationsDelegates,
         supportedLocales: AppLocalizations.supportedLocales,

@@ -25,9 +25,9 @@ abstract class AppRunner {
   }
 
   static Future<void> _launchApplication() async {
-    final dependenciesContainer = await AppDependenciesCreator.create();
-
     await _initFirebase();
+
+    final dependenciesContainer = await AppDependenciesCreator.create();
 
     runApp(App(dependenciesContainer: dependenciesContainer));
   }

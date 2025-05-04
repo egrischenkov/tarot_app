@@ -1,9 +1,10 @@
 name: taro
 version: 0.1.0
+publish_to: none
 
 environment:
-  sdk: ^3.7.2
-  flutter: ^3.29.3
+  sdk: ^3.6.1
+  flutter: ^3.27.3
 
 dependencies:
   flutter:
@@ -22,6 +23,16 @@ dependencies:
 
   # Other
   intl: ^0.19.0
+
+  # Workspaces
+  tarot_analytics:
+    path: packages/tarot_analytics
+  logger:
+    path: packages/logger
+  tarot_ui_kit:
+    path: packages/tarot_ui_kit
+  tarot_rest_client:
+    path: packages/tarot_rest_client
 
 dev_dependencies:
   flutter_test:
@@ -45,7 +56,7 @@ flutter:
     - assets/TarotMeets.png
 
 workspace:
-  - packages/analytics
+  - packages/tarot_analytics
   - packages/logger
-  - packages/ui_kit
-  - packages/rest_client
+  - packages/tarot_ui_kit
+  - packages/tarot_rest_client

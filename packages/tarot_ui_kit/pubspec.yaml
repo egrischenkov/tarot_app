@@ -1,8 +1,8 @@
-name: taro_ui_kit
+name: tarot_ui_kit
 version: 0.0.1
 
 environment:
-  sdk: ^3.7.2
-  flutter: ^3.29.3
+  sdk: ^3.6.1
+  flutter: ^3.27.3
 
 resolution: workspace

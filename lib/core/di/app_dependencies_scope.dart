@@ -22,7 +22,11 @@ import 'package:taro/core/extensions/context_extension.dart';
 class AppDependenciesScope extends InheritedWidget {
   final AppDependenciesContainer dependencies;
 
-  const AppDependenciesScope({required super.child, required this.dependencies, super.key});
+  const AppDependenciesScope({
+    required super.child,
+    required this.dependencies,
+    super.key,
+  });
 
   static AppDependenciesContainer of(BuildContext context) =>
       context.inheritOf<AppDependenciesScope>(listen: false).dependencies;
