@@ -1,9 +1,11 @@
 import 'dart:async';
+import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:intl/date_symbol_data_local.dart';
 import 'package:taro/app_runner/app.dart';
 import 'package:taro/core/di/app_dependencies_creator.dart';
+import 'package:taro/firebase_options.dart';
 
 /// A class that is responsible for running the application.
 abstract class AppRunner {
@@ -17,12 +19,24 @@ abstract class AppRunner {
 
     await initializeDateFormatting();
 
+    await Firebase.initializeApp(options: DefaultFirebaseOptions.currentPlatform);
+
     await _launchApplication();
   }
 
   static Future<void> _launchApplication() async {
     final dependenciesContainer = await AppDependenciesCreator.create();
 
+    await _initFirebase();
+
     runApp(App(dependenciesContainer: dependenciesContainer));
+  }
+
+  static Future<void> _initFirebase() async {
+    try {
+      await Firebase.initializeApp(options: DefaultFirebaseOptions.currentPlatform);
+    } catch (e, s) {
+      print("Firebase initialization error: $e: $s");
+    }
   }
 }

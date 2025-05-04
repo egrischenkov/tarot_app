@@ -1,4 +1,4 @@
-package ru.taro.app
+package ru.tarot.app
 
 import io.flutter.embedding.android.FlutterActivity
 
