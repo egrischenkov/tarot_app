@@ -36,7 +36,9 @@ abstract class AppRunner {
     try {
       await Firebase.initializeApp(options: DefaultFirebaseOptions.currentPlatform);
     } catch (e, s) {
-      print("Firebase initialization error: $e: $s");
+      // TODO(egrischenkov): remove when logger is implemented
+      // ignore: avoid_print
+      print('Firebase initialization error: $e: $s');
     }
   }
 }
