@@ -4,13 +4,17 @@ import 'package:tarot_analytics/scr/analytics_reporter.dart';
 /// An implementation of [AnalyticsReporter] that reports events to Firebase
 /// Analytics.
 final class FirebaseAnalyticsReporter implements AnalyticsReporter {
-  const FirebaseAnalyticsReporter();
+  final FirebaseAnalytics _analytics;
+
+  const FirebaseAnalyticsReporter({
+    required FirebaseAnalytics analytics,
+  }) : _analytics = analytics;
 
   @override
   Future<void> logEvent(AnalyticsEvent event) async {
     // logger.trace('Logging analytics event: $event');
 
-    await FirebaseAnalytics.instance.logEvent(
+    await _analytics.logEvent(
       name: event.name,
       parameters: event.parameters.isEmpty
           ? null

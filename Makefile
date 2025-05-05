@@ -5,6 +5,7 @@ GIT_HOOKS_INIT := $(SCRIPTS_DIR)/git_hooks_init.sh
 PODS := $(SCRIPTS_DIR)/update_pods.sh
 GEN_L10N := $(SCRIPTS_DIR)/gen_l10n.sh
 TEST_COVERAGE := $(SCRIPTS_DIR)/test_coverage.sh
+TESTS := $(SCRIPTS_DIR)/test.sh
 
 # Tasks to run each script
 gen:
@@ -28,6 +29,9 @@ get:
 test_coverage:
 	sh ${TEST_COVERAGE}
 	
+tests:
+	bash ${TESTS}
+	
 help:
 	@echo "Available tasks:"
 	@echo " - codegen: build_runner build & dart format 80"
@@ -37,3 +41,4 @@ help:
 	@echo " - fmt: formats the code with dart format"
 	@echo " - get: cleans and gets dependencies"
 	@echo " - test_coverage: runs tests with coverage"
+	@echo " - test: runs tests"
