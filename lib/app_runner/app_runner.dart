@@ -18,14 +18,6 @@ abstract class AppRunner {
 
   /// Initializes dependencies and launches the application within a guarded execution zone.
   static Future<void> startup() async {
-    WidgetsFlutterBinding.ensureInitialized();
-
-    await SystemChrome.setPreferredOrientations([DeviceOrientation.portraitUp]);
-
-    await initializeDateFormatting();
-
-    await Firebase.initializeApp(options: DefaultFirebaseOptions.currentPlatform);
-
     final logger = AppLogger(
       observers: [
         if (!kReleaseMode) const PrintingLogObserver(),
@@ -36,16 +28,34 @@ abstract class AppRunner {
       ],
     );
 
-    // Configure global error interception
-    FlutterError.onError = logger.logFlutterError;
-    WidgetsBinding.instance.platformDispatcher.onError = logger.logPlatformDispatcherError;
+    await runZonedGuarded(
+      () async {
+        WidgetsFlutterBinding.ensureInitialized();
 
-    Bloc.observer = AppBlocObserver(logger: logger);
-    Bloc.transformer = bloc_concurrency.sequential();
+        await SystemChrome.setPreferredOrientations([DeviceOrientation.portraitUp]);
 
-    await SystemChrome.setPreferredOrientations([DeviceOrientation.portraitUp]);
+        await initializeDateFormatting();
 
-    await _launchApplication(logger: logger);
+        await Firebase.initializeApp(options: DefaultFirebaseOptions.currentPlatform);
+
+        // Configure global error interception
+        FlutterError.onError = logger.logFlutterError;
+        WidgetsBinding.instance.platformDispatcher.onError = logger.logPlatformDispatcherError;
+
+        Bloc.observer = AppBlocObserver(logger: logger);
+        Bloc.transformer = bloc_concurrency.sequential();
+
+        await SystemChrome.setPreferredOrientations([DeviceOrientation.portraitUp]);
+
+        await _launchApplication(logger: logger);
+      },
+      (error, stackTrace) {
+        logger.logZoneError(
+          error,
+          stackTrace,
+        );
+      },
+    );
   }
 
   static Future<void> _launchApplication({
