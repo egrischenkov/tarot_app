@@ -5,14 +5,15 @@ import 'package:tarot_logger/logger.dart';
 
 class AppDependenciesCreator {
   static Future<AppDependenciesContainer> create({
-    required AppLogger appLogger,
+    required Logger logger,
   }) async {
     final analyticsReporter = FirebaseAnalyticsReporter(
+      logger: logger,
       analytics: FirebaseAnalytics.instance,
     );
 
     return AppDependenciesContainer(
-      appLogger: appLogger,
+      logger: logger,
       analyticsReporter: analyticsReporter,
     );
   }

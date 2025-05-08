@@ -3,6 +3,7 @@ import 'package:flutter_test/flutter_test.dart';
 import 'package:mocktail/mocktail.dart';
 import 'package:tarot_analytics/scr/analytics_reporter.dart';
 import 'package:tarot_analytics/scr/firebase_analytics_reporter.dart';
+import 'package:tarot_logger/logger.dart';
 
 part 'mocks.dart';
 
@@ -12,7 +13,10 @@ void main() {
 
   setUp(() {
     mockAnalytics = FirebaseAnalyticsMock();
-    reporter = FirebaseAnalyticsReporter(analytics: mockAnalytics);
+    reporter = FirebaseAnalyticsReporter(
+      logger: const FakeLogger(),
+      analytics: mockAnalytics,
+    );
   });
 
   group('FirebaseAnalyticsReporter', () {

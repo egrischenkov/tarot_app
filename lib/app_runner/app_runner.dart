@@ -64,7 +64,7 @@ abstract class AppRunner {
     await _initFirebase(logger: logger);
 
     final dependenciesContainer = await AppDependenciesCreator.create(
-      appLogger: logger,
+      logger: logger,
     );
 
     runApp(App(dependenciesContainer: dependenciesContainer));

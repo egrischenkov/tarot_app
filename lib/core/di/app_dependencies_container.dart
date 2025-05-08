@@ -3,11 +3,11 @@ import 'package:tarot_logger/logger.dart';
 
 /// Container used to reuse dependencies across the application.
 class AppDependenciesContainer {
-  final AppLogger appLogger;
+  final Logger logger;
   final AnalyticsReporter analyticsReporter;
 
   const AppDependenciesContainer({
-    required this.appLogger,
+    required this.logger,
     required this.analyticsReporter,
   });
 }
