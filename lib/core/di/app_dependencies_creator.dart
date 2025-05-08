@@ -1,14 +1,18 @@
 import 'package:firebase_analytics/firebase_analytics.dart';
+import 'package:logger/logger.dart';
 import 'package:taro/core/di/app_dependencies_container.dart';
 import 'package:tarot_analytics/scr/firebase_analytics_reporter.dart';
 
 class AppDependenciesCreator {
-  static Future<AppDependenciesContainer> create() async {
+  static Future<AppDependenciesContainer> create({
+    required AppLogger appLogger,
+  }) async {
     final analyticsReporter = FirebaseAnalyticsReporter(
       analytics: FirebaseAnalytics.instance,
     );
 
     return AppDependenciesContainer(
+      appLogger: appLogger,
       analyticsReporter: analyticsReporter,
     );
   }
