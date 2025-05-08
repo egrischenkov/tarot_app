@@ -16,6 +16,3 @@ dev_dependencies:
   mocktail: ^1.0.4
 
 resolution: workspace
-
-flutter:
-  uses-material-design: true
