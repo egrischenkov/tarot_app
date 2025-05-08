@@ -1,6 +1,6 @@
-import 'package:logger/src/logger.dart';
-import 'package:logger/src/observers/log_observer.dart';
-import 'package:logger/src/reporters/error_reporter.dart';
+import '../logger.dart';
+import 'log_observer.dart';
+import '../reporters/error_reporter.dart';
 
 /// An observer that reports logs to the error reporter if it is active.
 final class ErrorReporterLogObserver extends LogObserver {

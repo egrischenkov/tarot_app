@@ -1,7 +1,7 @@
 import 'dart:developer' as dev;
 
-import 'package:logger/src/logger.dart';
-import 'package:logger/src/observers/log_observer.dart';
+import '../logger.dart';
+import 'log_observer.dart';
 import 'package:logging/logging.dart';
 
 /// [LogObserver] that prints logs using `dart:developer`.

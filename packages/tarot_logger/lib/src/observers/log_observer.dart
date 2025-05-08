@@ -1,4 +1,4 @@
-import 'package:logger/src/logger.dart';
+import '../logger.dart';
 
 /// Observer class, that is notified when a new log message is created
 abstract base class LogObserver {

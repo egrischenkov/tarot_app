@@ -1,5 +1,5 @@
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:logger/logger.dart';
+import '../../logger.dart';
 
 /// [BlocObserver] implementation that logs all events, transitions, and errors
 class AppBlocObserver extends BlocObserver {

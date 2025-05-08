@@ -1,5 +1,5 @@
-import 'package:logger/logger.dart';
 import 'package:tarot_analytics/scr/analytics_reporter.dart';
+import 'package:tarot_logger/logger.dart';
 
 /// Container used to reuse dependencies across the application.
 class AppDependenciesContainer {

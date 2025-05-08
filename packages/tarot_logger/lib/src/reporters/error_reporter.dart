@@ -1,7 +1,7 @@
 import 'dart:async';
 
-import 'package:logger/src/logger.dart';
-import 'package:logger/src/observers/log_observer.dart';
+import '../logger.dart';
+import '../observers/log_observer.dart';
 
 /// An interface for reporting errors.
 ///

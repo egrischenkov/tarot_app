@@ -1,7 +1,7 @@
 import 'package:firebase_crashlytics/firebase_crashlytics.dart';
 import 'package:flutter/foundation.dart';
 
-import 'package:logger/src/reporters/error_reporter.dart';
+import 'error_reporter.dart';
 
 /// An implementation of [ErrorReporter] that reports errors to Firebase Crashlytics.
 class FirebaseErrorReporter implements ErrorReporter {

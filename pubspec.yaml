@@ -32,8 +32,8 @@ dependencies:
   # Workspaces
   tarot_analytics:
     path: packages/tarot_analytics
-  logger:
-    path: packages/logger
+  tarot_logger:
+    path: packages/tarot_logger
   tarot_ui_kit:
     path: packages/tarot_ui_kit
   tarot_rest_client:
@@ -63,6 +63,6 @@ flutter:
 
 workspace:
   - packages/tarot_analytics
-  - packages/logger
+  - packages/tarot_logger
   - packages/tarot_ui_kit
   - packages/tarot_rest_client
