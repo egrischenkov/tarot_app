@@ -1,0 +1,152 @@
+# ==================================================================
+# Definitions
+# ==================================================================
+definitions:
+  cache: &cache
+    cache:
+      cache_paths:
+        - $FLUTTER_ROOT/.pub-cache
+        - $HOME/.pub-cache
+        - $HOME/.gradle/caches
+        - $HOME/Library/Caches/CocoaPods
+  env_versions: &env_versions
+    flutter: fvm
+  env_path: &env_path
+    CM_ENV_PATH: $CM_BUILD_DIR/.env
+  artifacts:
+    - &ipa build/ios/ipa/*.ipa
+    - &apk build/**/outputs/apk/**/*.apk
+    - &aab build/**/outputs/bundle/**/*.aab
+    - &xcode_log /tmp/xcodebuild_logs/*.log
+    - &flutter_drive_log flutter_drive.log
+    - &mapping build/**/outputs/**/mapping.txt
+  app_id: &app_id
+    IOS_PROD: ru.tarot.app.dev
+    IOS_DEV: ru.tarot.app.prod
+  ios_testflight_publish: &ios_testflight_publish
+    app_store_connect:
+      auth: integration
+      submit_to_testflight: true
+      beta_groups:
+        - Beta
+  app_store_connect_integration: &app_store_connect_integration
+    app_store_connect: "our connect"
+  android_signing: &android_signing
+    android_signing:
+      - autospot_upload_keystore
+
+  # ===================================================================
+  # Scripts
+  # ===================================================================
+  scripts:
+    - &update_version_in_pubspec
+      name: Update version in pubspec.yaml
+      script: |
+        # Get the current version from pubspec.yaml
+        CURRENT_VERSION=$(grep -E '^version:' pubspec.yaml | awk '{print $2}')
+        echo "Current app version: $CURRENT_VERSION"
+
+        # Split the version into parts
+        IFS='.+' read -r MAJOR MINOR PATCH BUILD <<< "$CURRENT_VERSION"
+
+        # Calculate new app version
+        NEW_APP_VERSION="$MAJOR.$MINOR.$PROJECT_BUILD_NUMBER+$PROJECT_BUILD_NUMBER"
+        echo "New app version: $NEW_APP_VERSION"
+
+        # Update version in pubspec.yaml
+        sed -i.bak "s/^version: .*/version: $NEW_APP_VERSION/" pubspec.yaml
+        rm -f pubspec.yaml.bak # Remove the backup file created by sed
+
+        # Commit changes
+        git add pubspec.yaml
+        git commit -m "Update version to $NEW_APP_VERSION [skip ci]" # https://docs.codemagic.io/yaml-running-builds/starting-builds-automatically/#exit-or-ignore-build-on-certain-commit-message
+
+        # Try to push changes
+        if ! git push; then
+          echo "Push failed, but continuing workflow..."
+        fi
+    - &flutter_pub_get
+      name: Get Flutter packages
+      script: |
+        flutter pub get
+    - &flutter_analyze
+      name: Flutter analyze
+      script: |
+        flutter analyze --no-fatal-infos
+    - &unit_tests
+      name: Unit tests
+      script: |
+        mkdir -p test-results
+        flutter test --machine > test-results/flutter.json
+      test_report: test-results/flutter.json
+    - &setup_test_env
+      name: Setup test env
+      script: |
+        echo $TEST_ENV | base64 --decode > $CM_ENV_PATH &&
+        cat $CM_ENV_PATH
+    - &setup_prod_env
+      name: Setup prod env
+      script: |
+        echo $PROD_ENV | base64 --decode > $CM_ENV_PATH
+    - &build_test_ipa
+      name: Build test ipa
+      script: |
+        flutter build ipa --release \
+          --flavor dev \
+          --dart-define-from-file=$CM_ENV_PATH \
+          --export-options-plist=/Users/builder/export_options.plist
+    - &build_test_apk
+      name: Build test APK
+      script: |
+        flutter build apk --release \
+          --flavor dev \
+          --dart-define-from-file=$CM_ENV_PATH
+    - &build_prod_ipa
+      name: Build prod ipa
+      script: |
+        flutter build ipa --release \
+          --flavor prod \
+          --dart-define-from-file=$CM_ENV_PATH \
+          --export-options-plist=/Users/builder/export_options.plist
+    - &build_prod_aab
+      name: Build prod aab
+      script: |
+        flutter build aab --release \
+          --flavor prod \
+          --dart-define-from-file=$CM_ENV_PATH
+
+# ===================================================================
+# Workflows
+# ===================================================================
+workflows:
+  dev:
+    name: Dev
+    environment:
+      groups:
+        - test
+      <<: *env_versions
+      vars:
+        <<: *env_path
+        <<: *app_id
+      <<: *android_signing
+      ios_signing:
+        distribution_type: app_store
+        bundle_identifier: $IOS_DEV
+    max_build_duration: 120
+    integrations:
+      <<: *app_store_connect_integration
+    <<: *cache
+    scripts:
+      - *update_version_in_pubspec
+      - *setup_android_local_properties
+      - *setup_xcode_signing
+      - *flutter_pub_get
+      - *flutter_analyze
+      - *setup_test_env
+      - *unit_tests
+      - *build_test_apk
+      - *build_test_ipa
+
+  prod:
+    environment:
+      flutter: fvm
