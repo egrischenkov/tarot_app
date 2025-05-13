@@ -77,7 +77,13 @@ definitions:
       name: Unit tests
       script: |
         mkdir -p test-results
-        flutter test --machine > test-results/flutter.json
+
+        for dir in packages/*; do
+          if [ -d "$dir/test" ]; then
+            echo "Running tests in $dir"
+            flutter test --machine "$dir" > "test-results/$(basename $dir)_flutter.json"
+          fi
+        done
       test_report: test-results/flutter.json
     - &setup_android_local_properties
       name: Set up local.properties
