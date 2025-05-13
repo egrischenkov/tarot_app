@@ -49,3 +49,8 @@ android/app/.cxx/
 .fvm/
 
 coverage
+
+# Environment
+.env
+.env.prod
+.env.dev
