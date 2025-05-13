@@ -146,3 +146,9 @@ workflows:
       - *unit_tests
       - *build_test_apk
       # - *build_test_ipa
+    artifacts:
+      - *apk
+      - *mapping
+      # - *ipa
+      # - *xcode_log
+      # - *flutter_drive_log
