@@ -33,7 +33,7 @@ definitions:
     app_store_connect: "our connect"
   android_signing: &android_signing
     android_signing:
-      - autospot_upload_keystore
+      - tarot_band_upload_keystore
 
   # ===================================================================
   # Scripts
@@ -129,12 +129,12 @@ workflows:
         <<: *env_path
         <<: *app_id
       <<: *android_signing
-      ios_signing:
-        distribution_type: app_store
-        bundle_identifier: $IOS_DEV
+      # ios_signing:
+      #   distribution_type: app_store
+      #   bundle_identifier: $IOS_DEV
     max_build_duration: 120
-    integrations:
-      <<: *app_store_connect_integration
+    # integrations:
+    #   <<: *app_store_connect_integration
     <<: *cache
     scripts:
       - *update_version_in_pubspec
@@ -145,8 +145,4 @@ workflows:
       - *setup_test_env
       - *unit_tests
       - *build_test_apk
-      - *build_test_ipa
-
-  prod:
-    environment:
-      flutter: fvm
+      # - *build_test_ipa
