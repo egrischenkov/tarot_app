@@ -126,8 +126,6 @@ workflows:
   dev:
     name: Dev
     environment:
-      groups:
-        - test
       <<: *env_versions
       vars:
         <<: *env_path
