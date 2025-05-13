@@ -143,7 +143,7 @@ workflows:
     scripts:
       - *update_version_in_pubspec
       - *setup_android_local_properties
-      - *setup_xcode_signing
+      # - *setup_xcode_signing
       - *flutter_pub_get
       - *flutter_analyze
       - *setup_test_env
