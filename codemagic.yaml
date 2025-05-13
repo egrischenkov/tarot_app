@@ -79,6 +79,10 @@ definitions:
         mkdir -p test-results
         flutter test --machine > test-results/flutter.json
       test_report: test-results/flutter.json
+    - &setup_android_local_properties
+      name: Set up local.properties
+      script: |
+        echo "flutter.sdk=$HOME/programs/flutter" > "$CM_BUILD_DIR/android/local.properties"
     - &setup_test_env
       name: Setup test env
       script: |
