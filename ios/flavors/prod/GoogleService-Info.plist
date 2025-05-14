@@ -3,17 +3,17 @@
 <plist version="1.0">
 <dict>
 	<key>API_KEY</key>
-	<string>AIzaSyAfIMabR_MTms9qV4lsSBO4iIqKlhxO6ww</string>
+	<string>AIzaSyBD8JD8_8FGP4_7Eis4D9RAAv1s01R3niw</string>
 	<key>GCM_SENDER_ID</key>
-	<string>13079376016</string>
+	<string>156154699552</string>
 	<key>PLIST_VERSION</key>
 	<string>1</string>
 	<key>BUNDLE_ID</key>
-	<string>ru.tarot.app</string>
+	<string>ru.tarot.app.prod</string>
 	<key>PROJECT_ID</key>
-	<string>tarot-app-1ece1</string>
+	<string>tarot-band-prod</string>
 	<key>STORAGE_BUCKET</key>
-	<string>tarot-app-1ece1.firebasestorage.app</string>
+	<string>tarot-band-prod.firebasestorage.app</string>
 	<key>IS_ADS_ENABLED</key>
 	<false></false>
 	<key>IS_ANALYTICS_ENABLED</key>
@@ -25,6 +25,6 @@
 	<key>IS_SIGNIN_ENABLED</key>
 	<true></true>
 	<key>GOOGLE_APP_ID</key>
-	<string>1:13079376016:ios:8d40d0ad839d6bd04a2815</string>
+	<string>1:156154699552:ios:cb669f1ba7d070c32b0145</string>
 </dict>
 </plist>

@@ -7,7 +7,7 @@ import 'package:flutter/foundation.dart' show defaultTargetPlatform, kIsWeb, Tar
 ///
 /// Example:
 /// ```dart
-/// import 'firebase_options.dart';
+/// import 'firebase_options_prod.dart';
 /// // ...
 /// await Firebase.initializeApp(
 ///   options: DefaultFirebaseOptions.currentPlatform,
@@ -42,24 +42,26 @@ class DefaultFirebaseOptions {
           'you can reconfigure this by running the FlutterFire CLI again.',
         );
       default:
-        throw UnsupportedError('DefaultFirebaseOptions are not supported for this platform.');
+        throw UnsupportedError(
+          'DefaultFirebaseOptions are not supported for this platform.',
+        );
     }
   }
 
   static const FirebaseOptions android = FirebaseOptions(
-    apiKey: 'AIzaSyBqgL_lgBtWAuYJygQIYA43yVcJlf3Ne6c',
-    appId: '1:13079376016:android:903ccaab62f2502e4a2815',
-    messagingSenderId: '13079376016',
-    projectId: 'tarot-app-1ece1',
-    storageBucket: 'tarot-app-1ece1.firebasestorage.app',
+    apiKey: 'AIzaSyAZuNLW1RHqKEDo40q43yAj-r8967EHTFw',
+    appId: '1:156154699552:android:36722840f3e630682b0145',
+    messagingSenderId: '156154699552',
+    projectId: 'tarot-band-prod',
+    storageBucket: 'tarot-band-prod.firebasestorage.app',
   );
 
   static const FirebaseOptions ios = FirebaseOptions(
-    apiKey: 'AIzaSyAfIMabR_MTms9qV4lsSBO4iIqKlhxO6ww',
-    appId: '1:13079376016:ios:8d40d0ad839d6bd04a2815',
-    messagingSenderId: '13079376016',
-    projectId: 'tarot-app-1ece1',
-    storageBucket: 'tarot-app-1ece1.firebasestorage.app',
-    iosBundleId: 'ru.tarot.app',
+    apiKey: 'AIzaSyBD8JD8_8FGP4_7Eis4D9RAAv1s01R3niw',
+    appId: '1:156154699552:ios:cb669f1ba7d070c32b0145',
+    messagingSenderId: '156154699552',
+    projectId: 'tarot-band-prod',
+    storageBucket: 'tarot-band-prod.firebasestorage.app',
+    iosBundleId: 'ru.tarot.app.prod',
   );
 }

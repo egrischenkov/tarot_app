@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "156154699552",
+    "project_id": "tarot-band-prod",
+    "storage_bucket": "tarot-band-prod.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:156154699552:android:36722840f3e630682b0145",
+        "android_client_info": {
+          "package_name": "ru.tarot.app.prod"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAZuNLW1RHqKEDo40q43yAj-r8967EHTFw"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
