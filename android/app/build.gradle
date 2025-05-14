@@ -58,6 +58,8 @@ android {
         }
     }
     
+    flavorDimensions "tarot"
+    
     productFlavors {
         dev {
             dimension "tarot"
