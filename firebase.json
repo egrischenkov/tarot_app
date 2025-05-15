@@ -1,1 +1,63 @@
-{"flutter":{"platforms":{"android":{"default":{"projectId":"tarot-app-1ece1","appId":"1:13079376016:android:903ccaab62f2502e4a2815","fileOutput":"android/app/google-services.json"},"buildConfigurations":{"src/dev":{"projectId":"tarot-band-dev","appId":"1:164246350532:android:7af181c24a011cac0c7791","fileOutput":"android/app/src/dev/google-services.json"},"src/prod":{"projectId":"tarot-band-prod","appId":"1:156154699552:android:36722840f3e630682b0145","fileOutput":"android/app/src/prod/google-services.json"}}},"ios":{"default":{"projectId":"tarot-app-1ece1","appId":"1:13079376016:ios:8d40d0ad839d6bd04a2815","uploadDebugSymbols":false,"fileOutput":"ios/Runner/GoogleService-Info.plist"},"buildConfigurations":{"Debug-dev":{"projectId":"tarot-band-dev","appId":"1:164246350532:ios:78968bd04e60a71e0c7791","uploadDebugSymbols":true,"fileOutput":"ios/flavors/dev/GoogleService-Info.plist"},"Release-prod":{"projectId":"tarot-band-prod","appId":"1:156154699552:ios:cb669f1ba7d070c32b0145","uploadDebugSymbols":true,"fileOutput":"ios/flavors/prod/GoogleService-Info.plist"}}},"dart":{"lib/firebase_options.dart":{"projectId":"tarot-app-1ece1","configurations":{"android":"1:13079376016:android:903ccaab62f2502e4a2815","ios":"1:13079376016:ios:8d40d0ad839d6bd04a2815"}},"lib/firebase_options_dev.dart":{"projectId":"tarot-band-dev","configurations":{"android":"1:164246350532:android:7af181c24a011cac0c7791","ios":"1:164246350532:ios:78968bd04e60a71e0c7791"}},"lib/firebase_options_prod.dart":{"projectId":"tarot-band-prod","configurations":{"android":"1:156154699552:android:36722840f3e630682b0145","ios":"1:156154699552:ios:cb669f1ba7d070c32b0145"}}}}}}
+{
+    "flutter": {
+        "platforms": {
+            "android": {
+                "default": {
+                    "projectId": "tarot-app-1ece1",
+                    "appId": "1:13079376016:android:903ccaab62f2502e4a2815",
+                    "fileOutput": "android/app/google-services.json"
+                },
+                "buildConfigurations": {
+                    "src/dev": {
+                        "projectId": "tarot-band-dev",
+                        "appId": "1:164246350532:android:7af181c24a011cac0c7791",
+                        "fileOutput": "android/app/src/dev/google-services.json"
+                    },
+                    "src/prod": {
+                        "projectId": "tarot-band-prod",
+                        "appId": "1:156154699552:android:36722840f3e630682b0145",
+                        "fileOutput": "android/app/src/prod/google-services.json"
+                    }
+                }
+            },
+            "ios": {
+                "default": {
+                    "projectId": "tarot-app-1ece1",
+                    "appId": "1:13079376016:ios:8d40d0ad839d6bd04a2815",
+                    "uploadDebugSymbols": false,
+                    "fileOutput": "ios/Runner/GoogleService-Info.plist"
+                },
+                "buildConfigurations": {
+                    "Debug-dev": {
+                        "projectId": "tarot-band-dev",
+                        "appId": "1:164246350532:ios:78968bd04e60a71e0c7791",
+                        "uploadDebugSymbols": true,
+                        "fileOutput": "ios/flavors/dev/GoogleService-Info.plist"
+                    },
+                    "Release-prod": {
+                        "projectId": "tarot-band-prod",
+                        "appId": "1:156154699552:ios:cb669f1ba7d070c32b0145",
+                        "uploadDebugSymbols": true,
+                        "fileOutput": "ios/flavors/prod/GoogleService-Info.plist"
+                    }
+                }
+            },
+            "dart": {
+                "lib/core/firebase/options/firebase_options_dev.g.dart": {
+                    "projectId": "tarot-band-dev",
+                    "configurations": {
+                        "android": "1:164246350532:android:7af181c24a011cac0c7791",
+                        "ios": "1:164246350532:ios:78968bd04e60a71e0c7791"
+                    }
+                },
+                "lib/core/firebase/options/firebase_options_prod.g.dart": {
+                    "projectId": "tarot-band-prod",
+                    "configurations": {
+                        "android": "1:156154699552:android:36722840f3e630682b0145",
+                        "ios": "1:156154699552:ios:cb669f1ba7d070c32b0145"
+                    }
+                }
+            }
+        }
+    }
+}

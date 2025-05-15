@@ -5,58 +5,67 @@
     "version": "0.2.0",
     "configurations": [
         {
-            "name": "taro (dev)",
+            "name": "Tarot (dev)",
             "request": "launch",
             "type": "dart",
-            "program": "lib/main.dart",
+            "program": "lib/main_dev.dart",
             "args": [
+                "--flavor",
+                "dev",
                 "--dart-define-from-file",
                 ".env.dev"
             ]
         },
         {
-            "name": "Taro (dev version in release mode)",
+            "name": "Tarot (dev version in release mode)",
             "request": "launch",
             "flutterMode": "release",
             "type": "dart",
-            "program": "lib/main.dart",
+            "program": "lib/main_devd.dart",
             "args": [
+                "--flavor",
+                "dev",
+                "--dart-define-from-file",
+                ".env.prod"
+            ]
+        },
+        {
+            "name": "Tarot (profile mode)",
+            "request": "launch",
+            "type": "dart",
+            "flutterMode": "profile",
+            "program": "lib/main_dev.dart",
+            "args": [
+                "--flavor",
+                "dev",
                 "--dart-define-from-file",
                 ".env.dev"
             ]
         },
         {
-            "name": "autospot (profile mode)",
+            "name": "Tarot (prod version with debugging)",
             "request": "launch",
             "type": "dart",
-            "flutterMode": "profile"
-        },
-        {
-            "name": "taro (prod version with debugging)",
-            "request": "launch",
-            "type": "dart",
-            "program": "lib/main.dart",
+            "program": "lib/main_prod.dart",
             "args": [
+                "--flavor",
+                "prod",
                 "--dart-define-from-file",
                 ".env.prod"
             ]
         },
         {
-            "name": "taro (prod release mode)",
+            "name": "Tarot (prod release mode)",
             "request": "launch",
             "type": "dart",
             "flutterMode": "release",
-            "program": "lib/main.dart",
+            "program": "lib/main_prod.dart",
             "args": [
+                "--flavor",
+                "prod",
                 "--dart-define-from-file",
                 ".env.prod"
             ]
-        },
-        {
-            "name": "Flutter",
-            "type": "dart",
-            "request": "launch",
-            "program": "lib/main.dart"
         },
         {
             "name": "Golden",

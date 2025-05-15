@@ -54,3 +54,11 @@ coverage
 .env
 .env.prod
 .env.dev
+
+# Firebase
+ios/Runner/GoogleService-Info.plist
+ios/flavors/*/GoogleService-Info.plist
+macos/Runner/GoogleService-Info.plist
+macos/flavors/*/GoogleService-Info.plist
+android/app/google-services.json
+android/app/src/*/google-services.json

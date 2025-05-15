@@ -102,6 +102,7 @@ definitions:
       name: Build test ipa
       script: |
         flutter build ipa --release \
+          -t lib/main_dev.dart \
           --flavor dev \
           --dart-define-from-file=$CM_ENV_PATH \
           --export-options-plist=/Users/builder/export_options.plist
@@ -109,12 +110,14 @@ definitions:
       name: Build test APK
       script: |
         flutter build apk --release \
+          -t lib/main_dev.dart \
           --flavor dev \
           --dart-define-from-file=$CM_ENV_PATH
     - &build_prod_ipa
       name: Build prod ipa
       script: |
         flutter build ipa --release \
+          -t lib/main_prod.dart \
           --flavor prod \
           --dart-define-from-file=$CM_ENV_PATH \
           --export-options-plist=/Users/builder/export_options.plist
@@ -122,6 +125,7 @@ definitions:
       name: Build prod aab
       script: |
         flutter build aab --release \
+          -t lib/main_prod.dart \
           --flavor prod \
           --dart-define-from-file=$CM_ENV_PATH
 

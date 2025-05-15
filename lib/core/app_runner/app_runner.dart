@@ -7,17 +7,21 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:intl/date_symbol_data_local.dart';
-import 'package:taro/app_runner/app.dart';
+import 'package:taro/core/app_runner/app.dart';
+import 'package:taro/core/app_runner/flavor_config.dart';
 import 'package:taro/core/di/app_dependencies_creator.dart';
-import 'package:taro/firebase_options.dart';
 import 'package:tarot_logger/logger.dart';
 
 /// A class that is responsible for running the application.
-abstract class AppRunner {
-  const AppRunner();
+final class AppRunner {
+  final FlavorConfig _flavorConfig;
+
+  const AppRunner({
+    required FlavorConfig flavorConfig,
+  }) : _flavorConfig = flavorConfig;
 
   /// Initializes dependencies and launches the application within a guarded execution zone.
-  static Future<void> startup() async {
+  Future<void> startup() async {
     final logger = AppLogger(
       observers: [
         if (!kReleaseMode) const PrintingLogObserver(),
@@ -36,8 +40,6 @@ abstract class AppRunner {
 
         await initializeDateFormatting();
 
-        await Firebase.initializeApp(options: DefaultFirebaseOptions.currentPlatform);
-
         // Configure global error interception
         FlutterError.onError = logger.logFlutterError;
         WidgetsBinding.instance.platformDispatcher.onError = logger.logPlatformDispatcherError;
@@ -46,6 +48,8 @@ abstract class AppRunner {
         Bloc.transformer = bloc_concurrency.sequential();
 
         await SystemChrome.setPreferredOrientations([DeviceOrientation.portraitUp]);
+
+        await _initFirebase(logger: logger);
 
         await _launchApplication(logger: logger);
       },
@@ -58,11 +62,9 @@ abstract class AppRunner {
     );
   }
 
-  static Future<void> _launchApplication({
+  Future<void> _launchApplication({
     required AppLogger logger,
   }) async {
-    await _initFirebase(logger: logger);
-
     final dependenciesContainer = await AppDependenciesCreator.create(
       logger: logger,
     );
@@ -70,11 +72,11 @@ abstract class AppRunner {
     runApp(App(dependenciesContainer: dependenciesContainer));
   }
 
-  static Future<void> _initFirebase({
+  Future<void> _initFirebase({
     required AppLogger logger,
   }) async {
     try {
-      await Firebase.initializeApp(options: DefaultFirebaseOptions.currentPlatform);
+      await Firebase.initializeApp(options: _flavorConfig.firebaseOptions);
     } catch (e, s) {
       logger.error('Firebase initialization error: $e: $s');
     }
