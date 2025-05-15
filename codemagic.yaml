@@ -164,3 +164,35 @@ workflows:
       # - *ipa
       # - *xcode_log
       # - *flutter_drive_log
+
+  prod:
+    name: Prod
+    environment:
+      <<: *env_versions
+      vars:
+        <<: *env_path
+        <<: *app_id
+      <<: *android_signing
+      # ios_signing:
+      #   distribution_type: app_store
+      #   bundle_identifier: $IOS_DEV
+    max_build_duration: 120
+    # integrations:
+    #   <<: *app_store_connect_integration
+    <<: *cache
+    scripts:
+      - *update_version_in_pubspec
+      - *setup_android_local_properties
+      # - *setup_xcode_signing
+      - *flutter_pub_get
+      - *flutter_analyze
+      - *setup_prod_env
+      - *unit_tests
+      - *build_prod_aab
+      # - *build_test_ipa
+    artifacts:
+      - *aab
+      - *mapping
+      # - *ipa
+      # - *xcode_log
+      # - *flutter_drive_log
