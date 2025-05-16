@@ -3,6 +3,7 @@ import 'package:taro/core/di/app_dependencies_container.dart';
 import 'package:taro/core/di/app_dependencies_scope.dart';
 import 'package:taro/core/localization/gen/app_localizations.g.dart';
 import 'package:taro/core/routing/app_router.dart';
+import 'package:tarot_ui_kit/ui_kit.dart';
 
 class App extends StatelessWidget {
   final AppDependenciesContainer dependenciesContainer;
@@ -22,6 +23,7 @@ class App extends StatelessWidget {
         localizationsDelegates: AppLocalizations.localizationsDelegates,
         supportedLocales: AppLocalizations.supportedLocales,
         routerConfig: _router.config(),
+        theme: UiKitTheme.light,
       ),
     );
   }
