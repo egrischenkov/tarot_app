@@ -102,6 +102,11 @@ definitions:
       name: Set up code signing settings on Xcode project
       script: |
         xcode-project use-profiles --custom-export-options='{"testFlightInternalTestingOnly": true}'
+    - &setup_flutterfire
+      name: Setup flutterfire
+      script: |
+        dart pub global activate flutterfire_cli
+        export PATH="$PATH":"$HOME/.pub-cache/bin"
     - &build_test_ipa
       name: Build test ipa
       script: |
@@ -160,6 +165,7 @@ workflows:
       - *flutter_analyze
       - *setup_test_env
       - *unit_tests
+      - *setup_flutterfire
       - *build_test_apk
       - *build_test_ipa
     artifacts:
@@ -194,6 +200,7 @@ workflows:
       - *flutter_analyze
       - *setup_prod_env
       - *unit_tests
+      - *setup_flutterfire
       - *build_prod_aab
       - *build_prod_ipa
     artifacts:
