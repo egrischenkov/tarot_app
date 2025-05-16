@@ -9,4 +9,13 @@ dependencies:
   flutter:
     sdk: flutter
 
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  alchemist: ^0.11.0
+  build_runner: ^2.4.13
+
+flutter:
+  uses-material-design: true
+
 resolution: workspace
