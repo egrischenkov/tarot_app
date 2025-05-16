@@ -21,8 +21,8 @@ definitions:
     - &flutter_drive_log flutter_drive.log
     - &mapping build/**/outputs/**/mapping.txt
   app_id: &app_id
-    IOS_PROD: ru.tarot.app.dev
-    IOS_DEV: ru.tarot.app.prod
+    IOS_PROD: ru.tarot.app.prod
+    IOS_DEV: ru.tarot.app.dev
   ios_testflight_publish: &ios_testflight_publish
     app_store_connect:
       auth: integration
@@ -30,7 +30,7 @@ definitions:
       beta_groups:
         - Beta
   app_store_connect_integration: &app_store_connect_integration
-    app_store_connect: "our connect"
+    app_store_connect: "API key for codemagic"
   android_signing: &android_signing
     android_signing:
       - tarot_band_upload_keystore
@@ -98,6 +98,10 @@ definitions:
       name: Setup prod env
       script: |
         echo $PROD_ENV | base64 --decode > $CM_ENV_PATH
+    - &setup_xcode_signing
+      name: Set up code signing settings on Xcode project
+      script: |
+        xcode-project use-profiles --custom-export-options='{"testFlightInternalTestingOnly": true}'
     - &build_test_ipa
       name: Build test ipa
       script: |
@@ -141,29 +145,31 @@ workflows:
         <<: *env_path
         <<: *app_id
       <<: *android_signing
-      # ios_signing:
-      #   distribution_type: app_store
-      #   bundle_identifier: $IOS_DEV
+      ios_signing:
+        distribution_type: app_store
+        bundle_identifier: $IOS_DEV
     max_build_duration: 120
-    # integrations:
-    #   <<: *app_store_connect_integration
+    integrations:
+      <<: *app_store_connect_integration
     <<: *cache
     scripts:
       - *update_version_in_pubspec
       - *setup_android_local_properties
-      # - *setup_xcode_signing
+      - *setup_xcode_signing
       - *flutter_pub_get
       - *flutter_analyze
       - *setup_test_env
       - *unit_tests
       - *build_test_apk
-      # - *build_test_ipa
+      - *build_test_ipa
     artifacts:
       - *apk
       - *mapping
-      # - *ipa
-      # - *xcode_log
-      # - *flutter_drive_log
+      - *ipa
+      - *xcode_log
+      - *flutter_drive_log
+    publishing:
+      <<: *ios_testflight_publish
 
   prod:
     name: Prod
@@ -173,26 +179,28 @@ workflows:
         <<: *env_path
         <<: *app_id
       <<: *android_signing
-      # ios_signing:
-      #   distribution_type: app_store
-      #   bundle_identifier: $IOS_DEV
+      ios_signing:
+        distribution_type: app_store
+        bundle_identifier: $IOS_PROD
     max_build_duration: 120
-    # integrations:
-    #   <<: *app_store_connect_integration
+    integrations:
+      <<: *app_store_connect_integration
     <<: *cache
     scripts:
       - *update_version_in_pubspec
       - *setup_android_local_properties
-      # - *setup_xcode_signing
+      - *setup_xcode_signing
       - *flutter_pub_get
       - *flutter_analyze
       - *setup_prod_env
       - *unit_tests
       - *build_prod_aab
-      # - *build_test_ipa
+      - *build_prod_ipa
     artifacts:
       - *aab
       - *mapping
-      # - *ipa
-      # - *xcode_log
-      # - *flutter_drive_log
+      - *ipa
+      - *xcode_log
+      - *flutter_drive_log
+    publishing:
+      <<: *ios_testflight_publish
