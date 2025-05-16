@@ -34,6 +34,12 @@
                         "uploadDebugSymbols": true,
                         "fileOutput": "ios/flavors/dev/GoogleService-Info.plist"
                     },
+                    "Release-dev": {
+                        "projectId": "tarot-band-dev",
+                        "appId": "1:164246350532:ios:78968bd04e60a71e0c7791",
+                        "uploadDebugSymbols": true,
+                        "fileOutput": "ios/flavors/dev/GoogleService-Info.plist"
+                    },
                     "Release-prod": {
                         "projectId": "tarot-band-prod",
                         "appId": "1:156154699552:ios:cb669f1ba7d070c32b0145",
