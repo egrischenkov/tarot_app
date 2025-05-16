@@ -153,7 +153,7 @@ workflows:
       ios_signing:
         distribution_type: app_store
         bundle_identifier: $IOS_DEV
-    max_build_duration: 120
+    max_build_duration: 60
     integrations:
       <<: *app_store_connect_integration
     <<: *cache
@@ -188,7 +188,7 @@ workflows:
       ios_signing:
         distribution_type: app_store
         bundle_identifier: $IOS_PROD
-    max_build_duration: 120
+    max_build_duration: 60
     integrations:
       <<: *app_store_connect_integration
     <<: *cache
