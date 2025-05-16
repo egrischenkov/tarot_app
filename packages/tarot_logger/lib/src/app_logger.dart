@@ -33,4 +33,10 @@ final class AppLogger extends Logger {
       observer.onLog(logMessage);
     }
   }
+
+  void addObserver(LogObserver observer) {
+    if (!_observers.contains(observer)) {
+      _observers.add(observer);
+    }
+  }
 }

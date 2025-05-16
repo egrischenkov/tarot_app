@@ -25,10 +25,6 @@ final class AppRunner {
     final logger = AppLogger(
       observers: [
         if (!kReleaseMode) const PrintingLogObserver(),
-        if (kReleaseMode)
-          ErrorReporterLogObserver(
-            errorReporter: FirebaseErrorReporter(),
-          ),
       ],
     );
 
@@ -77,6 +73,13 @@ final class AppRunner {
   }) async {
     try {
       await Firebase.initializeApp(options: _flavorConfig.firebaseOptions);
+      if (kReleaseMode) {
+        logger.addObserver(
+          ErrorReporterLogObserver(
+            errorReporter: FirebaseErrorReporter(),
+          ),
+        );
+      }
     } catch (e, s) {
       logger.error('Firebase initialization error: $e: $s');
     }
