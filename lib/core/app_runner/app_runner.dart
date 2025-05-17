@@ -8,7 +8,7 @@ import 'package:flutter/services.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:intl/date_symbol_data_local.dart';
 import 'package:taro/core/app_runner/app.dart';
-import 'package:taro/core/app_runner/flavor_config.dart';
+import 'package:taro/core/app_runner/configs/flavor_config.dart';
 import 'package:taro/core/di/app_dependencies_creator.dart';
 import 'package:tarot_logger/logger.dart';
 

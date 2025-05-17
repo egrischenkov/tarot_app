@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:taro/core/di/app_dependencies_container.dart' show AppDependenciesContainer;
+import 'package:taro/core/di/app_dependencies_scope.dart';
 import 'package:taro/core/localization/gen/app_localizations.g.dart';
 
 extension ContextExtension on BuildContext {
@@ -34,4 +36,8 @@ extension ContextExtension on BuildContext {
   /// obtain new values from that widget.
   T? _inheritMaybeOf<T extends InheritedWidget>({bool listen = true}) =>
       listen ? dependOnInheritedWidgetOfExactType<T>() : getInheritedWidgetOfExactType<T>();
+
+  AppDependenciesContainer get appDependenciesContainer {
+    return AppDependenciesScope.of(this);
+  }
 }

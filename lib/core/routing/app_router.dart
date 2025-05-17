@@ -1,6 +1,7 @@
 import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:taro/features/debug/ui/debug_screen.dart';
+import 'package:taro/features/debug/ui/debug_wrapper_entry.dart';
 import 'package:taro/features/home/ui/home_screen.dart';
 import 'package:taro/features/splash/ui/splash_screen.dart';
 
@@ -16,8 +17,13 @@ class AppRouter extends RootStackRouter {
 
   @override
   List<AutoRoute> get routes => [
-        AutoRoute(initial: true, page: SplashRoute.page),
-        AutoRoute(page: DebugRoute.page),
-        AutoRoute(page: HomeRoute.page),
+        AutoRoute(
+          page: DebugWrapperRoute.page,
+          children: [
+            AutoRoute(initial: true, page: SplashRoute.page),
+            AutoRoute(page: DebugRoute.page),
+            AutoRoute(page: HomeRoute.page),
+          ],
+        ),
       ];
 }
