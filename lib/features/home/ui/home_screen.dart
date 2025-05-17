@@ -1,4 +1,5 @@
 import 'package:auto_route/auto_route.dart';
+import 'package:firebase_crashlytics/firebase_crashlytics.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:taro/core/assets/gen/assets.gen.dart';
@@ -101,6 +102,23 @@ class _HomeScreenState extends State<HomeScreen> with SingleTickerProviderStateM
                   color: Colors.yellow,
                 ),
                 child: const Text('Отправить тестовое событие в Firebase'),
+              ),
+            ),
+            const SizedBox(height: 16),
+            InkWell(
+              onTap: () {
+                FirebaseCrashlytics.instance.crash();
+                HapticFeedback.lightImpact();
+              },
+              borderRadius: BorderRadius.circular(8),
+              child: Ink(
+                padding: const EdgeInsets.all(16),
+                decoration: BoxDecoration(
+                  border: Border.all(color: Colors.white),
+                  borderRadius: BorderRadius.circular(8),
+                  color: Colors.yellow,
+                ),
+                child: const Text('Тестовый краш в Firebase'),
               ),
             ),
           ],
