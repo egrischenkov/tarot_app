@@ -13,11 +13,12 @@ class AppRouter extends RootStackRouter {
   /// For most popular cases u can get access to router with context.router
   static final rootRouterGlobalKey = GlobalKey<NavigatorState>(debugLabel: 'App router global key');
 
-  AppRouter({super.navigatorKey});
+  AppRouter() : super(navigatorKey: rootRouterGlobalKey);
 
   @override
   List<AutoRoute> get routes => [
         AutoRoute(
+          initial: true,
           page: DebugWrapperRoute.page,
           children: [
             AutoRoute(initial: true, page: SplashRoute.page),

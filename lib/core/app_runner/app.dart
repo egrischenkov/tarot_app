@@ -13,7 +13,7 @@ class App extends StatelessWidget {
     super.key,
   });
 
-  final _router = AppRouter(navigatorKey: AppRouter.rootRouterGlobalKey);
+  final _router = AppRouter();
 
   @override
   Widget build(BuildContext context) {

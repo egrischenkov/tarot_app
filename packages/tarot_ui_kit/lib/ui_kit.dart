@@ -2,3 +2,6 @@ export 'src/theme/context_extensions/context_extension.dart';
 export 'src/theme/theme.dart';
 export 'src/theme/theme_extensions/colors.dart';
 export 'src/theme/theme_extensions/fonts.dart';
+export 'src/units/spacing.dart';
+export 'src/utils/intersperse.dart';
+export 'src/utils/sized_box_util.dart';

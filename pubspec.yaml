@@ -12,6 +12,9 @@ dependencies:
   flutter_localizations:
     sdk: flutter
 
+  # Networking
+  flutter_alice: ^2.0.1
+
   # UI
   flutter_svg: ^2.1.0
 
@@ -28,6 +31,7 @@ dependencies:
 
   # Other
   intl: ^0.19.0
+  package_info_plus: ^8.3.0
 
   # Workspaces
   tarot_analytics:

@@ -23,7 +23,7 @@ class _HomeScreenState extends State<HomeScreen> with SingleTickerProviderStateM
     _controller = AnimationController(
       duration: const Duration(seconds: 4),
       vsync: this,
-    )..repeat(); // запускаем сразу, но остановим
+    )..repeat();
     _controller.stop();
   }
 
