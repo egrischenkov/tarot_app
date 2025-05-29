@@ -1,4 +1,4 @@
-import 'package:taro/core/app_runner/configs/env_config/env_config.dart';
+import 'package:taro/core/app_runner/env_config.dart';
 import 'package:taro/core/utils/alice_service.dart';
 import 'package:taro/core/utils/package_info_service.dart';
 import 'package:tarot_analytics/scr/analytics_reporter.dart';

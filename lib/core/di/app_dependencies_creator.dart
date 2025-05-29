@@ -1,5 +1,5 @@
 import 'package:firebase_analytics/firebase_analytics.dart';
-import 'package:taro/core/app_runner/configs/env_config/env_config.dart';
+import 'package:taro/core/app_runner/env_config.dart';
 import 'package:taro/core/di/app_dependencies_container.dart';
 import 'package:taro/core/utils/alice_service.dart';
 import 'package:taro/core/utils/package_info_service.dart';

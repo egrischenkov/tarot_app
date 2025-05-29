@@ -8,17 +8,22 @@ import 'package:flutter/services.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:intl/date_symbol_data_local.dart';
 import 'package:taro/core/app_runner/app.dart';
-import 'package:taro/core/app_runner/configs/flavor_config.dart';
+import 'package:taro/core/app_runner/env_config.dart';
+import 'package:taro/core/app_runner/flavor.dart';
+import 'package:taro/core/di/app_dependencies_container.dart';
 import 'package:taro/core/di/app_dependencies_creator.dart';
 import 'package:tarot_logger/logger.dart';
 
 /// A class that is responsible for running the application.
 final class AppRunner {
-  final FlavorConfig _flavorConfig;
+  final Flavor _flavor;
 
-  const AppRunner({
-    required FlavorConfig flavorConfig,
-  }) : _flavorConfig = flavorConfig;
+  const AppRunner._({
+    required Flavor flavor,
+  }) : _flavor = flavor;
+
+  factory AppRunner.dev() => const AppRunner._(flavor: Flavor.dev);
+  factory AppRunner.prod() => const AppRunner._(flavor: Flavor.prod);
 
   /// Initializes dependencies and launches the application within a guarded execution zone.
   Future<void> startup() async {
@@ -45,8 +50,6 @@ final class AppRunner {
 
         await SystemChrome.setPreferredOrientations([DeviceOrientation.portraitUp]);
 
-        await _initFirebase(logger: logger);
-
         await _launchApplication(logger: logger);
       },
       (error, stackTrace) {
@@ -58,17 +61,19 @@ final class AppRunner {
     );
   }
 
-  Future<void> _launchApplication({
-    required AppLogger logger,
-  }) async {
+  Future<AppDependenciesContainer> _createDependencies() async {
+    await _initAnalyticsService(logger: logger);
+
     final dependenciesContainer = await AppDependenciesCreator.create(
       logger: logger,
     );
+  }
 
+  void _launchApplication() {
     runApp(App(dependenciesContainer: dependenciesContainer));
   }
 
-  Future<void> _initFirebase({
+  Future<void> _initAnalyticsService({
     required AppLogger logger,
   }) async {
     try {

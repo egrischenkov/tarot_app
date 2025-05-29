@@ -3,21 +3,15 @@ import 'observers/log_observer.dart';
 
 /// AppLogger class, that manages the logging of messages
 final class AppLogger extends Logger {
-  final List<LogObserver> _observers;
-
-  /// {@macro app_logger}
-  AppLogger({
-    List<LogObserver> observers = const [],
-  }) : _observers = List.unmodifiable(observers);
-
   @override
   void log(
     String message, {
     required LogLevel level,
+    required List<LogObserver> observers,
     Object? error,
     StackTrace? stackTrace,
   }) {
-    if (_observers.isEmpty) {
+    if (observers.isEmpty) {
       return;
     }
 
@@ -29,14 +23,8 @@ final class AppLogger extends Logger {
       timestamp: DateTime.now(),
     );
 
-    for (final observer in _observers) {
+    for (final observer in observers) {
       observer.onLog(logMessage);
-    }
-  }
-
-  void addObserver(LogObserver observer) {
-    if (!_observers.contains(observer)) {
-      _observers.add(observer);
     }
   }
 }

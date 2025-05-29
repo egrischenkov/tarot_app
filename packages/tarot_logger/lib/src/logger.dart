@@ -1,14 +1,27 @@
 import 'package:flutter/foundation.dart';
+import 'package:tarot_logger/src/observers/log_observer.dart';
 
 /// Logger class, that manages the logging of messages
 abstract base class Logger {
+  final List<LogObserver> _observers;
+
   /// {@macro logger}
-  const Logger();
+  Logger({
+    List<LogObserver> observers = const [],
+  }) : _observers = List.unmodifiable(observers);
+
+  void addObserver(LogObserver observer) {
+    if (!_observers.contains(observer)) {
+      _observers.add(observer);
+    }
+  }
 
   /// Logs a message with the specified [level].
+  @protected
   void log(
     String message, {
     required LogLevel level,
+    required List<LogObserver> observers,
     Object? error,
     StackTrace? stackTrace,
   });
@@ -17,6 +30,7 @@ abstract base class Logger {
   void logZoneError(Object error, StackTrace stackTrace) => log(
         'Zone error',
         level: LogLevel.error,
+        observers: _observers,
         error: error,
         stackTrace: stackTrace,
       );
@@ -26,6 +40,7 @@ abstract base class Logger {
     log(
       details.summary.toString(),
       level: LogLevel.error,
+      observers: _observers,
       error: details.exception,
       stackTrace: details.stack,
     );
@@ -36,6 +51,7 @@ abstract base class Logger {
     log(
       'Platform Error',
       level: LogLevel.error,
+      observers: _observers,
       error: error,
       stackTrace: stackTrace,
     );
@@ -52,6 +68,7 @@ abstract base class Logger {
       log(
         message,
         level: LogLevel.trace,
+        observers: _observers,
         error: error,
         stackTrace: stackTrace,
       );
@@ -65,6 +82,7 @@ abstract base class Logger {
       log(
         message,
         level: LogLevel.debug,
+        observers: _observers,
         error: error,
         stackTrace: stackTrace,
       );
@@ -78,6 +96,7 @@ abstract base class Logger {
       log(
         message,
         level: LogLevel.info,
+        observers: _observers,
         error: error,
         stackTrace: stackTrace,
       );
@@ -91,6 +110,7 @@ abstract base class Logger {
       log(
         message,
         level: LogLevel.warn,
+        observers: _observers,
         error: error,
         stackTrace: stackTrace,
       );
@@ -104,6 +124,7 @@ abstract base class Logger {
       log(
         message,
         level: LogLevel.error,
+        observers: _observers,
         error: error,
         stackTrace: stackTrace,
       );
@@ -117,6 +138,7 @@ abstract base class Logger {
       log(
         message,
         level: LogLevel.fatal,
+        observers: _observers,
         error: error,
         stackTrace: stackTrace,
       );
@@ -213,12 +235,13 @@ class LogMessage {
 /// A logger that does nothing.
 /// Use this for tests.
 final class FakeLogger extends Logger {
-  const FakeLogger();
+  FakeLogger();
 
   @override
   void log(
     String message, {
     required LogLevel level,
+    required List<LogObserver> observers,
     Object? error,
     StackTrace? stackTrace,
   }) {}
