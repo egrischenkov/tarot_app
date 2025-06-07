@@ -3,6 +3,10 @@ import 'observers/log_observer.dart';
 
 /// AppLogger class, that manages the logging of messages
 final class AppLogger extends Logger {
+  AppLogger({
+    super.observers = const [],
+  });
+
   @override
   void log(
     String message, {

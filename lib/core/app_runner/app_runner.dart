@@ -8,10 +8,9 @@ import 'package:flutter/services.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:intl/date_symbol_data_local.dart';
 import 'package:taro/core/app_runner/app.dart';
-import 'package:taro/core/app_runner/env_config.dart';
 import 'package:taro/core/app_runner/flavor.dart';
-import 'package:taro/core/di/app_dependencies_container.dart';
 import 'package:taro/core/di/app_dependencies_creator.dart';
+import 'package:taro/core/firebase/tarot_firebase_options.dart';
 import 'package:tarot_logger/logger.dart';
 
 /// A class that is responsible for running the application.
@@ -35,22 +34,17 @@ final class AppRunner {
 
     await runZonedGuarded(
       () async {
-        WidgetsFlutterBinding.ensureInitialized();
+        await _initFirebase(logger: logger);
 
-        await SystemChrome.setPreferredOrientations([DeviceOrientation.portraitUp]);
+        final dependencies = await AppDependenciesCreator.create(
+          logger: logger,
+          flavor: _flavor,
+        );
 
-        await initializeDateFormatting();
+        await _setupFlutterConfigurations(logger: logger);
+        _setupBlocConfigurations(logger: logger);
 
-        // Configure global error interception
-        FlutterError.onError = logger.logFlutterError;
-        WidgetsBinding.instance.platformDispatcher.onError = logger.logPlatformDispatcherError;
-
-        Bloc.observer = AppBlocObserver(logger: logger);
-        Bloc.transformer = bloc_concurrency.sequential();
-
-        await SystemChrome.setPreferredOrientations([DeviceOrientation.portraitUp]);
-
-        await _launchApplication(logger: logger);
+        runApp(App(dependenciesContainer: dependencies));
       },
       (error, stackTrace) {
         logger.logZoneError(
@@ -61,23 +55,34 @@ final class AppRunner {
     );
   }
 
-  Future<AppDependenciesContainer> _createDependencies() async {
-    await _initAnalyticsService(logger: logger);
+  Future<void> _setupFlutterConfigurations({
+    required Logger logger,
+  }) async {
+    WidgetsFlutterBinding.ensureInitialized();
 
-    final dependenciesContainer = await AppDependenciesCreator.create(
-      logger: logger,
-    );
+    await SystemChrome.setPreferredOrientations([DeviceOrientation.portraitUp]);
+
+    await initializeDateFormatting();
+
+    // Configure global error interception
+    FlutterError.onError = logger.logFlutterError;
+    WidgetsBinding.instance.platformDispatcher.onError = logger.logPlatformDispatcherError;
   }
 
-  void _launchApplication() {
-    runApp(App(dependenciesContainer: dependenciesContainer));
+  void _setupBlocConfigurations({
+    required Logger logger,
+  }) {
+    Bloc.observer = AppBlocObserver(logger: logger);
+    Bloc.transformer = bloc_concurrency.sequential();
   }
 
-  Future<void> _initAnalyticsService({
+  Future<void> _initFirebase({
     required AppLogger logger,
   }) async {
     try {
-      await Firebase.initializeApp(options: _flavorConfig.firebaseOptions);
+      await Firebase.initializeApp(
+        options: switch (_flavor) { Flavor.dev => TarotFirebaseOptions.dev, Flavor.prod => TarotFirebaseOptions.prod },
+      );
       if (kReleaseMode) {
         logger.addObserver(
           ErrorReporterLogObserver(

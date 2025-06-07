@@ -231,18 +231,3 @@ class LogMessage {
   /// up to the log message, which is particularly useful when logging errors.
   final StackTrace? stackTrace;
 }
-
-/// A logger that does nothing.
-/// Use this for tests.
-final class FakeLogger extends Logger {
-  FakeLogger();
-
-  @override
-  void log(
-    String message, {
-    required LogLevel level,
-    required List<LogObserver> observers,
-    Object? error,
-    StackTrace? stackTrace,
-  }) {}
-}

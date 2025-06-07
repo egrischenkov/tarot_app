@@ -1,4 +1,7 @@
 {
   "dart.flutterSdkPath": ".fvm/versions/3.29.0",
-  "dart.lineLength": 120
+  "dart.lineLength": 120,
+  "cSpell.words": [
+    "egrischenkov"
+  ]
 }

@@ -26,7 +26,7 @@ class DebugScreen extends StatelessWidget {
             [
               DebugOptionButton(
                 title: 'Открыть http инспектор',
-                onTap: context.appDependenciesContainer.aliceService.showInspector,
+                onTap: context.appDependenciesContainer.httpInspectorService.showInspector,
               ),
               DebugCardWidget(
                 title: 'Tarot App',
@@ -54,10 +54,10 @@ class DebugScreen extends StatelessWidget {
                 children: [
                   DebugValueWidget(
                     title: 'Environment',
-                    value: context.appDependenciesContainer.envConfig.environment.name,
+                    value: context.appDependenciesContainer.flavor.name,
                   ),
                 ],
-              )
+              ),
             ],
           ).toList(),
         ),

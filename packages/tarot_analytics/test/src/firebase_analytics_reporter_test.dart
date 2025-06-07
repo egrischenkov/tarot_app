@@ -14,7 +14,7 @@ void main() {
   setUp(() {
     mockAnalytics = FirebaseAnalyticsMock();
     reporter = FirebaseAnalyticsReporter(
-      logger: const FakeLogger(),
+      logger: FakeLogger(),
       analytics: mockAnalytics,
     );
   });

@@ -8,9 +8,9 @@ class DebugButton extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final envConfig = context.appDependenciesContainer.envConfig;
+    final flavor = context.appDependenciesContainer.flavor;
 
-    if (envConfig.environment.isProd) {
+    if (flavor.isProd) {
       return const SizedBox.shrink();
     }
 

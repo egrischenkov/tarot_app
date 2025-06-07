@@ -3,7 +3,7 @@ import '../../logger.dart';
 
 /// [BlocObserver] implementation that logs all events, transitions, and errors
 class AppBlocObserver extends BlocObserver {
-  final AppLogger logger;
+  final Logger logger;
 
   const AppBlocObserver({
     required this.logger,
