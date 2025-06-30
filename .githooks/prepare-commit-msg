@@ -8,7 +8,7 @@ COMMIT_MSG_FILE=$1
 BRANCH_NAME=$(git symbolic-ref --short HEAD)
 
 # Extract task number from the branch name (e.g., "TARO-29889")
-TASK_ID=$(echo "$BRANCH_NAME" | grep -oE "TARO-[0-9]+")
+TASK_ID=$(echo "$BRANCH_NAME" | grep -oE "TAROT-[0-9]+")
 PREFIX=""
 
 if [ -n "$TASK_ID" ]; then
