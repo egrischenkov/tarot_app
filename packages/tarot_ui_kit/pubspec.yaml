@@ -14,8 +14,30 @@ dev_dependencies:
     sdk: flutter
   alchemist: ^0.11.0
   build_runner: ^2.4.13
+  flutter_gen_runner: ^5.5.0+1
 
 flutter:
   uses-material-design: true
+  fonts:
+    - family: Poppins
+      fonts:
+        - asset: assets/fonts/poppins/regular.ttf
+          weight: 400
+        - asset: assets/fonts/poppins/medium.ttf
+          weight: 500
+        - asset: assets/fonts/poppins/semibold.ttf
+          weight: 600
+        - asset: assets/fonts/poppins/bold.ttf
+          weight: 700
+
+flutter_gen:
+  output: lib/assets/gen/
+  line_length: 100
+  assets:
+    outputs:
+      package_parameter_enabled: true
+
+  integrations:
+    flutter_svg: true
 
 resolution: workspace

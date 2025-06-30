@@ -8,5 +8,21 @@ import 'app_localizations.g.dart';
 class AppLocalizationsRu extends AppLocalizations {
   AppLocalizationsRu([String locale = 'ru']) : super(locale);
 
+  @override
+  String get appName => 'Tarot';
 
+  @override
+  String get onboarding$Path => 'Путь начинается здесь';
+
+  @override
+  String get onboarding$Answer => 'Ответ уже\nвнутри тебя';
+
+  @override
+  String get onboarding$Cards => 'Карты помогут\nего увидеть';
+
+  @override
+  String get onboarding$Skip => 'Пропустить';
+
+  @override
+  String get onboarding$Start => 'Вперёд';
 }

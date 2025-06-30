@@ -1,9 +1,10 @@
 import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
+import 'package:taro/core/routing/guards/onboarding_guard.dart';
 import 'package:taro/features/debug/ui/debug_screen.dart';
 import 'package:taro/features/debug/ui/debug_wrapper_entry.dart';
 import 'package:taro/features/home/ui/home_screen.dart';
-import 'package:taro/features/splash/ui/splash_screen.dart';
+import 'package:taro/features/onboarding/ui/onboarding_screen.dart';
 
 part 'app_router.gr.dart';
 
@@ -13,7 +14,11 @@ class AppRouter extends RootStackRouter {
   /// For most popular cases u can get access to router with context.router
   static final rootRouterGlobalKey = GlobalKey<NavigatorState>(debugLabel: 'App router global key');
 
-  AppRouter() : super(navigatorKey: rootRouterGlobalKey);
+  final OnboardingGuard _onboardingGuard;
+  AppRouter({
+    required OnboardingGuard onboardingGuard,
+  })  : _onboardingGuard = onboardingGuard,
+        super(navigatorKey: rootRouterGlobalKey);
 
   @override
   List<AutoRoute> get routes => [
@@ -21,7 +26,11 @@ class AppRouter extends RootStackRouter {
           initial: true,
           page: DebugWrapperRoute.page,
           children: [
-            AutoRoute(initial: true, page: SplashRoute.page),
+            AutoRoute(
+              initial: true,
+              page: OnboardingRoute.page,
+              guards: [_onboardingGuard],
+            ),
             AutoRoute(page: DebugRoute.page),
             AutoRoute(page: HomeRoute.page),
           ],

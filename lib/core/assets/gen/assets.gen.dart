@@ -9,10 +9,27 @@
 
 import 'package:flutter/widgets.dart';
 
+class $AssetsImagesGen {
+  const $AssetsImagesGen();
+
+  /// File path: assets/images/welcome_1.png
+  AssetGenImage get welcome1 => const AssetGenImage('assets/images/welcome_1.png');
+
+  /// File path: assets/images/welcome_2.png
+  AssetGenImage get welcome2 => const AssetGenImage('assets/images/welcome_2.png');
+
+  /// File path: assets/images/welcome_3.png
+  AssetGenImage get welcome3 => const AssetGenImage('assets/images/welcome_3.png');
+
+  /// List of all assets
+  List<AssetGenImage> get values => [welcome1, welcome2, welcome3];
+}
+
 class Assets {
   const Assets._();
 
   static const AssetGenImage tarotMeets = AssetGenImage('assets/TarotMeets.png');
+  static const $AssetsImagesGen images = $AssetsImagesGen();
 
   /// List of all assets
   static List<AssetGenImage> get values => [tarotMeets];

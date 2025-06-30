@@ -42,7 +42,7 @@ TARO-12345: refactor(make review): use bloc pattern for domain layer
 
 - `main` — latest production-ready version (what users currently have)
 - `dev` — all tested features merged here; always stable
-- `feature/AUTO-<task-id>` — new feature development
+- `feature/TAROT-<task-id>` — new feature development
 - `mobile-release/<date>` — created from `dev` for release preparation and QA
 
 ---

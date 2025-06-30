@@ -58,6 +58,10 @@ class DebugScreen extends StatelessWidget {
                   ),
                 ],
               ),
+              DebugOptionButton(
+                title: 'Очистить локальное хранилище',
+                onTap: context.appDependenciesContainer.appConfigurationsStorage.clear,
+              ),
             ],
           ).toList(),
         ),
