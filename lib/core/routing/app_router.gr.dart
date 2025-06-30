@@ -59,17 +59,40 @@ class HomeRoute extends PageRouteInfo<void> {
 }
 
 /// generated route for
-/// [SplashScreen]
-class SplashRoute extends PageRouteInfo<void> {
-  const SplashRoute({List<PageRouteInfo>? children})
-    : super(SplashRoute.name, initialChildren: children);
+/// [OnboardingScreen]
+class OnboardingRoute extends PageRouteInfo<OnboardingRouteArgs> {
+  OnboardingRoute({
+    int initialPage = 0,
+    Key? key,
+    List<PageRouteInfo>? children,
+  }) : super(
+         OnboardingRoute.name,
+         args: OnboardingRouteArgs(initialPage: initialPage, key: key),
+         initialChildren: children,
+       );
 
-  static const String name = 'SplashRoute';
+  static const String name = 'OnboardingRoute';
 
   static PageInfo page = PageInfo(
     name,
     builder: (data) {
-      return const SplashScreen();
+      final args = data.argsAs<OnboardingRouteArgs>(
+        orElse: () => const OnboardingRouteArgs(),
+      );
+      return OnboardingScreen(initialPage: args.initialPage, key: args.key);
     },
   );
+}
+
+class OnboardingRouteArgs {
+  const OnboardingRouteArgs({this.initialPage = 0, this.key});
+
+  final int initialPage;
+
+  final Key? key;
+
+  @override
+  String toString() {
+    return 'OnboardingRouteArgs{initialPage: $initialPage, key: $key}';
+  }
 }

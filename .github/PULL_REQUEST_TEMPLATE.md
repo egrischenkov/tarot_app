@@ -1,14 +1,8 @@
 ## Changes
-<!--
-For more info https://github.com/surfstudio/flutter-roadmap/blob/main/docs/PULL_REQUEST_TEMPLATE_README.md#changes
--->
 
 ## Screenshot / Video
 
 ## Troubles (optional)
-<!--
-For more info https://github.com/surfstudio/flutter-roadmap/blob/main/docs/PULL_REQUEST_TEMPLATE_README.md#troubles-optional
--->
 
 ## Checklist for self-check
 - [ ] The author is marked as an assigne and assigned mandatory reviewers.

@@ -1,1 +1,16 @@
-{}
+{
+    "@segmentCommon": {
+        "---------": "---------",
+        "description": "Common"
+    },
+    "appName": "Tarot",
+    "@segmentOnboarding": {
+        "---------": "---------",
+        "description": "Onboarding"
+    },
+    "onboarding$Path": "Путь начинается здесь",
+    "onboarding$Answer": "Ответ уже\nвнутри тебя",
+    "onboarding$Cards": "Карты помогут\nего увидеть",
+    "onboarding$Skip": "Пропустить",
+    "onboarding$Start": "Вперёд"
+}

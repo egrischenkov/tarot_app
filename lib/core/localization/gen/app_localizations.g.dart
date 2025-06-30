@@ -93,6 +93,41 @@ abstract class AppLocalizations {
     Locale('ru')
   ];
 
+  /// No description provided for @appName.
+  ///
+  /// In ru, this message translates to:
+  /// **'Tarot'**
+  String get appName;
+
+  /// No description provided for @onboarding$Path.
+  ///
+  /// In ru, this message translates to:
+  /// **'Путь начинается здесь'**
+  String get onboarding$Path;
+
+  /// No description provided for @onboarding$Answer.
+  ///
+  /// In ru, this message translates to:
+  /// **'Ответ уже\nвнутри тебя'**
+  String get onboarding$Answer;
+
+  /// No description provided for @onboarding$Cards.
+  ///
+  /// In ru, this message translates to:
+  /// **'Карты помогут\nего увидеть'**
+  String get onboarding$Cards;
+
+  /// No description provided for @onboarding$Skip.
+  ///
+  /// In ru, this message translates to:
+  /// **'Пропустить'**
+  String get onboarding$Skip;
+
+  /// No description provided for @onboarding$Start.
+  ///
+  /// In ru, this message translates to:
+  /// **'Вперёд'**
+  String get onboarding$Start;
 }
 
 class _AppLocalizationsDelegate extends LocalizationsDelegate<AppLocalizations> {

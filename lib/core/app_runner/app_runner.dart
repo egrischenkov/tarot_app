@@ -34,6 +34,8 @@ final class AppRunner {
 
     await runZonedGuarded(
       () async {
+        WidgetsFlutterBinding.ensureInitialized();
+
         await _initFirebase(logger: logger);
 
         final dependencies = await AppDependenciesCreator.create(
