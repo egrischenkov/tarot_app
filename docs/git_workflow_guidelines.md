@@ -9,12 +9,12 @@ We follow the [Gitflow](https://www.atlassian.com/git/tutorials/comparing-workfl
 We use a simplified [Conventional Commits](https://www.conventionalcommits.org/en/v1.0.0) format:
 
 ```
-<TASK-ID>: <type>(<scope>): <short summary>
+TAROT<TASK-ID> - <type>(<scope>): <short summary>
 ```
 
 #### Example:
 ```
-TARO-12345: refactor(make review): use bloc pattern for domain layer
+TAROT-12345: refactor(make review): use bloc pattern for domain layer
 ```
 
 - **TASK-ID** — automatically added via [git hook](/.githooks/prepare-commit-msg)
