@@ -66,7 +66,7 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
 
     return Scaffold(
       appBar: AppBar(
-        backgroundColor: colors.white,
+        backgroundColor: colors.whiteBgSecondary,
         title: Text(l10n.appName, style: fonts.titleLarge),
         centerTitle: false,
         actions: [
@@ -92,7 +92,7 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
           ),
         ],
       ),
-      backgroundColor: colors.white,
+      backgroundColor: colors.whiteBgWhite,
       body: SafeArea(
         child: Column(
           children: [

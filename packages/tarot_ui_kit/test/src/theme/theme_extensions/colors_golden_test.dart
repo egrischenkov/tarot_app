@@ -13,7 +13,7 @@ void main() {
           GoldenTestScenario(
             name: 'White',
             child: _ColorTile(
-              color: UiKitTheme.lightThemeColors.white,
+              color: UiKitTheme.lightThemeColors.whiteBgWhite,
             ),
           ),
         ],
