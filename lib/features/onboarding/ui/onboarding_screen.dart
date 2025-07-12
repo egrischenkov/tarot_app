@@ -66,8 +66,8 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
 
     return Scaffold(
       appBar: AppBar(
-        backgroundColor: colors.white,
-        title: Text(l10n.appName, style: fonts.titleLarge),
+        backgroundColor: colors.whiteBgSecondary,
+        title: Text(l10n.appName, style: fonts.largeTitleRegular),
         centerTitle: false,
         actions: [
           Padding(
@@ -78,7 +78,7 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
                 duration: const Duration(milliseconds: 300),
                 curve: Curves.easeInOut,
                 style: isLastPage
-                    ? fonts.titleLarge.copyWith(
+                    ? fonts.largeTitleRegular.copyWith(
                         color: colors.onSurface,
                       )
                     : fonts.testStyle.copyWith(
@@ -92,7 +92,7 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
           ),
         ],
       ),
-      backgroundColor: colors.white,
+      backgroundColor: colors.whiteBgWhite,
       body: SafeArea(
         child: Column(
           children: [

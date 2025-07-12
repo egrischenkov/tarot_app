@@ -14,13 +14,45 @@ void main() {
           columns: 3,
           children: [
             GoldenTestScenario(
-              name: 'Headers',
+              name: 'Fonts',
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   _TextTile(
                     style: UiKitTheme.fonts.testStyle,
                     label: 'Test Style',
+                  ),
+                  _TextTile(
+                    style: UiKitTheme.fonts.largeTitleEmphasized,
+                    label: 'Large Title Emphasized',
+                  ),
+                  _TextTile(
+                    style: UiKitTheme.fonts.largeTitleRegular,
+                    label: 'Large Title Regular',
+                  ),
+                  _TextTile(
+                    style: UiKitTheme.fonts.headlineRegular,
+                    label: 'Headline Regular',
+                  ),
+                  _TextTile(
+                    style: UiKitTheme.fonts.headlineLarge,
+                    label: 'Headline Large',
+                  ),
+                  _TextTile(
+                    style: UiKitTheme.fonts.bodyRegular,
+                    label: 'Body Regular',
+                  ),
+                  _TextTile(
+                    style: UiKitTheme.fonts.bodyEmphasized,
+                    label: 'Body Emphasized',
+                  ),
+                  _TextTile(
+                    style: UiKitTheme.fonts.bodyEmphasizedItalic,
+                    label: 'Body Emphasized Italic',
+                  ),
+                  _TextTile(
+                    style: UiKitTheme.fonts.xsLabel,
+                    label: 'XS Label',
                   ),
                 ],
               ),

@@ -19,17 +19,26 @@ dev_dependencies:
 flutter:
   uses-material-design: true
   fonts:
-    - family: Poppins
+    - family: SFProDisplay
       fonts:
-        - asset: assets/fonts/poppins/regular.ttf
+        - asset: assets/fonts/sf_pro_display/ultralight.otf
+          weight: 100
+        - asset: assets/fonts/sf_pro_display/thin.otf
+          weight: 200
+        - asset: assets/fonts/sf_pro_display/light.otf
+          weight: 300
+        - asset: assets/fonts/sf_pro_display/regular.otf
           weight: 400
-        - asset: assets/fonts/poppins/medium.ttf
+        - asset: assets/fonts/sf_pro_display/medium.otf
           weight: 500
-        - asset: assets/fonts/poppins/semibold.ttf
+        - asset: assets/fonts/sf_pro_display/semibold.otf
           weight: 600
-        - asset: assets/fonts/poppins/bold.ttf
+        - asset: assets/fonts/sf_pro_display/bold.otf
           weight: 700
-
+        - asset: assets/fonts/sf_pro_display/heavy.otf
+          weight: 800
+        - asset: assets/fonts/sf_pro_display/black.otf
+          weight: 900
 flutter_gen:
   output: lib/assets/gen/
   line_length: 100

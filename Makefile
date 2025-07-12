@@ -6,6 +6,7 @@ PODS := $(SCRIPTS_DIR)/update_pods.sh
 GEN_L10N := $(SCRIPTS_DIR)/gen_l10n.sh
 TEST_COVERAGE := $(SCRIPTS_DIR)/test_coverage.sh
 TESTS := $(SCRIPTS_DIR)/test.sh
+UPDATE_GOLDENS := $(SCRIPTS_DIR)/update_goldens.sh
 
 # Tasks to run each script
 gen:
@@ -32,6 +33,9 @@ test_coverage:
 tests:
 	bash ${TESTS}
 	
+goldens:
+	bash ${UPDATE_GOLDENS}
+	
 help:
 	@echo "Available tasks:"
 	@echo " - codegen: build_runner build & dart format 80"
@@ -42,3 +46,4 @@ help:
 	@echo " - get: cleans and gets dependencies"
 	@echo " - test_coverage: runs tests with coverage"
 	@echo " - test: runs tests"
+	@echo " - goldens: updates goldens"

@@ -10,19 +10,33 @@ class UiKitTheme {
       lightThemeColors,
       fonts,
     ],
-    scaffoldBackgroundColor: lightThemeColors.white,
+    scaffoldBackgroundColor: lightThemeColors.whiteBgWhite,
     // TODO(egrischenkov): return back when we decide which color scheme to use
     // colorScheme: ColorScheme.fromSeed(seedColor: lightThemeColors.accent)
     //     .copyWith(surface: lightThemeColors.white),
   );
 
   static final lightThemeColors = UiKitColors(
-    white: Colors.white,
     grey: Colors.grey.withValues(alpha: 0.9),
     textUnselected: const Color(0xFF090909),
     onSurface: const Color(0xFF1D1B20),
     deepOrange: const Color(0xFFF0A400),
     yellow: const Color(0xFFFFE397),
+    accentOrange: const Color(0xFFFF8F3C),
+    accentYellow: const Color(0xFFFFD964),
+    accentYellowSec: const Color(0xFFFFB62C),
+    accentPurple: const Color(0xFF8240E6),
+    accentPurpleSec: const Color(0xFF6B2DC8),
+    purpleText: const Color(0xFF521DA3),
+    itsyBitsyBlack: const Color(0xFF2E2E2E),
+    greyText: const Color(0xFF86848B),
+    whiteText: const Color(0xFFFCFCFC),
+    whiteBgWhite: Colors.white,
+    whiteBgSecondary: const Color(0xFFF4F1F8),
+    blackBgMudberry: const Color(0xFF3B2F63),
+    blackBgPurple: const Color(0xFF635983),
+    goodGreen: const Color(0xFFA6E3A1),
+    wrongRed: const Color(0xFFF6A6A6),
   );
 
   static const fonts = UiKitFonts(
@@ -33,17 +47,60 @@ class UiKitTheme {
       letterSpacing: -0.4,
     ),
     headlineLarge: TextStyle(
-      fontFamily: FontFamily.poppins,
+      fontFamily: FontFamily.sFProDisplay,
       fontSize: 32,
       fontWeight: FontWeight.w600,
       height: 40 / 32,
       letterSpacing: 0,
     ),
-    titleLarge: TextStyle(
-      fontFamily: FontFamily.poppins,
-      fontSize: 22,
+    largeTitleEmphasized: TextStyle(
+      fontFamily: FontFamily.sFProDisplay,
+      fontSize: 34,
+      fontWeight: FontWeight.w700,
+      height: 41 / 34,
+      letterSpacing: -0.4,
+    ),
+    largeTitleRegular: TextStyle(
+      fontFamily: FontFamily.sFProDisplay,
+      fontSize: 34,
+      fontWeight: FontWeight.w400,
+      height: 41 / 34,
+      letterSpacing: -0.4,
+    ),
+    headlineRegular: TextStyle(
+      fontFamily: FontFamily.sFProDisplay,
+      fontSize: 17,
       fontWeight: FontWeight.w600,
-      height: 28 / 22,
+      height: 22 / 17,
+      letterSpacing: -0.43,
+    ),
+    bodyRegular: TextStyle(
+      fontFamily: FontFamily.sFProDisplay,
+      fontSize: 17,
+      fontWeight: FontWeight.w400,
+      height: 22 / 17,
+      letterSpacing: -0.43,
+    ),
+    bodyEmphasized: TextStyle(
+      fontFamily: FontFamily.sFProDisplay,
+      fontSize: 17,
+      fontWeight: FontWeight.w600,
+      height: 22 / 17,
+      letterSpacing: -0.43,
+    ),
+    bodyEmphasizedItalic: TextStyle(
+      fontFamily: FontFamily.sFProDisplay,
+      fontSize: 17,
+      fontWeight: FontWeight.w600,
+      fontStyle: FontStyle.italic,
+      height: 22 / 17,
+      letterSpacing: -0.43,
+    ),
+    xsLabel: TextStyle(
+      fontFamily: FontFamily.sFProDisplay,
+      fontSize: 10,
+      fontWeight: FontWeight.w400,
+      height: 100 / 10,
       letterSpacing: 0,
     ),
   );

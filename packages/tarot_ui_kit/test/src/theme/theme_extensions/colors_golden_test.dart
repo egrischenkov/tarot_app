@@ -11,9 +11,99 @@ void main() {
       builder: () => GoldenTestGroup(
         children: [
           GoldenTestScenario(
+            name: 'Accent-orange',
+            child: _ColorTile(
+              color: UiKitTheme.lightThemeColors.accentOrange,
+            ),
+          ),
+          GoldenTestScenario(
+            name: 'Accent-yellow',
+            child: _ColorTile(
+              color: UiKitTheme.lightThemeColors.accentYellow,
+            ),
+          ),
+          GoldenTestScenario(
+            name: 'Accent-yellow-sec',
+            child: _ColorTile(
+              color: UiKitTheme.lightThemeColors.accentYellowSec,
+            ),
+          ),
+          GoldenTestScenario(
+            name: 'Accent-purple',
+            child: _ColorTile(
+              color: UiKitTheme.lightThemeColors.accentPurple,
+            ),
+          ),
+          GoldenTestScenario(
+            name: 'Accent-purple-sec',
+            child: _ColorTile(
+              color: UiKitTheme.lightThemeColors.accentPurpleSec,
+            ),
+          ),
+          GoldenTestScenario(
+            name: 'Purple-text',
+            child: _ColorTile(
+              color: UiKitTheme.lightThemeColors.purpleText,
+            ),
+          ),
+          GoldenTestScenario(
+            name: 'Itsy-bitsy-black',
+            child: _ColorTile(
+              color: UiKitTheme.lightThemeColors.itsyBitsyBlack,
+            ),
+          ),
+          GoldenTestScenario(
+            name: 'Grey-text',
+            child: _ColorTile(
+              color: UiKitTheme.lightThemeColors.greyText,
+            ),
+          ),
+          GoldenTestScenario(
+            name: 'White-text',
+            child: _ColorTile(
+              color: UiKitTheme.lightThemeColors.whiteText,
+            ),
+          ),
+          GoldenTestScenario(
             name: 'White',
             child: _ColorTile(
-              color: UiKitTheme.lightThemeColors.white,
+              color: UiKitTheme.lightThemeColors.whiteBgWhite,
+            ),
+          ),
+          GoldenTestScenario(
+            name: 'White-bg-white',
+            child: _ColorTile(
+              color: UiKitTheme.lightThemeColors.whiteBgWhite,
+            ),
+          ),
+          GoldenTestScenario(
+            name: 'White-bg-secondary',
+            child: _ColorTile(
+              color: UiKitTheme.lightThemeColors.whiteBgSecondary,
+            ),
+          ),
+          GoldenTestScenario(
+            name: 'Black-bg-mudberry',
+            child: _ColorTile(
+              color: UiKitTheme.lightThemeColors.blackBgMudberry,
+            ),
+          ),
+          GoldenTestScenario(
+            name: 'Black-bg-purple',
+            child: _ColorTile(
+              color: UiKitTheme.lightThemeColors.blackBgPurple,
+            ),
+          ),
+          GoldenTestScenario(
+            name: 'Good-green',
+            child: _ColorTile(
+              color: UiKitTheme.lightThemeColors.goodGreen,
+            ),
+          ),
+          GoldenTestScenario(
+            name: 'Wrong-red',
+            child: _ColorTile(
+              color: UiKitTheme.lightThemeColors.wrongRed,
             ),
           ),
         ],
