@@ -1,5 +1,7 @@
 import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
+import 'package:taro/core/extensions/context_extension.dart';
+import 'package:taro/features/home/domain/entities/menu_card_model.dart';
 import 'package:taro/features/home/ui/widgets/profile_widget.dart';
 import 'package:tarot_ui_kit/ui_kit.dart';
 
@@ -37,5 +39,29 @@ class _HomeScreenState extends State<HomeScreen> with SingleTickerProviderStateM
         ],
       ),
     );
+  }
+}
+
+extension on MenuCardModel {
+  IconData get icon {
+    return switch (id) {
+      'daily_card' => Icons.calendar_month,
+      'funny' => Icons.celebration,
+      'yammy' => Icons.food_bank,
+      'spreads' => Icons.card_giftcard,
+      _ => Icons.face,
+    };
+  }
+
+  String getName(BuildContext context) {
+    final l10n = context.l10n;
+
+    return switch (id) {
+      'daily_card' => l10n.homeScreen$MenuDailyCard,
+      'funny' => l10n.homeScreen$MenuFunny,
+      'yammy' => l10n.homeScreen$MenuYammy,
+      'spreads' => l10n.homeScreen$MenuSpreads,
+      _ => '',
+    };
   }
 }

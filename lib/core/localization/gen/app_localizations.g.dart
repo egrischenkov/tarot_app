@@ -128,6 +128,30 @@ abstract class AppLocalizations {
   /// In ru, this message translates to:
   /// **'Вперёд'**
   String get onboarding$Start;
+
+  /// No description provided for @homeScreen$MenuDailyCard.
+  ///
+  /// In ru, this message translates to:
+  /// **'Карта дня'**
+  String get homeScreen$MenuDailyCard;
+
+  /// No description provided for @homeScreen$MenuFunny.
+  ///
+  /// In ru, this message translates to:
+  /// **'Приколики'**
+  String get homeScreen$MenuFunny;
+
+  /// No description provided for @homeScreen$MenuSpreads.
+  ///
+  /// In ru, this message translates to:
+  /// **'Расклады'**
+  String get homeScreen$MenuSpreads;
+
+  /// No description provided for @homeScreen$MenuYammy.
+  ///
+  /// In ru, this message translates to:
+  /// **'Вкусняшки'**
+  String get homeScreen$MenuYammy;
 }
 
 class _AppLocalizationsDelegate extends LocalizationsDelegate<AppLocalizations> {
