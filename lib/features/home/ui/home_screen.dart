@@ -18,6 +18,13 @@ class HomeScreen extends StatefulWidget {
 class _HomeScreenState extends State<HomeScreen> with TickerProviderStateMixin {
   late final AnimationController _animationController;
 
+  late final Animation<double> _moveToCenterAnimation;
+  late final Animation<double> _shiftCardsAnimation;
+  late final Animation<double> _expandAnimation;
+  late final Animation<double> _returnBackAnimation;
+  late final Animation<double> _resizeBackAnimation;
+  late final Animation<double> _rotationAnimation;
+
   @override
   void initState() {
     super.initState();
@@ -74,6 +81,48 @@ class _HomeScreenState extends State<HomeScreen> with TickerProviderStateMixin {
           _animationController.reset();
         }
       });
+
+    _moveToCenterAnimation = Tween<double>(begin: 0, end: 1).animate(
+      CurvedAnimation(
+        parent: _animationController,
+        curve: const Interval(0, .5, curve: Curves.easeIn),
+      ),
+    );
+
+    _shiftCardsAnimation = Tween<double>(begin: 0, end: 1).animate(
+      CurvedAnimation(
+        parent: _animationController,
+        curve: const Interval(0.15, 0.7, curve: Curves.easeInOut),
+      ),
+    );
+
+    _expandAnimation = Tween<double>(begin: 0, end: 1).animate(
+      CurvedAnimation(
+        parent: _animationController,
+        curve: const Interval(0.55, 1, curve: Curves.easeIn),
+      ),
+    );
+
+    _returnBackAnimation = Tween<double>(begin: 0, end: 1).animate(
+      CurvedAnimation(
+        parent: _animationController,
+        curve: const Interval(0.25, 0.85, curve: Curves.easeIn),
+      ),
+    );
+
+    _resizeBackAnimation = Tween<double>(begin: 0, end: 1).animate(
+      CurvedAnimation(
+        parent: _animationController,
+        curve: const Interval(0.5, 0.6, curve: Curves.easeIn),
+      ),
+    );
+
+    _rotationAnimation = Tween<double>(begin: 0, end: 1).animate(
+      CurvedAnimation(
+        parent: _animationController,
+        curve: const Interval(0.1, 0.5, curve: Curves.easeIn),
+      ),
+    );
   }
 }
 
