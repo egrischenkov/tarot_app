@@ -71,6 +71,7 @@ flutter:
   assets:
     - assets/TarotMeets.png
     - assets/images/
+    - assets/icons/
 
 workspace:
   - packages/tarot_analytics

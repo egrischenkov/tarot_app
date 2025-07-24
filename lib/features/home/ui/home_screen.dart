@@ -1,5 +1,6 @@
 import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
+import 'package:taro/features/home/ui/widgets/profile_widget.dart';
 import 'package:tarot_ui_kit/ui_kit.dart';
 
 const _appBarHeight = 120.0;
@@ -28,7 +29,7 @@ class _HomeScreenState extends State<HomeScreen> with SingleTickerProviderStateM
               color: colors.whiteBgWhite,
               child: const Row(
                 mainAxisAlignment: MainAxisAlignment.end,
-                children: [],
+                children: [ProfileWidget()],
               ),
             ),
           ),
