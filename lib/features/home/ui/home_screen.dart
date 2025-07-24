@@ -1,7 +1,9 @@
 import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:taro/core/extensions/context_extension.dart';
+import 'package:taro/core/utils/map_with_index.dart';
 import 'package:taro/features/home/domain/entities/menu_card_model.dart';
+import 'package:taro/features/home/ui/widgets/menu_card_widget.dart';
 import 'package:taro/features/home/ui/widgets/profile_widget.dart';
 import 'package:tarot_ui_kit/ui_kit.dart';
 
@@ -25,11 +27,33 @@ class _HomeScreenState extends State<HomeScreen> with TickerProviderStateMixin {
   late final Animation<double> _resizeBackAnimation;
   late final Animation<double> _rotationAnimation;
 
+  late final double _cardWidth;
+  late final double _cardHeight;
+
+  /// Menu items
+  ///
+  /// Cards order is matter
+  List<MenuCardModel> get _menuCards => [
+        MenuCardModel(id: 'daily_card'),
+        MenuCardModel(id: 'spreads'),
+        MenuCardModel(id: 'funny'),
+        MenuCardModel(id: 'yammy'),
+      ];
+
   @override
   void initState() {
     super.initState();
 
     _initAnimations();
+  }
+
+  @override
+  void didChangeDependencies() {
+    super.didChangeDependencies();
+
+    final screenWidth = MediaQuery.of(context).size.width;
+    _cardWidth = screenWidth * 0.4;
+    _cardHeight = _cardWidth * 1.5;
   }
 
   @override
@@ -64,7 +88,23 @@ class _HomeScreenState extends State<HomeScreen> with TickerProviderStateMixin {
               return Positioned.fill(
                 top: _appBarHeight,
                 child: Stack(
-                  children: [],
+                  children: _menuCards.mapWithIndex((index, card, _, __) {
+                    final values = _getAnimationValues(index: index, card: card);
+
+                    return MenuCardWidget(
+                      name: card.getName(context),
+                      verticalOffset: values.verticalOffset,
+                      horizontalOffset: values.horizontalOffset,
+                      height: values.height,
+                      width: values.width,
+                      heightFactor: values.heightFactor,
+                      angle: values.angle,
+                      yAngle: values.yAngle,
+                      borderRadius: BorderRadius.circular(24),
+                      icon: Icon(card.icon),
+                      onTap: () {},
+                    );
+                  }).toList(),
                 ),
               );
             },
@@ -122,6 +162,37 @@ class _HomeScreenState extends State<HomeScreen> with TickerProviderStateMixin {
         parent: _animationController,
         curve: const Interval(0.1, 0.5, curve: Curves.easeIn),
       ),
+    );
+  }
+
+  ({
+    double verticalOffset,
+    double horizontalOffset,
+    double height,
+    double width,
+    double heightFactor,
+    double angle,
+    double yAngle,
+  }) _getAnimationValues({required int index, required MenuCardModel card}) {
+    const baseAngle = -0.12;
+    const angleStep = 0.12;
+    final baseVerticalOffset = MediaQuery.of(context).size.height - _cardHeight * 0.9;
+
+    final double defaultVertical = baseVerticalOffset + (index - 1) * 3;
+    final double defaultHorizontal = (_cardWidth / 2) * (index - 1) + 16;
+    final double defaultAngle = baseAngle + (angleStep * (index - 1));
+    final double defaultCardWidth = _cardWidth;
+    final double defaultCardHeight = _cardHeight;
+    const double defaultHeightFactor = 0.33;
+
+    return (
+      verticalOffset: defaultVertical,
+      horizontalOffset: defaultHorizontal,
+      height: defaultCardHeight,
+      width: defaultCardWidth,
+      heightFactor: defaultHeightFactor,
+      angle: defaultAngle,
+      yAngle: 0,
     );
   }
 }

@@ -6,6 +6,7 @@ class MenuCardModel {
   double? yAngle;
   double? width;
   double? height;
+  double? heightFactor;
 
   MenuCardModel({
     required this.id,
@@ -15,5 +16,6 @@ class MenuCardModel {
     this.yAngle,
     this.width,
     this.height,
+    this.heightFactor,
   });
 }
