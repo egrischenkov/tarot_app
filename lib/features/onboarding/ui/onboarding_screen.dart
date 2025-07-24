@@ -41,32 +41,32 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
     super.dispose();
   }
 
+  List<_PageWidget> get _pages => [
+        _PageWidget(
+          image: Assets.images.welcome1.image(),
+          title: context.l10n.onboarding$Path,
+        ),
+        _PageWidget(
+          image: Assets.images.welcome2.image(),
+          title: context.l10n.onboarding$Answer,
+        ),
+        _PageWidget(
+          image: Assets.images.welcome3.image(),
+          title: context.l10n.onboarding$Cards,
+        ),
+      ];
+
   @override
   Widget build(BuildContext context) {
     final l10n = context.l10n;
     final fonts = context.fonts;
     final colors = context.colors;
 
-    final pages = [
-      _PageWidget(
-        image: Assets.images.welcome1.image(),
-        title: l10n.onboarding$Path,
-      ),
-      _PageWidget(
-        image: Assets.images.welcome2.image(),
-        title: l10n.onboarding$Answer,
-      ),
-      _PageWidget(
-        image: Assets.images.welcome3.image(),
-        title: l10n.onboarding$Cards,
-      ),
-    ];
-
-    final isLastPage = _pageIndicatorIndex == pages.length - 1;
+    final isLastPage = _pageIndicatorIndex == _pages.length - 1;
 
     return Scaffold(
       appBar: AppBar(
-        backgroundColor: colors.whiteBgSecondary,
+        backgroundColor: colors.whiteBgWhite,
         title: Text(l10n.appName, style: fonts.largeTitleRegular),
         centerTitle: false,
         actions: [
@@ -100,12 +100,12 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
               child: PageView(
                 controller: _pageController,
                 onPageChanged: _onPageChanged,
-                children: pages,
+                children: _pages,
               ),
             ),
             UiKitSpacing.x6.h,
             UiKitPageIndicator(
-              count: pages.length,
+              count: _pages.length,
               selectedIndex: _pageIndicatorIndex,
             ),
           ],
@@ -128,8 +128,9 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
       return;
     }
 
-    _pageController.nextPage(
+    _pageController.animateToPage(
       duration: const Duration(milliseconds: 300),
+      _pages.length - 1,
       curve: Curves.easeInOut,
     );
   }
