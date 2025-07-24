@@ -15,7 +15,23 @@ class HomeScreen extends StatefulWidget {
   State<HomeScreen> createState() => _HomeScreenState();
 }
 
-class _HomeScreenState extends State<HomeScreen> with SingleTickerProviderStateMixin {
+class _HomeScreenState extends State<HomeScreen> with TickerProviderStateMixin {
+  late final AnimationController _animationController;
+
+  @override
+  void initState() {
+    super.initState();
+
+    _initAnimations();
+  }
+
+  @override
+  void dispose() {
+    _animationController.dispose();
+
+    super.dispose();
+  }
+
   @override
   Widget build(BuildContext context) {
     final colors = context.colors;
@@ -35,10 +51,29 @@ class _HomeScreenState extends State<HomeScreen> with SingleTickerProviderStateM
               ),
             ),
           ),
-          const Placeholder(),
+          AnimatedBuilder(
+            animation: _animationController,
+            builder: (context, _) {
+              return Positioned.fill(
+                top: _appBarHeight,
+                child: Stack(
+                  children: [],
+                ),
+              );
+            },
+          ),
         ],
       ),
     );
+  }
+
+  void _initAnimations() {
+    _animationController = AnimationController(vsync: this, duration: const Duration(milliseconds: 650))
+      ..addStatusListener((status) {
+        if (status == AnimationStatus.completed) {
+          _animationController.reset();
+        }
+      });
   }
 }
 
