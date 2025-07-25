@@ -30,6 +30,11 @@ class _HomeScreenState extends State<HomeScreen> with TickerProviderStateMixin {
   late final double _cardWidth;
   late final double _cardHeight;
 
+  late final _selectedCard = _menuCards.first;
+  int _selectedCardIndex = 0;
+
+  MenuCardModel? _previousSelectedCard;
+
   /// Menu items
   ///
   /// Cards order is matter
@@ -62,6 +67,8 @@ class _HomeScreenState extends State<HomeScreen> with TickerProviderStateMixin {
 
     super.dispose();
   }
+
+  bool _isSelectedCard(MenuCardModel card) => _selectedCard.id == card.id;
 
   @override
   Widget build(BuildContext context) {
@@ -177,6 +184,9 @@ class _HomeScreenState extends State<HomeScreen> with TickerProviderStateMixin {
     double angle,
     double yAngle,
   }) _getAnimationValues({required int index, required MenuCardModel card}) {
+    final isSelected = _isSelectedCard(card);
+    final isPreviouslySelected = !isSelected && card.id == _previousSelectedCard?.id;
+
     const baseAngle = -0.12;
     const angleStep = 0.12;
     final baseVerticalOffset = MediaQuery.of(context).size.height - _cardHeight * 0.9;
