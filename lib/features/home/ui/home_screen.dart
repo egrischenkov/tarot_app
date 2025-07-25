@@ -33,7 +33,7 @@ class _HomeScreenState extends State<HomeScreen> with TickerProviderStateMixin {
   late final double _cardWidth;
   late final double _cardHeight;
 
-  late final _selectedCard = _menuCards.first;
+  late var _selectedCard = _menuCards.first;
   int _selectedCardIndex = 0;
 
   MenuCardModel? _previousSelectedCard;
@@ -121,7 +121,19 @@ class _HomeScreenState extends State<HomeScreen> with TickerProviderStateMixin {
                         card.icon,
                         color: Colors.blueAccent,
                       ),
-                      onTap: () {},
+                      onTap: () {
+                        if (_animationController.isAnimating || _isSelectedCard(card)) {
+                          return;
+                        }
+
+                        setState(() {
+                          _previousSelectedCard = _selectedCard;
+
+                          _selectedCard = card;
+                          _selectedCardIndex = index;
+                        });
+                        _animationController.forward();
+                      },
                     );
                   }).toList(),
                 ),
@@ -180,7 +192,7 @@ class _HomeScreenState extends State<HomeScreen> with TickerProviderStateMixin {
     _rotationAnimation = Tween<double>(begin: 0, end: 1).animate(
       CurvedAnimation(
         parent: _animationController,
-        curve: const Interval(0.1, 0.5, curve: Curves.easeIn),
+        curve: const Interval(0.1, 0.8, curve: Curves.easeIn),
       ),
     );
   }
@@ -366,7 +378,7 @@ class _HomeScreenState extends State<HomeScreen> with TickerProviderStateMixin {
           final cardToReinsert = _menuCards.removeAt(index);
           final cardToReinsertDeckIndex = _deckOrder.indexOf(cardToReinsert.id);
 
-          var searchedIndex = _menuCards.length - 1;
+          var searchedIndex = _deckOrder.length - 1;
           for (final card in _menuCards.skip(1)) {
             final deckIndex = _deckOrder.indexOf(card.id);
 
