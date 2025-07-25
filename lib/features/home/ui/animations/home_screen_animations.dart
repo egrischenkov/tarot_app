@@ -1,5 +1,9 @@
 import 'package:flutter/animation.dart';
 
+/// Encapsulates all animation controllers and tween sequences for the HomeScreen.
+/// Includes movement, expansion, rotation, and return animations.
+///
+/// Used to animate selected and deselected cards in sync with the UI state.
 class HomeScreenAnimations {
   final AnimationController controller;
 

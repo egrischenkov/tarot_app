@@ -12,6 +12,13 @@ import 'package:tarot_ui_kit/ui_kit.dart';
 
 const _appBarHeight = 120.0;
 
+/// This screen is the main entry point for the user's interactive card experience.
+/// It displays a dynamic stack of tarot menu cards that animate when selected.
+/// The animation logic is encapsulated in [HomeScreenAnimations] and card positioning
+/// is calculated by [CardAnimationCalculator].
+///
+/// Cards reposition themselves based on selection, and the stack order is managed
+/// through [reorderStack] to maintain the correct visual order.
 @RoutePage()
 class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});

@@ -6,6 +6,10 @@ import 'package:taro/features/home/domain/entities/menu_card_model.dart';
 
 import '../animations/home_screen_animations.dart';
 
+/// Calculates all UI animation values (position, size, rotation, etc.)
+/// for each card based on its current state: selected, previously selected, or idle.
+///
+/// Takes into account the stack reorder flag to determine final position values.
 class CardAnimationCalculator {
   final BuildContext context;
   final HomeScreenAnimations animations;

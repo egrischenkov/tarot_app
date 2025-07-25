@@ -1,5 +1,8 @@
 import 'package:taro/features/home/domain/entities/menu_card_model.dart';
 
+/// Utility function to manage the visual order of cards after animations.
+/// Moves the selected card to the top of the stack and reinserts the previously
+/// selected card according to the predefined deck order.
 void reorderStack({
   required List<MenuCardModel> cards,
   required int selectedIndex,
