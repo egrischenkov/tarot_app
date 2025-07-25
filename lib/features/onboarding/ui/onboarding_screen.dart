@@ -71,7 +71,7 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
         centerTitle: false,
         actions: [
           Padding(
-            padding: const EdgeInsets.only(right: 16),
+            padding: const EdgeInsets.only(right: UiKitSpacing.x4),
             child: TextButton(
               onPressed: () => _onNextTap(isLastPage),
               child: AnimatedDefaultTextStyle(
@@ -153,7 +153,9 @@ class _PageWidget extends StatelessWidget {
         Expanded(child: image),
         UiKitSpacing.x6.h,
         Padding(
-          padding: const EdgeInsets.symmetric(horizontal: 16),
+          padding: const EdgeInsets.symmetric(
+            horizontal: UiKitSpacing.x4,
+          ),
           child: Text(
             title,
             style: context.fonts.headlineLarge.copyWith(

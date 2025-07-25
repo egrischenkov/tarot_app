@@ -100,7 +100,7 @@ class UiKitTheme {
       fontFamily: FontFamily.sFProDisplay,
       fontSize: 10,
       fontWeight: FontWeight.w400,
-      height: 100 / 10,
+      height: 10 / 10,
       letterSpacing: 0,
     ),
   );

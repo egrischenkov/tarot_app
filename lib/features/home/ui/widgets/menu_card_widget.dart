@@ -58,23 +58,19 @@ class MenuCardWidget extends StatelessWidget {
             ),
             child: ClipRect(
               child: Align(
-                alignment: Alignment.topCenter,
+                alignment: Alignment.topLeft,
                 heightFactor: heightFactor,
                 child: Padding(
-                  padding: const EdgeInsets.all(16),
+                  padding: const EdgeInsets.all(UiKitSpacing.x3),
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
+                      icon,
                       Text(
                         name,
                         style: context.fonts.xsLabel.copyWith(
                           fontSize: width * 0.07,
                         ),
-                      ),
-                      const Spacer(),
-                      Align(
-                        alignment: Alignment.bottomRight,
-                        child: icon,
                       ),
                     ],
                   ),

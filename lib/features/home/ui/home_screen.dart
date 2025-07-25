@@ -101,7 +101,10 @@ class _HomeScreenState extends State<HomeScreen> with TickerProviderStateMixin {
                       angle: values.angle,
                       yAngle: values.yAngle,
                       borderRadius: BorderRadius.circular(24),
-                      icon: Icon(card.icon),
+                      icon: Icon(
+                        card.icon,
+                        color: Colors.blueAccent,
+                      ),
                       onTap: () {},
                     );
                   }).toList(),
@@ -179,7 +182,7 @@ class _HomeScreenState extends State<HomeScreen> with TickerProviderStateMixin {
     final baseVerticalOffset = MediaQuery.of(context).size.height - _cardHeight * 0.9;
 
     final double defaultVertical = baseVerticalOffset + (index - 1) * 3;
-    final double defaultHorizontal = (_cardWidth / 2) * (index - 1) + 16;
+    final double defaultHorizontal = (_cardWidth / 2) * (index - 1) + 32;
     final double defaultAngle = baseAngle + (angleStep * (index - 1));
     final double defaultCardWidth = _cardWidth;
     final double defaultCardHeight = _cardHeight;
