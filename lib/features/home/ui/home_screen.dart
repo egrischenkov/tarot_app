@@ -1,3 +1,6 @@
+import 'dart:math';
+import 'dart:ui';
+
 import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:taro/core/extensions/context_extension.dart';
@@ -38,12 +41,18 @@ class _HomeScreenState extends State<HomeScreen> with TickerProviderStateMixin {
   /// Menu items
   ///
   /// Cards order is matter
-  List<MenuCardModel> get _menuCards => [
-        MenuCardModel(id: 'daily_card'),
-        MenuCardModel(id: 'spreads'),
-        MenuCardModel(id: 'funny'),
-        MenuCardModel(id: 'yammy'),
-      ];
+  final _menuCards = [
+    MenuCardModel(id: 'daily_card'),
+    MenuCardModel(id: 'spreads'),
+    MenuCardModel(id: 'funny'),
+    MenuCardModel(id: 'yammy'),
+  ];
+  final List<String> _deckOrder = [
+    'daily_card',
+    'spreads',
+    'funny',
+    'yammy',
+  ];
 
   @override
   void initState() {
@@ -126,6 +135,7 @@ class _HomeScreenState extends State<HomeScreen> with TickerProviderStateMixin {
 
   void _initAnimations() {
     _animationController = AnimationController(vsync: this, duration: const Duration(milliseconds: 650))
+      ..addListener(_animationHooks)
       ..addStatusListener((status) {
         if (status == AnimationStatus.completed) {
           _animationController.reset();
@@ -198,15 +208,178 @@ class _HomeScreenState extends State<HomeScreen> with TickerProviderStateMixin {
     final double defaultCardHeight = _cardHeight;
     const double defaultHeightFactor = 0.33;
 
+    if (_animationController.isAnimating) {
+      if (_previousSelectedCard?.id case final previousCardId?) {
+        final isRepositionAnimationAvailable = !isSelected && !isPreviouslySelected && !_isStackReordered;
+
+        final previousCardDeckIndex = _deckOrder.indexOf(previousCardId);
+        final currentCardDeckIndex = _deckOrder.indexOf(card.id);
+
+        final isNeedToShiftLeft = index >= _selectedCardIndex && currentCardDeckIndex <= previousCardDeckIndex;
+        final isNeedToShiftRight = index <= _selectedCardIndex && currentCardDeckIndex >= previousCardDeckIndex;
+        if (isRepositionAnimationAvailable && isNeedToShiftLeft) {
+          card.verticalOffset = lerpDouble(
+            card.verticalOffset ?? defaultVertical,
+            baseVerticalOffset + (index - 2) * 3,
+            _shiftCardsAnimation.value,
+          );
+
+          card.horizontalOffset = lerpDouble(
+            card.horizontalOffset ?? defaultHorizontal,
+            (_cardWidth / 2) * (index - 2) + 16,
+            _shiftCardsAnimation.value,
+          )!;
+
+          card.angle = lerpDouble(
+            card.angle ?? defaultAngle,
+            baseAngle + (angleStep * (index - 2)),
+            _shiftCardsAnimation.value,
+          );
+        }
+
+        if (isRepositionAnimationAvailable && isNeedToShiftRight) {
+          card.verticalOffset = lerpDouble(
+            card.verticalOffset ?? defaultVertical,
+            baseVerticalOffset + index * 3,
+            _shiftCardsAnimation.value,
+          );
+
+          card.horizontalOffset = lerpDouble(
+            card.horizontalOffset ?? defaultHorizontal,
+            (_cardWidth / 2) * index + 16,
+            _shiftCardsAnimation.value,
+          )!;
+
+          card.angle = lerpDouble(
+            card.angle ?? defaultAngle,
+            baseAngle + (angleStep * index),
+            _shiftCardsAnimation.value,
+          );
+        }
+      }
+
+      if (isSelected) {
+        card.verticalOffset = lerpDouble(defaultVertical, 0, _animationController.value);
+
+        card.horizontalOffset = _animationController.value >= .5
+            ? lerpDouble(MediaQuery.of(context).size.width / 2 - _cardWidth / 2, 0, _expandAnimation.value)
+            : lerpDouble(
+                defaultHorizontal,
+                MediaQuery.of(context).size.width / 2 - _cardWidth / 2,
+                _moveToCenterAnimation.value,
+              );
+
+        card.width = lerpDouble(
+          defaultCardWidth,
+          MediaQuery.of(context).size.width,
+          _expandAnimation.value,
+        );
+        card.height = lerpDouble(
+          defaultCardHeight,
+          MediaQuery.of(context).size.height,
+          _expandAnimation.value,
+        );
+        card.heightFactor = lerpDouble(0.33, 1.0, _expandAnimation.value) ?? 0.33;
+        card.angle = lerpDouble(defaultAngle, 0, _moveToCenterAnimation.value);
+        card.yAngle = lerpDouble(0.0, pi, _rotationAnimation.value);
+      }
+
+      // Возврат предыдущей карты в её позицию
+      if (isPreviouslySelected) {
+        final targetIndex = _menuCards.indexWhere((c) => c.id == card.id);
+        final returningVertical =
+            _isStackReordered ? baseVerticalOffset + (targetIndex - 1) * 3 : MediaQuery.of(context).size.height;
+        final returningHorizontal =
+            _isStackReordered ? (_cardWidth / 2) * (targetIndex - 1) + 16 : MediaQuery.of(context).size.width;
+        final returningAngle = _isStackReordered ? baseAngle + (angleStep * (targetIndex - 1)) : baseAngle + angleStep;
+
+        card.verticalOffset = lerpDouble(
+          card.verticalOffset ?? 0,
+          returningVertical,
+          _returnBackAnimation.value,
+        );
+        card.horizontalOffset = lerpDouble(
+          card.horizontalOffset ?? 0,
+          returningHorizontal,
+          _returnBackAnimation.value,
+        )!;
+        card.angle = lerpDouble(card.angle ?? 0, returningAngle, _returnBackAnimation.value);
+        card.yAngle = card.yAngle = lerpDouble(pi, 0, _rotationAnimation.value);
+        card.width = lerpDouble(
+          MediaQuery.of(context).size.width,
+          defaultCardWidth,
+          _resizeBackAnimation.value,
+        );
+        card.height = lerpDouble(
+          MediaQuery.of(context).size.height,
+          defaultCardHeight,
+          _resizeBackAnimation.value,
+        );
+        card.heightFactor = lerpDouble(1.0, 0.33, _returnBackAnimation.value) ?? 0.33;
+      }
+    } else if (isSelected) {
+      card.verticalOffset = 0;
+      card.horizontalOffset = 0;
+      card.angle = 0;
+      card.width = MediaQuery.of(context).size.width;
+      card.height = MediaQuery.of(context).size.height;
+      card.heightFactor = 1;
+    }
+
     return (
-      verticalOffset: defaultVertical,
-      horizontalOffset: defaultHorizontal,
-      height: defaultCardHeight,
-      width: defaultCardWidth,
-      heightFactor: defaultHeightFactor,
-      angle: defaultAngle,
-      yAngle: 0,
+      verticalOffset: card.verticalOffset ?? defaultVertical,
+      horizontalOffset: card.horizontalOffset ?? defaultHorizontal,
+      height: card.height ?? defaultCardHeight,
+      width: card.width ?? defaultCardWidth,
+      heightFactor: card.heightFactor ?? defaultHeightFactor,
+      angle: card.angle ?? defaultAngle,
+      yAngle: card.yAngle ?? 0,
     );
+  }
+
+  bool _isStackReordered = false;
+
+  void _animationHooks() {
+    if (_animationController.value >= 0.7 && !_isStackReordered) {
+      _changeStackOrder();
+      _isStackReordered = true;
+    } else if (_animationController.value < 0.7) {
+      _isStackReordered = false;
+    }
+  }
+
+  void _changeStackOrder() {
+    setState(() {
+      final selectedCard = _menuCards.removeAt(_selectedCardIndex);
+      _menuCards.insert(0, selectedCard);
+
+      // фишка в том что предыдущая выбранная карта должна быть под всеми
+      // но в случае если выбрана первая карта, и выбрать вторую.
+      // то выбранная первая займет свое место согласно константному порядку и окажется под выбранной второй
+
+      // Решить:
+      // надо сравнить индекс предыдущей карты с индексами оставшихся, и расположить соответственно
+
+      if (_previousSelectedCard != null) {
+        final index = _menuCards.indexWhere((c) => c.id == _previousSelectedCard!.id);
+        if (index != -1) {
+          final cardToReinsert = _menuCards.removeAt(index);
+          final cardToReinsertDeckIndex = _deckOrder.indexOf(cardToReinsert.id);
+
+          var searchedIndex = _menuCards.length - 1;
+          for (final card in _menuCards.skip(1)) {
+            final deckIndex = _deckOrder.indexOf(card.id);
+
+            if (cardToReinsertDeckIndex < deckIndex) {
+              searchedIndex = _menuCards.indexWhere((c) => c.id == card.id);
+              break;
+            }
+          }
+
+          _menuCards.insert(searchedIndex, cardToReinsert);
+        }
+      }
+    });
   }
 }
 
