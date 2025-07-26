@@ -1,3 +1,5 @@
+import 'dart:math';
+
 import 'package:flutter/material.dart';
 import 'package:tarot_ui_kit/ui_kit.dart';
 
@@ -29,6 +31,8 @@ class MenuCardWidget extends StatelessWidget {
     super.key,
   });
 
+  bool get _isFrontSide => yAngle < pi / 2 || yAngle > 3 * pi / 2;
+
   @override
   Widget build(BuildContext context) {
     return Transform(
@@ -56,26 +60,41 @@ class MenuCardWidget extends StatelessWidget {
                 ),
               ],
             ),
-            child: ClipRect(
-              child: Align(
-                alignment: Alignment.topLeft,
-                heightFactor: heightFactor,
-                child: Padding(
-                  padding: const EdgeInsets.all(UiKitSpacing.x3),
-                  child: Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      icon,
-                      Text(
-                        name,
-                        style: context.fonts.xsLabel.copyWith(
-                          fontSize: width * 0.07,
+            child: Stack(
+              children: [
+                Visibility(
+                  visible: _isFrontSide,
+                  child: ClipRect(
+                    child: Align(
+                      alignment: Alignment.topLeft,
+                      heightFactor: heightFactor,
+                      child: Padding(
+                        padding: const EdgeInsets.all(UiKitSpacing.x3),
+                        child: Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            icon,
+                            Text(
+                              name,
+                              style: context.fonts.xsLabel.copyWith(
+                                fontSize: width * 0.07,
+                              ),
+                            ),
+                          ],
                         ),
                       ),
-                    ],
+                    ),
                   ),
                 ),
-              ),
+                Visibility(
+                  visible: !_isFrontSide,
+                  child: Transform(
+                    alignment: Alignment.topCenter,
+                    transform: Matrix4.identity()..rotateY(pi),
+                    child: const Text('test'),
+                  ),
+                ),
+              ],
             ),
           ),
         ),
