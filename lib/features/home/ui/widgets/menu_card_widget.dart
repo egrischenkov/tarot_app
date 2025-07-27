@@ -15,6 +15,7 @@ class MenuCardWidget extends StatelessWidget {
   final Widget icon;
   final BorderRadius borderRadius;
   final VoidCallback onTap;
+  final Widget backSideWidget;
 
   const MenuCardWidget({
     required this.name,
@@ -28,6 +29,7 @@ class MenuCardWidget extends StatelessWidget {
     required this.borderRadius,
     required this.icon,
     required this.onTap,
+    required this.backSideWidget,
     super.key,
   });
 
@@ -48,6 +50,8 @@ class MenuCardWidget extends StatelessWidget {
           child: Container(
             width: width,
             height: height,
+            padding: const EdgeInsets.all(UiKitSpacing.x3),
+            clipBehavior: Clip.hardEdge,
             decoration: BoxDecoration(
               color: context.colors.whiteBgSecondary,
               borderRadius: borderRadius,
@@ -68,20 +72,17 @@ class MenuCardWidget extends StatelessWidget {
                     child: Align(
                       alignment: Alignment.topLeft,
                       heightFactor: heightFactor,
-                      child: Padding(
-                        padding: const EdgeInsets.all(UiKitSpacing.x3),
-                        child: Column(
-                          crossAxisAlignment: CrossAxisAlignment.start,
-                          children: [
-                            icon,
-                            Text(
-                              name,
-                              style: context.fonts.xsLabel.copyWith(
-                                fontSize: width * 0.07,
-                              ),
+                      child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          icon,
+                          Text(
+                            name,
+                            style: context.fonts.xsLabel.copyWith(
+                              fontSize: width * 0.07,
                             ),
-                          ],
-                        ),
+                          ),
+                        ],
                       ),
                     ),
                   ),
@@ -91,7 +92,7 @@ class MenuCardWidget extends StatelessWidget {
                   child: Transform(
                     alignment: Alignment.topCenter,
                     transform: Matrix4.identity()..rotateY(pi),
-                    child: const Text('test'),
+                    child: backSideWidget,
                   ),
                 ),
               ],

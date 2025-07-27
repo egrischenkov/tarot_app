@@ -1,10 +1,14 @@
 import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:taro/core/routing/guards/onboarding_guard.dart';
+import 'package:taro/features/daily_card/ui/daily_card_screen.dart';
 import 'package:taro/features/debug/ui/debug_screen.dart';
 import 'package:taro/features/debug/ui/debug_wrapper_entry.dart';
+import 'package:taro/features/decks/ui/decks_screen.dart';
+import 'package:taro/features/funny/ui/funny_screen.dart';
 import 'package:taro/features/home/ui/home_screen.dart';
 import 'package:taro/features/onboarding/ui/onboarding_screen.dart';
+import 'package:taro/features/yammy/ui/yammy_screen.dart';
 
 part 'app_router.gr.dart';
 
@@ -32,7 +36,15 @@ class AppRouter extends RootStackRouter {
               guards: [_onboardingGuard],
             ),
             AutoRoute(page: DebugRoute.page),
-            AutoRoute(page: HomeRoute.page),
+            AutoRoute(
+              page: HomeRoute.page,
+              children: [
+                AutoRoute(page: DailyCardRoute.page),
+                AutoRoute(page: DecksRoute.page),
+                AutoRoute(page: FunnyRoute.page),
+                AutoRoute(page: YammyRoute.page),
+              ],
+            ),
           ],
         ),
       ];

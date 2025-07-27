@@ -11,6 +11,22 @@
 part of 'app_router.dart';
 
 /// generated route for
+/// [DailyCardScreen]
+class DailyCardRoute extends PageRouteInfo<void> {
+  const DailyCardRoute({List<PageRouteInfo>? children})
+    : super(DailyCardRoute.name, initialChildren: children);
+
+  static const String name = 'DailyCardRoute';
+
+  static PageInfo page = PageInfo(
+    name,
+    builder: (data) {
+      return const DailyCardScreen();
+    },
+  );
+}
+
+/// generated route for
 /// [DebugScreen]
 class DebugRoute extends PageRouteInfo<void> {
   const DebugRoute({List<PageRouteInfo>? children})
@@ -38,6 +54,38 @@ class DebugWrapperRoute extends PageRouteInfo<void> {
     name,
     builder: (data) {
       return const DebugWrapperEntry();
+    },
+  );
+}
+
+/// generated route for
+/// [DecksScreen]
+class DecksRoute extends PageRouteInfo<void> {
+  const DecksRoute({List<PageRouteInfo>? children})
+    : super(DecksRoute.name, initialChildren: children);
+
+  static const String name = 'DecksRoute';
+
+  static PageInfo page = PageInfo(
+    name,
+    builder: (data) {
+      return const DecksScreen();
+    },
+  );
+}
+
+/// generated route for
+/// [FunnyScreen]
+class FunnyRoute extends PageRouteInfo<void> {
+  const FunnyRoute({List<PageRouteInfo>? children})
+    : super(FunnyRoute.name, initialChildren: children);
+
+  static const String name = 'FunnyRoute';
+
+  static PageInfo page = PageInfo(
+    name,
+    builder: (data) {
+      return const FunnyScreen();
     },
   );
 }
@@ -95,4 +143,20 @@ class OnboardingRouteArgs {
   String toString() {
     return 'OnboardingRouteArgs{initialPage: $initialPage, key: $key}';
   }
+}
+
+/// generated route for
+/// [YammyScreen]
+class YammyRoute extends PageRouteInfo<void> {
+  const YammyRoute({List<PageRouteInfo>? children})
+    : super(YammyRoute.name, initialChildren: children);
+
+  static const String name = 'YammyRoute';
+
+  static PageInfo page = PageInfo(
+    name,
+    builder: (data) {
+      return const YammyScreen();
+    },
+  );
 }

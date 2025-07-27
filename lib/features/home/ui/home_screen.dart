@@ -1,6 +1,7 @@
 import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:taro/core/extensions/context_extension.dart';
+import 'package:taro/core/routing/app_router.dart';
 import 'package:taro/core/utils/map_with_index.dart';
 import 'package:taro/features/home/domain/entities/menu_card_model.dart';
 import 'package:taro/features/home/ui/animations/home_screen_animations.dart';
@@ -85,62 +86,80 @@ class _HomeScreenState extends State<HomeScreen> with TickerProviderStateMixin {
     final colors = context.colors;
 
     return Scaffold(
-      body: Stack(
-        children: [
-          Align(
-            alignment: Alignment.topCenter,
-            child: Container(
-              padding: const EdgeInsets.symmetric(horizontal: 20),
-              height: _appBarHeight,
-              color: colors.whiteBgWhite,
-              child: const Row(
-                mainAxisAlignment: MainAxisAlignment.end,
-                children: [ProfileWidget()],
-              ),
-            ),
-          ),
-          AnimatedBuilder(
-            animation: _animations.controller,
-            builder: (context, _) {
-              return Positioned.fill(
-                top: _appBarHeight,
-                child: Stack(
-                  children: _menuCards.mapWithIndex((index, card, _, __) {
-                    final animationValues = CardAnimationCalculator(
-                      context: context,
-                      animations: _animations,
-                      cardWidth: _cardWidth,
-                      cardHeight: _cardHeight,
-                      selectedCardIndex: _selectedCardIndex,
-                      selectedCard: _selectedCard,
-                      previousSelectedCard: _previousSelectedCard,
-                      menuCards: _menuCards,
-                      deckOrder: _deckOrder,
-                      isStackReordered: _isStackReordered,
-                    ).calculate(index, card);
-
-                    return MenuCardWidget(
-                      name: card.getName(context),
-                      verticalOffset: animationValues.verticalOffset,
-                      horizontalOffset: animationValues.horizontalOffset,
-                      height: animationValues.height,
-                      width: animationValues.width,
-                      heightFactor: animationValues.heightFactor,
-                      angle: animationValues.angle,
-                      yAngle: animationValues.yAngle,
-                      borderRadius: BorderRadius.circular(24),
-                      icon: Icon(
-                        card.icon,
-                        color: Colors.blueAccent,
-                      ),
-                      onTap: () => _onCardTap(card, index),
-                    );
-                  }).toList(),
-                ),
-              );
-            },
-          ),
+      body: AutoTabsRouter(
+        duration: const Duration(milliseconds: 500),
+        transitionBuilder: (context, child, animation) => FadeTransition(
+          opacity: animation,
+          child: child,
+        ),
+        routes: const [
+          DailyCardRoute(),
+          DecksRoute(),
+          FunnyRoute(),
+          YammyRoute(),
         ],
+        builder: (context, child) {
+          final tabsRouter = AutoTabsRouter.of(context);
+
+          return Stack(
+            children: [
+              Align(
+                alignment: Alignment.topCenter,
+                child: Container(
+                  padding: const EdgeInsets.symmetric(horizontal: 20),
+                  height: _appBarHeight,
+                  color: colors.whiteBgWhite,
+                  child: const Row(
+                    mainAxisAlignment: MainAxisAlignment.end,
+                    children: [ProfileWidget()],
+                  ),
+                ),
+              ),
+              AnimatedBuilder(
+                animation: _animations.controller,
+                builder: (context, _) {
+                  return Positioned.fill(
+                    top: _appBarHeight,
+                    child: Stack(
+                      children: _menuCards.mapWithIndex((index, card, _, __) {
+                        final animationValues = CardAnimationCalculator(
+                          context: context,
+                          animations: _animations,
+                          cardWidth: _cardWidth,
+                          cardHeight: _cardHeight,
+                          selectedCardIndex: _selectedCardIndex,
+                          selectedCard: _selectedCard,
+                          previousSelectedCard: _previousSelectedCard,
+                          menuCards: _menuCards,
+                          deckOrder: _deckOrder,
+                          isStackReordered: _isStackReordered,
+                        ).calculate(index, card);
+
+                        return MenuCardWidget(
+                          name: card.getName(context),
+                          verticalOffset: animationValues.verticalOffset,
+                          horizontalOffset: animationValues.horizontalOffset,
+                          height: animationValues.height,
+                          width: animationValues.width,
+                          heightFactor: animationValues.heightFactor,
+                          angle: animationValues.angle,
+                          yAngle: animationValues.yAngle,
+                          borderRadius: BorderRadius.circular(24),
+                          icon: Icon(
+                            card.icon,
+                            color: Colors.blueAccent,
+                          ),
+                          onTap: () => _onCardTap(card, index, tabsRouter),
+                          backSideWidget: child,
+                        );
+                      }).toList(),
+                    ),
+                  );
+                },
+              ),
+            ],
+          );
+        },
       ),
     );
   }
@@ -165,7 +184,7 @@ class _HomeScreenState extends State<HomeScreen> with TickerProviderStateMixin {
     });
   }
 
-  void _onCardTap(MenuCardModel card, int index) {
+  void _onCardTap(MenuCardModel card, int index, TabsRouter tabsRouter) {
     if (_animations.controller.isAnimating || _isSelectedCard(card)) {
       return;
     }
@@ -176,6 +195,11 @@ class _HomeScreenState extends State<HomeScreen> with TickerProviderStateMixin {
       _selectedCardIndex = index;
     });
     _animations.controller.forward();
+    _animations.controller.addListener(() {
+      if (_animations.controller.value >= 0.5) {
+        tabsRouter.setActiveIndex(index);
+      }
+    });
   }
 }
 
