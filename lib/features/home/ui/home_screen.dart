@@ -135,6 +135,8 @@ class _HomeScreenState extends State<HomeScreen> with TickerProviderStateMixin {
                           isStackReordered: _isStackReordered,
                         ).calculate(index, card);
 
+                        final isPreviousSelected = card.id == _previousSelectedCard?.id;
+
                         return MenuCardWidget(
                           name: card.getName(context),
                           verticalOffset: animationValues.verticalOffset,
@@ -144,7 +146,10 @@ class _HomeScreenState extends State<HomeScreen> with TickerProviderStateMixin {
                           heightFactor: animationValues.heightFactor,
                           angle: animationValues.angle,
                           yAngle: animationValues.yAngle,
-                          borderRadius: BorderRadius.circular(24),
+                          borderRadius: (_animations.controller.value >= 0.3 && _animations.controller.value <= 5.0) &&
+                                  (isPreviousSelected || _isSelectedCard(card))
+                              ? BorderRadius.circular(24)
+                              : const BorderRadius.vertical(top: Radius.circular(24)),
                           icon: Icon(
                             card.icon,
                             color: Colors.blueAccent,
