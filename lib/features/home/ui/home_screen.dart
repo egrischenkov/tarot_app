@@ -1,5 +1,6 @@
 import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:taro/core/extensions/context_extension.dart';
 import 'package:taro/core/routing/app_router.dart';
 import 'package:taro/core/utils/map_with_index.dart';
@@ -193,6 +194,8 @@ class _HomeScreenState extends State<HomeScreen> with TickerProviderStateMixin {
     if (_animations.controller.isAnimating || _isSelectedCard(card)) {
       return;
     }
+
+    HapticFeedback.mediumImpact();
 
     setState(() {
       _previousSelectedCard = _selectedCard;
