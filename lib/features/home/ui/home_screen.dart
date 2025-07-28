@@ -196,8 +196,11 @@ class _HomeScreenState extends State<HomeScreen> with TickerProviderStateMixin {
     });
     _animations.controller.forward();
     _animations.controller.addListener(() {
-      if (_animations.controller.value >= 0.5) {
-        tabsRouter.setActiveIndex(index);
+      if (_animations.controller.value >= 0.6) {
+        setState(() {
+          final searchedIndex = _deckOrder.indexWhere((c) => c == card.id);
+          tabsRouter.setActiveIndex(searchedIndex);
+        });
       }
     });
   }

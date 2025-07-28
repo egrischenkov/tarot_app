@@ -194,6 +194,7 @@ class CardAnimationCalculator {
             ) ??
             0.33;
       }
+      // Initially selected card properties
     } else if (isSelected) {
       card.verticalOffset = 0;
       card.horizontalOffset = 0;
@@ -201,6 +202,7 @@ class CardAnimationCalculator {
       card.width = screen.width;
       card.height = screen.height;
       card.heightFactor = 1;
+      card.yAngle = pi;
     }
 
     return (
