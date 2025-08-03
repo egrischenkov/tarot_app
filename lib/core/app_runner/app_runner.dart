@@ -83,7 +83,10 @@ final class AppRunner {
   }) async {
     try {
       await Firebase.initializeApp(
-        options: switch (_flavor) { Flavor.dev => TarotFirebaseOptions.dev, Flavor.prod => TarotFirebaseOptions.prod },
+        options: switch (_flavor) {
+          Flavor.dev => TarotFirebaseOptions.dev,
+          Flavor.prod => TarotFirebaseOptions.prod,
+        },
       );
       if (kReleaseMode) {
         logger.addObserver(
