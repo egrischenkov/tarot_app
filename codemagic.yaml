@@ -137,33 +137,36 @@ definitions:
           -t lib/main_prod.dart \
           --flavor prod \
           --dart-define-from-file=$CM_ENV_PATH
-    - &send_discord_notification
-      name: Discord notification
+    - &send_telegram_notification
+      name: Telegram notification
       script: |
-        set -ex
+      set -ex
 
-        APK_LINK=$(echo "$CM_ARTIFACT_LINKS" | jq -r '.[] | select(.name | endswith(".apk")) | .url')
-        AAB_LINK=$(echo "$CM_ARTIFACT_LINKS" | jq -r '.[] | select(.name | endswith(".aab")) | .url')
-        IPA_LINK=$(echo "$CM_ARTIFACT_LINKS" | jq -r '.[] | select(.name | endswith(".ipa")) | .url')
+      APK_LINK=$(echo "$CM_ARTIFACT_LINKS" | jq -r '.[] | select(.name | endswith(".apk")) | .url')
+      AAB_LINK=$(echo "$CM_ARTIFACT_LINKS" | jq -r '.[] | select(.name | endswith(".aab")) | .url')
+      IPA_LINK=$(echo "$CM_ARTIFACT_LINKS" | jq -r '.[] | select(.name | endswith(".ipa")) | .url')
 
-        # Get first 7 digits of commit number
-        COMMIT=$(echo "${CM_COMMIT}" | sed 's/^\(........\).*/\1/;q')
+      COMMIT=$(echo "${CM_COMMIT}" | sed 's/^\(........\).*/\1/;q')
+      COMMIT_MESSAGE=$(git log --format=%B -n 1 $CM_COMMIT)
+      AUTHOR=$(git show -s --format='%ae' $CM_COMMIT)
+      VERSION=$(grep -E '^version:' pubspec.yaml | awk '{print $2}')
 
-        # Get commit message
-        COMMIT_MESSAGE=$(git log --format=%B -n 1 $CM_COMMIT)
+      TEXT="*Commit:* \`${COMMIT}\`
+      *Message:* ${COMMIT_MESSAGE}
+      *Branch:* ${CM_BRANCH}
+      *Author:* ${AUTHOR}
+      *Version:* ${VERSION}
 
-        # Get commit author
-        AUTHOR=$(git show -s --format='%ae' $CM_COMMIT)
+      *Artifacts:*
+      [APK](${APK_LINK})
+      [IPA](${IPA_LINK})
+      [AAB](${AAB_LINK})"
 
-        # Extract version from pubspec.yaml
-        VERSION=$(grep -E '^version:' pubspec.yaml | awk '{print $2}')
+      curl -s -X POST "https://api.telegram.org/bot${TELEGRAM_BOT_TOKEN}/sendMessage" \
+          -d chat_id="${TELEGRAM_CHAT_ID}" \
+          -d parse_mode="Markdown" \
+          -d text="$TEXT"
 
-        curl -H "Content-Type: multipart/form-data" \
-        -F 'payload_json={
-          "username": "codemagic-bot",
-          "content": "**Commit:** `'"$COMMIT"'`\n\n**Message:** '"$COMMIT_MESSAGE"'\n\n**Branch:** '"$CM_BRANCH"'\n\n**Author:** '"$AUTHOR"'\n\n**Version:** '"$VERSION"'\n\n**Artifacts:**\nAPK: '"$APK_LINK"'\nIPA: '"$IPA_LINK"'\nAAB: '"$AAB_LINK"'"
-        }' \
-        $DISCORD_WEBHOOK_URL
 
 # ===================================================================
 # Workflows
@@ -173,7 +176,7 @@ workflows:
     name: Dev
     environment:
       groups:
-        - discord_credentials
+        - telegram_credentials
       <<: *env_versions
       vars:
         <<: *env_path
@@ -205,14 +208,14 @@ workflows:
       - *flutter_drive_log
     publishing:
       scripts:
-        - *send_discord_notification
+        - *send_telegram_notification
       <<: *ios_testflight_publish
 
   prod:
     name: Prod
     environment:
       groups:
-        - discord_credentials
+        - telegram_credentials
       <<: *env_versions
       vars:
         <<: *env_path
@@ -244,5 +247,5 @@ workflows:
       - *flutter_drive_log
     publishing:
       scripts:
-        - *send_discord_notification
+        - *send_telegram_notification
       <<: *ios_testflight_publish
