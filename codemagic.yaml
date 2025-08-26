@@ -140,33 +140,32 @@ definitions:
     - &send_telegram_notification
       name: Telegram notification
       script: |
-      set -ex
+        set -ex
 
-      APK_LINK=$(echo "$CM_ARTIFACT_LINKS" | jq -r '.[] | select(.name | endswith(".apk")) | .url')
-      AAB_LINK=$(echo "$CM_ARTIFACT_LINKS" | jq -r '.[] | select(.name | endswith(".aab")) | .url')
-      IPA_LINK=$(echo "$CM_ARTIFACT_LINKS" | jq -r '.[] | select(.name | endswith(".ipa")) | .url')
+        APK_LINK=$(echo "$CM_ARTIFACT_LINKS" | jq -r '.[] | select(.name | endswith(".apk")) | .url')
+        AAB_LINK=$(echo "$CM_ARTIFACT_LINKS" | jq -r '.[] | select(.name | endswith(".aab")) | .url')
+        IPA_LINK=$(echo "$CM_ARTIFACT_LINKS" | jq -r '.[] | select(.name | endswith(".ipa")) | .url')
 
-      COMMIT=$(echo "${CM_COMMIT}" | sed 's/^\(........\).*/\1/;q')
-      COMMIT_MESSAGE=$(git log --format=%B -n 1 $CM_COMMIT)
-      AUTHOR=$(git show -s --format='%ae' $CM_COMMIT)
-      VERSION=$(grep -E '^version:' pubspec.yaml | awk '{print $2}')
+        COMMIT=$(echo "${CM_COMMIT}" | sed 's/^\(........\).*/\1/;q')
+        COMMIT_MESSAGE=$(git log --format=%B -n 1 $CM_COMMIT)
+        AUTHOR=$(git show -s --format='%ae' $CM_COMMIT)
+        VERSION=$(grep -E '^version:' pubspec.yaml | awk '{print $2}')
 
-      TEXT="*Commit:* \`${COMMIT}\`
-      *Message:* ${COMMIT_MESSAGE}
-      *Branch:* ${CM_BRANCH}
-      *Author:* ${AUTHOR}
-      *Version:* ${VERSION}
+        TEXT="*Commit:* \`${COMMIT}\`
+        *Message:* ${COMMIT_MESSAGE}
+        *Branch:* ${CM_BRANCH}
+        *Author:* ${AUTHOR}
+        *Version:* ${VERSION}
 
-      *Artifacts:*
-      [APK](${APK_LINK})
-      [IPA](${IPA_LINK})
-      [AAB](${AAB_LINK})"
+        *Artifacts:*
+        [APK](${APK_LINK})
+        [IPA](${IPA_LINK})
+        [AAB](${AAB_LINK})"
 
-      curl -s -X POST "https://api.telegram.org/bot${TELEGRAM_BOT_TOKEN}/sendMessage" \
-          -d chat_id="${TELEGRAM_CHAT_ID}" \
-          -d parse_mode="Markdown" \
-          -d text="$TEXT"
-
+        curl -s -X POST "https://api.telegram.org/bot${TELEGRAM_BOT_TOKEN}/sendMessage" \
+            -d chat_id="${TELEGRAM_CHAT_ID}" \
+            -d parse_mode="Markdown" \
+            -d text="$TEXT"
 
 # ===================================================================
 # Workflows
