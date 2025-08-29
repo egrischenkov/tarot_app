@@ -38,6 +38,7 @@ class UiKitTheme {
     blackBgPurple: const Color(0xFF635983),
     goodGreen: const Color(0xFFA6E3A1),
     wrongRed: const Color(0xFFF6A6A6),
+    transparent: Colors.transparent,
   );
 
   static const fonts = UiKitFonts(

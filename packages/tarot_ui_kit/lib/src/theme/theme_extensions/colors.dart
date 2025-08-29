@@ -25,6 +25,7 @@ class UiKitColors extends ThemeExtension<UiKitColors> {
   final Color blackBgPurple;
   final Color goodGreen;
   final Color wrongRed;
+  final Color transparent;
 
   const UiKitColors({
     required this.grey,
@@ -48,6 +49,7 @@ class UiKitColors extends ThemeExtension<UiKitColors> {
     required this.blackBgPurple,
     required this.goodGreen,
     required this.wrongRed,
+    required this.transparent,
   });
 
   @override
@@ -73,6 +75,7 @@ class UiKitColors extends ThemeExtension<UiKitColors> {
     Color? blackBgPurple,
     Color? goodGreen,
     Color? wrongRed,
+    Color? transparent,
   }) {
     return UiKitColors(
       grey: grey ?? this.grey,
@@ -96,6 +99,7 @@ class UiKitColors extends ThemeExtension<UiKitColors> {
       blackBgPurple: blackBgPurple ?? this.blackBgPurple,
       goodGreen: goodGreen ?? this.goodGreen,
       wrongRed: wrongRed ?? this.wrongRed,
+      transparent: transparent ?? this.transparent,
     );
   }
 
@@ -126,6 +130,7 @@ class UiKitColors extends ThemeExtension<UiKitColors> {
       blackBgPurple: Color.lerp(blackBgPurple, other.blackBgPurple, t) ?? other.blackBgPurple,
       goodGreen: Color.lerp(goodGreen, other.goodGreen, t) ?? other.goodGreen,
       wrongRed: Color.lerp(wrongRed, other.wrongRed, t) ?? other.wrongRed,
+      transparent: Color.lerp(transparent, other.transparent, t) ?? other.transparent,
     );
   }
 }

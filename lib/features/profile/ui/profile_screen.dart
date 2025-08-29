@@ -31,7 +31,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
       body: Stack(
         children: [
           Container(
-            height: MediaQuery.sizeOf(context).height / 2,
+            height: MediaQuery.sizeOf(context).height * .6,
             decoration: BoxDecoration(
               gradient: LinearGradient(
                 begin: Alignment.topLeft,
@@ -50,7 +50,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
               // we will see that background color of ListView is different from background color of ListView body.
               Positioned(
                 bottom: 0,
-                height: MediaQuery.of(context).size.height / 3,
+                height: MediaQuery.of(context).size.height * .4,
                 width: MediaQuery.of(context).size.width,
                 child: ColoredBox(color: colors.whiteBgSecondary),
               ),
