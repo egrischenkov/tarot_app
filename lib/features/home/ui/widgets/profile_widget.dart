@@ -16,18 +16,15 @@ class ProfileWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Hero(
-      tag: heroTag,
-      child: GestureDetector(
-        onTap: onTap,
-        child: Container(
-          height: size,
-          width: size,
-          decoration: const BoxDecoration(
-            shape: BoxShape.circle,
-          ),
-          child: child,
+    return GestureDetector(
+      onTap: onTap,
+      child: Container(
+        height: size,
+        width: size,
+        decoration: const BoxDecoration(
+          shape: BoxShape.circle,
         ),
+        child: child,
       ),
     );
   }

@@ -114,14 +114,17 @@ class _HomeScreenState extends State<HomeScreen> with TickerProviderStateMixin {
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.end,
                     children: [
-                      ProfileWidget(
-                        child: Assets.icons.ava1.svg(
-                          height: 64,
-                          width: 64,
+                      Hero(
+                        tag: ProfileWidget.heroTag,
+                        child: ProfileWidget(
+                          child: Assets.icons.ava1.svg(
+                            height: 64,
+                            width: 64,
+                          ),
+                          onTap: () {
+                            context.router.push(const ProfileRoute());
+                          },
                         ),
-                        onTap: () {
-                          context.router.push(const ProfileRoute());
-                        },
                       ),
                     ],
                   ),

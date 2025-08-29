@@ -39,11 +39,14 @@ class ProfileHeaderWidget extends StatelessWidget {
         Positioned(
           top: -avaRadius,
           left: MediaQuery.of(context).size.width / 2 - avaRadius,
-          child: ProfileWidget(
-            size: avaSize,
-            child: Assets.icons.ava1.svg(
-              height: avaSize,
-              width: avaSize,
+          child: Hero(
+            tag: ProfileWidget.heroTag,
+            child: ProfileWidget(
+              size: avaSize,
+              child: Assets.icons.ava1.svg(
+                height: avaSize,
+                width: avaSize,
+              ),
             ),
           ),
         ),

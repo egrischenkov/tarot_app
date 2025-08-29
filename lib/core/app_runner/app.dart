@@ -27,7 +27,7 @@ class App extends StatelessWidget {
       child: MaterialApp.router(
         localizationsDelegates: AppLocalizations.localizationsDelegates,
         supportedLocales: AppLocalizations.supportedLocales,
-        routerConfig: _router.config(),
+        routerConfig: _router.config(navigatorObservers: () => [HeroController()]),
         theme: UiKitTheme.light,
       ),
     );
