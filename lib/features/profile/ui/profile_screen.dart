@@ -40,48 +40,72 @@ class _ProfileScreenState extends State<ProfileScreen> {
               ),
             ),
           ),
-          ListView(
-            padding: const EdgeInsets.only(
-              top: kToolbarHeight + UiKitAppBar.height + UiKitSpacing.x10,
-            ),
+          Stack(
             children: [
-              const ProfileHeaderWidget(name: 'Лолкек Лолкекович'),
-              16.h,
-              Container(
-                color: Colors.blue,
-                height: 200,
+              // This widget is needed to cover bottom part of screen with background color
+              // which corresponds to profile screen background.
+              // It is needed to achieve transparent background for avatar widget and at the same time consistent background color for ListView.
+              //
+              // For example, if we remove this widget, then when we scroll ListView to the top,
+              // we will see that background color of ListView is different from background color of ListView body.
+              Positioned(
+                bottom: 0,
+                height: MediaQuery.of(context).size.height / 3,
+                width: MediaQuery.of(context).size.width,
+                child: ColoredBox(color: colors.whiteBgSecondary),
               ),
-              16.h,
-              Container(
-                color: Colors.blue,
-                height: 200,
+              ListView(
+                padding: const EdgeInsets.only(
+                  top: kToolbarHeight + UiKitAppBar.height + UiKitSpacing.x10,
+                ),
+                children: [
+                  const ProfileHeaderWidget(name: 'Лолкек Лолкекович'),
+                  ColoredBox(
+                    color: colors.whiteBgSecondary,
+                    child: Column(
+                      children: [
+                        UiKitSpacing.x4.h,
+                        ...intersperse(
+                          UiKitSpacing.x4.h,
+                          [
+                            Container(
+                              height: 150,
+                              margin: const EdgeInsets.symmetric(
+                                horizontal: UiKitSpacing.x2,
+                              ),
+                              decoration: BoxDecoration(
+                                color: colors.whiteBgWhite,
+                                borderRadius: BorderRadius.circular(UiKitSpacing.x4),
+                              ),
+                            ),
+                            Container(
+                              height: 150,
+                              margin: const EdgeInsets.symmetric(
+                                horizontal: UiKitSpacing.x2,
+                              ),
+                              decoration: BoxDecoration(
+                                color: colors.whiteBgWhite,
+                                borderRadius: BorderRadius.circular(UiKitSpacing.x4),
+                              ),
+                            ),
+                            Container(
+                              height: 150,
+                              margin: const EdgeInsets.symmetric(
+                                horizontal: UiKitSpacing.x2,
+                              ),
+                              decoration: BoxDecoration(
+                                color: colors.whiteBgWhite,
+                                borderRadius: BorderRadius.circular(UiKitSpacing.x4),
+                              ),
+                            ),
+                            UiKitSpacing.x4.h,
+                          ],
+                        ),
+                      ],
+                    ),
+                  ),
+                ],
               ),
-              16.h,
-              Container(
-                color: Colors.blue,
-                height: 200,
-              ),
-              16.h,
-              Container(
-                color: Colors.blue,
-                height: 200,
-              ),
-              16.h,
-              Container(
-                color: Colors.blue,
-                height: 200,
-              ),
-              16.h,
-              Container(
-                color: Colors.blue,
-                height: 200,
-              ),
-              16.h,
-              Container(
-                color: Colors.blue,
-                height: 200,
-              ),
-              16.h,
             ],
           ),
         ],

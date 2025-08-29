@@ -29,6 +29,17 @@ class ProfileHeaderWidget extends StatelessWidget {
     return Stack(
       clipBehavior: Clip.none,
       children: [
+        // Widget for making bottom part of container with another background which corresponds
+        // to profile screen background.
+        // It is needed to achieve transparent background for avatar widget.
+        Positioned(
+          bottom: 0,
+          height: UiKitSpacing.x5,
+          width: MediaQuery.of(context).size.width,
+          child: ColoredBox(
+            color: colors.whiteBgSecondary,
+          ),
+        ),
         ClipContainerWithCutout(
           cutoutRadius: cutoutRadius,
           color: colors.whiteBgWhite,
