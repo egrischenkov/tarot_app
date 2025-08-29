@@ -1,21 +1,33 @@
 import 'package:flutter/widgets.dart';
-import 'package:taro/core/assets/gen/assets.gen.dart';
 
 class ProfileWidget extends StatelessWidget {
+  static const String heroTag = 'profile_ava';
+
   final VoidCallback? onTap;
+  final Widget child;
+  final double size;
 
   const ProfileWidget({
+    required this.child,
+    this.size = 64,
     this.onTap,
     super.key,
   });
 
   @override
   Widget build(BuildContext context) {
-    return GestureDetector(
-      onTap: onTap,
-      child: Assets.icons.ava1.svg(
-        height: 64,
-        width: 64,
+    return Hero(
+      tag: heroTag,
+      child: GestureDetector(
+        onTap: onTap,
+        child: Container(
+          height: size,
+          width: size,
+          decoration: const BoxDecoration(
+            shape: BoxShape.circle,
+          ),
+          child: child,
+        ),
       ),
     );
   }

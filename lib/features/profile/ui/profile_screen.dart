@@ -1,6 +1,7 @@
 import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:taro/core/extensions/context_extension.dart';
+import 'package:taro/features/profile/ui/widgets/profile_header_widget.dart';
 import 'package:tarot_ui_kit/ui_kit.dart';
 
 @RoutePage()
@@ -38,6 +39,50 @@ class _ProfileScreenState extends State<ProfileScreen> {
                 colors: [colors.lightYellow, colors.accentYellowSec],
               ),
             ),
+          ),
+          ListView(
+            padding: const EdgeInsets.only(
+              top: kToolbarHeight + UiKitAppBar.height + UiKitSpacing.x10,
+            ),
+            children: [
+              const ProfileHeaderWidget(name: 'Лолкек Лолкекович'),
+              16.h,
+              Container(
+                color: Colors.blue,
+                height: 200,
+              ),
+              16.h,
+              Container(
+                color: Colors.blue,
+                height: 200,
+              ),
+              16.h,
+              Container(
+                color: Colors.blue,
+                height: 200,
+              ),
+              16.h,
+              Container(
+                color: Colors.blue,
+                height: 200,
+              ),
+              16.h,
+              Container(
+                color: Colors.blue,
+                height: 200,
+              ),
+              16.h,
+              Container(
+                color: Colors.blue,
+                height: 200,
+              ),
+              16.h,
+              Container(
+                color: Colors.blue,
+                height: 200,
+              ),
+              16.h,
+            ],
           ),
         ],
       ),

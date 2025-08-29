@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:tarot_ui_kit/ui_kit.dart';
 
 class UiKitAppBar extends StatelessWidget implements PreferredSizeWidget {
+  static const double height = 80;
+
   final String title;
   final List<Widget>? actions;
   final VoidCallback? onBack;
@@ -70,5 +72,5 @@ class UiKitAppBar extends StatelessWidget implements PreferredSizeWidget {
   }
 
   @override
-  Size get preferredSize => const Size.fromHeight(80);
+  Size get preferredSize => const Size.fromHeight(height);
 }
