@@ -89,7 +89,7 @@ class _HomeScreenState extends State<HomeScreen> with TickerProviderStateMixin {
 
     return Scaffold(
       body: AutoTabsRouter(
-        duration: const Duration(milliseconds: 500),
+        duration: const Duration(milliseconds: 400),
         transitionBuilder: (context, child, animation) => FadeTransition(
           opacity: animation,
           child: child,
