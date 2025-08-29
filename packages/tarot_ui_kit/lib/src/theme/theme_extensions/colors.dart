@@ -12,6 +12,7 @@ class UiKitColors extends ThemeExtension<UiKitColors> {
   final Color accentOrange;
   final Color accentYellow;
   final Color accentYellowSec;
+  final Color lightYellow;
   final Color accentPurple;
   final Color accentPurpleSec;
   final Color purpleText;
@@ -34,6 +35,7 @@ class UiKitColors extends ThemeExtension<UiKitColors> {
     required this.accentOrange,
     required this.accentYellow,
     required this.accentYellowSec,
+    required this.lightYellow,
     required this.accentPurple,
     required this.accentPurpleSec,
     required this.purpleText,
@@ -58,6 +60,7 @@ class UiKitColors extends ThemeExtension<UiKitColors> {
     Color? accentOrange,
     Color? accentYellow,
     Color? accentYellowSec,
+    Color? lightYellow,
     Color? accentPurple,
     Color? accentPurpleSec,
     Color? purpleText,
@@ -80,6 +83,7 @@ class UiKitColors extends ThemeExtension<UiKitColors> {
       accentOrange: accentOrange ?? this.accentOrange,
       accentYellow: accentYellow ?? this.accentYellow,
       accentYellowSec: accentYellowSec ?? this.accentYellowSec,
+      lightYellow: lightYellow ?? this.lightYellow,
       accentPurple: accentPurple ?? this.accentPurple,
       accentPurpleSec: accentPurpleSec ?? this.accentPurpleSec,
       purpleText: purpleText ?? this.purpleText,
@@ -109,6 +113,7 @@ class UiKitColors extends ThemeExtension<UiKitColors> {
       accentOrange: Color.lerp(accentOrange, other.accentOrange, t) ?? other.accentOrange,
       accentYellow: Color.lerp(accentYellow, other.accentYellow, t) ?? other.accentYellow,
       accentYellowSec: Color.lerp(accentYellowSec, other.accentYellowSec, t) ?? other.accentYellowSec,
+      lightYellow: Color.lerp(lightYellow, other.lightYellow, t) ?? other.lightYellow,
       accentPurple: Color.lerp(accentPurple, other.accentPurple, t) ?? other.accentPurple,
       accentPurpleSec: Color.lerp(accentPurpleSec, other.accentPurpleSec, t) ?? other.accentPurpleSec,
       purpleText: Color.lerp(purpleText, other.purpleText, t) ?? other.purpleText,

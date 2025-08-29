@@ -37,4 +37,7 @@ class AppLocalizationsRu extends AppLocalizations {
 
   @override
   String get homeScreen$MenuYammy => 'Вкусняшки';
+
+  @override
+  String get profileScreen$Title => 'Профиль';
 }

@@ -152,6 +152,12 @@ abstract class AppLocalizations {
   /// In ru, this message translates to:
   /// **'Вкусняшки'**
   String get homeScreen$MenuYammy;
+
+  /// No description provided for @profileScreen$Title.
+  ///
+  /// In ru, this message translates to:
+  /// **'Профиль'**
+  String get profileScreen$Title;
 }
 
 class _AppLocalizationsDelegate extends LocalizationsDelegate<AppLocalizations> {

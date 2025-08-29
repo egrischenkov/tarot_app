@@ -110,9 +110,15 @@ class _HomeScreenState extends State<HomeScreen> with TickerProviderStateMixin {
                   padding: const EdgeInsets.symmetric(horizontal: 20),
                   height: _appBarHeight,
                   color: colors.whiteBgWhite,
-                  child: const Row(
+                  child: Row(
                     mainAxisAlignment: MainAxisAlignment.end,
-                    children: [ProfileWidget()],
+                    children: [
+                      ProfileWidget(
+                        onTap: () {
+                          context.router.push(const ProfileRoute());
+                        },
+                      ),
+                    ],
                   ),
                 ),
               ),

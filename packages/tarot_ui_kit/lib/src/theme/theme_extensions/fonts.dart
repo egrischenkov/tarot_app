@@ -59,10 +59,10 @@ class UiKitFonts extends ThemeExtension<UiKitFonts> {
     return UiKitFonts(
       testStyle: TextStyle.lerp(testStyle, other.testStyle, t) ?? other.testStyle,
       headlineLarge: TextStyle.lerp(headlineLarge, other.headlineLarge, t) ?? other.headlineLarge,
+      headlineRegular: TextStyle.lerp(headlineRegular, other.headlineRegular, t) ?? other.headlineRegular,
       largeTitleEmphasized:
           TextStyle.lerp(largeTitleEmphasized, other.largeTitleEmphasized, t) ?? other.largeTitleEmphasized,
       largeTitleRegular: TextStyle.lerp(largeTitleRegular, other.largeTitleRegular, t) ?? other.largeTitleRegular,
-      headlineRegular: TextStyle.lerp(headlineRegular, other.headlineRegular, t) ?? other.headlineRegular,
       bodyRegular: TextStyle.lerp(bodyRegular, other.bodyRegular, t) ?? other.bodyRegular,
       bodyEmphasized: TextStyle.lerp(bodyEmphasized, other.bodyEmphasized, t) ?? other.bodyEmphasized,
       bodyEmphasizedItalic:

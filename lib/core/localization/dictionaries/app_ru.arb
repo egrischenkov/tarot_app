@@ -20,5 +20,10 @@
     "homeScreen$MenuDailyCard": "Карта дня",
     "homeScreen$MenuFunny": "Приколики",
     "homeScreen$MenuSpreads": "Расклады",
-    "homeScreen$MenuYammy": "Вкусняшки"
+    "homeScreen$MenuYammy": "Вкусняшки",
+    "@segmentProfileScreen": {
+        "---------": "---------",
+        "description": "Profile screen"
+    },
+    "profileScreen$Title": "Профиль"
 }

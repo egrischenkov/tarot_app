@@ -22,6 +22,7 @@ class UiKitTheme {
     onSurface: const Color(0xFF1D1B20),
     deepOrange: const Color(0xFFF0A400),
     yellow: const Color(0xFFFFE397),
+    lightYellow: const Color(0xFFfbe7aa),
     accentOrange: const Color(0xFFFF8F3C),
     accentYellow: const Color(0xFFFFD964),
     accentYellowSec: const Color(0xFFFFB62C),
@@ -46,11 +47,18 @@ class UiKitTheme {
       height: 14 / 12,
       letterSpacing: -0.4,
     ),
+    headlineRegular: TextStyle(
+      fontFamily: FontFamily.sFProDisplay,
+      fontSize: 17,
+      fontWeight: FontWeight.w600,
+      height: 22 / 17,
+      letterSpacing: -0.43,
+    ),
     headlineLarge: TextStyle(
       fontFamily: FontFamily.sFProDisplay,
-      fontSize: 32,
+      fontSize: 24,
       fontWeight: FontWeight.w600,
-      height: 40 / 32,
+      height: 40 / 28,
       letterSpacing: 0,
     ),
     largeTitleEmphasized: TextStyle(
@@ -66,13 +74,6 @@ class UiKitTheme {
       fontWeight: FontWeight.w400,
       height: 41 / 34,
       letterSpacing: -0.4,
-    ),
-    headlineRegular: TextStyle(
-      fontFamily: FontFamily.sFProDisplay,
-      fontSize: 17,
-      fontWeight: FontWeight.w600,
-      height: 22 / 17,
-      letterSpacing: -0.43,
     ),
     bodyRegular: TextStyle(
       fontFamily: FontFamily.sFProDisplay,
