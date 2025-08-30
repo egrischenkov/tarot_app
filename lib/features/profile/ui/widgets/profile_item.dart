@@ -10,13 +10,7 @@ class ProfileItem extends StatelessWidget {
     final colors = context.colors;
 
     return Container(
-      margin: const EdgeInsets.symmetric(
-        horizontal: UiKitSpacing.x2,
-      ),
-      padding: const EdgeInsets.symmetric(
-        vertical: UiKitSpacing.x2,
-        horizontal: UiKitSpacing.x4,
-      ),
+      padding: const EdgeInsets.all(UiKitSpacing.x4),
       decoration: BoxDecoration(
         color: colors.whiteBgWhite,
         borderRadius: BorderRadius.circular(UiKitSpacing.x4),

@@ -17,7 +17,7 @@ class HomeScreenAnimations {
   HomeScreenAnimations({required TickerProvider vsync})
       : controller = AnimationController(
           vsync: vsync,
-          duration: const Duration(milliseconds: 350),
+          duration: const Duration(milliseconds: 420),
         ) {
     moveToCenter = Tween<double>(begin: 0, end: 1).animate(
       CurvedAnimation(

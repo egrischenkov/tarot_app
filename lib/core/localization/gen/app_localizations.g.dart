@@ -158,6 +158,24 @@ abstract class AppLocalizations {
   /// In ru, this message translates to:
   /// **'Профиль'**
   String get profileScreen$Title;
+
+  /// No description provided for @profileScreen$Subscription.
+  ///
+  /// In ru, this message translates to:
+  /// **'Подписка'**
+  String get profileScreen$Subscription;
+
+  /// No description provided for @profileScreen$ChooseSubscription.
+  ///
+  /// In ru, this message translates to:
+  /// **'Выбрать подписку'**
+  String get profileScreen$ChooseSubscription;
+
+  /// No description provided for @profileScreen$SuggestSubscription.
+  ///
+  /// In ru, this message translates to:
+  /// **'Нет подписки? Давай подберем'**
+  String get profileScreen$SuggestSubscription;
 }
 
 class _AppLocalizationsDelegate extends LocalizationsDelegate<AppLocalizations> {

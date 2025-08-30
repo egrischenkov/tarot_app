@@ -40,4 +40,13 @@ class AppLocalizationsRu extends AppLocalizations {
 
   @override
   String get profileScreen$Title => 'Профиль';
+
+  @override
+  String get profileScreen$Subscription => 'Подписка';
+
+  @override
+  String get profileScreen$ChooseSubscription => 'Выбрать подписку';
+
+  @override
+  String get profileScreen$SuggestSubscription => 'Нет подписки? Давай подберем';
 }

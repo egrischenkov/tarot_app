@@ -80,15 +80,41 @@ class _ProfileScreenState extends State<ProfileScreen> {
                           ...intersperse(
                             UiKitSpacing.x4.h,
                             [
-                              ProfileItem(
-                                  child: Column(
-                                children: [
-                                  Row(),
-                                  UiKitSpacing.x4.h,
-                                  UiKitSpacing.x2.h,
-                                  // UiKitButton(),
-                                ],
-                              )),
+                              Padding(
+                                padding: const EdgeInsets.symmetric(horizontal: UiKitSpacing.x2),
+                                child: UiKitBorderBeam(
+                                  borderWidth: 2,
+                                  child: ProfileItem(
+                                    child: Column(
+                                      crossAxisAlignment: CrossAxisAlignment.start,
+                                      children: [
+                                        Row(
+                                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                                          children: [
+                                            Text(
+                                              l10n.profileScreen$Subscription,
+                                              style: context.fonts.bodyEmphasized,
+                                            ),
+                                            const UiKitForwardButton(),
+                                          ],
+                                        ),
+                                        UiKitSpacing.x3.h,
+                                        Text(
+                                          l10n.profileScreen$SuggestSubscription,
+                                          style: context.fonts.xsLabel,
+                                        ),
+                                        UiKitSpacing.x3.h,
+                                        UiKitBigButton.regular(
+                                          context: context,
+                                          label: l10n.profileScreen$ChooseSubscription,
+                                          onTap: () {},
+                                          isExpanded: true,
+                                        ),
+                                      ],
+                                    ),
+                                  ),
+                                ),
+                              ),
                               Container(
                                 height: 150,
                                 margin: const EdgeInsets.symmetric(

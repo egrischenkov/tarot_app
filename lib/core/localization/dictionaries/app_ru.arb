@@ -25,5 +25,8 @@
         "---------": "---------",
         "description": "Profile screen"
     },
-    "profileScreen$Title": "Профиль"
+    "profileScreen$Title": "Профиль",
+    "profileScreen$Subscription": "Подписка",
+    "profileScreen$ChooseSubscription": "Выбрать подписку",
+    "profileScreen$SuggestSubscription": "Нет подписки? Давай подберем"
 }
