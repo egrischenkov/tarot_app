@@ -2,6 +2,7 @@ import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:taro/core/extensions/context_extension.dart';
 import 'package:taro/features/profile/ui/widgets/profile_header_widget.dart';
+import 'package:taro/features/profile/ui/widgets/profile_refresh_indicator.dart';
 import 'package:tarot_ui_kit/ui_kit.dart';
 
 @RoutePage()
@@ -54,57 +55,60 @@ class _ProfileScreenState extends State<ProfileScreen> {
                 width: MediaQuery.of(context).size.width,
                 child: ColoredBox(color: colors.whiteBgSecondary),
               ),
-              ListView(
-                padding: const EdgeInsets.only(
-                  top: kToolbarHeight + UiKitAppBar.height + UiKitSpacing.x10,
-                ),
-                children: [
-                  const ProfileHeaderWidget(name: 'Лолкек Лолкекович'),
-                  ColoredBox(
-                    color: colors.whiteBgSecondary,
-                    child: Column(
-                      children: [
-                        UiKitSpacing.x4.h,
-                        ...intersperse(
-                          UiKitSpacing.x4.h,
-                          [
-                            Container(
-                              height: 150,
-                              margin: const EdgeInsets.symmetric(
-                                horizontal: UiKitSpacing.x2,
-                              ),
-                              decoration: BoxDecoration(
-                                color: colors.whiteBgWhite,
-                                borderRadius: BorderRadius.circular(UiKitSpacing.x4),
-                              ),
-                            ),
-                            Container(
-                              height: 150,
-                              margin: const EdgeInsets.symmetric(
-                                horizontal: UiKitSpacing.x2,
-                              ),
-                              decoration: BoxDecoration(
-                                color: colors.whiteBgWhite,
-                                borderRadius: BorderRadius.circular(UiKitSpacing.x4),
-                              ),
-                            ),
-                            Container(
-                              height: 150,
-                              margin: const EdgeInsets.symmetric(
-                                horizontal: UiKitSpacing.x2,
-                              ),
-                              decoration: BoxDecoration(
-                                color: colors.whiteBgWhite,
-                                borderRadius: BorderRadius.circular(UiKitSpacing.x4),
-                              ),
-                            ),
-                            UiKitSpacing.x4.h,
-                          ],
-                        ),
-                      ],
-                    ),
+              ProfileRefreshIndicator(
+                child: ListView(
+                  padding: const EdgeInsets.only(
+                    top: kToolbarHeight + UiKitAppBar.height + UiKitSpacing.x10,
                   ),
-                ],
+                  shrinkWrap: true,
+                  children: [
+                    const ProfileHeaderWidget(name: 'Лолкек Лолкекович'),
+                    ColoredBox(
+                      color: colors.whiteBgSecondary,
+                      child: Column(
+                        children: [
+                          UiKitSpacing.x4.h,
+                          ...intersperse(
+                            UiKitSpacing.x4.h,
+                            [
+                              Container(
+                                height: 150,
+                                margin: const EdgeInsets.symmetric(
+                                  horizontal: UiKitSpacing.x2,
+                                ),
+                                decoration: BoxDecoration(
+                                  color: colors.whiteBgWhite,
+                                  borderRadius: BorderRadius.circular(UiKitSpacing.x4),
+                                ),
+                              ),
+                              Container(
+                                height: 150,
+                                margin: const EdgeInsets.symmetric(
+                                  horizontal: UiKitSpacing.x2,
+                                ),
+                                decoration: BoxDecoration(
+                                  color: colors.whiteBgWhite,
+                                  borderRadius: BorderRadius.circular(UiKitSpacing.x4),
+                                ),
+                              ),
+                              Container(
+                                height: 150,
+                                margin: const EdgeInsets.symmetric(
+                                  horizontal: UiKitSpacing.x2,
+                                ),
+                                decoration: BoxDecoration(
+                                  color: colors.whiteBgWhite,
+                                  borderRadius: BorderRadius.circular(UiKitSpacing.x4),
+                                ),
+                              ),
+                              UiKitSpacing.x4.h,
+                            ],
+                          ),
+                        ],
+                      ),
+                    ),
+                  ],
+                ),
               ),
             ],
           ),

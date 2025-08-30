@@ -38,12 +38,23 @@ class $AssetsImagesGen {
   List<AssetGenImage> get values => [welcome1, welcome2, welcome3];
 }
 
+class $AssetsLottieGen {
+  const $AssetsLottieGen();
+
+  /// File path: assets/lottie/sandy_loading.json
+  String get sandyLoading => 'assets/lottie/sandy_loading.json';
+
+  /// List of all assets
+  List<String> get values => [sandyLoading];
+}
+
 class Assets {
   const Assets._();
 
   static const AssetGenImage tarotMeets = AssetGenImage('assets/TarotMeets.png');
   static const $AssetsIconsGen icons = $AssetsIconsGen();
   static const $AssetsImagesGen images = $AssetsImagesGen();
+  static const $AssetsLottieGen lottie = $AssetsLottieGen();
 
   /// List of all assets
   static List<AssetGenImage> get values => [tarotMeets];
