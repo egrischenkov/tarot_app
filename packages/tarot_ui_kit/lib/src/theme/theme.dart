@@ -41,12 +41,13 @@ class UiKitTheme {
     transparent: Colors.transparent,
   );
 
-  static const fonts = UiKitFonts(
+  static final fonts = UiKitFonts(
     testStyle: TextStyle(
       fontSize: 12,
       fontWeight: FontWeight.w500,
       height: 14 / 12,
       letterSpacing: -0.4,
+      color: lightThemeColors.itsyBitsyBlack,
     ),
     headlineRegular: TextStyle(
       fontFamily: FontFamily.sFProDisplay,
@@ -54,6 +55,7 @@ class UiKitTheme {
       fontWeight: FontWeight.w600,
       height: 22 / 17,
       letterSpacing: -0.43,
+      color: lightThemeColors.itsyBitsyBlack,
     ),
     headlineLarge: TextStyle(
       fontFamily: FontFamily.sFProDisplay,
@@ -61,6 +63,7 @@ class UiKitTheme {
       fontWeight: FontWeight.w600,
       height: 40 / 28,
       letterSpacing: 0,
+      color: lightThemeColors.itsyBitsyBlack,
     ),
     largeTitleEmphasized: TextStyle(
       fontFamily: FontFamily.sFProDisplay,
@@ -68,6 +71,7 @@ class UiKitTheme {
       fontWeight: FontWeight.w700,
       height: 41 / 34,
       letterSpacing: -0.4,
+      color: lightThemeColors.itsyBitsyBlack,
     ),
     largeTitleRegular: TextStyle(
       fontFamily: FontFamily.sFProDisplay,
@@ -75,6 +79,7 @@ class UiKitTheme {
       fontWeight: FontWeight.w400,
       height: 41 / 34,
       letterSpacing: -0.4,
+      color: lightThemeColors.itsyBitsyBlack,
     ),
     bodyRegular: TextStyle(
       fontFamily: FontFamily.sFProDisplay,
@@ -82,6 +87,7 @@ class UiKitTheme {
       fontWeight: FontWeight.w400,
       height: 22 / 17,
       letterSpacing: -0.43,
+      color: lightThemeColors.itsyBitsyBlack,
     ),
     bodyEmphasized: TextStyle(
       fontFamily: FontFamily.sFProDisplay,
@@ -89,6 +95,7 @@ class UiKitTheme {
       fontWeight: FontWeight.w600,
       height: 22 / 17,
       letterSpacing: -0.43,
+      color: lightThemeColors.itsyBitsyBlack,
     ),
     bodyEmphasizedItalic: TextStyle(
       fontFamily: FontFamily.sFProDisplay,
@@ -97,13 +104,15 @@ class UiKitTheme {
       fontStyle: FontStyle.italic,
       height: 22 / 17,
       letterSpacing: -0.43,
+      color: lightThemeColors.itsyBitsyBlack,
     ),
     xsLabel: TextStyle(
       fontFamily: FontFamily.sFProDisplay,
-      fontSize: 10,
+      fontSize: 12,
       fontWeight: FontWeight.w400,
       height: 12 / 10,
       letterSpacing: 0,
+      color: lightThemeColors.itsyBitsyBlack,
     ),
   );
 }
