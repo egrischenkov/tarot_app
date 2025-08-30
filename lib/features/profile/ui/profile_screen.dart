@@ -23,6 +23,26 @@ class ProfileScreen extends StatefulWidget {
 }
 
 class _ProfileScreenState extends State<ProfileScreen> {
+  final _scrollController = ScrollController();
+  double _offset = 0;
+
+  @override
+  void initState() {
+    super.initState();
+    _scrollController.addListener(() {
+      setState(() {
+        _offset = _scrollController.offset;
+      });
+    });
+  }
+
+  @override
+  void dispose() {
+    _scrollController.dispose();
+
+    super.dispose();
+  }
+
   @override
   Widget build(BuildContext context) {
     final l10n = context.l10n;
@@ -36,6 +56,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
           Icon(Icons.upload_rounded),
           Icon(Icons.settings),
         ],
+        scrollOffset: _offset,
         onBack: () => context.router.pop(),
       ),
       body: Stack(
@@ -66,6 +87,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
               ),
               ProfileRefreshIndicator(
                 child: ListView(
+                  controller: _scrollController,
                   padding: const EdgeInsets.only(
                     top: kToolbarHeight + UiKitAppBar.height + UiKitSpacing.x10,
                   ),
@@ -113,6 +135,16 @@ class _ProfileScreenState extends State<ProfileScreen> {
                                       ],
                                     ),
                                   ),
+                                ),
+                              ),
+                              Container(
+                                height: 150,
+                                margin: const EdgeInsets.symmetric(
+                                  horizontal: UiKitSpacing.x2,
+                                ),
+                                decoration: BoxDecoration(
+                                  color: colors.whiteBgWhite,
+                                  borderRadius: BorderRadius.circular(UiKitSpacing.x4),
                                 ),
                               ),
                               Container(
