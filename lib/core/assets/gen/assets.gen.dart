@@ -18,8 +18,14 @@ class $AssetsIconsGen {
   /// File path: assets/icons/ava_1.svg
   SvgGenImage get ava1 => const SvgGenImage('assets/icons/ava_1.svg');
 
+  /// File path: assets/icons/settings.svg
+  SvgGenImage get settings => const SvgGenImage('assets/icons/settings.svg');
+
+  /// File path: assets/icons/share.svg
+  SvgGenImage get share => const SvgGenImage('assets/icons/share.svg');
+
   /// List of all assets
-  List<SvgGenImage> get values => [ava1];
+  List<SvgGenImage> get values => [ava1, settings, share];
 }
 
 class $AssetsImagesGen {

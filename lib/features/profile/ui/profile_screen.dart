@@ -52,9 +52,23 @@ class _ProfileScreenState extends State<ProfileScreen> {
       extendBodyBehindAppBar: true,
       appBar: UiKitAppBar(
         title: l10n.profileScreen$Title,
-        actions: const [
-          Icon(Icons.upload_rounded),
-          Icon(Icons.settings),
+        actions: [
+          GestureDetector(
+            onTap: _onShareTap,
+            behavior: HitTestBehavior.translucent,
+            child: Assets.icons.share.svg(
+              width: UiKitSize.x5,
+              height: UiKitSize.x5,
+            ),
+          ),
+          GestureDetector(
+            onTap: _onSettingsTap,
+            behavior: HitTestBehavior.translucent,
+            child: Assets.icons.settings.svg(
+              width: UiKitSize.x5,
+              height: UiKitSize.x5,
+            ),
+          ),
         ],
         scrollOffset: _offset,
         onBack: () => context.router.pop(),
@@ -105,7 +119,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
                               Padding(
                                 padding: const EdgeInsets.symmetric(horizontal: UiKitSpacing.x2),
                                 child: UiKitBorderBeam(
-                                  borderWidth: 2,
+                                  borderWidth: 3,
                                   child: ProfileItem(
                                     child: Column(
                                       crossAxisAlignment: CrossAxisAlignment.start,
@@ -182,4 +196,8 @@ class _ProfileScreenState extends State<ProfileScreen> {
       ),
     );
   }
+
+  void _onShareTap() {}
+
+  void _onSettingsTap() {}
 }
