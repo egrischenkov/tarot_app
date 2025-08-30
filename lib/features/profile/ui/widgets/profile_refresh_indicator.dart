@@ -30,9 +30,12 @@ class ProfileRefreshIndicator extends StatelessWidget {
           alignment: Alignment.topCenter,
           children: [
             // The scrollable list, moved down during loading
-            Transform.translate(
-              offset: Offset(0, listOffset),
-              child: child,
+            IgnorePointer(
+              ignoring: controller.isLoading,
+              child: Transform.translate(
+                offset: Offset(0, listOffset),
+                child: child,
+              ),
             ),
 
             // Lottie indicator
