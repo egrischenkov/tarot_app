@@ -12,6 +12,7 @@ class UiKitBackButton extends StatelessWidget {
 
     return GestureDetector(
       onTap: onTap,
+      behavior: HitTestBehavior.translucent,
       child: Container(
         padding: const EdgeInsets.all(UiKitSpacing.base),
         decoration: BoxDecoration(

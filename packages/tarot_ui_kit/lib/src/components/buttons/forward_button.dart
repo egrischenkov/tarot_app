@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:tarot_ui_kit/ui_kit.dart';
 
-class UiKitNextButton extends StatelessWidget {
+class UiKitForwardButton extends StatelessWidget {
   final VoidCallback? onTap;
   final Color? backgroundColor;
 
-  const UiKitNextButton({
+  const UiKitForwardButton({
     this.onTap,
     this.backgroundColor,
     super.key,
@@ -17,6 +17,7 @@ class UiKitNextButton extends StatelessWidget {
 
     return GestureDetector(
       onTap: onTap,
+      behavior: HitTestBehavior.translucent,
       child: Container(
         padding: const EdgeInsets.all(UiKitSpacing.base),
         decoration: BoxDecoration(
@@ -25,7 +26,7 @@ class UiKitNextButton extends StatelessWidget {
         ),
         child: const Icon(
           Icons.arrow_forward_ios,
-          size: UiKitSize.x3,
+          size: UiKitSize.x4,
         ),
       ),
     );
