@@ -1,9 +1,18 @@
+import 'dart:math';
+import 'dart:ui';
+
 import 'package:auto_route/auto_route.dart';
+import 'package:custom_refresh_indicator/custom_refresh_indicator.dart';
 import 'package:flutter/material.dart';
+import 'package:lottie/lottie.dart';
+import 'package:taro/core/assets/gen/assets.gen.dart';
 import 'package:taro/core/extensions/context_extension.dart';
-import 'package:taro/features/profile/ui/widgets/profile_header_widget.dart';
-import 'package:taro/features/profile/ui/widgets/profile_refresh_indicator.dart';
+import 'package:taro/features/profile/ui/widgets/profile_widget.dart';
 import 'package:tarot_ui_kit/ui_kit.dart';
+
+part 'widgets/profile_header_widget.dart';
+part 'widgets/profile_item.dart';
+part 'widgets/profile_refresh_indicator.dart';
 
 @RoutePage()
 class ProfileScreen extends StatefulWidget {
@@ -71,16 +80,15 @@ class _ProfileScreenState extends State<ProfileScreen> {
                           ...intersperse(
                             UiKitSpacing.x4.h,
                             [
-                              Container(
-                                height: 150,
-                                margin: const EdgeInsets.symmetric(
-                                  horizontal: UiKitSpacing.x2,
-                                ),
-                                decoration: BoxDecoration(
-                                  color: colors.whiteBgWhite,
-                                  borderRadius: BorderRadius.circular(UiKitSpacing.x4),
-                                ),
-                              ),
+                              ProfileItem(
+                                  child: Column(
+                                children: [
+                                  Row(),
+                                  UiKitSpacing.x4.h,
+                                  UiKitSpacing.x2.h,
+                                  // UiKitButton(),
+                                ],
+                              )),
                               Container(
                                 height: 150,
                                 margin: const EdgeInsets.symmetric(

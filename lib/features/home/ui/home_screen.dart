@@ -10,7 +10,7 @@ import 'package:taro/features/home/ui/animations/home_screen_animations.dart';
 import 'package:taro/features/home/ui/utils/card_animation_calculator.dart';
 import 'package:taro/features/home/ui/utils/reorder_utils.dart';
 import 'package:taro/features/home/ui/widgets/menu_card_widget.dart';
-import 'package:taro/features/home/ui/widgets/profile_widget.dart';
+import 'package:taro/features/profile/ui/widgets/profile_widget.dart';
 import 'package:tarot_ui_kit/ui_kit.dart';
 
 const _appBarHeight = 120.0;

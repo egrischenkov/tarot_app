@@ -1,9 +1,4 @@
-import 'dart:math';
-
-import 'package:flutter/material.dart';
-import 'package:taro/core/assets/gen/assets.gen.dart';
-import 'package:taro/features/home/ui/widgets/profile_widget.dart';
-import 'package:tarot_ui_kit/ui_kit.dart';
+part of '../profile_screen.dart';
 
 class ProfileHeaderWidget extends StatelessWidget {
   final String name;

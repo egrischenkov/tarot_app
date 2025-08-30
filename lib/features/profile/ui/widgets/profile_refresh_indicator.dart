@@ -1,9 +1,4 @@
-import 'dart:ui';
-import 'package:custom_refresh_indicator/custom_refresh_indicator.dart';
-import 'package:flutter/material.dart';
-import 'package:lottie/lottie.dart';
-import 'package:taro/core/assets/gen/assets.gen.dart';
-import 'package:tarot_ui_kit/ui_kit.dart';
+part of '../profile_screen.dart';
 
 class ProfileRefreshIndicator extends StatelessWidget {
   final Widget child;
