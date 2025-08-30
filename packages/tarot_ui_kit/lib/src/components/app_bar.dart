@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:tarot_ui_kit/ui_kit.dart';
 
 class UiKitAppBar extends StatelessWidget implements PreferredSizeWidget {
-  static const double height = 80;
+  static const double height = 60;
 
   final String title;
   final List<Widget>? actions;
@@ -29,40 +30,40 @@ class UiKitAppBar extends StatelessWidget implements PreferredSizeWidget {
       shadowColor: colors.whiteBgSecondary.withValues(alpha: 0.6),
       child: AppBar(
         automaticallyImplyLeading: false,
-        backgroundColor: Colors.transparent,
+        shape: const RoundedRectangleBorder(
+          borderRadius: borderRadius,
+        ),
         flexibleSpace: DecoratedBox(
           decoration: BoxDecoration(
             color: colors.whiteBgWhite,
             borderRadius: borderRadius,
           ),
-          child: SafeArea(
-            child: Align(
-              alignment: Alignment.bottomCenter,
-              child: Padding(
-                padding: const EdgeInsets.symmetric(
-                  horizontal: UiKitSpacing.x4,
-                  vertical: UiKitSpacing.x3,
-                ),
-                child: Row(
-                  children: [
-                    Expanded(
-                      child: Row(
-                        children: [
-                          UiKitBackButton(onTap: onBack),
-                          UiKitSpacing.x6.w,
-                          Text(
-                            title,
-                            style: context.fonts.headlineLarge.copyWith(
-                              fontWeight: FontWeight.w700,
-                            ),
+          child: Align(
+            alignment: Alignment.bottomCenter,
+            child: Padding(
+              padding: const EdgeInsets.symmetric(
+                horizontal: UiKitSpacing.x4,
+                vertical: UiKitSpacing.x3,
+              ),
+              child: Row(
+                children: [
+                  Expanded(
+                    child: Row(
+                      children: [
+                        UiKitBackButton(onTap: onBack),
+                        UiKitSpacing.x6.w,
+                        Text(
+                          title,
+                          style: context.fonts.headlineLarge.copyWith(
+                            fontWeight: FontWeight.w700,
                           ),
-                          UiKitSpacing.x4.w,
-                        ],
-                      ),
+                        ),
+                        UiKitSpacing.x4.w,
+                      ],
                     ),
-                    ...intersperse(UiKitSpacing.x5.w, actions ?? []),
-                  ],
-                ),
+                  ),
+                  ...intersperse(UiKitSpacing.x5.w, actions ?? []),
+                ],
               ),
             ),
           ),
