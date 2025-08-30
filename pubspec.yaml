@@ -18,6 +18,7 @@ dependencies:
 
   # UI
   flutter_svg: ^2.1.0
+  lottie: ^3.3.1
 
   # Routing
   auto_route: ^10.0.1
@@ -72,6 +73,7 @@ flutter:
     - assets/TarotMeets.png
     - assets/images/
     - assets/icons/
+    - assets/lottie/
 
 workspace:
   - packages/tarot_analytics
