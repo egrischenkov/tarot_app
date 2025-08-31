@@ -12,6 +12,7 @@ class UiKitColors extends ThemeExtension<UiKitColors> {
   final Color accentOrange;
   final Color accentYellow;
   final Color accentYellowSec;
+  final Color lightYellow;
   final Color accentPurple;
   final Color accentPurpleSec;
   final Color purpleText;
@@ -24,6 +25,7 @@ class UiKitColors extends ThemeExtension<UiKitColors> {
   final Color blackBgPurple;
   final Color goodGreen;
   final Color wrongRed;
+  final Color transparent;
 
   const UiKitColors({
     required this.grey,
@@ -34,6 +36,7 @@ class UiKitColors extends ThemeExtension<UiKitColors> {
     required this.accentOrange,
     required this.accentYellow,
     required this.accentYellowSec,
+    required this.lightYellow,
     required this.accentPurple,
     required this.accentPurpleSec,
     required this.purpleText,
@@ -46,6 +49,7 @@ class UiKitColors extends ThemeExtension<UiKitColors> {
     required this.blackBgPurple,
     required this.goodGreen,
     required this.wrongRed,
+    required this.transparent,
   });
 
   @override
@@ -58,6 +62,7 @@ class UiKitColors extends ThemeExtension<UiKitColors> {
     Color? accentOrange,
     Color? accentYellow,
     Color? accentYellowSec,
+    Color? lightYellow,
     Color? accentPurple,
     Color? accentPurpleSec,
     Color? purpleText,
@@ -70,6 +75,7 @@ class UiKitColors extends ThemeExtension<UiKitColors> {
     Color? blackBgPurple,
     Color? goodGreen,
     Color? wrongRed,
+    Color? transparent,
   }) {
     return UiKitColors(
       grey: grey ?? this.grey,
@@ -80,6 +86,7 @@ class UiKitColors extends ThemeExtension<UiKitColors> {
       accentOrange: accentOrange ?? this.accentOrange,
       accentYellow: accentYellow ?? this.accentYellow,
       accentYellowSec: accentYellowSec ?? this.accentYellowSec,
+      lightYellow: lightYellow ?? this.lightYellow,
       accentPurple: accentPurple ?? this.accentPurple,
       accentPurpleSec: accentPurpleSec ?? this.accentPurpleSec,
       purpleText: purpleText ?? this.purpleText,
@@ -92,6 +99,7 @@ class UiKitColors extends ThemeExtension<UiKitColors> {
       blackBgPurple: blackBgPurple ?? this.blackBgPurple,
       goodGreen: goodGreen ?? this.goodGreen,
       wrongRed: wrongRed ?? this.wrongRed,
+      transparent: transparent ?? this.transparent,
     );
   }
 
@@ -109,6 +117,7 @@ class UiKitColors extends ThemeExtension<UiKitColors> {
       accentOrange: Color.lerp(accentOrange, other.accentOrange, t) ?? other.accentOrange,
       accentYellow: Color.lerp(accentYellow, other.accentYellow, t) ?? other.accentYellow,
       accentYellowSec: Color.lerp(accentYellowSec, other.accentYellowSec, t) ?? other.accentYellowSec,
+      lightYellow: Color.lerp(lightYellow, other.lightYellow, t) ?? other.lightYellow,
       accentPurple: Color.lerp(accentPurple, other.accentPurple, t) ?? other.accentPurple,
       accentPurpleSec: Color.lerp(accentPurpleSec, other.accentPurpleSec, t) ?? other.accentPurpleSec,
       purpleText: Color.lerp(purpleText, other.purpleText, t) ?? other.purpleText,
@@ -121,6 +130,7 @@ class UiKitColors extends ThemeExtension<UiKitColors> {
       blackBgPurple: Color.lerp(blackBgPurple, other.blackBgPurple, t) ?? other.blackBgPurple,
       goodGreen: Color.lerp(goodGreen, other.goodGreen, t) ?? other.goodGreen,
       wrongRed: Color.lerp(wrongRed, other.wrongRed, t) ?? other.wrongRed,
+      transparent: Color.lerp(transparent, other.transparent, t) ?? other.transparent,
     );
   }
 }

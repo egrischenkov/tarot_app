@@ -49,7 +49,7 @@ TAROT-12345: refactor(make review): use bloc pattern for domain layer
 
 ### ✅ Code Review Rules
 
-- Use **Squash & Merge** when merging PRs
+- Use **Merge** when merging PRs
 - If changes are needed after PR approval:
   1. Original: `0001-feature-some` → `dev` ✅
   2. Fix: `0001-fix-some` → `0001-feature-some` 🔁

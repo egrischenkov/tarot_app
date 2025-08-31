@@ -60,7 +60,7 @@ PODS:
     - GoogleUtilities/Environment (~> 8.0)
     - GoogleUtilities/UserDefaults (~> 8.0)
     - PromisesObjC (~> 2.4)
-  - FirebaseRemoteConfigInterop (11.12.0)
+  - FirebaseRemoteConfigInterop (11.15.0)
   - FirebaseSessions (11.10.0):
     - FirebaseCore (~> 11.10.0)
     - FirebaseCoreExtension (~> 11.10.0)
@@ -197,7 +197,7 @@ SPEC CHECKSUMS:
   FirebaseCoreInternal: ef4505d2afb1d0ebbc33162cb3795382904b5679
   FirebaseCrashlytics: 84b073c997235740e6a951b7ee49608932877e5c
   FirebaseInstallations: 9980995bdd06ec8081dfb6ab364162bdd64245c3
-  FirebaseRemoteConfigInterop: 82b81fd06ee550cbeff40004e2c106daedf73e38
+  FirebaseRemoteConfigInterop: 1c6135e8a094cc6368949f5faeeca7ee8948b8aa
   FirebaseSessions: 9b3b30947b97a15370e0902ee7a90f50ef60ead6
   Flutter: e0871f40cf51350855a761d2e70bf5af5b9b5de7
   GoogleAppMeasurement: 36684bfb3ee034e2b42b4321eb19da3a1b81e65d

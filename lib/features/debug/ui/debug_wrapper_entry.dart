@@ -13,7 +13,7 @@ class DebugWrapperEntry extends StatelessWidget {
       children: [
         AutoRouter(),
         Positioned(
-          left: 5,
+          right: 5,
           bottom: 5,
           child: DebugButton(),
         ),

@@ -12,5 +12,21 @@
     "onboarding$Answer": "Ответ уже\nвнутри тебя",
     "onboarding$Cards": "Карты помогут\nего увидеть",
     "onboarding$Skip": "Пропустить",
-    "onboarding$Start": "Вперёд"
+    "onboarding$Start": "Вперёд",
+    "@segmentHomeScreen": {
+        "---------": "---------",
+        "description": "Home screen"
+    },
+    "homeScreen$MenuDailyCard": "Карта дня",
+    "homeScreen$MenuFunny": "Приколики",
+    "homeScreen$MenuSpreads": "Расклады",
+    "homeScreen$MenuYammy": "Вкусняшки",
+    "@segmentProfileScreen": {
+        "---------": "---------",
+        "description": "Profile screen"
+    },
+    "profileScreen$Title": "Профиль",
+    "profileScreen$Subscription": "Подписка",
+    "profileScreen$ChooseSubscription": "Выбрать подписку",
+    "profileScreen$SuggestSubscription": "Нет подписки? Давай подберем"
 }

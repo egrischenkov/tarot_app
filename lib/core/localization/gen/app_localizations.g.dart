@@ -128,6 +128,54 @@ abstract class AppLocalizations {
   /// In ru, this message translates to:
   /// **'Вперёд'**
   String get onboarding$Start;
+
+  /// No description provided for @homeScreen$MenuDailyCard.
+  ///
+  /// In ru, this message translates to:
+  /// **'Карта дня'**
+  String get homeScreen$MenuDailyCard;
+
+  /// No description provided for @homeScreen$MenuFunny.
+  ///
+  /// In ru, this message translates to:
+  /// **'Приколики'**
+  String get homeScreen$MenuFunny;
+
+  /// No description provided for @homeScreen$MenuSpreads.
+  ///
+  /// In ru, this message translates to:
+  /// **'Расклады'**
+  String get homeScreen$MenuSpreads;
+
+  /// No description provided for @homeScreen$MenuYammy.
+  ///
+  /// In ru, this message translates to:
+  /// **'Вкусняшки'**
+  String get homeScreen$MenuYammy;
+
+  /// No description provided for @profileScreen$Title.
+  ///
+  /// In ru, this message translates to:
+  /// **'Профиль'**
+  String get profileScreen$Title;
+
+  /// No description provided for @profileScreen$Subscription.
+  ///
+  /// In ru, this message translates to:
+  /// **'Подписка'**
+  String get profileScreen$Subscription;
+
+  /// No description provided for @profileScreen$ChooseSubscription.
+  ///
+  /// In ru, this message translates to:
+  /// **'Выбрать подписку'**
+  String get profileScreen$ChooseSubscription;
+
+  /// No description provided for @profileScreen$SuggestSubscription.
+  ///
+  /// In ru, this message translates to:
+  /// **'Нет подписки? Давай подберем'**
+  String get profileScreen$SuggestSubscription;
 }
 
 class _AppLocalizationsDelegate extends LocalizationsDelegate<AppLocalizations> {

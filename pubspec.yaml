@@ -14,10 +14,12 @@ dependencies:
 
   # Networking
   flutter_alice: ^2.0.1
-  dio:
+  dio: ^5.9.0
 
   # UI
   flutter_svg: ^2.1.0
+  lottie: ^3.3.1
+  custom_refresh_indicator: ^4.0.1
 
   # Routing
   auto_route: ^10.0.1
@@ -71,6 +73,8 @@ flutter:
   assets:
     - assets/TarotMeets.png
     - assets/images/
+    - assets/icons/
+    - assets/lottie/
 
 workspace:
   - packages/tarot_analytics
