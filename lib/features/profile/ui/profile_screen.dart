@@ -3,6 +3,7 @@ import 'dart:ui';
 
 import 'package:auto_route/auto_route.dart';
 import 'package:custom_refresh_indicator/custom_refresh_indicator.dart';
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:lottie/lottie.dart';
 import 'package:taro/core/assets/gen/assets.gen.dart';
@@ -100,6 +101,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
                 child: ColoredBox(color: colors.whiteBgSecondary),
               ),
               ProfileRefreshIndicator(
+                onRefresh: _onRefresh,
                 child: ListView(
                   controller: _scrollController,
                   padding: const EdgeInsets.only(
@@ -200,4 +202,9 @@ class _ProfileScreenState extends State<ProfileScreen> {
   void _onShareTap() {}
 
   void _onSettingsTap() {}
+
+  Future<void> _onRefresh() async {
+    // Simulate a refresh delay
+    await Future.delayed(const Duration(seconds: 2));
+  }
 }

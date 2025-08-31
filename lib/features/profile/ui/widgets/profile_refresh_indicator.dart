@@ -1,9 +1,14 @@
 part of '../profile_screen.dart';
 
 class ProfileRefreshIndicator extends StatelessWidget {
+  final AsyncCallback onRefresh;
   final Widget child;
 
-  const ProfileRefreshIndicator({required this.child, super.key});
+  const ProfileRefreshIndicator({
+    required this.onRefresh,
+    required this.child,
+    super.key,
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -11,7 +16,7 @@ class ProfileRefreshIndicator extends StatelessWidget {
     const double appBarHeight = kToolbarHeight + UiKitAppBar.height;
 
     return CustomRefreshIndicator(
-      onRefresh: _onRefresh,
+      onRefresh: onRefresh,
       builder: (context, child, controller) {
         // Pull value for animation
         final double pullValue = controller.isLoading ? 1.0 : controller.value.clamp(0.0, 1.0);
@@ -66,10 +71,5 @@ class ProfileRefreshIndicator extends StatelessWidget {
       },
       child: child,
     );
-  }
-
-  Future<void> _onRefresh() async {
-    // Simulate a refresh delay
-    await Future.delayed(const Duration(seconds: 2));
   }
 }
