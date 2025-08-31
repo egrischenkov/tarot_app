@@ -6,6 +6,16 @@ import 'package:taro/features/home/domain/entities/menu_card_model.dart';
 
 import '../animations/home_screen_animations.dart';
 
+typedef CalculationValues = ({
+  double verticalOffset,
+  double horizontalOffset,
+  double height,
+  double width,
+  double heightFactor,
+  double angle,
+  double yAngle,
+});
+
 /// Calculates all UI animation values (position, size, rotation, etc.)
 /// for each card based on its current state: selected, previously selected, or idle.
 ///
@@ -37,15 +47,7 @@ class CardAnimationCalculator {
 
   bool _isSelected(MenuCardModel card) => selectedCard.id == card.id;
 
-  ({
-    double verticalOffset,
-    double horizontalOffset,
-    double height,
-    double width,
-    double heightFactor,
-    double angle,
-    double yAngle,
-  }) calculate(int index, MenuCardModel card) {
+  CalculationValues calculate(int index, MenuCardModel card) {
     final isSelected = _isSelected(card);
     final isPreviouslySelected = !isSelected && card.id == previousSelectedCard?.id;
 

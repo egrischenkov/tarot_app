@@ -3,7 +3,7 @@ import 'package:flutter/services.dart';
 import 'package:tarot_ui_kit/ui_kit.dart';
 
 class UiKitAppBar extends StatelessWidget implements PreferredSizeWidget {
-  static const double height = 60;
+  static const double height = 80;
 
   final String title;
   final List<Widget>? actions;

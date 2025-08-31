@@ -13,8 +13,6 @@ import 'package:taro/features/home/ui/widgets/menu_card_widget.dart';
 import 'package:taro/features/profile/ui/widgets/profile_widget.dart';
 import 'package:tarot_ui_kit/ui_kit.dart';
 
-const _appBarHeight = 120.0;
-
 /// This screen is the main entry point for the user's interactive card experience.
 /// It displays a dynamic stack of tarot menu cards that animate when selected.
 /// The animation logic is encapsulated in [HomeScreenAnimations] and card positioning
@@ -72,7 +70,7 @@ class _HomeScreenState extends State<HomeScreen> with TickerProviderStateMixin {
     super.didChangeDependencies();
     final screenWidth = MediaQuery.of(context).size.width;
     _cardWidth = screenWidth * 0.4;
-    _cardHeight = _cardWidth * 1.5;
+    _cardHeight = _cardWidth * 1.7;
   }
 
   @override
@@ -103,81 +101,83 @@ class _HomeScreenState extends State<HomeScreen> with TickerProviderStateMixin {
         builder: (context, child) {
           final tabsRouter = AutoTabsRouter.of(context);
 
-          return Stack(
-            children: [
-              Align(
-                alignment: Alignment.topCenter,
-                child: Container(
-                  padding: const EdgeInsets.symmetric(horizontal: 20),
-                  height: _appBarHeight,
-                  color: colors.whiteBgWhite,
-                  child: Row(
-                    mainAxisAlignment: MainAxisAlignment.end,
-                    children: [
-                      Hero(
-                        tag: ProfileWidget.heroTag,
-                        child: ProfileWidget(
-                          child: Assets.icons.ava1.svg(
-                            height: 64,
-                            width: 64,
+          return Padding(
+            padding: const EdgeInsets.only(top: kToolbarHeight),
+            child: Stack(
+              children: [
+                Align(
+                  alignment: Alignment.topCenter,
+                  child: Container(
+                    padding: const EdgeInsets.symmetric(horizontal: 20),
+                    height: UiKitAppBar.height,
+                    color: colors.whiteBgWhite,
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.end,
+                      children: [
+                        Hero(
+                          tag: ProfileWidget.heroTag,
+                          child: ProfileWidget(
+                            onTap: _onProfileTap,
+                            child: Assets.icons.ava1.svg(
+                              height: 64,
+                              width: 64,
+                            ),
                           ),
-                          onTap: () {
-                            context.router.push(const ProfileRoute());
-                          },
                         ),
-                      ),
-                    ],
+                      ],
+                    ),
                   ),
                 ),
-              ),
-              AnimatedBuilder(
-                animation: _animations.controller,
-                builder: (context, _) {
-                  return Positioned.fill(
-                    top: _appBarHeight,
-                    child: Stack(
-                      children: _menuCards.mapWithIndex((index, card, _, __) {
-                        final animationValues = CardAnimationCalculator(
-                          context: context,
-                          animations: _animations,
-                          cardWidth: _cardWidth,
-                          cardHeight: _cardHeight,
-                          selectedCardIndex: _selectedCardIndex,
-                          selectedCard: _selectedCard,
-                          previousSelectedCard: _previousSelectedCard,
-                          menuCards: _menuCards,
-                          deckOrder: _deckOrder,
-                          isStackReordered: _isStackReordered,
-                        ).calculate(index, card);
+                AnimatedBuilder(
+                  animation: _animations.controller,
+                  builder: (context, _) {
+                    return Positioned.fill(
+                      top: UiKitAppBar.height,
+                      child: Stack(
+                        children: _menuCards.mapWithIndex((index, card, _, __) {
+                          final animationValues = CardAnimationCalculator(
+                            context: context,
+                            animations: _animations,
+                            cardWidth: _cardWidth,
+                            cardHeight: _cardHeight,
+                            selectedCardIndex: _selectedCardIndex,
+                            selectedCard: _selectedCard,
+                            previousSelectedCard: _previousSelectedCard,
+                            menuCards: _menuCards,
+                            deckOrder: _deckOrder,
+                            isStackReordered: _isStackReordered,
+                          ).calculate(index, card);
 
-                        final isPreviousSelected = card.id == _previousSelectedCard?.id;
+                          final isPreviousSelected = card.id == _previousSelectedCard?.id;
 
-                        return MenuCardWidget(
-                          name: card.getName(context),
-                          verticalOffset: animationValues.verticalOffset,
-                          horizontalOffset: animationValues.horizontalOffset,
-                          height: animationValues.height,
-                          width: animationValues.width,
-                          heightFactor: animationValues.heightFactor,
-                          angle: animationValues.angle,
-                          yAngle: animationValues.yAngle,
-                          borderRadius: (_animations.controller.value >= 0.3 && _animations.controller.value <= 5.0) &&
-                                  (isPreviousSelected || _isSelectedCard(card))
-                              ? BorderRadius.circular(24)
-                              : const BorderRadius.vertical(top: Radius.circular(24)),
-                          icon: Icon(
-                            card.icon,
-                            color: Colors.blueAccent,
-                          ),
-                          onTap: () => _onCardTap(card, index, tabsRouter),
-                          backSideWidget: child,
-                        );
-                      }).toList(),
-                    ),
-                  );
-                },
-              ),
-            ],
+                          return MenuCardWidget(
+                            name: card.getName(context),
+                            verticalOffset: animationValues.verticalOffset,
+                            horizontalOffset: animationValues.horizontalOffset,
+                            height: animationValues.height,
+                            width: animationValues.width,
+                            heightFactor: animationValues.heightFactor,
+                            angle: animationValues.angle,
+                            yAngle: animationValues.yAngle,
+                            borderRadius:
+                                (_animations.controller.value >= 0.3 && _animations.controller.value <= 5.0) &&
+                                        (isPreviousSelected || _isSelectedCard(card))
+                                    ? BorderRadius.circular(24)
+                                    : const BorderRadius.vertical(top: Radius.circular(24)),
+                            icon: Icon(
+                              card.icon,
+                              color: Colors.blueAccent,
+                            ),
+                            onTap: () => _onCardTap(card, index, tabsRouter),
+                            backSideWidget: child,
+                          );
+                        }).toList(),
+                      ),
+                    );
+                  },
+                ),
+              ],
+            ),
           );
         },
       ),
@@ -225,6 +225,10 @@ class _HomeScreenState extends State<HomeScreen> with TickerProviderStateMixin {
         });
       }
     });
+  }
+
+  void _onProfileTap() {
+    context.router.push(const ProfileRoute());
   }
 }
 
