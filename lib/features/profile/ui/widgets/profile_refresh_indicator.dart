@@ -1,6 +1,6 @@
 part of '../profile_screen.dart';
 
-class ProfileRefreshIndicator extends StatelessWidget {
+class ProfileRefreshIndicator extends StatefulWidget {
   final AsyncCallback onRefresh;
   final Widget child;
 
@@ -11,12 +11,17 @@ class ProfileRefreshIndicator extends StatelessWidget {
   });
 
   @override
+  State<ProfileRefreshIndicator> createState() => _ProfileRefreshIndicatorState();
+}
+
+class _ProfileRefreshIndicatorState extends State<ProfileRefreshIndicator> {
+  @override
   Widget build(BuildContext context) {
     const double indicatorHeight = 70;
     const double appBarHeight = kToolbarHeight + UiKitAppBar.height;
 
     return CustomRefreshIndicator(
-      onRefresh: onRefresh,
+      onRefresh: widget.onRefresh,
       builder: (context, child, controller) {
         // Pull value for animation
         final double pullValue = controller.isLoading ? 1.0 : controller.value.clamp(0.0, 1.0);
@@ -28,8 +33,10 @@ class ProfileRefreshIndicator extends StatelessWidget {
         final double listOffset = controller.isLoading ? indicatorHeight : indicatorHeight * pullValue;
 
         // Scale and opacity for the indicator
-        final double indicatorScale = lerpDouble(0.5, 1.0, pullValue)!;
+        final double? indicatorScale = lerpDouble(0.5, 1.0, pullValue);
         final double indicatorOpacity = pullValue;
+
+        _triggerHaptic(controller);
 
         return Stack(
           alignment: Alignment.topCenter,
@@ -69,7 +76,21 @@ class ProfileRefreshIndicator extends StatelessWidget {
           ],
         );
       },
-      child: child,
+      child: widget.child,
     );
+  }
+
+  DateTime? _lastHapticTime;
+
+  void _triggerHaptic(IndicatorController controller) {
+    // Trigger haptic feedback only when dragging
+    if (controller.isDragging) {
+      final now = DateTime.now();
+      // Allow one vibration every 150ms
+      if (_lastHapticTime == null || now.difference(_lastHapticTime!) > const Duration(milliseconds: 50)) {
+        HapticFeedback.lightImpact();
+        _lastHapticTime = now;
+      }
+    }
   }
 }

@@ -119,8 +119,8 @@ class _StarCirclePainter extends CustomPainter {
       return;
     }
 
-    final double outerRadius = lerpDouble(circleRadius, starOuter, progress)!;
-    final double innerRadius = lerpDouble(circleRadius, starInner, progress)!;
+    final double outerRadius = lerpDouble(circleRadius, starOuter, progress) ?? 0;
+    final double innerRadius = lerpDouble(circleRadius, starInner, progress) ?? 0;
 
     final Path path = Path();
     const int points = 8;
