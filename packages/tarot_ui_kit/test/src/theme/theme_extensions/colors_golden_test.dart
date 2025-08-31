@@ -106,6 +106,18 @@ void main() {
               color: UiKitTheme.lightThemeColors.wrongRed,
             ),
           ),
+          GoldenTestScenario(
+            name: 'Light-yellow',
+            child: _ColorTile(
+              color: UiKitTheme.lightThemeColors.lightYellow,
+            ),
+          ),
+          GoldenTestScenario(
+            name: 'Transparent',
+            child: _ColorTile(
+              color: UiKitTheme.lightThemeColors.transparent,
+            ),
+          ),
         ],
       ),
     );
