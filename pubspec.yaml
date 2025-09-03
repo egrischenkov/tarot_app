@@ -59,6 +59,7 @@ dev_dependencies:
   auto_route_generator: ^10.0.1
   mocktail: ^1.0.4
   alchemist: ^0.11.0
+  flutter_launcher_icons: ^0.14.4
 
 flutter_gen:
   output: lib/core/assets/gen/
@@ -71,7 +72,7 @@ flutter:
   uses-material-design: true
   generate: true
   assets:
-    - assets/TarotMeets.png
+    - assets/
     - assets/images/
     - assets/icons/
     - assets/lottie/
@@ -81,3 +82,13 @@ workspace:
   - packages/tarot_logger
   - packages/tarot_ui_kit
   - packages/tarot_rest_client
+
+flutter_launcher_icons:
+  android: "launcher_icon"
+  image_path_android: assets/android_app_icon.png
+  adaptive_icon_background: "#905CFB"
+  adaptive_icon_foreground: assets/android_foreground.png
+  ios: true
+  image_path_ios: assets/ios_app_icon.png
+  remove_alpha_ios: true
+  min_sdk_android: 21
