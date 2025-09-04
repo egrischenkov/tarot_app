@@ -72,9 +72,7 @@ class UiKitAppBar extends StatelessWidget implements PreferredSizeWidget {
                             children: [
                               Text(
                                 title,
-                                style: context.fonts.headlineLarge.copyWith(
-                                  fontWeight: FontWeight.w700,
-                                ),
+                                style: context.fonts.headlineLarge,
                               ),
                             ],
                           ),
