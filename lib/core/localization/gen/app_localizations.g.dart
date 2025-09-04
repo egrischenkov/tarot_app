@@ -176,6 +176,60 @@ abstract class AppLocalizations {
   /// In ru, this message translates to:
   /// **'Нет подписки? Давай подберем'**
   String get profileScreen$SuggestSubscription;
+
+  /// No description provided for @settingsScreen$Title.
+  ///
+  /// In ru, this message translates to:
+  /// **'Настройки'**
+  String get settingsScreen$Title;
+
+  /// No description provided for @settingsScreen$EditProfile.
+  ///
+  /// In ru, this message translates to:
+  /// **'Редактировать профиль'**
+  String get settingsScreen$EditProfile;
+
+  /// No description provided for @settingsScreen$ManageSubscription.
+  ///
+  /// In ru, this message translates to:
+  /// **'Управление подпиской'**
+  String get settingsScreen$ManageSubscription;
+
+  /// No description provided for @settingsScreen$App.
+  ///
+  /// In ru, this message translates to:
+  /// **'Приложение'**
+  String get settingsScreen$App;
+
+  /// No description provided for @settingsScreen$ChangeLanguage.
+  ///
+  /// In ru, this message translates to:
+  /// **'Изменить язык'**
+  String get settingsScreen$ChangeLanguage;
+
+  /// No description provided for @settingsScreen$ChangeTheme.
+  ///
+  /// In ru, this message translates to:
+  /// **'Тема оформления'**
+  String get settingsScreen$ChangeTheme;
+
+  /// No description provided for @settingsScreen$AboutApp.
+  ///
+  /// In ru, this message translates to:
+  /// **'О приложении'**
+  String get settingsScreen$AboutApp;
+
+  /// No description provided for @settingsScreen$FeedbackForm.
+  ///
+  /// In ru, this message translates to:
+  /// **'Форма обратной связи'**
+  String get settingsScreen$FeedbackForm;
+
+  /// No description provided for @settingsScreen$LogOut.
+  ///
+  /// In ru, this message translates to:
+  /// **'Выйти из аккаунта'**
+  String get settingsScreen$LogOut;
 }
 
 class _AppLocalizationsDelegate extends LocalizationsDelegate<AppLocalizations> {

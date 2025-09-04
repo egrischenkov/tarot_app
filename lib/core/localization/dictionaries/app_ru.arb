@@ -28,5 +28,18 @@
     "profileScreen$Title": "Профиль",
     "profileScreen$Subscription": "Подписка",
     "profileScreen$ChooseSubscription": "Выбрать подписку",
-    "profileScreen$SuggestSubscription": "Нет подписки? Давай подберем"
+    "profileScreen$SuggestSubscription": "Нет подписки? Давай подберем",
+    "@segmentSettingsScreen": {
+        "---------": "---------",
+        "description": "Settings screen"
+    },
+    "settingsScreen$Title": "Настройки",
+    "settingsScreen$EditProfile": "Редактировать профиль",
+    "settingsScreen$ManageSubscription": "Управление подпиской",
+    "settingsScreen$App": "Приложение",
+    "settingsScreen$ChangeLanguage": "Изменить язык",
+    "settingsScreen$ChangeTheme": "Тема оформления",
+    "settingsScreen$AboutApp": "О приложении",
+    "settingsScreen$FeedbackForm": "Форма обратной связи",
+    "settingsScreen$LogOut": "Выйти из аккаунта"
 }

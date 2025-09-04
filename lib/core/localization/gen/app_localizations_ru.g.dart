@@ -49,4 +49,31 @@ class AppLocalizationsRu extends AppLocalizations {
 
   @override
   String get profileScreen$SuggestSubscription => 'Нет подписки? Давай подберем';
+
+  @override
+  String get settingsScreen$Title => 'Настройки';
+
+  @override
+  String get settingsScreen$EditProfile => 'Редактировать профиль';
+
+  @override
+  String get settingsScreen$ManageSubscription => 'Управление подпиской';
+
+  @override
+  String get settingsScreen$App => 'Приложение';
+
+  @override
+  String get settingsScreen$ChangeLanguage => 'Изменить язык';
+
+  @override
+  String get settingsScreen$ChangeTheme => 'Тема оформления';
+
+  @override
+  String get settingsScreen$AboutApp => 'О приложении';
+
+  @override
+  String get settingsScreen$FeedbackForm => 'Форма обратной связи';
+
+  @override
+  String get settingsScreen$LogOut => 'Выйти из аккаунта';
 }

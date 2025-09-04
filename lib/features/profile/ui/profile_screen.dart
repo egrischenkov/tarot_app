@@ -51,7 +51,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
     final l10n = context.l10n;
     final colors = context.colors;
 
-    return BaseScreen(
+    return UiKitBaseScreen(
       title: l10n.profileScreen$Title,
       actions: [
         GestureDetector(
