@@ -9,6 +9,7 @@ import 'package:taro/features/funny/ui/funny_screen.dart';
 import 'package:taro/features/home/ui/home_screen.dart';
 import 'package:taro/features/onboarding/ui/onboarding_screen.dart';
 import 'package:taro/features/profile/ui/profile_screen.dart';
+import 'package:taro/features/settings/ui/settings_screen.dart';
 import 'package:taro/features/yammy/ui/yammy_screen.dart';
 
 part 'app_router.gr.dart';
@@ -47,6 +48,7 @@ class AppRouter extends RootStackRouter {
               ],
             ),
             AutoRoute(page: ProfileRoute.page),
+            AutoRoute(page: SettingsRoute.page),
           ],
         ),
       ];

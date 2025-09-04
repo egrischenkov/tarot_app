@@ -58,12 +58,15 @@ class Assets {
   const Assets._();
 
   static const AssetGenImage tarotMeets = AssetGenImage('assets/TarotMeets.png');
+  static const AssetGenImage androidAppIcon = AssetGenImage('assets/android_app_icon.png');
+  static const AssetGenImage androidForeground = AssetGenImage('assets/android_foreground.png');
   static const $AssetsIconsGen icons = $AssetsIconsGen();
   static const $AssetsImagesGen images = $AssetsImagesGen();
+  static const AssetGenImage iosAppIcon = AssetGenImage('assets/ios_app_icon.png');
   static const $AssetsLottieGen lottie = $AssetsLottieGen();
 
   /// List of all assets
-  static List<AssetGenImage> get values => [tarotMeets];
+  static List<AssetGenImage> get values => [tarotMeets, androidAppIcon, androidForeground, iosAppIcon];
 }
 
 class AssetGenImage {
