@@ -9,6 +9,7 @@ import 'package:flutter/services.dart';
 import 'package:lottie/lottie.dart';
 import 'package:taro/core/assets/gen/assets.gen.dart';
 import 'package:taro/core/extensions/context_extension.dart';
+import 'package:taro/core/routing/app_router.dart';
 import 'package:taro/features/profile/ui/widgets/profile_widget.dart';
 import 'package:tarot_ui_kit/ui_kit.dart';
 
@@ -50,31 +51,28 @@ class _ProfileScreenState extends State<ProfileScreen> {
     final l10n = context.l10n;
     final colors = context.colors;
 
-    return Scaffold(
-      extendBodyBehindAppBar: true,
-      appBar: UiKitAppBar(
-        title: l10n.profileScreen$Title,
-        actions: [
-          GestureDetector(
-            onTap: _onShareTap,
-            behavior: HitTestBehavior.translucent,
-            child: Assets.icons.share.svg(
-              width: UiKitSize.x5,
-              height: UiKitSize.x5,
-            ),
+    return BaseScreen(
+      title: l10n.profileScreen$Title,
+      actions: [
+        GestureDetector(
+          onTap: _onShareTap,
+          behavior: HitTestBehavior.translucent,
+          child: Assets.icons.share.svg(
+            width: UiKitSize.x5,
+            height: UiKitSize.x5,
           ),
-          GestureDetector(
-            onTap: _onSettingsTap,
-            behavior: HitTestBehavior.translucent,
-            child: Assets.icons.settings.svg(
-              width: UiKitSize.x5,
-              height: UiKitSize.x5,
-            ),
+        ),
+        GestureDetector(
+          onTap: _onSettingsTap,
+          behavior: HitTestBehavior.translucent,
+          child: Assets.icons.settings.svg(
+            width: UiKitSize.x5,
+            height: UiKitSize.x5,
           ),
-        ],
-        scrollOffset: _offset,
-        onBack: () => context.router.pop(),
-      ),
+        ),
+      ],
+      scrollOffset: _offset,
+      onBack: () => context.router.pop(),
       body: Stack(
         children: [
           Container(
@@ -202,7 +200,9 @@ class _ProfileScreenState extends State<ProfileScreen> {
 
   void _onShareTap() {}
 
-  void _onSettingsTap() {}
+  void _onSettingsTap() {
+    context.router.push(const SettingsRoute());
+  }
 
   Future<void> _onRefresh() async {
     // Simulate a refresh delay
