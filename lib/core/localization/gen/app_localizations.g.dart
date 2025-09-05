@@ -248,6 +248,18 @@ abstract class AppLocalizations {
   /// In ru, this message translates to:
   /// **'Как в системе'**
   String get settingsScreen$Theme$System;
+
+  /// No description provided for @settingsScreen$Language$En.
+  ///
+  /// In ru, this message translates to:
+  /// **'English'**
+  String get settingsScreen$Language$En;
+
+  /// No description provided for @settingsScreen$Language$Ru.
+  ///
+  /// In ru, this message translates to:
+  /// **'Русский'**
+  String get settingsScreen$Language$Ru;
 }
 
 class _AppLocalizationsDelegate extends LocalizationsDelegate<AppLocalizations> {

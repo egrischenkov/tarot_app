@@ -44,5 +44,7 @@
     "settingsScreen$LogOut": "Выйти из аккаунта",
     "settingsScreen$Theme$Light": "Всегда светлая",
     "settingsScreen$Theme$Dark": "Всегда тёмная",
-    "settingsScreen$Theme$System": "Как в системе"
+    "settingsScreen$Theme$System": "Как в системе",
+    "settingsScreen$Language$En": "English",
+    "settingsScreen$Language$Ru": "Русский"
 }

@@ -1,13 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:taro/core/extensions/context_extension.dart';
-import 'package:taro/features/settings/domain/entities/theme_option.dart';
+import 'package:taro/features/settings/domain/entities/language_option.dart';
 import 'package:tarot_ui_kit/ui_kit.dart';
 
-class ThemeBottomSheet extends StatefulWidget {
-  const ThemeBottomSheet._();
+class ChangeLanguageBottomSheet extends StatefulWidget {
+  const ChangeLanguageBottomSheet._();
 
   @override
-  State<ThemeBottomSheet> createState() => _ThemeBottomSheetState();
+  State<ChangeLanguageBottomSheet> createState() => _ChangeLanguageBottomSheetState();
 
   static Future<void> show({
     required BuildContext context,
@@ -16,13 +16,13 @@ class ThemeBottomSheet extends StatefulWidget {
       context: context,
       isScrollControlled: false,
       backgroundColor: context.colors.transparent,
-      builder: (_) => const ThemeBottomSheet._(),
+      builder: (_) => const ChangeLanguageBottomSheet._(),
     );
   }
 }
 
-class _ThemeBottomSheetState extends State<ThemeBottomSheet> {
-  ThemeOption selectedTheme = ThemeOption.system;
+class _ChangeLanguageBottomSheetState extends State<ChangeLanguageBottomSheet> {
+  LanguageOption selectedLanguage = LanguageOption.ru;
 
   @override
   Widget build(BuildContext context) {
@@ -35,11 +35,11 @@ class _ThemeBottomSheetState extends State<ThemeBottomSheet> {
             height: UiKitSpacing.x4,
             color: colors.whiteBgSecondary,
           ),
-          ThemeOption.values.map((value) {
+          LanguageOption.values.map((value) {
             return UiKitBottomSheetValueItem(
               label: value.getLabel(context),
-              isSelected: selectedTheme == value,
-              onTap: () => _onThemeOptionTap(value),
+              isSelected: selectedLanguage == value,
+              onTap: () => _onLanguageOptionTap(value),
             );
           }).toList(),
         ).toList(),
@@ -47,24 +47,20 @@ class _ThemeBottomSheetState extends State<ThemeBottomSheet> {
     );
   }
 
-  void _onThemeOptionTap(ThemeOption theme) {
+  void _onLanguageOptionTap(LanguageOption language) {
     setState(() {
-      selectedTheme = theme;
+      selectedLanguage = language;
     });
   }
 }
 
-extension ThemeOptionX on ThemeOption {
+extension LanguageOptionX on LanguageOption {
   String getLabel(BuildContext context) {
     final l10n = context.l10n;
 
-    switch (this) {
-      case ThemeOption.light:
-        return l10n.settingsScreen$Theme$Light;
-      case ThemeOption.dark:
-        return l10n.settingsScreen$Theme$Dark;
-      case ThemeOption.system:
-        return l10n.settingsScreen$Theme$System;
-    }
+    return switch (this) {
+      LanguageOption.ru => l10n.settingsScreen$Theme$Light,
+      LanguageOption.en => l10n.settingsScreen$Theme$Dark,
+    };
   }
 }

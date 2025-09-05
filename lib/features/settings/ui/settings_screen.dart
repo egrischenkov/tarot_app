@@ -1,7 +1,8 @@
 import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:taro/core/extensions/context_extension.dart';
-import 'package:taro/features/settings/ui/widgets/theme_bottom_sheet.dart';
+import 'package:taro/features/settings/ui/widgets/change_language_bottom_sheet.dart';
+import 'package:taro/features/settings/ui/widgets/change_theme_bottom_sheet.dart';
 import 'package:tarot_ui_kit/ui_kit.dart';
 
 @RoutePage()
@@ -54,7 +55,7 @@ class _SettingsScreenState extends State<SettingsScreen> {
                 ),
                 UiKitLineItem(
                   title: l10n.settingsScreen$ChangeLanguage,
-                  onTap: () {},
+                  onTap: _onChangeLanguageTap,
                 ),
                 UiKitLineItem(
                   title: l10n.settingsScreen$FeedbackForm,
@@ -87,6 +88,10 @@ class _SettingsScreenState extends State<SettingsScreen> {
   }
 
   void _onChangeThemeTap() {
-    ThemeBottomSheet.show(context: context);
+    ChangeThemeBottomSheet.show(context: context);
+  }
+
+  void _onChangeLanguageTap() {
+    ChangeLanguageBottomSheet.show(context: context);
   }
 }

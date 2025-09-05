@@ -85,4 +85,10 @@ class AppLocalizationsRu extends AppLocalizations {
 
   @override
   String get settingsScreen$Theme$System => 'Как в системе';
+
+  @override
+  String get settingsScreen$Language$En => 'English';
+
+  @override
+  String get settingsScreen$Language$Ru => 'Русский';
 }
