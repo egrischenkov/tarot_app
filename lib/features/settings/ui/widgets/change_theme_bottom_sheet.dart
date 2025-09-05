@@ -55,7 +55,7 @@ class _ChangeThemeBottomSheetState extends State<ChangeThemeBottomSheet> {
   }
 }
 
-extension ThemeOptionX on ThemeOption {
+extension _ThemeOptionX on ThemeOption {
   String getLabel(BuildContext context) {
     final l10n = context.l10n;
 

@@ -54,7 +54,7 @@ class _ChangeLanguageBottomSheetState extends State<ChangeLanguageBottomSheet> {
   }
 }
 
-extension LanguageOptionX on LanguageOption {
+extension _LanguageOptionX on LanguageOption {
   String getLabel(BuildContext context) {
     final l10n = context.l10n;
 
