@@ -91,4 +91,58 @@ class AppLocalizationsRu extends AppLocalizations {
 
   @override
   String get settingsScreen$Language$Ru => 'Русский';
+
+  @override
+  String get feedbackFormScreen$Title => 'Форма обратной связи';
+
+  @override
+  String get feedbackFormScreen$ShareYourFeedback => 'Поделитесь вашим фидбеком';
+
+  @override
+  String get feedbackFormScreen$RateYourExperience => 'Ваше впечатление';
+
+  @override
+  String get feedbackFormScreen$TerribleRate => 'Ужасно';
+
+  @override
+  String get feedbackFormScreen$BadRate => 'Плохо';
+
+  @override
+  String get feedbackFormScreen$OkayRate => 'Нормально';
+
+  @override
+  String get feedbackFormScreen$GoodRate => 'Хорошо';
+
+  @override
+  String get feedbackFormScreen$AwesomeRate => 'Отлично!';
+
+  @override
+  String get feedbackFormScreen$WhatDidYouLike => 'Что вам понравилось?';
+
+  @override
+  String get feedbackFormScreen$FeedbackCategory$CardInterpretations => 'Интерпретация карт';
+
+  @override
+  String get feedbackFormScreen$FeedbackCategory$AppDesign => 'Атмосфера и дизайн приложения';
+
+  @override
+  String get feedbackFormScreen$FeedbackCategory$Accuracy => 'Точность раскладов';
+
+  @override
+  String get feedbackFormScreen$FeedbackCategory$Usability => 'Удобство использования';
+
+  @override
+  String get feedbackFormScreen$FeedbackCategory$Variety => 'Разнообразие раскладов';
+
+  @override
+  String get feedbackFormScreen$FeedbackCategory$Inspiration => 'Вдохновение и личное развитие';
+
+  @override
+  String get feedbackFormScreen$FeedbackCategory$Other => 'Другое';
+
+  @override
+  String get feedbackFormScreen$Send => 'Отправить';
+
+  @override
+  String get feedbackFromScreen$YourComment => 'Ваш комментарий (необязательно)';
 }

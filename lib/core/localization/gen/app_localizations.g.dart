@@ -260,6 +260,114 @@ abstract class AppLocalizations {
   /// In ru, this message translates to:
   /// **'Русский'**
   String get settingsScreen$Language$Ru;
+
+  /// No description provided for @feedbackFormScreen$Title.
+  ///
+  /// In ru, this message translates to:
+  /// **'Форма обратной связи'**
+  String get feedbackFormScreen$Title;
+
+  /// No description provided for @feedbackFormScreen$ShareYourFeedback.
+  ///
+  /// In ru, this message translates to:
+  /// **'Поделитесь вашим фидбеком'**
+  String get feedbackFormScreen$ShareYourFeedback;
+
+  /// No description provided for @feedbackFormScreen$RateYourExperience.
+  ///
+  /// In ru, this message translates to:
+  /// **'Ваше впечатление'**
+  String get feedbackFormScreen$RateYourExperience;
+
+  /// No description provided for @feedbackFormScreen$TerribleRate.
+  ///
+  /// In ru, this message translates to:
+  /// **'Ужасно'**
+  String get feedbackFormScreen$TerribleRate;
+
+  /// No description provided for @feedbackFormScreen$BadRate.
+  ///
+  /// In ru, this message translates to:
+  /// **'Плохо'**
+  String get feedbackFormScreen$BadRate;
+
+  /// No description provided for @feedbackFormScreen$OkayRate.
+  ///
+  /// In ru, this message translates to:
+  /// **'Нормально'**
+  String get feedbackFormScreen$OkayRate;
+
+  /// No description provided for @feedbackFormScreen$GoodRate.
+  ///
+  /// In ru, this message translates to:
+  /// **'Хорошо'**
+  String get feedbackFormScreen$GoodRate;
+
+  /// No description provided for @feedbackFormScreen$AwesomeRate.
+  ///
+  /// In ru, this message translates to:
+  /// **'Отлично!'**
+  String get feedbackFormScreen$AwesomeRate;
+
+  /// No description provided for @feedbackFormScreen$WhatDidYouLike.
+  ///
+  /// In ru, this message translates to:
+  /// **'Что вам понравилось?'**
+  String get feedbackFormScreen$WhatDidYouLike;
+
+  /// No description provided for @feedbackFormScreen$FeedbackCategory$CardInterpretations.
+  ///
+  /// In ru, this message translates to:
+  /// **'Интерпретация карт'**
+  String get feedbackFormScreen$FeedbackCategory$CardInterpretations;
+
+  /// No description provided for @feedbackFormScreen$FeedbackCategory$AppDesign.
+  ///
+  /// In ru, this message translates to:
+  /// **'Атмосфера и дизайн приложения'**
+  String get feedbackFormScreen$FeedbackCategory$AppDesign;
+
+  /// No description provided for @feedbackFormScreen$FeedbackCategory$Accuracy.
+  ///
+  /// In ru, this message translates to:
+  /// **'Точность раскладов'**
+  String get feedbackFormScreen$FeedbackCategory$Accuracy;
+
+  /// No description provided for @feedbackFormScreen$FeedbackCategory$Usability.
+  ///
+  /// In ru, this message translates to:
+  /// **'Удобство использования'**
+  String get feedbackFormScreen$FeedbackCategory$Usability;
+
+  /// No description provided for @feedbackFormScreen$FeedbackCategory$Variety.
+  ///
+  /// In ru, this message translates to:
+  /// **'Разнообразие раскладов'**
+  String get feedbackFormScreen$FeedbackCategory$Variety;
+
+  /// No description provided for @feedbackFormScreen$FeedbackCategory$Inspiration.
+  ///
+  /// In ru, this message translates to:
+  /// **'Вдохновение и личное развитие'**
+  String get feedbackFormScreen$FeedbackCategory$Inspiration;
+
+  /// No description provided for @feedbackFormScreen$FeedbackCategory$Other.
+  ///
+  /// In ru, this message translates to:
+  /// **'Другое'**
+  String get feedbackFormScreen$FeedbackCategory$Other;
+
+  /// No description provided for @feedbackFormScreen$Send.
+  ///
+  /// In ru, this message translates to:
+  /// **'Отправить'**
+  String get feedbackFormScreen$Send;
+
+  /// No description provided for @feedbackFromScreen$YourComment.
+  ///
+  /// In ru, this message translates to:
+  /// **'Ваш комментарий (необязательно)'**
+  String get feedbackFromScreen$YourComment;
 }
 
 class _AppLocalizationsDelegate extends LocalizationsDelegate<AppLocalizations> {
