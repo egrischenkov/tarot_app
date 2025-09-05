@@ -68,5 +68,6 @@
     "feedbackFormScreen$FeedbackCategory$Inspiration": "Вдохновение и личное развитие",
     "feedbackFormScreen$FeedbackCategory$Other": "Другое",
     "feedbackFormScreen$Send": "Отправить",
-    "feedbackFromScreen$YourComment": "Ваш комментарий (необязательно)"
+    "feedbackFromScreen$YourComment": "Ваш комментарий (необязательно)",
+    "feedbackFromScreen$CommentHint": "Опишите ваш опыт использования приложения"
 }

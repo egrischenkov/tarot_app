@@ -145,4 +145,7 @@ class AppLocalizationsRu extends AppLocalizations {
 
   @override
   String get feedbackFromScreen$YourComment => 'Ваш комментарий (необязательно)';
+
+  @override
+  String get feedbackFromScreen$CommentHint => 'Опишите ваш опыт использования приложения';
 }

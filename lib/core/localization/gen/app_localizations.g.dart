@@ -368,6 +368,12 @@ abstract class AppLocalizations {
   /// In ru, this message translates to:
   /// **'Ваш комментарий (необязательно)'**
   String get feedbackFromScreen$YourComment;
+
+  /// No description provided for @feedbackFromScreen$CommentHint.
+  ///
+  /// In ru, this message translates to:
+  /// **'Опишите ваш опыт использования приложения'**
+  String get feedbackFromScreen$CommentHint;
 }
 
 class _AppLocalizationsDelegate extends LocalizationsDelegate<AppLocalizations> {
