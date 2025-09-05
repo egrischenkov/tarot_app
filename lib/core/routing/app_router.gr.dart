@@ -75,6 +75,22 @@ class DecksRoute extends PageRouteInfo<void> {
 }
 
 /// generated route for
+/// [FeedbackFormScreen]
+class FeedbackFormRoute extends PageRouteInfo<void> {
+  const FeedbackFormRoute({List<PageRouteInfo>? children})
+    : super(FeedbackFormRoute.name, initialChildren: children);
+
+  static const String name = 'FeedbackFormRoute';
+
+  static PageInfo page = PageInfo(
+    name,
+    builder: (data) {
+      return const FeedbackFormScreen();
+    },
+  );
+}
+
+/// generated route for
 /// [FunnyScreen]
 class FunnyRoute extends PageRouteInfo<void> {
   const FunnyRoute({List<PageRouteInfo>? children})

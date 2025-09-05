@@ -5,6 +5,7 @@ import 'package:taro/features/daily_card/ui/daily_card_screen.dart';
 import 'package:taro/features/debug/ui/debug_screen.dart';
 import 'package:taro/features/debug/ui/debug_wrapper_entry.dart';
 import 'package:taro/features/decks/ui/decks_screen.dart';
+import 'package:taro/features/feedback_form/ui/feedback_form_screen.dart';
 import 'package:taro/features/funny/ui/funny_screen.dart';
 import 'package:taro/features/home/ui/home_screen.dart';
 import 'package:taro/features/onboarding/ui/onboarding_screen.dart';
@@ -49,6 +50,7 @@ class AppRouter extends RootStackRouter {
             ),
             AutoRoute(page: ProfileRoute.page),
             AutoRoute(page: SettingsRoute.page),
+            AutoRoute(page: FeedbackFormRoute.page),
           ],
         ),
       ];
