@@ -230,6 +230,24 @@ abstract class AppLocalizations {
   /// In ru, this message translates to:
   /// **'Выйти из аккаунта'**
   String get settingsScreen$LogOut;
+
+  /// No description provided for @settingsScreen$Theme$Light.
+  ///
+  /// In ru, this message translates to:
+  /// **'Всегда светлая'**
+  String get settingsScreen$Theme$Light;
+
+  /// No description provided for @settingsScreen$Theme$Dark.
+  ///
+  /// In ru, this message translates to:
+  /// **'Всегда тёмная'**
+  String get settingsScreen$Theme$Dark;
+
+  /// No description provided for @settingsScreen$Theme$System.
+  ///
+  /// In ru, this message translates to:
+  /// **'Как в системе'**
+  String get settingsScreen$Theme$System;
 }
 
 class _AppLocalizationsDelegate extends LocalizationsDelegate<AppLocalizations> {

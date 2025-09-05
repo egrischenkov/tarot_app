@@ -41,5 +41,8 @@
     "settingsScreen$ChangeTheme": "Тема оформления",
     "settingsScreen$AboutApp": "О приложении",
     "settingsScreen$FeedbackForm": "Форма обратной связи",
-    "settingsScreen$LogOut": "Выйти из аккаунта"
+    "settingsScreen$LogOut": "Выйти из аккаунта",
+    "settingsScreen$Theme$Light": "Всегда светлая",
+    "settingsScreen$Theme$Dark": "Всегда тёмная",
+    "settingsScreen$Theme$System": "Как в системе"
 }

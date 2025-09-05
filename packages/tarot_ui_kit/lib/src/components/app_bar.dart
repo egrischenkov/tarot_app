@@ -68,7 +68,7 @@ class UiKitAppBar extends StatelessWidget implements PreferredSizeWidget {
                         if (actions != null) UiKitSpacing.x6.w,
                         Expanded(
                           child: Row(
-                            mainAxisAlignment: MainAxisAlignment.center,
+                            mainAxisAlignment: actions != null ? MainAxisAlignment.start : MainAxisAlignment.center,
                             children: [
                               Text(
                                 title,

@@ -1,6 +1,7 @@
 import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:taro/core/extensions/context_extension.dart';
+import 'package:taro/features/settings/ui/widgets/theme_bottom_sheet.dart';
 import 'package:tarot_ui_kit/ui_kit.dart';
 
 @RoutePage()
@@ -49,7 +50,7 @@ class _SettingsScreenState extends State<SettingsScreen> {
               items: [
                 UiKitLineItem(
                   title: l10n.settingsScreen$ChangeTheme,
-                  onTap: () {},
+                  onTap: _onChangeThemeTap,
                 ),
                 UiKitLineItem(
                   title: l10n.settingsScreen$ChangeLanguage,
@@ -83,5 +84,9 @@ class _SettingsScreenState extends State<SettingsScreen> {
         ),
       ),
     );
+  }
+
+  void _onChangeThemeTap() {
+    ThemeBottomSheet.show(context: context);
   }
 }

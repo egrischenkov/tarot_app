@@ -76,4 +76,13 @@ class AppLocalizationsRu extends AppLocalizations {
 
   @override
   String get settingsScreen$LogOut => 'Выйти из аккаунта';
+
+  @override
+  String get settingsScreen$Theme$Light => 'Всегда светлая';
+
+  @override
+  String get settingsScreen$Theme$Dark => 'Всегда тёмная';
+
+  @override
+  String get settingsScreen$Theme$System => 'Как в системе';
 }

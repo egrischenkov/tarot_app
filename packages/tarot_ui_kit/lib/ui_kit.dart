@@ -1,6 +1,8 @@
 export 'src/components/app_bar.dart';
 export 'src/components/base_screen.dart';
 export 'src/components/border_beam.dart';
+export 'src/components/bottom_sheet/bottom_sheet_value_item.dart';
+export 'src/components/bottom_sheet/bottom_sheet_wrapper.dart';
 export 'src/components/buttons/back_button.dart';
 export 'src/components/buttons/big_button.dart';
 export 'src/components/buttons/forward_button.dart';

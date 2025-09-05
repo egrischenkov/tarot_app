@@ -7,4 +7,5 @@ abstract class UiKitSize {
   static const double x5 = base * 5;
   static const double x6 = base * 6;
   static const double x8 = base * 8;
+  static const double x9 = base * 9;
 }
