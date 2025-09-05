@@ -30,8 +30,12 @@ class UiKitBottomSheetValueItem extends StatelessWidget {
         child: Row(
           children: [
             if (localTrailing != null) ...[
-              localTrailing,
-              UiKitSpacing.x2.w,
+              SizedBox(
+                height: UiKitSize.x6,
+                width: UiKitSize.x6,
+                child: localTrailing,
+              ),
+              UiKitSpacing.x4.w,
             ],
             Text(label, style: fonts.bodyRegular),
             const Spacer(),
