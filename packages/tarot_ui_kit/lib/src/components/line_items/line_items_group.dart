@@ -15,12 +15,7 @@ class UiKitLineItemsGroup extends StatelessWidget {
   Widget build(BuildContext context) {
     final colors = context.colors;
 
-    return Container(
-      padding: const EdgeInsets.all(UiKitSpacing.x4),
-      decoration: BoxDecoration(
-        borderRadius: BorderRadius.circular(UiKitSpacing.x4),
-        color: colors.whiteBgWhite,
-      ),
+    return UiKitBaseSectionWrapper(
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [

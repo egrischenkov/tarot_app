@@ -7,14 +7,7 @@ class ProfileItem extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final colors = context.colors;
-
-    return Container(
-      padding: const EdgeInsets.all(UiKitSpacing.x4),
-      decoration: BoxDecoration(
-        color: colors.whiteBgWhite,
-        borderRadius: BorderRadius.circular(UiKitSpacing.x4),
-      ),
+    return UiKitBaseSectionWrapper(
       child: child,
     );
   }

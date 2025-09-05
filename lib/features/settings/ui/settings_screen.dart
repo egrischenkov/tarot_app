@@ -1,6 +1,7 @@
 import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:taro/core/extensions/context_extension.dart';
+import 'package:taro/core/routing/app_router.dart';
 import 'package:taro/features/settings/ui/widgets/change_language_bottom_sheet.dart';
 import 'package:taro/features/settings/ui/widgets/change_theme_bottom_sheet.dart';
 import 'package:tarot_ui_kit/ui_kit.dart';
@@ -59,7 +60,7 @@ class _SettingsScreenState extends State<SettingsScreen> {
                 ),
                 UiKitLineItem(
                   title: l10n.settingsScreen$FeedbackForm,
-                  onTap: () {},
+                  onTap: _onFeedbackFormTap,
                 ),
                 UiKitLineItem(
                   title: l10n.settingsScreen$AboutApp,
@@ -68,12 +69,7 @@ class _SettingsScreenState extends State<SettingsScreen> {
               ],
             ),
             UiKitSpacing.x4.h,
-            Container(
-              padding: const EdgeInsets.all(UiKitSpacing.x4),
-              decoration: BoxDecoration(
-                borderRadius: BorderRadius.circular(UiKitRadius.x4),
-                color: colors.whiteBgWhite,
-              ),
+            UiKitBaseSectionWrapper(
               child: UiKitBigButton.regular(
                 context: context,
                 label: l10n.settingsScreen$LogOut,
@@ -93,5 +89,9 @@ class _SettingsScreenState extends State<SettingsScreen> {
 
   void _onChangeLanguageTap() {
     ChangeLanguageBottomSheet.show(context: context);
+  }
+
+  void _onFeedbackFormTap() {
+    context.router.push(const FeedbackFormRoute());
   }
 }
