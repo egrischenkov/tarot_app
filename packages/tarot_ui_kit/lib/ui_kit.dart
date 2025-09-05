@@ -7,6 +7,7 @@ export 'src/components/bottom_sheet/bottom_sheet_wrapper.dart';
 export 'src/components/buttons/back_button.dart';
 export 'src/components/buttons/big_button.dart';
 export 'src/components/buttons/forward_button.dart';
+export 'src/components/fields/text_field.dart';
 export 'src/components/indicators/page_indicator.dart';
 export 'src/components/line_items/checkbox_line_item.dart';
 export 'src/components/line_items/line_item.dart';
