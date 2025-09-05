@@ -111,8 +111,11 @@ class _UiKitBigButtonState extends State<UiKitBigButton> {
             padding: _padding,
             child: widget.isLoading
                 ? Center(
-                    child: CupertinoActivityIndicator(
-                      color: widget.labelColor,
+                    child: SizedBox(
+                      height: 19,
+                      child: CupertinoActivityIndicator(
+                        color: widget.labelColor,
+                      ),
                     ),
                   )
                 : Row(
