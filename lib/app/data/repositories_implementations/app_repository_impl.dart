@@ -68,6 +68,7 @@ extension on Locale {
 }
 
 extension on ThemeModel {
+  // ignore: unused_element
   ThemeOption get _toThemeOption {
     return ThemeOption.values.singleWhere((value) {
       return value.name == name;
