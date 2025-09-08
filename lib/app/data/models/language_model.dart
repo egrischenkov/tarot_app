@@ -1,0 +1,1 @@
+enum LanguageModel { ru, en }

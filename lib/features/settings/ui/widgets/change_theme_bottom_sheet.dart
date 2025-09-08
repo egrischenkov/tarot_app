@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:taro/app/domain/entities/theme_option.dart';
 import 'package:taro/core/extensions/context_extension.dart';
-import 'package:taro/features/settings/domain/entities/theme_option.dart';
 import 'package:tarot_ui_kit/ui_kit.dart';
 
 class ChangeThemeBottomSheet extends StatefulWidget {
