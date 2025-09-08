@@ -1,4 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart' show BlocProvider, MultiBlocProvider;
+import 'package:taro/app/domain/entities/language_option.dart';
+import 'package:taro/app/ui/bloc/language_bloc/language_bloc.dart';
 import 'package:taro/core/di/app_dependencies_container.dart';
 import 'package:taro/core/di/app_dependencies_scope.dart';
 import 'package:taro/core/localization/gen/app_localizations.g.dart';
@@ -24,11 +27,16 @@ class App extends StatelessWidget {
   Widget build(BuildContext context) {
     return AppDependenciesScope(
       dependencies: _dependenciesContainer,
-      child: MaterialApp.router(
-        localizationsDelegates: AppLocalizations.localizationsDelegates,
-        supportedLocales: AppLocalizations.supportedLocales,
-        routerConfig: _router.config(navigatorObservers: () => [HeroController()]),
-        theme: UiKitTheme.light,
+      child: MultiBlocProvider(
+        providers: [
+          BlocProvider.value(value: LanguageBloc(languageOption: LanguageOption.ru)),
+        ],
+        child: MaterialApp.router(
+          localizationsDelegates: AppLocalizations.localizationsDelegates,
+          supportedLocales: AppLocalizations.supportedLocales,
+          routerConfig: _router.config(navigatorObservers: () => [HeroController()]),
+          theme: UiKitTheme.light,
+        ),
       ),
     );
   }
