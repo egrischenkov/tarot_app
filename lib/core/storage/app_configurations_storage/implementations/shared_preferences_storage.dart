@@ -4,6 +4,7 @@ part of '../app_configurations_storage.dart';
 /// This class provides methods to get and set application configuration values through SharedPreferences.
 class SharedPreferencesStorage implements AppConfigurationsStorage {
   static const _isOnboardingCompleted = 'is_onboarding_completed';
+  static const _selectedLanguageOption = 'selected_language_option';
 
   final SharedPreferences _sharedPreferences;
   final Logger _logger;
@@ -21,6 +22,12 @@ class SharedPreferencesStorage implements AppConfigurationsStorage {
       );
 
   @override
+  String? get selectedLocaleCode => _getRemotePrimitiveValue<String?>(
+        keyName: _selectedLanguageOption,
+        defaultValue: null,
+      );
+
+  @override
   Future<void> setOnboardingCompleted({required bool value}) async {
     try {
       await _sharedPreferences.setBool(_isOnboardingCompleted, value);
@@ -33,12 +40,29 @@ class SharedPreferencesStorage implements AppConfigurationsStorage {
     }
   }
 
+  @override
+  Future<void> setSelectedLocaleCode({required String localeCode}) async {
+    try {
+      await _sharedPreferences.setString(_selectedLanguageOption, localeCode);
+    } catch (e, s) {
+      _logger.error(
+        'Failed to set $_selectedLanguageOption in SharedPreferences',
+        error: e,
+        stackTrace: s,
+      );
+    }
+  }
+
   /// Get [bool], [String], [double], [int] value from SharedPreferences.
   T _getRemotePrimitiveValue<T>({
     required String keyName,
     required T defaultValue,
   }) {
     try {
+      if (isGenericTypeNullable<T>()) {
+        return _sharedPreferences.get(keyName) as T;
+      }
+
       if (T == bool) {
         return (_sharedPreferences.getBool(keyName) ?? defaultValue) as T;
       }
