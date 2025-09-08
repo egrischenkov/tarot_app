@@ -25,9 +25,12 @@ class UiKitCheckboxLineItem extends StatelessWidget {
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
-          Text(
-            title,
-            style: fonts.bodyRegular,
+          Expanded(
+            child: Text(
+              title,
+              style: fonts.bodyRegular,
+              overflow: TextOverflow.ellipsis,
+            ),
           ),
           UiKitSpacing.x2.w,
           Checkbox(
