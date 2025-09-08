@@ -1,0 +1,80 @@
+{
+    "@segmentCommon": {
+        "---------": "---------",
+        "description": "Common"
+    },
+    "appName": "Tarot",
+    "@segmentOnboarding": {
+        "---------": "---------",
+        "description": "Onboarding"
+    },
+    "onboarding$Path": "The journey begins here",
+    "onboarding$Answer": "The answer is already\nwithin you",
+    "onboarding$Cards": "The cards will help\nyou see it",
+    "onboarding$Skip": "Skip",
+    "onboarding$Start": "Start",
+    "@segmentHomeScreen": {
+        "---------": "---------",
+        "description": "Home screen"
+    },
+    "homeScreen$MenuDailyCard": "Daily Card",
+    "homeScreen$MenuFunny": "Fun Stuff",
+    "homeScreen$MenuSpreads": "Spreads",
+    "homeScreen$MenuYammy": "Treats",
+    "@segmentProfileScreen": {
+        "---------": "---------",
+        "description": "Profile screen"
+    },
+    "profileScreen$Title": "Profile",
+    "profileScreen$Subscription": "Subscription",
+    "profileScreen$ChooseSubscription": "Choose a subscription",
+    "profileScreen$SuggestSubscription": "No subscription? Let’s find one",
+    "@segmentSettingsScreen": {
+        "---------": "---------",
+        "description": "Settings screen"
+    },
+    "settingsScreen$Title": "Settings",
+    "settingsScreen$EditProfile": "Edit profile",
+    "settingsScreen$ManageSubscription": "Manage subscription",
+    "settingsScreen$App": "App",
+    "settingsScreen$ChangeLanguage": "Change language",
+    "settingsScreen$ChangeTheme": "Theme",
+    "settingsScreen$AboutApp": "About app",
+    "settingsScreen$FeedbackForm": "Feedback form",
+    "settingsScreen$LogOut": "Log out",
+    "settingsScreen$Theme$Light": "Always light",
+    "settingsScreen$Theme$Dark": "Always dark",
+    "settingsScreen$Theme$System": "Follow system",
+    "settingsScreen$Language$Ru": "Русский",
+    "settingsScreen$Language$En": "English",
+    "settingsScreen$Language$De": "Deutsch",
+    "settingsScreen$Language$Es": "Español",
+    "settingsScreen$Language$Fr": "Français",
+    "settingsScreen$Language$Hi": "हिन्दी",
+    "settingsScreen$Language$It": "Italiano",
+    "settingsScreen$Language$Pt": "Português",
+    "settingsScreen$Language$Zh": "中文",
+    "@segmentFeedbackFormScreen": {
+        "---------": "---------",
+        "description": "Feedback form screen"
+    },
+    "feedbackFormScreen$Title": "Feedback form",
+    "feedbackFormScreen$ShareYourFeedback": "Share your feedback",
+    "feedbackFormScreen$RateYourExperience": "Your experience",
+    "feedbackFormScreen$TerribleRate": "Terrible",
+    "feedbackFormScreen$BadRate": "Bad",
+    "feedbackFormScreen$OkayRate": "Okay",
+    "feedbackFormScreen$GoodRate": "Good",
+    "feedbackFormScreen$AwesomeRate": "Awesome!",
+    "feedbackFormScreen$WhatDidYouLike": "What did you like?",
+    "feedbackFormScreen$FeedbackCategory$CardInterpretations": "Card interpretations",
+    "feedbackFormScreen$FeedbackCategory$AppDesign": "App atmosphere & design",
+    "feedbackFormScreen$FeedbackCategory$Accuracy": "Accuracy of spreads",
+    "feedbackFormScreen$FeedbackCategory$Usability": "Ease of use",
+    "feedbackFormScreen$FeedbackCategory$Variety": "Variety of spreads",
+    "feedbackFormScreen$FeedbackCategory$Inspiration": "Inspiration & personal growth",
+    "feedbackFormScreen$FeedbackCategory$Other": "Other",
+    "feedbackFormScreen$Send": "Send",
+    "feedbackFromScreen$YourComment": "Your comment (optional)",
+    "feedbackFromScreen$CommentHint": "Describe your experience using the app"
+}

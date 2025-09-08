@@ -1,0 +1,80 @@
+{
+    "@segmentCommon": {
+        "---------": "---------",
+        "description": "Allgemein"
+    },
+    "appName": "Tarot",
+    "@segmentOnboarding": {
+        "---------": "---------",
+        "description": "Onboarding"
+    },
+    "onboarding$Path": "Der Weg beginnt hier",
+    "onboarding$Answer": "Die Antwort liegt bereits\nin dir",
+    "onboarding$Cards": "Die Karten helfen dir,\nsie zu erkennen",
+    "onboarding$Skip": "Überspringen",
+    "onboarding$Start": "Los geht’s",
+    "@segmentHomeScreen": {
+        "---------": "---------",
+        "description": "Home screen"
+    },
+    "homeScreen$MenuDailyCard": "Tageskarte",
+    "homeScreen$MenuFunny": "Spaß",
+    "homeScreen$MenuSpreads": "Legungen",
+    "homeScreen$MenuYammy": "Leckereien",
+    "@segmentProfileScreen": {
+        "---------": "---------",
+        "description": "Profile screen"
+    },
+    "profileScreen$Title": "Profil",
+    "profileScreen$Subscription": "Abonnement",
+    "profileScreen$ChooseSubscription": "Abonnement wählen",
+    "profileScreen$SuggestSubscription": "Kein Abo? Lass uns eins finden",
+    "@segmentSettingsScreen": {
+        "---------": "---------",
+        "description": "Settings screen"
+    },
+    "settingsScreen$Title": "Einstellungen",
+    "settingsScreen$EditProfile": "Profil bearbeiten",
+    "settingsScreen$ManageSubscription": "Abo verwalten",
+    "settingsScreen$App": "App",
+    "settingsScreen$ChangeLanguage": "Sprache ändern",
+    "settingsScreen$ChangeTheme": "Design",
+    "settingsScreen$AboutApp": "Über die App",
+    "settingsScreen$FeedbackForm": "Feedback-Formular",
+    "settingsScreen$LogOut": "Abmelden",
+    "settingsScreen$Theme$Light": "Immer hell",
+    "settingsScreen$Theme$Dark": "Immer dunkel",
+    "settingsScreen$Theme$System": "Systemstandard",
+    "settingsScreen$Language$Ru": "Русский",
+    "settingsScreen$Language$En": "English",
+    "settingsScreen$Language$De": "Deutsch",
+    "settingsScreen$Language$Es": "Español",
+    "settingsScreen$Language$Fr": "Français",
+    "settingsScreen$Language$Hi": "हिन्दी",
+    "settingsScreen$Language$It": "Italiano",
+    "settingsScreen$Language$Pt": "Português",
+    "settingsScreen$Language$Zh": "中文",
+    "@segmentFeedbackFormScreen": {
+        "---------": "---------",
+        "description": "Feedback form screen"
+    },
+    "feedbackFormScreen$Title": "Feedback-Formular",
+    "feedbackFormScreen$ShareYourFeedback": "Teile dein Feedback",
+    "feedbackFormScreen$RateYourExperience": "Dein Erlebnis",
+    "feedbackFormScreen$TerribleRate": "Schrecklich",
+    "feedbackFormScreen$BadRate": "Schlecht",
+    "feedbackFormScreen$OkayRate": "Okay",
+    "feedbackFormScreen$GoodRate": "Gut",
+    "feedbackFormScreen$AwesomeRate": "Großartig!",
+    "feedbackFormScreen$WhatDidYouLike": "Was hat dir gefallen?",
+    "feedbackFormScreen$FeedbackCategory$CardInterpretations": "Karteninterpretationen",
+    "feedbackFormScreen$FeedbackCategory$AppDesign": "Atmosphäre & Design der App",
+    "feedbackFormScreen$FeedbackCategory$Accuracy": "Genauigkeit der Legungen",
+    "feedbackFormScreen$FeedbackCategory$Usability": "Benutzerfreundlichkeit",
+    "feedbackFormScreen$FeedbackCategory$Variety": "Vielfalt der Legungen",
+    "feedbackFormScreen$FeedbackCategory$Inspiration": "Inspiration & persönliche Entwicklung",
+    "feedbackFormScreen$FeedbackCategory$Other": "Sonstiges",
+    "feedbackFormScreen$Send": "Senden",
+    "feedbackFromScreen$YourComment": "Dein Kommentar (optional)",
+    "feedbackFromScreen$CommentHint": "Beschreibe deine Erfahrung mit der App"
+}

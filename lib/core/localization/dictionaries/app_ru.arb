@@ -45,8 +45,15 @@
     "settingsScreen$Theme$Light": "Всегда светлая",
     "settingsScreen$Theme$Dark": "Всегда тёмная",
     "settingsScreen$Theme$System": "Как в системе",
-    "settingsScreen$Language$En": "English",
     "settingsScreen$Language$Ru": "Русский",
+    "settingsScreen$Language$En": "English",
+    "settingsScreen$Language$De": "Deutsch",
+    "settingsScreen$Language$Es": "Español",
+    "settingsScreen$Language$Fr": "Français",
+    "settingsScreen$Language$Hi": "हिन्दी",
+    "settingsScreen$Language$It": "Italiano",
+    "settingsScreen$Language$Pt": "Português",
+    "settingsScreen$Language$Zh": "中文",
     "@segmentFeedbackFormScreen": {
         "---------": "---------",
         "description": "Feedback form screen"

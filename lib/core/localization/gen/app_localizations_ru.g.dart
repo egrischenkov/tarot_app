@@ -87,10 +87,31 @@ class AppLocalizationsRu extends AppLocalizations {
   String get settingsScreen$Theme$System => 'Как в системе';
 
   @override
+  String get settingsScreen$Language$Ru => 'Русский';
+
+  @override
   String get settingsScreen$Language$En => 'English';
 
   @override
-  String get settingsScreen$Language$Ru => 'Русский';
+  String get settingsScreen$Language$De => 'Deutsch';
+
+  @override
+  String get settingsScreen$Language$Es => 'Español';
+
+  @override
+  String get settingsScreen$Language$Fr => 'Français';
+
+  @override
+  String get settingsScreen$Language$Hi => 'हिन्दी';
+
+  @override
+  String get settingsScreen$Language$It => 'Italiano';
+
+  @override
+  String get settingsScreen$Language$Pt => 'Português';
+
+  @override
+  String get settingsScreen$Language$Zh => '中文';
 
   @override
   String get feedbackFormScreen$Title => 'Форма обратной связи';

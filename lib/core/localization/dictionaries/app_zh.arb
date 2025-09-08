@@ -1,0 +1,80 @@
+{
+    "@segmentCommon": {
+        "---------": "---------",
+        "description": "Common"
+    },
+    "appName": "塔罗",
+    "@segmentOnboarding": {
+        "---------": "---------",
+        "description": "Onboarding"
+    },
+    "onboarding$Path": "旅程从这里开始",
+    "onboarding$Answer": "答案早已在你心中",
+    "onboarding$Cards": "卡牌会帮助你\n看见它",
+    "onboarding$Skip": "跳过",
+    "onboarding$Start": "开始",
+    "@segmentHomeScreen": {
+        "---------": "---------",
+        "description": "Home screen"
+    },
+    "homeScreen$MenuDailyCard": "今日卡牌",
+    "homeScreen$MenuFunny": "趣味",
+    "homeScreen$MenuSpreads": "牌阵",
+    "homeScreen$MenuYammy": "美味",
+    "@segmentProfileScreen": {
+        "---------": "---------",
+        "description": "Profile screen"
+    },
+    "profileScreen$Title": "个人资料",
+    "profileScreen$Subscription": "订阅",
+    "profileScreen$ChooseSubscription": "选择订阅",
+    "profileScreen$SuggestSubscription": "没有订阅？我们来帮你选一个",
+    "@segmentSettingsScreen": {
+        "---------": "---------",
+        "description": "Settings screen"
+    },
+    "settingsScreen$Title": "设置",
+    "settingsScreen$EditProfile": "编辑资料",
+    "settingsScreen$ManageSubscription": "管理订阅",
+    "settingsScreen$App": "应用",
+    "settingsScreen$ChangeLanguage": "更改语言",
+    "settingsScreen$ChangeTheme": "主题",
+    "settingsScreen$AboutApp": "关于应用",
+    "settingsScreen$FeedbackForm": "反馈表",
+    "settingsScreen$LogOut": "退出账号",
+    "settingsScreen$Theme$Light": "始终浅色",
+    "settingsScreen$Theme$Dark": "始终深色",
+    "settingsScreen$Theme$System": "跟随系统",
+    "settingsScreen$Language$Ru": "Русский",
+    "settingsScreen$Language$En": "English",
+    "settingsScreen$Language$De": "Deutsch",
+    "settingsScreen$Language$Es": "Español",
+    "settingsScreen$Language$Fr": "Français",
+    "settingsScreen$Language$Hi": "हिन्दी",
+    "settingsScreen$Language$It": "Italiano",
+    "settingsScreen$Language$Pt": "Português",
+    "settingsScreen$Language$Zh": "中文",
+    "@segmentFeedbackFormScreen": {
+        "---------": "---------",
+        "description": "Feedback form screen"
+    },
+    "feedbackFormScreen$Title": "反馈表",
+    "feedbackFormScreen$ShareYourFeedback": "分享你的反馈",
+    "feedbackFormScreen$RateYourExperience": "你的体验",
+    "feedbackFormScreen$TerribleRate": "糟糕",
+    "feedbackFormScreen$BadRate": "差",
+    "feedbackFormScreen$OkayRate": "一般",
+    "feedbackFormScreen$GoodRate": "好",
+    "feedbackFormScreen$AwesomeRate": "太棒了！",
+    "feedbackFormScreen$WhatDidYouLike": "你喜欢什么？",
+    "feedbackFormScreen$FeedbackCategory$CardInterpretations": "卡牌解读",
+    "feedbackFormScreen$FeedbackCategory$AppDesign": "应用氛围与设计",
+    "feedbackFormScreen$FeedbackCategory$Accuracy": "牌阵的准确性",
+    "feedbackFormScreen$FeedbackCategory$Usability": "使用便捷性",
+    "feedbackFormScreen$FeedbackCategory$Variety": "牌阵的多样性",
+    "feedbackFormScreen$FeedbackCategory$Inspiration": "启发与个人成长",
+    "feedbackFormScreen$FeedbackCategory$Other": "其他",
+    "feedbackFormScreen$Send": "发送",
+    "feedbackFromScreen$YourComment": "你的评论（可选）",
+    "feedbackFromScreen$CommentHint": "描述你使用应用的体验"
+}

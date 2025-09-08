@@ -5,7 +5,15 @@ import 'package:flutter/widgets.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:intl/intl.dart' as intl;
 
+import 'app_localizations_de.g.dart';
+import 'app_localizations_en.g.dart';
+import 'app_localizations_es.g.dart';
+import 'app_localizations_fr.g.dart';
+import 'app_localizations_hi.g.dart';
+import 'app_localizations_it.g.dart';
+import 'app_localizations_pt.g.dart';
 import 'app_localizations_ru.g.dart';
+import 'app_localizations_zh.g.dart';
 
 // ignore_for_file: type=lint
 
@@ -90,7 +98,15 @@ abstract class AppLocalizations {
 
   /// A list of this localizations delegate's supported locales.
   static const List<Locale> supportedLocales = <Locale>[
-    Locale('ru')
+    Locale('de'),
+    Locale('en'),
+    Locale('es'),
+    Locale('fr'),
+    Locale('hi'),
+    Locale('it'),
+    Locale('pt'),
+    Locale('ru'),
+    Locale('zh')
   ];
 
   /// No description provided for @appName.
@@ -249,17 +265,59 @@ abstract class AppLocalizations {
   /// **'Как в системе'**
   String get settingsScreen$Theme$System;
 
+  /// No description provided for @settingsScreen$Language$Ru.
+  ///
+  /// In ru, this message translates to:
+  /// **'Русский'**
+  String get settingsScreen$Language$Ru;
+
   /// No description provided for @settingsScreen$Language$En.
   ///
   /// In ru, this message translates to:
   /// **'English'**
   String get settingsScreen$Language$En;
 
-  /// No description provided for @settingsScreen$Language$Ru.
+  /// No description provided for @settingsScreen$Language$De.
   ///
   /// In ru, this message translates to:
-  /// **'Русский'**
-  String get settingsScreen$Language$Ru;
+  /// **'Deutsch'**
+  String get settingsScreen$Language$De;
+
+  /// No description provided for @settingsScreen$Language$Es.
+  ///
+  /// In ru, this message translates to:
+  /// **'Español'**
+  String get settingsScreen$Language$Es;
+
+  /// No description provided for @settingsScreen$Language$Fr.
+  ///
+  /// In ru, this message translates to:
+  /// **'Français'**
+  String get settingsScreen$Language$Fr;
+
+  /// No description provided for @settingsScreen$Language$Hi.
+  ///
+  /// In ru, this message translates to:
+  /// **'हिन्दी'**
+  String get settingsScreen$Language$Hi;
+
+  /// No description provided for @settingsScreen$Language$It.
+  ///
+  /// In ru, this message translates to:
+  /// **'Italiano'**
+  String get settingsScreen$Language$It;
+
+  /// No description provided for @settingsScreen$Language$Pt.
+  ///
+  /// In ru, this message translates to:
+  /// **'Português'**
+  String get settingsScreen$Language$Pt;
+
+  /// No description provided for @settingsScreen$Language$Zh.
+  ///
+  /// In ru, this message translates to:
+  /// **'中文'**
+  String get settingsScreen$Language$Zh;
 
   /// No description provided for @feedbackFormScreen$Title.
   ///
@@ -385,7 +443,7 @@ class _AppLocalizationsDelegate extends LocalizationsDelegate<AppLocalizations> 
   }
 
   @override
-  bool isSupported(Locale locale) => <String>['ru'].contains(locale.languageCode);
+  bool isSupported(Locale locale) => <String>['de', 'en', 'es', 'fr', 'hi', 'it', 'pt', 'ru', 'zh'].contains(locale.languageCode);
 
   @override
   bool shouldReload(_AppLocalizationsDelegate old) => false;
@@ -396,7 +454,15 @@ AppLocalizations lookupAppLocalizations(Locale locale) {
 
   // Lookup logic when only language code is specified.
   switch (locale.languageCode) {
+    case 'de': return AppLocalizationsDe();
+    case 'en': return AppLocalizationsEn();
+    case 'es': return AppLocalizationsEs();
+    case 'fr': return AppLocalizationsFr();
+    case 'hi': return AppLocalizationsHi();
+    case 'it': return AppLocalizationsIt();
+    case 'pt': return AppLocalizationsPt();
     case 'ru': return AppLocalizationsRu();
+    case 'zh': return AppLocalizationsZh();
   }
 
   throw FlutterError(
