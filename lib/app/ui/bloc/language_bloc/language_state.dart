@@ -5,72 +5,57 @@ typedef LanguageStateMatch<T, S extends LanguageState> = T Function(S state);
 sealed class LanguageState extends Equatable {
   const LanguageState();
 
-  const factory LanguageState.loading() = LanguageStateLoading;
+  const factory LanguageState.idle() = LanguageState$Idle;
 
   const factory LanguageState.success({
-    required Object data,
-  }) = LanguageStateSuccess;
-
-  const factory LanguageState.error() = LanguageStateError;
+    required LanguageOption languageOption,
+  }) = LanguageState$Success;
 
   T map<T>({
-    required LanguageStateMatch<T, LanguageStateLoading> loading,
-    required LanguageStateMatch<T, LanguageStateSuccess> success,
-    required LanguageStateMatch<T, LanguageStateError> error,
+    required LanguageStateMatch<T, LanguageState$Idle> idle,
+    required LanguageStateMatch<T, LanguageState$Success> success,
   }) =>
       switch (this) {
-        final LanguageStateLoading state => loading(state),
-        final LanguageStateSuccess state => success(state),
-        final LanguageStateError state => error(state),
+        final LanguageState$Idle state => idle(state),
+        final LanguageState$Success state => success(state),
       };
 
   T? mapOrNull<T>({
-    LanguageStateMatch<T, LanguageStateLoading>? loading,
-    LanguageStateMatch<T, LanguageStateSuccess>? success,
-    LanguageStateMatch<T, LanguageStateError>? error,
+    LanguageStateMatch<T, LanguageState$Idle>? idle,
+    LanguageStateMatch<T, LanguageState$Success>? success,
   }) =>
       map<T?>(
-        loading: loading ?? (_) => null,
+        idle: idle ?? (_) => null,
         success: success ?? (_) => null,
-        error: error ?? (_) => null,
       );
 
   T maybeMap<T>({
     required T Function() orElse,
-    LanguageStateMatch<T, LanguageStateLoading>? loading,
-    LanguageStateMatch<T, LanguageStateSuccess>? success,
-    LanguageStateMatch<T, LanguageStateError>? error,
+    LanguageStateMatch<T, LanguageState$Idle>? idle,
+    LanguageStateMatch<T, LanguageState$Success>? success,
   }) =>
       map<T>(
-        loading: loading ?? (_) => orElse(),
+        idle: idle ?? (_) => orElse(),
         success: success ?? (_) => orElse(),
-        error: error ?? (_) => orElse(),
       );
 }
 
 /// States
 
-final class LanguageStateLoading extends LanguageState {
-  const LanguageStateLoading();
+final class LanguageState$Idle extends LanguageState {
+  const LanguageState$Idle();
 
   @override
   List<Object?> get props => [];
 }
 
-final class LanguageStateSuccess extends LanguageState {
-  final Object data;
+final class LanguageState$Success extends LanguageState {
+  final LanguageOption languageOption;
 
-  const LanguageStateSuccess({
-    required this.data,
+  const LanguageState$Success({
+    required this.languageOption,
   });
 
   @override
-  List<Object?> get props => [data];
-}
-
-final class LanguageStateError extends LanguageState {
-  const LanguageStateError();
-
-  @override
-  List<Object?> get props => [];
+  List<Object?> get props => [languageOption];
 }

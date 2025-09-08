@@ -5,19 +5,23 @@ typedef LanguageEventMatch<T, S extends LanguageEvent> = T Function(S event);
 sealed class LanguageEvent extends Equatable {
   const LanguageEvent();
 
-  const factory LanguageEvent.start() = LanguageEventStart;
+  const factory LanguageEvent.languageChanged({
+    required LanguageOption languageOption,
+  }) = LanguageEvent$LanguageChanged;
 
   T map<T>({
-    required LanguageEventMatch<T, LanguageEventStart> start,
+    required LanguageEventMatch<T, LanguageEvent$LanguageChanged> languageChanged,
   }) =>
       switch (this) {
-        final LanguageEventStart event => start(event),
+        final LanguageEvent$LanguageChanged event => languageChanged(event),
       };
 }
 
-final class LanguageEventStart extends LanguageEvent {
-  const LanguageEventStart();
+final class LanguageEvent$LanguageChanged extends LanguageEvent {
+  final LanguageOption languageOption;
+
+  const LanguageEvent$LanguageChanged({required this.languageOption});
 
   @override
-  List<Object?> get props => [];
+  List<Object?> get props => [languageOption];
 }
