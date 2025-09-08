@@ -2,7 +2,7 @@
 
 The architecture in this project strictly follows the principles of **Clean Architecture** with a touch of **Domain-Driven Design (DDD)**. UI state management is handled using **BLoC**.
 
-![tarot\_architecture.png](https://cdn2.buildin.ai/s3/93af0a7c-0caf-4a81-a98c-48481a6ca1b9/tarot_architecture.png?time=1749828600\&token=e9aff9b24f487b13ca3b0bf7a650b85b\&role=free)
+![tarot\_architecture.png](src/tarot_architecture.png)
 
 ## 📁 Project Structure
 
