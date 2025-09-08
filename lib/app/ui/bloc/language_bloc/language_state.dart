@@ -5,6 +5,11 @@ typedef LanguageStateMatch<T, S extends LanguageState> = T Function(S state);
 sealed class LanguageState extends Equatable {
   const LanguageState();
 
+  LanguageOption get languageOption => maybeMap(
+        success: (state) => state.languageOption,
+        orElse: () => LanguageOption.english,
+      );
+
   const factory LanguageState.idle() = LanguageState$Idle;
 
   const factory LanguageState.success({
@@ -50,6 +55,7 @@ final class LanguageState$Idle extends LanguageState {
 }
 
 final class LanguageState$Success extends LanguageState {
+  @override
   final LanguageOption languageOption;
 
   const LanguageState$Success({
