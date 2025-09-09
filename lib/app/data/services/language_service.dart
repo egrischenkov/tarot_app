@@ -3,13 +3,13 @@ import 'dart:ui';
 
 import 'package:taro/core/storage/app_configurations_storage/app_configurations_storage.dart';
 
-final class LocaleService {
+final class LanguageService {
   final AppConfigurationsStorage _appConfigurationsStorage;
 
   late Locale currentLocale;
 
   /// @nodoc
-  LocaleService({required AppConfigurationsStorage appConfigurationsStorage})
+  LanguageService({required AppConfigurationsStorage appConfigurationsStorage})
       : _appConfigurationsStorage = appConfigurationsStorage {
     currentLocale = _getCurrentLocale();
   }
