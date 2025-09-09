@@ -5,8 +5,8 @@ class ChangeLanguageUseCase {
   final AppRepository _repository;
 
   ChangeLanguageUseCase({
-    required AppRepository repository,
-  }) : _repository = repository;
+    required AppRepository appRepository,
+  }) : _repository = appRepository;
 
   Future<void> changeLanguage({required LanguageOption languageOption}) {
     return _repository.setCurrentLanguage(languageOption: languageOption);

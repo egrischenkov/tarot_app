@@ -3,20 +3,24 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:taro/app/data/repositories_implementations/app_repository_impl.dart';
 import 'package:taro/app/data/services/language_service.dart';
 import 'package:taro/app/data/services/theme_service.dart';
+import 'package:taro/app/domain/repositories/app_repository.dart';
 import 'package:taro/app/domain/use_cases/language/change_language_use_case.dart';
 import 'package:taro/app/domain/use_cases/language/get_current_language_use_case.dart';
+import 'package:taro/app/domain/use_cases/theme/change_theme_use_case.dart';
+import 'package:taro/app/domain/use_cases/theme/get_current_theme_use_case.dart';
 import 'package:taro/app/ui/bloc/language_bloc/language_bloc.dart';
+import 'package:taro/app/ui/bloc/theme_bloc/theme_bloc.dart';
 import 'package:taro/core/di/app_dependencies_container.dart';
 import 'package:taro/core/di/app_dependencies_scope.dart';
 import 'package:taro/core/localization/gen/app_localizations.g.dart';
 import 'package:taro/core/routing/app_router.dart';
 import 'package:taro/core/routing/guards/onboarding_guard.dart';
-import 'package:taro/core/storage/app_configurations_storage/app_configurations_storage.dart';
 import 'package:tarot_ui_kit/ui_kit.dart';
 
 class App extends StatelessWidget {
   final AppDependenciesContainer _dependenciesContainer;
   final AppRouter _router;
+  final AppRepository _appRepository;
 
   App({
     required AppDependenciesContainer dependenciesContainer,
@@ -26,6 +30,10 @@ class App extends StatelessWidget {
           onboardingGuard: OnboardingGuard(
             sharedPreferencesStorage: dependenciesContainer.appConfigurationsStorage,
           ),
+        ),
+        _appRepository = AppRepositoryImpl(
+          localeService: LanguageService(appConfigurationsStorage: dependenciesContainer.appConfigurationsStorage),
+          themeService: ThemeService(appConfigurationsStorage: dependenciesContainer.appConfigurationsStorage),
         );
 
   @override
@@ -35,7 +43,10 @@ class App extends StatelessWidget {
       child: MultiBlocProvider(
         providers: [
           BlocProvider.value(
-            value: _createLanguageBloc(_dependenciesContainer.appConfigurationsStorage),
+            value: _createLanguageBloc(),
+          ),
+          BlocProvider.value(
+            value: _createThemeBloc(),
           ),
         ],
         child: BlocBuilder<LanguageBloc, LanguageState>(
@@ -51,14 +62,17 @@ class App extends StatelessWidget {
     );
   }
 
-  LanguageBloc _createLanguageBloc(AppConfigurationsStorage appConfigurationsStorage) {
-    final appRepository = AppRepositoryImpl(
-      localeService: LanguageService(appConfigurationsStorage: appConfigurationsStorage),
-      themeService: ThemeService(appConfigurationsStorage: appConfigurationsStorage),
-    );
+  LanguageBloc _createLanguageBloc() {
     return LanguageBloc(
-      getCurrentLanguageUseCase: GetCurrentLanguageUseCase(appRepository: appRepository),
-      changeLanguageUseCase: ChangeLanguageUseCase(repository: appRepository),
+      getCurrentLanguageUseCase: GetCurrentLanguageUseCase(appRepository: _appRepository),
+      changeLanguageUseCase: ChangeLanguageUseCase(appRepository: _appRepository),
+    );
+  }
+
+  ThemeBloc _createThemeBloc() {
+    return ThemeBloc(
+      getCurrentThemeUseCase: GetCurrentThemeUseCase(appRepository: _appRepository),
+      changeThemeUseCase: ChangeThemeUseCase(appRepository: _appRepository),
     );
   }
 }
