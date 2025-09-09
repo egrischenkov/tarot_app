@@ -1,7 +1,10 @@
 import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:taro/app/ui/bloc/language_bloc/language_bloc.dart';
 import 'package:taro/core/extensions/context_extension.dart';
 import 'package:taro/core/routing/app_router.dart';
+import 'package:taro/features/settings/ui/extensions/language_option_extension.dart';
 import 'package:taro/features/settings/ui/widgets/change_language_bottom_sheet.dart';
 import 'package:taro/features/settings/ui/widgets/change_theme_bottom_sheet.dart';
 import 'package:tarot_ui_kit/ui_kit.dart';
@@ -37,11 +40,11 @@ class _SettingsScreenState extends State<SettingsScreen> {
               title: l10n.settingsScreen$Title,
               items: [
                 UiKitLineItem(
-                  title: l10n.settingsScreen$EditProfile,
+                  label: l10n.settingsScreen$EditProfile,
                   onTap: () {},
                 ),
                 UiKitLineItem(
-                  title: l10n.settingsScreen$ManageSubscription,
+                  label: l10n.settingsScreen$ManageSubscription,
                   onTap: () {},
                 ),
               ],
@@ -51,19 +54,20 @@ class _SettingsScreenState extends State<SettingsScreen> {
               title: l10n.settingsScreen$App,
               items: [
                 UiKitLineItem(
-                  title: l10n.settingsScreen$ChangeTheme,
+                  label: l10n.settingsScreen$ChangeTheme,
                   onTap: _onChangeThemeTap,
                 ),
                 UiKitLineItem(
-                  title: l10n.settingsScreen$ChangeLanguage,
+                  label: l10n.settingsScreen$ChangeLanguage,
                   onTap: _onChangeLanguageTap,
+                  valueLabel: context.read<LanguageBloc>().state.languageOption.getLabel(context),
                 ),
                 UiKitLineItem(
-                  title: l10n.settingsScreen$FeedbackForm,
+                  label: l10n.settingsScreen$FeedbackForm,
                   onTap: _onFeedbackFormTap,
                 ),
                 UiKitLineItem(
-                  title: l10n.settingsScreen$AboutApp,
+                  label: l10n.settingsScreen$AboutApp,
                   onTap: () {},
                 ),
               ],
