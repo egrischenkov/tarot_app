@@ -2,8 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:taro/app/data/repositories_implementations/app_repository_impl.dart';
 import 'package:taro/app/data/services/language_service.dart';
-import 'package:taro/app/domain/use_cases/change_language_use_case.dart';
-import 'package:taro/app/domain/use_cases/get_current_language_use_case.dart';
+import 'package:taro/app/data/services/theme_service.dart';
+import 'package:taro/app/domain/use_cases/language/change_language_use_case.dart';
+import 'package:taro/app/domain/use_cases/language/get_current_language_use_case.dart';
 import 'package:taro/app/ui/bloc/language_bloc/language_bloc.dart';
 import 'package:taro/core/di/app_dependencies_container.dart';
 import 'package:taro/core/di/app_dependencies_scope.dart';
@@ -53,6 +54,7 @@ class App extends StatelessWidget {
   LanguageBloc _createLanguageBloc(AppConfigurationsStorage appConfigurationsStorage) {
     final appRepository = AppRepositoryImpl(
       localeService: LanguageService(appConfigurationsStorage: appConfigurationsStorage),
+      themeService: ThemeService(appConfigurationsStorage: appConfigurationsStorage),
     );
     return LanguageBloc(
       getCurrentLanguageUseCase: GetCurrentLanguageUseCase(appRepository: appRepository),

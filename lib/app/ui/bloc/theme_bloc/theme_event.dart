@@ -5,19 +5,23 @@ typedef ThemeEventMatch<T, S extends ThemeEvent> = T Function(S event);
 sealed class ThemeEvent extends Equatable {
   const ThemeEvent();
 
-  const factory ThemeEvent.start() = ThemeEventStart;
+  const factory ThemeEvent.themeChanged({
+    required ThemeOption themeOption,
+  }) = ThemeEvent$ThemeChanged;
 
   T map<T>({
-    required ThemeEventMatch<T, ThemeEventStart> start,
+    required ThemeEventMatch<T, ThemeEvent$ThemeChanged> start,
   }) =>
       switch (this) {
-        final ThemeEventStart event => start(event),
+        final ThemeEvent$ThemeChanged event => start(event),
       };
 }
 
-final class ThemeEventStart extends ThemeEvent {
-  const ThemeEventStart();
+final class ThemeEvent$ThemeChanged extends ThemeEvent {
+  final ThemeOption themeOption;
+
+  const ThemeEvent$ThemeChanged({required this.themeOption});
 
   @override
-  List<Object?> get props => [];
+  List<Object?> get props => [themeOption];
 }

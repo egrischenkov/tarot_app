@@ -5,72 +5,57 @@ typedef ThemeStateMatch<T, S extends ThemeState> = T Function(S state);
 sealed class ThemeState extends Equatable {
   const ThemeState();
 
-  const factory ThemeState.loading() = ThemeStateLoading;
+  const factory ThemeState.idle() = ThemeState$Idle;
 
   const factory ThemeState.success({
-    required Object data,
-  }) = ThemeStateSuccess;
-
-  const factory ThemeState.error() = ThemeStateError;
+    required ThemeOption themeOption,
+  }) = ThemeState$Success;
 
   T map<T>({
-    required ThemeStateMatch<T, ThemeStateLoading> loading,
-    required ThemeStateMatch<T, ThemeStateSuccess> success,
-    required ThemeStateMatch<T, ThemeStateError> error,
+    required ThemeStateMatch<T, ThemeState$Idle> idle,
+    required ThemeStateMatch<T, ThemeState$Success> success,
   }) =>
       switch (this) {
-        final ThemeStateLoading state => loading(state),
-        final ThemeStateSuccess state => success(state),
-        final ThemeStateError state => error(state),
+        final ThemeState$Idle state => idle(state),
+        final ThemeState$Success state => success(state),
       };
 
   T? mapOrNull<T>({
-    ThemeStateMatch<T, ThemeStateLoading>? loading,
-    ThemeStateMatch<T, ThemeStateSuccess>? success,
-    ThemeStateMatch<T, ThemeStateError>? error,
+    ThemeStateMatch<T, ThemeState$Idle>? idle,
+    ThemeStateMatch<T, ThemeState$Success>? success,
   }) =>
       map<T?>(
-        loading: loading ?? (_) => null,
+        idle: idle ?? (_) => null,
         success: success ?? (_) => null,
-        error: error ?? (_) => null,
       );
 
   T maybeMap<T>({
     required T Function() orElse,
-    ThemeStateMatch<T, ThemeStateLoading>? loading,
-    ThemeStateMatch<T, ThemeStateSuccess>? success,
-    ThemeStateMatch<T, ThemeStateError>? error,
+    ThemeStateMatch<T, ThemeState$Idle>? idle,
+    ThemeStateMatch<T, ThemeState$Success>? success,
   }) =>
       map<T>(
-        loading: loading ?? (_) => orElse(),
+        idle: idle ?? (_) => orElse(),
         success: success ?? (_) => orElse(),
-        error: error ?? (_) => orElse(),
       );
 }
 
 /// States
 
-final class ThemeStateLoading extends ThemeState {
-  const ThemeStateLoading();
+final class ThemeState$Idle extends ThemeState {
+  const ThemeState$Idle();
 
   @override
   List<Object?> get props => [];
 }
 
-final class ThemeStateSuccess extends ThemeState {
-  final Object data;
+final class ThemeState$Success extends ThemeState {
+  final ThemeOption themeOption;
 
-  const ThemeStateSuccess({
-    required this.data,
+  const ThemeState$Success({
+    required this.themeOption,
   });
 
   @override
-  List<Object?> get props => [data];
-}
-
-final class ThemeStateError extends ThemeState {
-  const ThemeStateError();
-
-  @override
-  List<Object?> get props => [];
+  List<Object?> get props => [themeOption];
 }
