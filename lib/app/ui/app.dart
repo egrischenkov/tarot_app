@@ -52,7 +52,7 @@ class App extends StatelessWidget {
 
   LanguageBloc _createLanguageBloc(AppConfigurationsStorage appConfigurationsStorage) {
     final appRepository = AppRepositoryImpl(
-      localeService: LocaleService(appConfigurationsStorage: appConfigurationsStorage),
+      localeService: LanguageService(appConfigurationsStorage: appConfigurationsStorage),
     );
     return LanguageBloc(
       getCurrentLanguageUseCase: GetCurrentLanguageUseCase(appRepository: appRepository),

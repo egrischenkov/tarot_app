@@ -29,9 +29,9 @@ class SharedPreferencesStorage implements AppConfigurationsStorage {
       );
 
   @override
-  String get selectedTheme => _getRemotePrimitiveValue(
+  String get selectedTheme => _getRemotePrimitiveValue<String>(
         keyName: _selectedTheme,
-        defaultValue: 'light',
+        defaultValue: AppConfigurationsStorage.systemThemeKey,
       );
 
   @override

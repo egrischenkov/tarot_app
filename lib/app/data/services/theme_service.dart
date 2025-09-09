@@ -2,6 +2,10 @@ import 'package:taro/core/storage/app_configurations_storage/app_configurations_
 
 /// A service that stores and retrieves app theme mode.
 class ThemeService {
+  static const systemTheme = AppConfigurationsStorage.systemThemeKey;
+  static const lightTheme = AppConfigurationsStorage.lightThemeKey;
+  static const darkTheme = AppConfigurationsStorage.darkThemeKey;
+
   final AppConfigurationsStorage _appConfigurationsStorage;
 
   late String currentThemeMode;
@@ -12,13 +16,13 @@ class ThemeService {
     currentThemeMode = _getCurrentTheme();
   }
 
-  void selectTheme(String selectedThemeMode) {
+  Future<void> selectTheme(String selectedThemeMode) async {
     if (currentThemeMode == selectedThemeMode) {
       return;
     }
 
     currentThemeMode = selectedThemeMode;
-    _appConfigurationsStorage.setSelectedTheme(theme: selectedThemeMode);
+    return _appConfigurationsStorage.setSelectedTheme(theme: selectedThemeMode);
   }
 
   String _getCurrentTheme() {

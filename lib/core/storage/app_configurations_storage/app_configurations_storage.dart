@@ -5,6 +5,10 @@ import 'package:tarot_logger/logger.dart';
 part 'implementations/shared_preferences_storage.dart';
 
 abstract interface class AppConfigurationsStorage {
+  static const systemThemeKey = 'system';
+  static const lightThemeKey = 'light';
+  static const darkThemeKey = 'dark';
+
   bool get isOnboardingCompleted;
   String? get selectedLocaleCode;
   String get selectedTheme;
