@@ -5,6 +5,7 @@ part of '../app_configurations_storage.dart';
 class SharedPreferencesStorage implements AppConfigurationsStorage {
   static const _isOnboardingCompleted = 'is_onboarding_completed';
   static const _selectedLanguageOption = 'selected_language_option';
+  static const _selectedTheme = 'selectedTheme';
 
   final SharedPreferences _sharedPreferences;
   final Logger _logger;
@@ -28,6 +29,12 @@ class SharedPreferencesStorage implements AppConfigurationsStorage {
       );
 
   @override
+  String get selectedTheme => _getRemotePrimitiveValue(
+        keyName: _selectedTheme,
+        defaultValue: 'light',
+      );
+
+  @override
   Future<void> setOnboardingCompleted({required bool value}) async {
     try {
       await _sharedPreferences.setBool(_isOnboardingCompleted, value);
@@ -47,6 +54,19 @@ class SharedPreferencesStorage implements AppConfigurationsStorage {
     } catch (e, s) {
       _logger.error(
         'Failed to set $_selectedLanguageOption in SharedPreferences',
+        error: e,
+        stackTrace: s,
+      );
+    }
+  }
+
+  @override
+  Future<void> setSelectedTheme({required String theme}) async {
+    try {
+      await _sharedPreferences.setString(_selectedTheme, theme);
+    } catch (e, s) {
+      _logger.error(
+        'Failed to set $_selectedTheme in SharedPreferences',
         error: e,
         stackTrace: s,
       );

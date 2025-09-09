@@ -7,9 +7,11 @@ part 'implementations/shared_preferences_storage.dart';
 abstract interface class AppConfigurationsStorage {
   bool get isOnboardingCompleted;
   String? get selectedLocaleCode;
+  String get selectedTheme;
 
   Future<void> setOnboardingCompleted({required bool value});
   Future<void> setSelectedLocaleCode({required String localeCode});
+  Future<void> setSelectedTheme({required String theme});
 
   Future<void> clear();
 }
