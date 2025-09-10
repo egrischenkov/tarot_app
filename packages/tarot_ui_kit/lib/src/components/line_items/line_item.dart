@@ -24,7 +24,7 @@ class UiKitLineItem extends StatelessWidget {
       onTap: onTap,
       child: DecoratedBox(
         decoration: BoxDecoration(
-          color: colors.whiteBgWhite,
+          color: colors.background,
         ),
         child: Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,

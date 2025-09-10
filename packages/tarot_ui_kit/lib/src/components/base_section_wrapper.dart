@@ -14,7 +14,7 @@ class UiKitBaseSectionWrapper extends StatelessWidget {
       padding: const EdgeInsets.all(UiKitSpacing.x4),
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(UiKitSpacing.x4),
-        color: context.colors.whiteBgWhite,
+        color: context.colors.background,
       ),
       child: child,
     );

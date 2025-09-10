@@ -2,12 +2,9 @@ import 'package:flutter/material.dart';
 
 @immutable
 class UiKitFonts extends ThemeExtension<UiKitFonts> {
-  // TODO(egrischenkov): remove it when the onboarding screen will be ready
-  final TextStyle testStyle;
-  final TextStyle headlineLarge;
-
   final TextStyle largeTitleEmphasized;
   final TextStyle largeTitleRegular;
+  final TextStyle headlineLarge;
   final TextStyle headlineRegular;
   final TextStyle bodyRegular;
   final TextStyle bodyEmphasized;
@@ -15,7 +12,6 @@ class UiKitFonts extends ThemeExtension<UiKitFonts> {
   final TextStyle xsLabel;
 
   const UiKitFonts({
-    required this.testStyle,
     required this.headlineLarge,
     required this.largeTitleEmphasized,
     required this.largeTitleRegular,
@@ -39,7 +35,6 @@ class UiKitFonts extends ThemeExtension<UiKitFonts> {
     TextStyle? xsLabel,
   }) {
     return UiKitFonts(
-      testStyle: testStyle ?? this.testStyle,
       headlineLarge: headlineLarge ?? this.headlineLarge,
       largeTitleEmphasized: largeTitleEmphasized ?? this.largeTitleEmphasized,
       largeTitleRegular: largeTitleRegular ?? this.largeTitleRegular,
@@ -57,7 +52,6 @@ class UiKitFonts extends ThemeExtension<UiKitFonts> {
       return this;
     }
     return UiKitFonts(
-      testStyle: TextStyle.lerp(testStyle, other.testStyle, t) ?? other.testStyle,
       headlineLarge: TextStyle.lerp(headlineLarge, other.headlineLarge, t) ?? other.headlineLarge,
       headlineRegular: TextStyle.lerp(headlineRegular, other.headlineRegular, t) ?? other.headlineRegular,
       largeTitleEmphasized:

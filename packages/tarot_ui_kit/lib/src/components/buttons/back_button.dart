@@ -16,7 +16,7 @@ class UiKitBackButton extends StatelessWidget {
       child: Container(
         padding: const EdgeInsets.all(UiKitSpacing.base),
         decoration: BoxDecoration(
-          color: colors.whiteBgSecondary,
+          color: colors.backgroundSecondary,
           shape: BoxShape.circle,
         ),
         child: const Icon(

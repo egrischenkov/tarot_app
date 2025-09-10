@@ -28,7 +28,7 @@ class UiKitLineItemsGroup extends StatelessWidget {
           ...intersperse(
             Divider(
               height: UiKitSpacing.x5,
-              color: colors.whiteBgSecondary,
+              color: colors.backgroundSecondary,
             ),
             items,
             insertFirst: true,

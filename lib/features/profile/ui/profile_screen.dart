@@ -81,7 +81,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
               gradient: LinearGradient(
                 begin: Alignment.topLeft,
                 end: Alignment.bottomRight,
-                colors: [colors.lightYellow, colors.accentYellowSec],
+                colors: [colors.gradientFirst, colors.accentSecondary],
               ),
             ),
           ),
@@ -97,7 +97,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
                 bottom: 0,
                 height: MediaQuery.of(context).size.height * .4,
                 width: MediaQuery.of(context).size.width,
-                child: ColoredBox(color: colors.whiteBgSecondary),
+                child: ColoredBox(color: colors.backgroundSecondary),
               ),
               ProfileRefreshIndicator(
                 onRefresh: _onRefresh,
@@ -110,7 +110,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
                   children: [
                     const ProfileHeaderWidget(name: 'Лолкек Лолкекович'),
                     ColoredBox(
-                      color: colors.whiteBgSecondary,
+                      color: colors.backgroundSecondary,
                       child: Column(
                         children: [
                           UiKitSpacing.x4.h,
@@ -158,7 +158,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
                                   horizontal: UiKitSpacing.x2,
                                 ),
                                 decoration: BoxDecoration(
-                                  color: colors.whiteBgWhite,
+                                  color: colors.background,
                                   borderRadius: BorderRadius.circular(UiKitSpacing.x4),
                                 ),
                               ),
@@ -168,7 +168,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
                                   horizontal: UiKitSpacing.x2,
                                 ),
                                 decoration: BoxDecoration(
-                                  color: colors.whiteBgWhite,
+                                  color: colors.background,
                                   borderRadius: BorderRadius.circular(UiKitSpacing.x4),
                                 ),
                               ),
@@ -178,7 +178,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
                                   horizontal: UiKitSpacing.x2,
                                 ),
                                 decoration: BoxDecoration(
-                                  color: colors.whiteBgWhite,
+                                  color: colors.background,
                                   borderRadius: BorderRadius.circular(UiKitSpacing.x4),
                                 ),
                               ),

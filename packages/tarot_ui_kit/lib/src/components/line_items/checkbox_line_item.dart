@@ -20,7 +20,7 @@ class UiKitCheckboxLineItem extends StatelessWidget {
 
     return DecoratedBox(
       decoration: BoxDecoration(
-        color: colors.whiteBgWhite,
+        color: colors.background,
       ),
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -37,15 +37,15 @@ class UiKitCheckboxLineItem extends StatelessWidget {
             value: isSelected,
             fillColor: WidgetStateProperty.resolveWith((states) {
               if (!states.contains(WidgetState.selected)) {
-                return colors.whiteBgWhite;
+                return colors.background;
               }
               return null;
             }),
-            side: BorderSide(color: colors.grey),
+            side: BorderSide(color: colors.disabled),
             onChanged: onChanged,
             shape: const CircleBorder(),
-            checkColor: colors.whiteBgWhite,
-            activeColor: colors.accentYellow,
+            checkColor: colors.background,
+            activeColor: colors.accent,
           ),
         ],
       ),

@@ -110,7 +110,7 @@ class _HomeScreenState extends State<HomeScreen> with TickerProviderStateMixin {
                   child: Container(
                     padding: const EdgeInsets.symmetric(horizontal: 20),
                     height: UiKitAppBar.height,
-                    color: colors.whiteBgWhite,
+                    color: colors.background,
                     child: Row(
                       mainAxisAlignment: MainAxisAlignment.end,
                       children: [

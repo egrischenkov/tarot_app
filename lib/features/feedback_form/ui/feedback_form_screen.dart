@@ -38,7 +38,7 @@ class _FeedbackFormScreenState extends State<FeedbackFormScreen> {
           title: l10n.feedbackFormScreen$Title,
           onBack: router.pop,
           bodyWithAppBarOffset: true,
-          backgroundColor: colors.whiteBgSecondary,
+          backgroundColor: colors.backgroundSecondary,
           body: Padding(
             padding: const EdgeInsets.symmetric(horizontal: UiKitSpacing.x2),
             child: Column(

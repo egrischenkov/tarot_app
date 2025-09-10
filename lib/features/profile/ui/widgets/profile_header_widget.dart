@@ -32,12 +32,12 @@ class ProfileHeaderWidget extends StatelessWidget {
           height: UiKitSpacing.x5,
           width: MediaQuery.of(context).size.width,
           child: ColoredBox(
-            color: colors.whiteBgSecondary,
+            color: colors.backgroundSecondary,
           ),
         ),
         ClipContainerWithCutout(
           cutoutRadius: cutoutRadius,
-          color: colors.whiteBgWhite,
+          color: colors.background,
           child: Column(
             children: [Text(name, style: fonts.bodyEmphasized)],
           ),

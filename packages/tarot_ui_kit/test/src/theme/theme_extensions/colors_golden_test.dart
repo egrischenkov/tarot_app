@@ -11,111 +11,93 @@ void main() {
       builder: () => GoldenTestGroup(
         children: [
           GoldenTestScenario(
-            name: 'Accent-orange',
+            name: 'Accent',
             child: _ColorTile(
-              color: UiKitTheme.lightThemeColors.accentOrange,
+              color: UiKitTheme.lightThemeColors.accent,
             ),
           ),
           GoldenTestScenario(
-            name: 'Accent-yellow',
+            name: 'Accent-Secondary',
             child: _ColorTile(
-              color: UiKitTheme.lightThemeColors.accentYellow,
+              color: UiKitTheme.lightThemeColors.accentSecondary,
             ),
           ),
           GoldenTestScenario(
-            name: 'Accent-yellow-sec',
+            name: 'Accent-Tertiary',
             child: _ColorTile(
-              color: UiKitTheme.lightThemeColors.accentYellowSec,
+              color: UiKitTheme.lightThemeColors.accentTertiary,
             ),
           ),
           GoldenTestScenario(
-            name: 'Accent-purple',
+            name: 'Text',
             child: _ColorTile(
-              color: UiKitTheme.lightThemeColors.accentPurple,
+              color: UiKitTheme.lightThemeColors.text,
             ),
           ),
           GoldenTestScenario(
-            name: 'Accent-purple-sec',
+            name: 'Text-Disabled',
             child: _ColorTile(
-              color: UiKitTheme.lightThemeColors.accentPurpleSec,
+              color: UiKitTheme.lightThemeColors.textDisabled,
             ),
           ),
           GoldenTestScenario(
-            name: 'Purple-text',
+            name: 'Background',
             child: _ColorTile(
-              color: UiKitTheme.lightThemeColors.purpleText,
+              color: UiKitTheme.lightThemeColors.background,
             ),
           ),
           GoldenTestScenario(
-            name: 'Itsy-bitsy-black',
+            name: 'Background-Secondary',
             child: _ColorTile(
-              color: UiKitTheme.lightThemeColors.itsyBitsyBlack,
+              color: UiKitTheme.lightThemeColors.backgroundSecondary,
             ),
           ),
           GoldenTestScenario(
-            name: 'Grey-text',
+            name: 'Success',
             child: _ColorTile(
-              color: UiKitTheme.lightThemeColors.greyText,
+              color: UiKitTheme.lightThemeColors.success,
             ),
           ),
           GoldenTestScenario(
-            name: 'White-text',
+            name: 'Error',
             child: _ColorTile(
-              color: UiKitTheme.lightThemeColors.whiteText,
+              color: UiKitTheme.lightThemeColors.error,
             ),
           ),
           GoldenTestScenario(
-            name: 'White',
+            name: 'Disabled',
             child: _ColorTile(
-              color: UiKitTheme.lightThemeColors.whiteBgWhite,
-            ),
-          ),
-          GoldenTestScenario(
-            name: 'White-bg-white',
-            child: _ColorTile(
-              color: UiKitTheme.lightThemeColors.whiteBgWhite,
-            ),
-          ),
-          GoldenTestScenario(
-            name: 'White-bg-secondary',
-            child: _ColorTile(
-              color: UiKitTheme.lightThemeColors.whiteBgSecondary,
-            ),
-          ),
-          GoldenTestScenario(
-            name: 'Black-bg-mudberry',
-            child: _ColorTile(
-              color: UiKitTheme.lightThemeColors.blackBgMudberry,
-            ),
-          ),
-          GoldenTestScenario(
-            name: 'Black-bg-purple',
-            child: _ColorTile(
-              color: UiKitTheme.lightThemeColors.blackBgPurple,
-            ),
-          ),
-          GoldenTestScenario(
-            name: 'Good-green',
-            child: _ColorTile(
-              color: UiKitTheme.lightThemeColors.goodGreen,
-            ),
-          ),
-          GoldenTestScenario(
-            name: 'Wrong-red',
-            child: _ColorTile(
-              color: UiKitTheme.lightThemeColors.wrongRed,
-            ),
-          ),
-          GoldenTestScenario(
-            name: 'Light-yellow',
-            child: _ColorTile(
-              color: UiKitTheme.lightThemeColors.lightYellow,
+              color: UiKitTheme.lightThemeColors.disabled,
             ),
           ),
           GoldenTestScenario(
             name: 'Transparent',
             child: _ColorTile(
               color: UiKitTheme.lightThemeColors.transparent,
+            ),
+          ),
+          GoldenTestScenario(
+            name: 'Gradient-First',
+            child: _ColorTile(
+              color: UiKitTheme.lightThemeColors.gradientFirst,
+            ),
+          ),
+          GoldenTestScenario(
+            name: 'Gradient-Second',
+            child: _ColorTile(
+              color: UiKitTheme.lightThemeColors.gradientSecond,
+            ),
+          ),
+          GoldenTestScenario(
+            name: 'Border-Gradient-First',
+            child: _ColorTile(
+              color: UiKitTheme.lightThemeColors.borderGradientFirst,
+            ),
+          ),
+          GoldenTestScenario(
+            name: 'Border-Gradient-Second',
+            child: _ColorTile(
+              color: UiKitTheme.lightThemeColors.borderGradientSecond,
             ),
           ),
         ],

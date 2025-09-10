@@ -5,6 +5,11 @@ typedef ThemeStateMatch<T, S extends ThemeState> = T Function(S state);
 sealed class ThemeState extends Equatable {
   const ThemeState();
 
+  ThemeOption get themeOption => maybeMap(
+        success: (state) => state.themeOption,
+        orElse: () => ThemeOption.system,
+      );
+
   const factory ThemeState.idle() = ThemeState$Idle;
 
   const factory ThemeState.success({
@@ -50,6 +55,7 @@ final class ThemeState$Idle extends ThemeState {
 }
 
 final class ThemeState$Success extends ThemeState {
+  @override
   final ThemeOption themeOption;
 
   const ThemeState$Success({

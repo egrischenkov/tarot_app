@@ -30,7 +30,7 @@ class ChangeLanguageBottomSheet extends StatelessWidget {
             children: intersperse(
               Divider(
                 height: UiKitSpacing.x4,
-                color: colors.whiteBgSecondary,
+                color: colors.backgroundSecondary,
               ),
               LanguageOption.values.map((value) {
                 return UiKitBottomSheetValueItem(

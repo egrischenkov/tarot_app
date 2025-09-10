@@ -29,14 +29,14 @@ class UiKitAppBar extends StatelessWidget implements PreferredSizeWidget {
     final localScrollOffset = scrollOffset;
     final opacity = localScrollOffset != null ? (localScrollOffset / 100).clamp(0, 1).toDouble() : 1.0;
 
-    final bgColor = colors.whiteBgWhite.withValues(alpha: opacity);
+    final bgColor = colors.background.withValues(alpha: opacity);
     final elevation = opacity > 0.9 ? 2.0 : 0.0;
 
     return Material(
       elevation: elevation,
       color: bgColor,
       borderRadius: borderRadius,
-      shadowColor: colors.whiteBgSecondary.withValues(alpha: 0.6),
+      shadowColor: colors.backgroundSecondary.withValues(alpha: 0.6),
       child: AppBar(
         systemOverlayStyle: const SystemUiOverlayStyle(
           statusBarIconBrightness: Brightness.dark,

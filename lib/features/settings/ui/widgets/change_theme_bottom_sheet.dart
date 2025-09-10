@@ -33,7 +33,7 @@ class _ChangeThemeBottomSheetState extends State<ChangeThemeBottomSheet> {
         children: intersperse(
           Divider(
             height: UiKitSpacing.x4,
-            color: colors.whiteBgSecondary,
+            color: colors.backgroundSecondary,
           ),
           ThemeOption.values.map((value) {
             return UiKitBottomSheetValueItem(

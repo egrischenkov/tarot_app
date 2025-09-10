@@ -19,7 +19,7 @@ class UiKitBottomSheetWrapper extends StatelessWidget {
       padding: const EdgeInsets.symmetric(horizontal: UiKitSpacing.x4),
       margin: const EdgeInsets.symmetric(horizontal: UiKitSpacing.x2),
       decoration: BoxDecoration(
-        color: colors.whiteBgWhite,
+        color: colors.background,
         borderRadius: const BorderRadius.only(
           topLeft: Radius.circular(UiKitRadius.x4),
           topRight: Radius.circular(UiKitRadius.x4),
@@ -33,7 +33,7 @@ class UiKitBottomSheetWrapper extends StatelessWidget {
             height: UiKitSize.base,
             width: UiKitSize.x9,
             decoration: BoxDecoration(
-              color: context.colors.whiteBgSecondary,
+              color: context.colors.backgroundSecondary,
               borderRadius: const BorderRadius.all(Radius.circular(UiKitRadius.x4)),
             ),
           ),

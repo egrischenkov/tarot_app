@@ -26,33 +26,33 @@ class UiKitTextField extends StatelessWidget {
         disabledBorder: OutlineInputBorder(
           borderRadius: BorderRadius.circular(UiKitRadius.x3),
           borderSide: BorderSide(
-            color: colors.whiteBgSecondary,
+            color: colors.backgroundSecondary,
             width: UiKitSize.base / 2,
           ),
         ),
         enabledBorder: OutlineInputBorder(
           borderRadius: BorderRadius.circular(UiKitRadius.x3),
           borderSide: BorderSide(
-            color: colors.whiteBgSecondary,
+            color: colors.backgroundSecondary,
             width: UiKitSize.base / 2,
           ),
         ),
         focusedBorder: OutlineInputBorder(
           borderRadius: BorderRadius.circular(UiKitRadius.x3),
           borderSide: BorderSide(
-            color: colors.grey,
+            color: colors.disabled,
             width: UiKitSize.base / 2,
           ),
         ),
         border: OutlineInputBorder(
           borderRadius: BorderRadius.circular(UiKitRadius.x3),
           borderSide: BorderSide(
-            color: colors.whiteBgSecondary,
+            color: colors.backgroundSecondary,
             width: UiKitSize.base / 2,
           ),
         ),
         hintText: hintText,
-        hintStyle: fonts.xsLabel.copyWith(color: colors.greyText),
+        hintStyle: fonts.xsLabel.copyWith(color: colors.textDisabled),
       ),
       maxLength: maxLength,
       maxLines: maxLines,

@@ -77,7 +77,7 @@ class _EmojiItem extends StatelessWidget {
               duration: const Duration(milliseconds: 300),
               padding: const EdgeInsets.all(UiKitSpacing.x3),
               decoration: BoxDecoration(
-                color: isSelected ? colors.accentYellow : colors.whiteBgSecondary,
+                color: isSelected ? colors.accent : colors.backgroundSecondary,
                 shape: BoxShape.circle,
               ),
               child: Text(
@@ -91,12 +91,12 @@ class _EmojiItem extends StatelessWidget {
                 right: 0,
                 child: Container(
                   decoration: BoxDecoration(
-                    color: colors.accentYellowSec,
+                    color: colors.accentSecondary,
                     shape: BoxShape.circle,
                   ),
                   child: Icon(
                     Icons.check,
-                    color: colors.whiteBgWhite,
+                    color: colors.background,
                     size: UiKitSize.x6,
                   ),
                 ),

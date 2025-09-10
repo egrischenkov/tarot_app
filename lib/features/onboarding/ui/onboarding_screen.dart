@@ -66,7 +66,7 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
 
     return Scaffold(
       appBar: AppBar(
-        backgroundColor: colors.whiteBgWhite,
+        backgroundColor: colors.background,
         title: Text(l10n.appName, style: fonts.largeTitleRegular),
         centerTitle: false,
         actions: [
@@ -79,10 +79,10 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
                 curve: Curves.easeInOut,
                 style: isLastPage
                     ? fonts.largeTitleRegular.copyWith(
-                        color: colors.onSurface,
+                        color: colors.accentTertiary,
                       )
-                    : fonts.testStyle.copyWith(
-                        color: colors.grey.withValues(alpha: 0.8),
+                    : fonts.largeTitleRegular.copyWith(
+                        color: colors.gradientFirst.withValues(alpha: 0.8),
                       ),
                 child: Text(
                   isLastPage ? l10n.onboarding$Start : l10n.onboarding$Skip,
@@ -92,7 +92,7 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
           ),
         ],
       ),
-      backgroundColor: colors.whiteBgWhite,
+      backgroundColor: colors.background,
       body: SafeArea(
         child: Column(
           children: [
@@ -159,7 +159,7 @@ class _PageWidget extends StatelessWidget {
           child: Text(
             title,
             style: context.fonts.headlineLarge.copyWith(
-              color: context.colors.textUnselected,
+              color: context.colors.textDisabled,
             ),
           ),
         ),

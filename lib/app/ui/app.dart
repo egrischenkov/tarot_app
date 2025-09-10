@@ -50,12 +50,23 @@ class App extends StatelessWidget {
           ),
         ],
         child: BlocBuilder<LanguageBloc, LanguageState>(
-          builder: (_, state) => MaterialApp.router(
-            locale: state.languageOption.toLocale,
-            localizationsDelegates: AppLocalizations.localizationsDelegates,
-            supportedLocales: AppLocalizations.supportedLocales,
-            routerConfig: _router.config(navigatorObservers: () => [HeroController()]),
-            theme: UiKitTheme.light,
+          builder: (_, languageState) => BlocBuilder<ThemeBloc, ThemeState>(
+            builder: (context, themeState) {
+              return MaterialApp.router(
+                locale: languageState.languageOption.toLocale,
+                localizationsDelegates: AppLocalizations.localizationsDelegates,
+                supportedLocales: AppLocalizations.supportedLocales,
+                routerConfig: _router.config(navigatorObservers: () => [HeroController()]),
+                themeMode: ThemeMode.values.singleWhere(
+                  (mode) {
+                    return themeState.themeOption.name == mode.name;
+                  },
+                  orElse: () => ThemeMode.system,
+                ),
+                theme: UiKitTheme.lightThemeData,
+                darkTheme: UiKitTheme.darkThemeData,
+              );
+            },
           ),
         ),
       ),

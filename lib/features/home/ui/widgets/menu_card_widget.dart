@@ -53,7 +53,7 @@ class MenuCardWidget extends StatelessWidget {
             padding: const EdgeInsets.all(UiKitSpacing.x3),
             clipBehavior: Clip.hardEdge,
             decoration: BoxDecoration(
-              color: context.colors.whiteBgSecondary,
+              color: context.colors.backgroundSecondary,
               borderRadius: borderRadius,
               boxShadow: [
                 BoxShadow(

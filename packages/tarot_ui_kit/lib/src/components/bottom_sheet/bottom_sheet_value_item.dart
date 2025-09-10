@@ -26,7 +26,7 @@ class UiKitBottomSheetValueItem extends StatelessWidget {
       onTap: onTap,
       child: Container(
         height: UiKitSize.x6,
-        color: colors.whiteBgWhite,
+        color: colors.background,
         child: Row(
           children: [
             if (localTrailing != null) ...[
@@ -42,7 +42,7 @@ class UiKitBottomSheetValueItem extends StatelessWidget {
             if (isSelected)
               Icon(
                 Icons.check_circle,
-                color: colors.accentYellow,
+                color: colors.accent,
                 size: UiKitSize.x6,
               ),
           ],

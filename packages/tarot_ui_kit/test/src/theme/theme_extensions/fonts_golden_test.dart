@@ -19,39 +19,35 @@ void main() {
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   _TextTile(
-                    style: UiKitTheme.fonts.testStyle,
-                    label: 'Test Style',
-                  ),
-                  _TextTile(
-                    style: UiKitTheme.fonts.largeTitleEmphasized,
+                    style: UiKitTheme.fonts(UiKitTheme.lightThemeColors).largeTitleEmphasized,
                     label: 'Large Title Emphasized',
                   ),
                   _TextTile(
-                    style: UiKitTheme.fonts.largeTitleRegular,
+                    style: UiKitTheme.fonts(UiKitTheme.lightThemeColors).largeTitleRegular,
                     label: 'Large Title Regular',
                   ),
                   _TextTile(
-                    style: UiKitTheme.fonts.headlineRegular,
+                    style: UiKitTheme.fonts(UiKitTheme.lightThemeColors).headlineRegular,
                     label: 'Headline Regular',
                   ),
                   _TextTile(
-                    style: UiKitTheme.fonts.headlineLarge,
+                    style: UiKitTheme.fonts(UiKitTheme.lightThemeColors).headlineLarge,
                     label: 'Headline Large',
                   ),
                   _TextTile(
-                    style: UiKitTheme.fonts.bodyRegular,
+                    style: UiKitTheme.fonts(UiKitTheme.lightThemeColors).bodyRegular,
                     label: 'Body Regular',
                   ),
                   _TextTile(
-                    style: UiKitTheme.fonts.bodyEmphasized,
+                    style: UiKitTheme.fonts(UiKitTheme.lightThemeColors).bodyEmphasized,
                     label: 'Body Emphasized',
                   ),
                   _TextTile(
-                    style: UiKitTheme.fonts.bodyEmphasizedItalic,
+                    style: UiKitTheme.fonts(UiKitTheme.lightThemeColors).bodyEmphasizedItalic,
                     label: 'Body Emphasized Italic',
                   ),
                   _TextTile(
-                    style: UiKitTheme.fonts.xsLabel,
+                    style: UiKitTheme.fonts(UiKitTheme.lightThemeColors).xsLabel,
                     label: 'XS Label',
                   ),
                 ],

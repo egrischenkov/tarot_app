@@ -28,7 +28,7 @@ class _SettingsScreenState extends State<SettingsScreen> {
       title: l10n.settingsScreen$Title,
       onBack: router.pop,
       bodyWithAppBarOffset: true,
-      backgroundColor: colors.whiteBgSecondary,
+      backgroundColor: colors.backgroundSecondary,
       body: Padding(
         padding: const EdgeInsets.symmetric(
           horizontal: UiKitSpacing.x2,
