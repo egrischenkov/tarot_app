@@ -6,6 +6,7 @@ class UiKitColors extends ThemeExtension<UiKitColors> {
   final Color accentSecondary;
   final Color accentTertiary;
   final Color text;
+  final Color buttonText;
   final Color textDisabled;
   final Color background;
   final Color backgroundSecondary;
@@ -23,6 +24,7 @@ class UiKitColors extends ThemeExtension<UiKitColors> {
     required this.accentSecondary,
     required this.accentTertiary,
     required this.text,
+    required this.buttonText,
     required this.textDisabled,
     required this.background,
     required this.backgroundSecondary,
@@ -42,6 +44,7 @@ class UiKitColors extends ThemeExtension<UiKitColors> {
     Color? accentSecondary,
     Color? accentTertiary,
     Color? text,
+    Color? buttonText,
     Color? textDisabled,
     Color? background,
     Color? backgroundSecondary,
@@ -59,6 +62,7 @@ class UiKitColors extends ThemeExtension<UiKitColors> {
       accent: accent ?? this.accent,
       accentSecondary: accentSecondary ?? this.accentSecondary,
       text: text ?? this.text,
+      buttonText: buttonText ?? this.buttonText,
       textDisabled: textDisabled ?? this.textDisabled,
       background: background ?? this.background,
       backgroundSecondary: backgroundSecondary ?? this.backgroundSecondary,
@@ -83,6 +87,7 @@ class UiKitColors extends ThemeExtension<UiKitColors> {
       accentSecondary: Color.lerp(accentSecondary, other.accentSecondary, t) ?? other.accentSecondary,
       accentTertiary: Color.lerp(accentTertiary, other.accentTertiary, t) ?? other.accentTertiary,
       text: Color.lerp(text, other.text, t) ?? other.text,
+      buttonText: Color.lerp(buttonText, other.buttonText, t) ?? other.buttonText,
       textDisabled: Color.lerp(textDisabled, other.textDisabled, t) ?? other.textDisabled,
       background: Color.lerp(background, other.background, t) ?? other.background,
       backgroundSecondary: Color.lerp(backgroundSecondary, other.backgroundSecondary, t) ?? other.backgroundSecondary,

@@ -24,7 +24,7 @@ class UiKitBigButton extends StatefulWidget {
       UiKitBigButton._(
         label: label,
         backgroundColor: context.colors.accent,
-        labelColor: context.colors.text,
+        labelColor: context.colors.buttonText,
         pressedColor: context.colors.accentSecondary.withBrightness(1.5),
         title: title,
         suffix: suffix,
@@ -88,6 +88,8 @@ class _UiKitBigButtonState extends State<UiKitBigButton> {
 
   @override
   Widget build(BuildContext context) {
+    final colors = context.colors;
+
     return GestureDetector(
       onTapDown: (_) => setState(() {
         _isPressed = true;
@@ -131,7 +133,9 @@ class _UiKitBigButtonState extends State<UiKitBigButton> {
                           if (widget.title != null)
                             Text(
                               widget.title!,
-                              style: context.fonts.xsLabel,
+                              style: context.fonts.xsLabel.copyWith(
+                                color: colors.buttonText,
+                              ),
                               maxLines: 1,
                               overflow: TextOverflow.ellipsis,
                             ),
