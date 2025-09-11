@@ -39,6 +39,7 @@ class UiKitTheme {
     gradientSecond: const Color(0xFFFFB62C),
     borderGradientFirst: const Color(0xFFFFD964),
     borderGradientSecond: const Color(0xFF8240E6),
+    iconColor: const Color(0xFF2E2E2E),
   );
 
   static final darkThemeColors = UiKitColors(
@@ -58,6 +59,7 @@ class UiKitTheme {
     gradientSecond: const Color(0xFF3035c3),
     borderGradientFirst: const Color(0xFFFFD964),
     borderGradientSecond: const Color(0xFF7d7df6),
+    iconColor: const Color(0xFFF4F1F8),
   );
 
   static UiKitFonts fonts(UiKitColors colors) => UiKitFonts(

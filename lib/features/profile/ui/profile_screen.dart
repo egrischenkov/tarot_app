@@ -60,6 +60,10 @@ class _ProfileScreenState extends State<ProfileScreen> {
           child: Assets.icons.share.svg(
             width: UiKitSize.x5,
             height: UiKitSize.x5,
+            colorFilter: ColorFilter.mode(
+              colors.iconColor,
+              BlendMode.srcIn,
+            ),
           ),
         ),
         GestureDetector(
@@ -68,6 +72,10 @@ class _ProfileScreenState extends State<ProfileScreen> {
           child: Assets.icons.settings.svg(
             width: UiKitSize.x5,
             height: UiKitSize.x5,
+            colorFilter: ColorFilter.mode(
+              colors.iconColor,
+              BlendMode.srcIn,
+            ),
           ),
         ),
       ],
