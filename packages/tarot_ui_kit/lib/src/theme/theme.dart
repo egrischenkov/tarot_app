@@ -10,7 +10,7 @@ class UiKitTheme {
       lightThemeColors,
       fonts(lightThemeColors),
     ],
-    brightness: Brightness.light,
+    brightness: Brightness.dark,
   );
 
   static final darkThemeData = ThemeData(
@@ -19,7 +19,7 @@ class UiKitTheme {
       darkThemeColors,
       fonts(darkThemeColors),
     ],
-    brightness: Brightness.dark,
+    brightness: Brightness.light,
   );
 
   static final lightThemeColors = UiKitColors(

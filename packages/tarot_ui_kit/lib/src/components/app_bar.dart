@@ -32,15 +32,18 @@ class UiKitAppBar extends StatelessWidget implements PreferredSizeWidget {
     final bgColor = colors.background.withValues(alpha: opacity);
     final elevation = opacity > 0.9 ? 2.0 : 0.0;
 
+    final currentBrightness = Theme.of(context).brightness;
+    final iconBrightness = currentBrightness == Brightness.light ? Brightness.dark : Brightness.light;
+
     return Material(
       elevation: elevation,
       color: bgColor,
       borderRadius: borderRadius,
       shadowColor: colors.backgroundSecondary.withValues(alpha: 0.6),
       child: AppBar(
-        systemOverlayStyle: const SystemUiOverlayStyle(
-          statusBarIconBrightness: Brightness.dark,
-          statusBarBrightness: Brightness.light,
+        systemOverlayStyle: SystemUiOverlayStyle(
+          statusBarIconBrightness: currentBrightness,
+          statusBarBrightness: iconBrightness,
         ),
         backgroundColor: bgColor,
         automaticallyImplyLeading: false,

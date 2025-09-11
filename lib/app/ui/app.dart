@@ -71,7 +71,7 @@ class _AppState extends State<App> {
         ],
         child: BlocBuilder<LanguageBloc, LanguageState>(
           builder: (_, languageState) => BlocBuilder<ThemeBloc, ThemeState>(
-            builder: (context, themeState) {
+            builder: (_, themeState) {
               return MaterialApp.router(
                 locale: languageState.languageOption.toLocale,
                 localizationsDelegates: AppLocalizations.localizationsDelegates,

@@ -19,9 +19,10 @@ class UiKitBackButton extends StatelessWidget {
           color: colors.backgroundSecondary,
           shape: BoxShape.circle,
         ),
-        child: const Icon(
+        child: Icon(
           Icons.arrow_back_ios_new,
           size: UiKitSize.x4,
+          color: colors.iconColor,
         ),
       ),
     );

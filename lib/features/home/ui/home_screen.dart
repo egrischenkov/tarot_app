@@ -1,6 +1,9 @@
 import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:taro/app/domain/entities/theme_option.dart';
+import 'package:taro/app/ui/bloc/theme_bloc/theme_bloc.dart';
 import 'package:taro/core/assets/gen/assets.gen.dart';
 import 'package:taro/core/extensions/context_extension.dart';
 import 'package:taro/core/routing/app_router.dart';
@@ -84,102 +87,123 @@ class _HomeScreenState extends State<HomeScreen> with TickerProviderStateMixin {
   @override
   Widget build(BuildContext context) {
     final colors = context.colors;
+    final themeOption = context.read<ThemeBloc>().state.themeOption;
 
-    return Scaffold(
-      body: AutoTabsRouter(
-        duration: const Duration(milliseconds: 400),
-        transitionBuilder: (context, child, animation) => FadeTransition(
-          opacity: animation,
-          child: child,
-        ),
-        routes: const [
-          DailyCardRoute(),
-          DecksRoute(),
-          FunnyRoute(),
-          YammyRoute(),
-        ],
-        builder: (context, child) {
-          final tabsRouter = AutoTabsRouter.of(context);
+    return AnnotatedRegion<SystemUiOverlayStyle>(
+      value: SystemUiOverlayStyle(
+        statusBarColor: colors.transparent,
+        statusBarIconBrightness: switch (themeOption) {
+          ThemeOption.light => Brightness.dark,
+          ThemeOption.dark => Brightness.light,
+          ThemeOption.system => null,
+        },
+      ),
+      child: Scaffold(
+        body: AutoTabsRouter(
+          duration: const Duration(milliseconds: 400),
+          transitionBuilder: (context, child, animation) => FadeTransition(
+            opacity: animation,
+            child: child,
+          ),
+          routes: const [
+            DailyCardRoute(),
+            DecksRoute(),
+            FunnyRoute(),
+            YammyRoute(),
+          ],
+          builder: (context, child) {
+            final tabsRouter = AutoTabsRouter.of(context);
 
-          return Padding(
-            padding: const EdgeInsets.only(top: kToolbarHeight),
-            child: Stack(
-              children: [
-                Align(
-                  alignment: Alignment.topCenter,
-                  child: Container(
-                    padding: const EdgeInsets.symmetric(horizontal: 20),
-                    height: UiKitAppBar.height,
-                    color: colors.background,
-                    child: Row(
-                      mainAxisAlignment: MainAxisAlignment.end,
-                      children: [
-                        Hero(
-                          tag: ProfileWidget.heroTag,
-                          child: ProfileWidget(
-                            onTap: _onProfileTap,
-                            child: Assets.icons.ava1.svg(
-                              height: 64,
-                              width: 64,
+            return Container(
+              padding: MediaQuery.of(context).padding,
+              decoration: BoxDecoration(
+                gradient: LinearGradient(
+                  begin: Alignment.topLeft,
+                  end: Alignment.bottomRight,
+                  colors: [colors.gradientFirst, colors.gradientSecond],
+                ),
+              ),
+              child: Stack(
+                children: [
+                  Align(
+                    alignment: Alignment.topCenter,
+                    child: Container(
+                      padding: const EdgeInsets.symmetric(
+                        horizontal: UiKitSpacing.x4,
+                        vertical: UiKitSpacing.x4,
+                      ),
+                      child: Row(
+                        mainAxisAlignment: MainAxisAlignment.end,
+                        crossAxisAlignment: CrossAxisAlignment.center,
+                        children: [
+                          Hero(
+                            tag: ProfileWidget.heroTag,
+                            child: ProfileWidget(
+                              size: UiKitSize.x10,
+                              onTap: _onProfileTap,
+                              child: Assets.icons.ava1.svg(
+                                height: UiKitSize.x10,
+                                width: UiKitSize.x10,
+                              ),
                             ),
                           ),
-                        ),
-                      ],
+                        ],
+                      ),
                     ),
                   ),
-                ),
-                AnimatedBuilder(
-                  animation: _animations.controller,
-                  builder: (context, _) {
-                    return Positioned.fill(
-                      top: UiKitAppBar.height,
-                      child: Stack(
-                        children: _menuCards.mapWithIndex((index, card, _, __) {
-                          final animationValues = CardAnimationCalculator(
-                            context: context,
-                            animations: _animations,
-                            cardWidth: _cardWidth,
-                            cardHeight: _cardHeight,
-                            selectedCardIndex: _selectedCardIndex,
-                            selectedCard: _selectedCard,
-                            previousSelectedCard: _previousSelectedCard,
-                            menuCards: _menuCards,
-                            deckOrder: _deckOrder,
-                            isStackReordered: _isStackReordered,
-                          ).calculate(index, card);
+                  AnimatedBuilder(
+                    animation: _animations.controller,
+                    builder: (context, _) {
+                      return Positioned.fill(
+                        top: UiKitAppBar.height,
+                        child: Stack(
+                          children: _menuCards.mapWithIndex((index, card, _, __) {
+                            final animationValues = CardAnimationCalculator(
+                              context: context,
+                              animations: _animations,
+                              cardWidth: _cardWidth,
+                              cardHeight: _cardHeight,
+                              selectedCardIndex: _selectedCardIndex,
+                              selectedCard: _selectedCard,
+                              previousSelectedCard: _previousSelectedCard,
+                              menuCards: _menuCards,
+                              deckOrder: _deckOrder,
+                              isStackReordered: _isStackReordered,
+                            ).calculate(index, card);
 
-                          final isPreviousSelected = card.id == _previousSelectedCard?.id;
+                            final isPreviousSelected = card.id == _previousSelectedCard?.id;
 
-                          return MenuCardWidget(
-                            name: card.getName(context),
-                            verticalOffset: animationValues.verticalOffset,
-                            horizontalOffset: animationValues.horizontalOffset,
-                            height: animationValues.height,
-                            width: animationValues.width,
-                            heightFactor: animationValues.heightFactor,
-                            angle: animationValues.angle,
-                            yAngle: animationValues.yAngle,
-                            borderRadius:
-                                (_animations.controller.value >= 0.3 && _animations.controller.value <= 5.0) &&
-                                        (isPreviousSelected || _isSelectedCard(card))
-                                    ? BorderRadius.circular(24)
-                                    : const BorderRadius.vertical(top: Radius.circular(24)),
-                            icon: Icon(
-                              card.icon,
-                              color: Colors.blueAccent,
-                            ),
-                            onTap: () => _onCardTap(card, index, tabsRouter),
-                            backSideWidget: child,
-                          );
-                        }).toList(),
-                      ),
-                    );
-                  },
-                ),
-              ],
-            ),
-          );
-        },
+                            return MenuCardWidget(
+                              name: card.getName(context),
+                              verticalOffset: animationValues.verticalOffset,
+                              horizontalOffset: animationValues.horizontalOffset,
+                              height: animationValues.height,
+                              width: animationValues.width,
+                              heightFactor: animationValues.heightFactor,
+                              angle: animationValues.angle,
+                              yAngle: animationValues.yAngle,
+                              borderRadius:
+                                  (_animations.controller.value >= 0.3 && _animations.controller.value <= 5.0) &&
+                                          (isPreviousSelected || _isSelectedCard(card))
+                                      ? BorderRadius.circular(24)
+                                      : const BorderRadius.vertical(top: Radius.circular(24)),
+                              icon: Icon(
+                                card.icon,
+                                color: Colors.blueAccent,
+                              ),
+                              onTap: () => _onCardTap(card, index, tabsRouter),
+                              backSideWidget: child,
+                            );
+                          }).toList(),
+                        ),
+                      );
+                    },
+                  ),
+                ],
+              ),
+            );
+          },
+        ),
       ),
     );
   }
