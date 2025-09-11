@@ -19,6 +19,7 @@ class UiKitColors extends ThemeExtension<UiKitColors> {
   final Color borderGradientFirst;
   final Color borderGradientSecond;
   final Color iconColor;
+  final Color iconBackground;
 
   const UiKitColors({
     required this.accent,
@@ -38,6 +39,7 @@ class UiKitColors extends ThemeExtension<UiKitColors> {
     required this.borderGradientFirst,
     required this.borderGradientSecond,
     required this.iconColor,
+    required this.iconBackground,
   });
 
   @override
@@ -59,6 +61,7 @@ class UiKitColors extends ThemeExtension<UiKitColors> {
     Color? borderGradientFirst,
     Color? borderGradientSecond,
     Color? iconColor,
+    Color? iconBackground,
   }) {
     return UiKitColors(
       accentTertiary: accentTertiary ?? this.accentTertiary,
@@ -78,6 +81,7 @@ class UiKitColors extends ThemeExtension<UiKitColors> {
       borderGradientFirst: borderGradientFirst ?? this.borderGradientFirst,
       borderGradientSecond: borderGradientSecond ?? this.borderGradientSecond,
       iconColor: iconColor ?? this.iconColor,
+      iconBackground: iconBackground ?? this.iconBackground,
     );
   }
 
@@ -105,6 +109,7 @@ class UiKitColors extends ThemeExtension<UiKitColors> {
       borderGradientSecond:
           Color.lerp(borderGradientSecond, other.borderGradientSecond, t) ?? other.borderGradientSecond,
       iconColor: Color.lerp(iconColor, other.iconColor, t) ?? other.iconColor,
+      iconBackground: Color.lerp(iconBackground, other.iconBackground, t) ?? other.iconBackground,
     );
   }
 }

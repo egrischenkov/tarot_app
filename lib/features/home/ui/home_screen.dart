@@ -89,6 +89,10 @@ class _HomeScreenState extends State<HomeScreen> with TickerProviderStateMixin {
     final colors = context.colors;
     final themeOption = context.read<ThemeBloc>().state.themeOption;
 
+    const profileIconSize = UiKitSize.x10;
+    const profileIconVerticalPadding = UiKitSpacing.x4;
+    final cardScreenTopPadding = profileIconSize + profileIconVerticalPadding + MediaQuery.of(context).padding.top;
+
     return AnnotatedRegion<SystemUiOverlayStyle>(
       value: SystemUiOverlayStyle(
         statusBarColor: colors.transparent,
@@ -128,10 +132,7 @@ class _HomeScreenState extends State<HomeScreen> with TickerProviderStateMixin {
                   Align(
                     alignment: Alignment.topCenter,
                     child: Container(
-                      padding: const EdgeInsets.symmetric(
-                        horizontal: UiKitSpacing.x4,
-                        vertical: UiKitSpacing.x4,
-                      ),
+                      padding: const EdgeInsets.all(UiKitSpacing.x4),
                       child: Row(
                         mainAxisAlignment: MainAxisAlignment.end,
                         crossAxisAlignment: CrossAxisAlignment.center,
@@ -155,7 +156,7 @@ class _HomeScreenState extends State<HomeScreen> with TickerProviderStateMixin {
                     animation: _animations.controller,
                     builder: (context, _) {
                       return Positioned.fill(
-                        top: UiKitAppBar.height,
+                        top: cardScreenTopPadding,
                         child: Stack(
                           children: _menuCards.mapWithIndex((index, card, _, __) {
                             final animationValues = CardAnimationCalculator(

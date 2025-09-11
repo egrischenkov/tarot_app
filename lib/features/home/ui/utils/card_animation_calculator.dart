@@ -55,7 +55,7 @@ class CardAnimationCalculator {
     const angleStep = 0.12;
     const heightFactorDefault = 0.33;
     final screen = MediaQuery.of(context).size;
-    final baseVerticalOffset = screen.height - cardHeight * 0.9;
+    final baseVerticalOffset = screen.height - cardHeight * 0.82;
 
     final defaultVertical = baseVerticalOffset + (index - 1) * 3;
     final defaultHorizontal = (cardWidth / 2) * (index - 1) + 32;

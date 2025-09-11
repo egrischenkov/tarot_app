@@ -19,12 +19,13 @@ class UiKitForwardButton extends StatelessWidget {
       child: Container(
         padding: const EdgeInsets.all(UiKitSpacing.base),
         decoration: BoxDecoration(
-          color: colors.backgroundSecondary,
+          color: colors.iconBackground,
           shape: BoxShape.circle,
         ),
-        child: const Icon(
+        child: Icon(
           Icons.arrow_forward_ios,
           size: UiKitSize.x4,
+          color: colors.iconColor,
         ),
       ),
     );
