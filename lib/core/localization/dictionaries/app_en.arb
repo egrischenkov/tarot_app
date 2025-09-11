@@ -17,10 +17,9 @@
         "---------": "---------",
         "description": "Home screen"
     },
-    "homeScreen$MenuDailyCard": "Daily Card",
-    "homeScreen$MenuFunny": "Fun Stuff",
-    "homeScreen$MenuSpreads": "Spreads",
-    "homeScreen$MenuYammy": "Treats",
+    "homeScreen$Menu$DailyCard": "Daily Card",
+    "homeScreen$Menu$CardsCatalog": "Learn the Cards",
+    "homeScreen$Menu$YesNo": "Yes or No",
     "@segmentProfileScreen": {
         "---------": "---------",
         "description": "Profile screen"

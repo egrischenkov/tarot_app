@@ -27,16 +27,13 @@ class AppLocalizationsEs extends AppLocalizations {
   String get onboarding$Start => 'Comenzar';
 
   @override
-  String get homeScreen$MenuDailyCard => 'Carta del día';
+  String get homeScreen$Menu$DailyCard => 'Carta del día';
 
   @override
-  String get homeScreen$MenuFunny => 'Diversión';
+  String get homeScreen$Menu$CardsCatalog => 'Conoce las cartas';
 
   @override
-  String get homeScreen$MenuSpreads => 'Tiradas';
-
-  @override
-  String get homeScreen$MenuYammy => 'Dulces';
+  String get homeScreen$Menu$YesNo => 'Sí o No';
 
   @override
   String get profileScreen$Title => 'Perfil';

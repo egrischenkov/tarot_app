@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:taro/app/domain/entities/theme_option.dart';
 import 'package:taro/core/extensions/context_extension.dart';
+import 'package:tarot_ui_kit/ui_kit.dart';
 
 extension ThemeOptionX on ThemeOption {
   String getLabel(BuildContext context) {
@@ -13,11 +14,22 @@ extension ThemeOptionX on ThemeOption {
     };
   }
 
-  Widget getTrailingIcon() {
+  Widget getTrailingIcon(BuildContext context) {
+    final colors = context.colors;
+
     return switch (this) {
-      ThemeOption.light => const Icon(Icons.light_mode_outlined),
-      ThemeOption.dark => const Icon(Icons.dark_mode_outlined),
-      ThemeOption.system => const Icon(Icons.settings_display_outlined),
+      ThemeOption.light => Icon(
+          Icons.light_mode_outlined,
+          color: colors.iconColor,
+        ),
+      ThemeOption.dark => Icon(
+          Icons.dark_mode_outlined,
+          color: colors.iconColor,
+        ),
+      ThemeOption.system => Icon(
+          Icons.settings_display_outlined,
+          color: colors.iconColor,
+        ),
     };
   }
 }

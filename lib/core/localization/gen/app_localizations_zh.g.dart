@@ -27,16 +27,13 @@ class AppLocalizationsZh extends AppLocalizations {
   String get onboarding$Start => '开始';
 
   @override
-  String get homeScreen$MenuDailyCard => '今日卡牌';
+  String get homeScreen$Menu$DailyCard => '今日卡牌';
 
   @override
-  String get homeScreen$MenuFunny => '趣味';
+  String get homeScreen$Menu$CardsCatalog => '认识卡牌';
 
   @override
-  String get homeScreen$MenuSpreads => '牌阵';
-
-  @override
-  String get homeScreen$MenuYammy => '美味';
+  String get homeScreen$Menu$YesNo => '是或否';
 
   @override
   String get profileScreen$Title => '个人资料';

@@ -32,6 +32,10 @@ class HomeScreen extends StatefulWidget {
 }
 
 class _HomeScreenState extends State<HomeScreen> with TickerProviderStateMixin {
+  static const _dailyCardId = 'daily_card';
+  static const _cardsCatalogId = 'cards_catalog';
+  static const _yesNoId = 'yes_no';
+
   late final HomeScreenAnimations _animations;
   late double _cardWidth;
   late double _cardHeight;
@@ -41,17 +45,15 @@ class _HomeScreenState extends State<HomeScreen> with TickerProviderStateMixin {
   MenuCardModel? _previousSelectedCard;
 
   final _menuCards = [
-    MenuCardModel(id: 'daily_card'),
-    MenuCardModel(id: 'spreads'),
-    MenuCardModel(id: 'funny'),
-    MenuCardModel(id: 'yammy'),
+    MenuCardModel(id: _HomeScreenState._dailyCardId),
+    MenuCardModel(id: _HomeScreenState._cardsCatalogId),
+    MenuCardModel(id: _HomeScreenState._yesNoId),
   ];
 
   final List<String> _deckOrder = [
-    'daily_card',
-    'spreads',
-    'funny',
-    'yammy',
+    _HomeScreenState._dailyCardId,
+    _HomeScreenState._cardsCatalogId,
+    _HomeScreenState._yesNoId,
   ];
 
   bool _isStackReordered = false;
@@ -87,10 +89,12 @@ class _HomeScreenState extends State<HomeScreen> with TickerProviderStateMixin {
   @override
   Widget build(BuildContext context) {
     final colors = context.colors;
+    final fonts = context.fonts;
+
     final themeOption = context.read<ThemeBloc>().state.themeOption;
 
     const profileIconSize = UiKitSize.x10;
-    const profileIconVerticalPadding = UiKitSpacing.x4;
+    const profileIconVerticalPadding = UiKitSpacing.x2;
     final cardScreenTopPadding = profileIconSize + profileIconVerticalPadding + MediaQuery.of(context).padding.top;
 
     return AnnotatedRegion<SystemUiOverlayStyle>(
@@ -111,9 +115,8 @@ class _HomeScreenState extends State<HomeScreen> with TickerProviderStateMixin {
           ),
           routes: const [
             DailyCardRoute(),
-            DecksRoute(),
-            FunnyRoute(),
-            YammyRoute(),
+            CardsCatalogRoute(),
+            YesNoRoute(),
           ],
           builder: (context, child) {
             final tabsRouter = AutoTabsRouter.of(context);
@@ -134,9 +137,13 @@ class _HomeScreenState extends State<HomeScreen> with TickerProviderStateMixin {
                     child: Container(
                       padding: const EdgeInsets.all(UiKitSpacing.x4),
                       child: Row(
-                        mainAxisAlignment: MainAxisAlignment.end,
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         crossAxisAlignment: CrossAxisAlignment.center,
                         children: [
+                          Text(
+                            _selectedCard.getName(context),
+                            style: fonts.largeTitleEmphasized,
+                          ),
                           Hero(
                             tag: ProfileWidget.heroTag,
                             child: ProfileWidget(
@@ -260,10 +267,9 @@ class _HomeScreenState extends State<HomeScreen> with TickerProviderStateMixin {
 extension on MenuCardModel {
   IconData get icon {
     return switch (id) {
-      'daily_card' => Icons.calendar_month,
-      'funny' => Icons.celebration,
-      'yammy' => Icons.food_bank,
-      'spreads' => Icons.card_giftcard,
+      _HomeScreenState._dailyCardId => Icons.calendar_month,
+      _HomeScreenState._cardsCatalogId => Icons.celebration,
+      _HomeScreenState._yesNoId => Icons.food_bank,
       _ => Icons.face,
     };
   }
@@ -271,10 +277,9 @@ extension on MenuCardModel {
   String getName(BuildContext context) {
     final l10n = context.l10n;
     return switch (id) {
-      'daily_card' => l10n.homeScreen$MenuDailyCard,
-      'funny' => l10n.homeScreen$MenuFunny,
-      'yammy' => l10n.homeScreen$MenuYammy,
-      'spreads' => l10n.homeScreen$MenuSpreads,
+      _HomeScreenState._dailyCardId => l10n.homeScreen$Menu$DailyCard,
+      _HomeScreenState._cardsCatalogId => l10n.homeScreen$Menu$CardsCatalog,
+      _HomeScreenState._yesNoId => l10n.homeScreen$Menu$YesNo,
       _ => '',
     };
   }

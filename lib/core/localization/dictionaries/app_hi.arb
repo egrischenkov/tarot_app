@@ -17,10 +17,9 @@
         "---------": "---------",
         "description": "Home screen"
     },
-    "homeScreen$MenuDailyCard": "आज का कार्ड",
-    "homeScreen$MenuFunny": "मज़ेदार",
-    "homeScreen$MenuSpreads": "स्प्रेड्स",
-    "homeScreen$MenuYammy": "ट्रीट्स",
+    "homeScreen$Menu$DailyCard": "आज का कार्ड",
+    "homeScreen$Menu$CardsCatalog": "कार्ड्स जानें",
+    "homeScreen$Menu$YesNo": "हाँ या नहीं",
     "@segmentProfileScreen": {
         "---------": "---------",
         "description": "Profile screen"

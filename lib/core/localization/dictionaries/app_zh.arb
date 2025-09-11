@@ -17,10 +17,9 @@
         "---------": "---------",
         "description": "Home screen"
     },
-    "homeScreen$MenuDailyCard": "今日卡牌",
-    "homeScreen$MenuFunny": "趣味",
-    "homeScreen$MenuSpreads": "牌阵",
-    "homeScreen$MenuYammy": "美味",
+    "homeScreen$Menu$DailyCard": "今日卡牌",
+    "homeScreen$Menu$CardsCatalog": "认识卡牌",
+    "homeScreen$Menu$YesNo": "是或否",
     "@segmentProfileScreen": {
         "---------": "---------",
         "description": "Profile screen"

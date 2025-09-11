@@ -17,10 +17,9 @@
         "---------": "---------",
         "description": "Home screen"
     },
-    "homeScreen$MenuDailyCard": "Carte du jour",
-    "homeScreen$MenuFunny": "Divertissement",
-    "homeScreen$MenuSpreads": "Tirages",
-    "homeScreen$MenuYammy": "Gourmandises",
+    "homeScreen$Menu$DailyCard": "Carte du jour",
+    "homeScreen$Menu$CardsCatalog": "Découvrir les cartes",
+    "homeScreen$Menu$YesNo": "Oui ou Non",
     "@segmentProfileScreen": {
         "---------": "---------",
         "description": "Profile screen"

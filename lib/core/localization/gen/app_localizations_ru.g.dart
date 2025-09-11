@@ -27,16 +27,13 @@ class AppLocalizationsRu extends AppLocalizations {
   String get onboarding$Start => 'Вперёд';
 
   @override
-  String get homeScreen$MenuDailyCard => 'Карта дня';
+  String get homeScreen$Menu$DailyCard => 'Карта дня';
 
   @override
-  String get homeScreen$MenuFunny => 'Приколики';
+  String get homeScreen$Menu$CardsCatalog => 'Узнай карты';
 
   @override
-  String get homeScreen$MenuSpreads => 'Расклады';
-
-  @override
-  String get homeScreen$MenuYammy => 'Вкусняшки';
+  String get homeScreen$Menu$YesNo => 'Да или Нет';
 
   @override
   String get profileScreen$Title => 'Профиль';

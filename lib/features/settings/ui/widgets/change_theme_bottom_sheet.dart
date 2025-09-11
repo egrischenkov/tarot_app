@@ -37,7 +37,7 @@ class ChangeThemeBottomSheet extends StatelessWidget {
                   label: value.getLabel(context),
                   isSelected: state.themeOption == value,
                   onTap: () => _onThemeOptionTap(context, value),
-                  trailing: value.getTrailingIcon(),
+                  trailing: value.getTrailingIcon(context),
                 );
               }).toList(),
             ).toList(),

@@ -1,17 +1,16 @@
 import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:taro/core/routing/guards/onboarding_guard.dart';
+import 'package:taro/features/cards_catalog/ui/cards_catalog_screen.dart';
 import 'package:taro/features/daily_card/ui/daily_card_screen.dart';
 import 'package:taro/features/debug/ui/debug_screen.dart';
 import 'package:taro/features/debug/ui/debug_wrapper_entry.dart';
-import 'package:taro/features/decks/ui/decks_screen.dart';
 import 'package:taro/features/feedback_form/ui/feedback_form_screen.dart';
-import 'package:taro/features/funny/ui/funny_screen.dart';
 import 'package:taro/features/home/ui/home_screen.dart';
 import 'package:taro/features/onboarding/ui/onboarding_screen.dart';
 import 'package:taro/features/profile/ui/profile_screen.dart';
 import 'package:taro/features/settings/ui/settings_screen.dart';
-import 'package:taro/features/yammy/ui/yammy_screen.dart';
+import 'package:taro/features/yes_no/ui/yes_no_screen.dart';
 
 part 'app_router.gr.dart';
 
@@ -43,9 +42,8 @@ class AppRouter extends RootStackRouter {
               page: HomeRoute.page,
               children: [
                 AutoRoute(page: DailyCardRoute.page),
-                AutoRoute(page: DecksRoute.page),
-                AutoRoute(page: FunnyRoute.page),
-                AutoRoute(page: YammyRoute.page),
+                AutoRoute(page: CardsCatalogRoute.page),
+                AutoRoute(page: YesNoRoute.page),
               ],
             ),
             AutoRoute(page: ProfileRoute.page),

@@ -145,29 +145,23 @@ abstract class AppLocalizations {
   /// **'Вперёд'**
   String get onboarding$Start;
 
-  /// No description provided for @homeScreen$MenuDailyCard.
+  /// No description provided for @homeScreen$Menu$DailyCard.
   ///
   /// In ru, this message translates to:
   /// **'Карта дня'**
-  String get homeScreen$MenuDailyCard;
+  String get homeScreen$Menu$DailyCard;
 
-  /// No description provided for @homeScreen$MenuFunny.
+  /// No description provided for @homeScreen$Menu$CardsCatalog.
   ///
   /// In ru, this message translates to:
-  /// **'Приколики'**
-  String get homeScreen$MenuFunny;
+  /// **'Узнай карты'**
+  String get homeScreen$Menu$CardsCatalog;
 
-  /// No description provided for @homeScreen$MenuSpreads.
+  /// No description provided for @homeScreen$Menu$YesNo.
   ///
   /// In ru, this message translates to:
-  /// **'Расклады'**
-  String get homeScreen$MenuSpreads;
-
-  /// No description provided for @homeScreen$MenuYammy.
-  ///
-  /// In ru, this message translates to:
-  /// **'Вкусняшки'**
-  String get homeScreen$MenuYammy;
+  /// **'Да или Нет'**
+  String get homeScreen$Menu$YesNo;
 
   /// No description provided for @profileScreen$Title.
   ///

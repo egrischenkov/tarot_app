@@ -40,9 +40,10 @@ class UiKitLineItem extends StatelessWidget {
                   Text(localValueLabel, style: fonts.xsLabel),
                   UiKitSpacing.x4.w,
                 ],
-                const Icon(
+                Icon(
                   Icons.arrow_forward_ios,
                   size: UiKitSize.x4,
+                  color: colors.iconColor,
                 ),
               ],
             ),
