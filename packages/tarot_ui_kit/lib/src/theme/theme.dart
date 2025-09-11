@@ -46,8 +46,6 @@ class UiKitTheme {
     accent: const Color(0xFF8240E6),
     accentSecondary: const Color(0xFF6B2DC8),
     accentTertiary: const Color(0xFF521DA3),
-    gradientFirst: const Color(0xFF8240E6),
-    gradientSecond: const Color(0xFF6B2DC8),
     text: const Color(0xFFFCFCFC),
     textDisabled: const Color(0xFF86848B),
     background: const Color(0xFF3B2F63),
@@ -56,6 +54,8 @@ class UiKitTheme {
     error: const Color(0xFFF6A6A6),
     transparent: Colors.transparent,
     disabled: Colors.grey.withValues(alpha: 0.9),
+    gradientFirst: const Color(0xFF8240E6),
+    gradientSecond: const Color(0xFF521DA3),
     borderGradientFirst: const Color(0xFFFFD964),
     borderGradientSecond: const Color(0xFF8240E6),
   );
