@@ -1,13 +1,12 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:taro/app/domain/entities/theme_option.dart';
+import 'package:taro/app/ui/bloc/theme_bloc/theme_bloc.dart';
 import 'package:taro/core/extensions/context_extension.dart';
 import 'package:tarot_ui_kit/ui_kit.dart';
 
-class ChangeThemeBottomSheet extends StatefulWidget {
+class ChangeThemeBottomSheet extends StatelessWidget {
   const ChangeThemeBottomSheet._();
-
-  @override
-  State<ChangeThemeBottomSheet> createState() => _ChangeThemeBottomSheetState();
 
   static Future<void> show({
     required BuildContext context,
@@ -19,39 +18,41 @@ class ChangeThemeBottomSheet extends StatefulWidget {
       builder: (_) => const ChangeThemeBottomSheet._(),
     );
   }
-}
-
-class _ChangeThemeBottomSheetState extends State<ChangeThemeBottomSheet> {
-  ThemeOption selectedTheme = ThemeOption.system;
 
   @override
   Widget build(BuildContext context) {
     final colors = context.colors;
 
     return UiKitBottomSheetWrapper(
-      body: Column(
-        children: intersperse(
-          Divider(
-            height: UiKitSpacing.x4,
-            color: colors.backgroundSecondary,
-          ),
-          ThemeOption.values.map((value) {
-            return UiKitBottomSheetValueItem(
-              label: value.getLabel(context),
-              isSelected: selectedTheme == value,
-              onTap: () => _onThemeOptionTap(value),
-              trailing: value.getTrailingIcon(),
-            );
-          }).toList(),
-        ).toList(),
+      body: BlocBuilder<ThemeBloc, ThemeState>(
+        builder: (context, state) {
+          return Column(
+            children: intersperse(
+              Divider(
+                height: UiKitSpacing.x4,
+                color: colors.backgroundSecondary,
+              ),
+              ThemeOption.values.map((value) {
+                return UiKitBottomSheetValueItem(
+                  label: value.getLabel(context),
+                  isSelected: state.themeOption == value,
+                  onTap: () => _onThemeOptionTap(context, value),
+                  trailing: value.getTrailingIcon(),
+                );
+              }).toList(),
+            ).toList(),
+          );
+        },
       ),
     );
   }
 
-  void _onThemeOptionTap(ThemeOption theme) {
-    setState(() {
-      selectedTheme = theme;
-    });
+  void _onThemeOptionTap(BuildContext context, ThemeOption themeOption) {
+    context.read<ThemeBloc>().add(
+          ThemeEvent.themeChanged(
+            themeOption: themeOption,
+          ),
+        );
   }
 }
 

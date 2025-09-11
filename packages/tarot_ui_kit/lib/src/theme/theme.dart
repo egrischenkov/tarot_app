@@ -11,15 +11,17 @@ class UiKitTheme {
       fonts(lightThemeColors),
     ],
     scaffoldBackgroundColor: lightThemeColors.background,
+    brightness: Brightness.light,
   );
 
   static final darkThemeData = ThemeData(
     useMaterial3: true,
     extensions: [
       darkThemeColors,
-      fonts(lightThemeColors),
+      fonts(darkThemeColors),
     ],
-    scaffoldBackgroundColor: lightThemeColors.background,
+    scaffoldBackgroundColor: darkThemeColors.background,
+    brightness: Brightness.dark,
   );
 
   static final lightThemeColors = UiKitColors(

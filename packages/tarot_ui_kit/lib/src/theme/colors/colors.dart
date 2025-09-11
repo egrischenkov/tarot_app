@@ -79,12 +79,12 @@ class UiKitColors extends ThemeExtension<UiKitColors> {
       return this;
     }
     return UiKitColors(
-      accentTertiary: Color.lerp(accentTertiary, other.accentTertiary, t) ?? other.accentTertiary,
       accent: Color.lerp(accent, other.accent, t) ?? other.accent,
       accentSecondary: Color.lerp(accentSecondary, other.accentSecondary, t) ?? other.accentSecondary,
+      accentTertiary: Color.lerp(accentTertiary, other.accentTertiary, t) ?? other.accentTertiary,
       text: Color.lerp(text, other.text, t) ?? other.text,
       textDisabled: Color.lerp(textDisabled, other.textDisabled, t) ?? other.textDisabled,
-      background: Color.lerp(text, other.text, t) ?? other.text,
+      background: Color.lerp(background, other.background, t) ?? other.background,
       backgroundSecondary: Color.lerp(backgroundSecondary, other.backgroundSecondary, t) ?? other.backgroundSecondary,
       success: Color.lerp(success, other.success, t) ?? other.success,
       error: Color.lerp(error, other.error, t) ?? other.error,

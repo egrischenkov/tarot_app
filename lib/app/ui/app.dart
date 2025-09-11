@@ -17,7 +17,7 @@ import 'package:taro/core/routing/app_router.dart';
 import 'package:taro/core/routing/guards/onboarding_guard.dart';
 import 'package:tarot_ui_kit/ui_kit.dart';
 
-class App extends StatelessWidget {
+class App extends StatefulWidget {
   final AppDependenciesContainer _dependenciesContainer;
   final AppRouter _router;
   final AppRepository _appRepository;
@@ -32,21 +32,41 @@ class App extends StatelessWidget {
           ),
         ),
         _appRepository = AppRepositoryImpl(
-          localeService: LanguageService(appConfigurationsStorage: dependenciesContainer.appConfigurationsStorage),
-          themeService: ThemeService(appConfigurationsStorage: dependenciesContainer.appConfigurationsStorage),
+          localeService: LanguageService(
+            appConfigurationsStorage: dependenciesContainer.appConfigurationsStorage,
+          ),
+          themeService: ThemeService(
+            appConfigurationsStorage: dependenciesContainer.appConfigurationsStorage,
+          ),
         );
+
+  @override
+  State<App> createState() => _AppState();
+}
+
+class _AppState extends State<App> {
+  late final ThemeBloc _themeBloc;
+  late final LanguageBloc _languageBloc;
+
+  @override
+  void initState() {
+    super.initState();
+
+    _themeBloc = _createThemeBloc();
+    _languageBloc = _createLanguageBloc();
+  }
 
   @override
   Widget build(BuildContext context) {
     return AppDependenciesScope(
-      dependencies: _dependenciesContainer,
+      dependencies: widget._dependenciesContainer,
       child: MultiBlocProvider(
         providers: [
           BlocProvider.value(
-            value: _createLanguageBloc(),
+            value: _themeBloc,
           ),
           BlocProvider.value(
-            value: _createThemeBloc(),
+            value: _languageBloc,
           ),
         ],
         child: BlocBuilder<LanguageBloc, LanguageState>(
@@ -56,7 +76,7 @@ class App extends StatelessWidget {
                 locale: languageState.languageOption.toLocale,
                 localizationsDelegates: AppLocalizations.localizationsDelegates,
                 supportedLocales: AppLocalizations.supportedLocales,
-                routerConfig: _router.config(navigatorObservers: () => [HeroController()]),
+                routerConfig: widget._router.config(navigatorObservers: () => [HeroController()]),
                 themeMode: ThemeMode.values.singleWhere(
                   (mode) {
                     return themeState.themeOption.name == mode.name;
@@ -75,15 +95,15 @@ class App extends StatelessWidget {
 
   LanguageBloc _createLanguageBloc() {
     return LanguageBloc(
-      getCurrentLanguageUseCase: GetCurrentLanguageUseCase(appRepository: _appRepository),
-      changeLanguageUseCase: ChangeLanguageUseCase(appRepository: _appRepository),
+      getCurrentLanguageUseCase: GetCurrentLanguageUseCase(appRepository: widget._appRepository),
+      changeLanguageUseCase: ChangeLanguageUseCase(appRepository: widget._appRepository),
     );
   }
 
   ThemeBloc _createThemeBloc() {
     return ThemeBloc(
-      getCurrentThemeUseCase: GetCurrentThemeUseCase(appRepository: _appRepository),
-      changeThemeUseCase: ChangeThemeUseCase(appRepository: _appRepository),
+      getCurrentThemeUseCase: GetCurrentThemeUseCase(appRepository: widget._appRepository),
+      changeThemeUseCase: ChangeThemeUseCase(appRepository: widget._appRepository),
     );
   }
 }
