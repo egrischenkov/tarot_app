@@ -5,23 +5,23 @@ import 'package:taro/app/domain/entities/theme_option.dart';
 import 'package:taro/app/domain/repositories/app_repository.dart';
 
 class AppRepositoryImpl implements AppRepository {
-  final LanguageService _localeService;
+  final LanguageService _languageService;
   final ThemeService _themeService;
 
   AppRepositoryImpl({
-    required LanguageService localeService,
+    required LanguageService languageService,
     required ThemeService themeService,
-  })  : _localeService = localeService,
+  })  : _languageService = languageService,
         _themeService = themeService;
 
   @override
   LanguageOption getCurrentLanguageOption() {
-    return _localeService.currentLocaleCode._toLanguageOption;
+    return _languageService.currentLocaleCode._toLanguageOption;
   }
 
   @override
   Future<void> setCurrentLanguage({required LanguageOption languageOption}) {
-    return _localeService.selectNewLocale(languageOption.name);
+    return _languageService.selectNewLocale(languageOption.languageCode);
   }
 
   @override

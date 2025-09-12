@@ -1,3 +1,5 @@
+import 'dart:io';
+
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:taro/app/data/repositories_implementations/app_repository_impl.dart';
@@ -32,8 +34,9 @@ class App extends StatefulWidget {
           ),
         ),
         _appRepository = AppRepositoryImpl(
-          localeService: LanguageService(
+          languageService: LanguageService(
             appConfigurationsStorage: dependenciesContainer.appConfigurationsStorage,
+            platformLanguageCode: Platform.localeName,
           ),
           themeService: ThemeService(
             appConfigurationsStorage: dependenciesContainer.appConfigurationsStorage,

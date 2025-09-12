@@ -1,8 +1,6 @@
-import 'dart:io';
-
 import 'package:taro/core/storage/app_configurations_storage/app_configurations_storage.dart';
 
-final class LanguageService {
+class LanguageService {
   static const russianLanguageCode = 'ru';
   static const englishLanguageCode = 'en';
   static const germanLanguageCode = 'de';
@@ -14,11 +12,15 @@ final class LanguageService {
   static const chineseLanguageCode = 'zh';
 
   final AppConfigurationsStorage _appConfigurationsStorage;
+  final String _platformLanguageCode;
   late String currentLocaleCode;
 
   /// @nodoc
-  LanguageService({required AppConfigurationsStorage appConfigurationsStorage})
-      : _appConfigurationsStorage = appConfigurationsStorage {
+  LanguageService({
+    required AppConfigurationsStorage appConfigurationsStorage,
+    required String platformLanguageCode,
+  })  : _appConfigurationsStorage = appConfigurationsStorage,
+        _platformLanguageCode = platformLanguageCode {
     currentLocaleCode = _getCurrentLocale();
   }
 
@@ -35,6 +37,6 @@ final class LanguageService {
     final currentLocaleCode = _appConfigurationsStorage.selectedLocaleCode;
     final isLocaleHasBeenSelectedByUser = currentLocaleCode != null;
 
-    return isLocaleHasBeenSelectedByUser ? currentLocaleCode : Platform.localeName;
+    return isLocaleHasBeenSelectedByUser ? currentLocaleCode : _platformLanguageCode;
   }
 }
