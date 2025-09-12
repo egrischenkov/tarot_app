@@ -3,7 +3,7 @@ import 'package:tarot_logger/src/observers/log_observer.dart';
 
 /// A logger that does nothing.
 /// Use this for tests.
-final class FakeLogger extends Logger {
+class FakeLogger extends Logger {
   FakeLogger();
 
   @override
