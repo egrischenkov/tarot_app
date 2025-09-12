@@ -10,8 +10,8 @@ import 'package:taro/app/domain/use_cases/language/change_language_use_case.dart
 import 'package:taro/app/domain/use_cases/language/get_current_language_use_case.dart';
 import 'package:taro/app/domain/use_cases/theme/change_theme_use_case.dart';
 import 'package:taro/app/domain/use_cases/theme/get_current_theme_use_case.dart';
-import 'package:taro/app/ui/bloc/language_bloc/language_bloc.dart';
-import 'package:taro/app/ui/bloc/theme_bloc/theme_bloc.dart';
+import 'package:taro/app/ui/bloc/language/language_bloc.dart';
+import 'package:taro/app/ui/bloc/theme/theme_bloc.dart';
 import 'package:taro/core/di/app_dependencies_container.dart';
 import 'package:taro/core/di/app_dependencies_scope.dart';
 import 'package:taro/core/localization/gen/app_localizations.g.dart';
