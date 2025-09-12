@@ -1,6 +1,7 @@
 import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:taro/core/routing/guards/onboarding_guard.dart';
+import 'package:taro/features/about/ui/about_screen.dart';
 import 'package:taro/features/cards_catalog/ui/cards_catalog_screen.dart';
 import 'package:taro/features/daily_card/ui/daily_card_screen.dart';
 import 'package:taro/features/debug/ui/debug_screen.dart';
@@ -49,6 +50,7 @@ class AppRouter extends RootStackRouter {
             AutoRoute(page: ProfileRoute.page),
             AutoRoute(page: SettingsRoute.page),
             AutoRoute(page: FeedbackFormRoute.page),
+            AutoRoute(page: AboutRoute.page),
           ],
         ),
       ];
