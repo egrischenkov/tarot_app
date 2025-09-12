@@ -37,11 +37,12 @@ class UiKitTheme {
     disabled: Colors.grey.withValues(alpha: 0.9),
     gradientFirst: const Color(0xFFfbe7aa),
     gradientSecond: const Color(0xFFFFB62C),
+    border: const Color(0xFFF4F1F8),
     borderGradientFirst: const Color(0xFFFFD964),
     borderGradientSecond: const Color(0xFF8240E6),
-    iconColor: const Color(0xFF2E2E2E),
+    icon: const Color(0xFF2E2E2E),
     iconBackground: const Color(0xFFF4F1F8),
-    shadowColor: Colors.grey.withValues(alpha: .9).withValues(alpha: .4),
+    shadow: Colors.grey.withValues(alpha: .9).withValues(alpha: .4),
   );
 
   static final darkThemeColors = UiKitColors(
@@ -59,11 +60,12 @@ class UiKitTheme {
     disabled: Colors.grey.withValues(alpha: 0.9),
     gradientFirst: const Color(0xFF7d7df6),
     gradientSecond: const Color(0xFF3035c3),
+    border: const Color(0xFF86848B),
     borderGradientFirst: const Color(0xFFFFD964),
     borderGradientSecond: const Color(0xFF7d7df6),
-    iconColor: const Color(0xFFF4F1F8),
+    icon: const Color(0xFFF4F1F8),
     iconBackground: const Color(0xFF86848B).withValues(alpha: .3),
-    shadowColor: const Color(0xFF010101).withValues(alpha: .4),
+    shadow: const Color(0xFF010101).withValues(alpha: .4),
   );
 
   static UiKitFonts fonts(UiKitColors colors) => UiKitFonts(

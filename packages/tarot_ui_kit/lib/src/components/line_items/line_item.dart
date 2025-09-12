@@ -43,7 +43,7 @@ class UiKitLineItem extends StatelessWidget {
                 Icon(
                   Icons.arrow_forward_ios,
                   size: UiKitSize.x4,
-                  color: colors.iconColor,
+                  color: colors.icon,
                 ),
               ],
             ),

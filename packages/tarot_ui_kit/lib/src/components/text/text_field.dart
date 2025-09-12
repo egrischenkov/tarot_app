@@ -26,14 +26,14 @@ class UiKitTextField extends StatelessWidget {
         disabledBorder: OutlineInputBorder(
           borderRadius: BorderRadius.circular(UiKitRadius.x3),
           borderSide: BorderSide(
-            color: colors.backgroundSecondary,
+            color: colors.border,
             width: UiKitSize.base / 2,
           ),
         ),
         enabledBorder: OutlineInputBorder(
           borderRadius: BorderRadius.circular(UiKitRadius.x3),
           borderSide: BorderSide(
-            color: colors.backgroundSecondary,
+            color: colors.border,
             width: UiKitSize.base / 2,
           ),
         ),
@@ -47,7 +47,7 @@ class UiKitTextField extends StatelessWidget {
         border: OutlineInputBorder(
           borderRadius: BorderRadius.circular(UiKitRadius.x3),
           borderSide: BorderSide(
-            color: colors.backgroundSecondary,
+            color: colors.border,
             width: UiKitSize.base / 2,
           ),
         ),

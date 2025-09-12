@@ -19,7 +19,7 @@ class DebugButton extends StatelessWidget {
       icon: Icon(
         Icons.bug_report_outlined,
         size: 25,
-        color: context.colors.iconColor,
+        color: context.colors.icon,
       ),
       onPressed: () => context.router.navigate(const DebugRoute()),
     );

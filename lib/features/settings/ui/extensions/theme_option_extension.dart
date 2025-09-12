@@ -20,15 +20,15 @@ extension ThemeOptionX on ThemeOption {
     return switch (this) {
       ThemeOption.light => Icon(
           Icons.light_mode_outlined,
-          color: colors.iconColor,
+          color: colors.icon,
         ),
       ThemeOption.dark => Icon(
           Icons.dark_mode_outlined,
-          color: colors.iconColor,
+          color: colors.icon,
         ),
       ThemeOption.system => Icon(
           Icons.settings_display_outlined,
-          color: colors.iconColor,
+          color: colors.icon,
         ),
     };
   }

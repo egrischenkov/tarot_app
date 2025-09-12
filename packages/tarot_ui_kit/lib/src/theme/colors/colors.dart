@@ -16,11 +16,12 @@ class UiKitColors extends ThemeExtension<UiKitColors> {
   final Color disabled;
   final Color gradientFirst;
   final Color gradientSecond;
+  final Color border;
   final Color borderGradientFirst;
   final Color borderGradientSecond;
-  final Color iconColor;
+  final Color icon;
   final Color iconBackground;
-  final Color shadowColor;
+  final Color shadow;
 
   const UiKitColors({
     required this.accent,
@@ -37,11 +38,12 @@ class UiKitColors extends ThemeExtension<UiKitColors> {
     required this.disabled,
     required this.gradientFirst,
     required this.gradientSecond,
+    required this.border,
     required this.borderGradientFirst,
     required this.borderGradientSecond,
-    required this.iconColor,
+    required this.icon,
     required this.iconBackground,
-    required this.shadowColor,
+    required this.shadow,
   });
 
   @override
@@ -58,13 +60,14 @@ class UiKitColors extends ThemeExtension<UiKitColors> {
     Color? error,
     Color? transparent,
     Color? disabled,
+    Color? border,
     Color? gradientFirst,
     Color? gradientSecond,
     Color? borderGradientFirst,
     Color? borderGradientSecond,
-    Color? iconColor,
+    Color? icon,
     Color? iconBackground,
-    Color? shadowColor,
+    Color? shadow,
   }) {
     return UiKitColors(
       accentTertiary: accentTertiary ?? this.accentTertiary,
@@ -79,13 +82,14 @@ class UiKitColors extends ThemeExtension<UiKitColors> {
       error: error ?? this.error,
       transparent: transparent ?? this.transparent,
       disabled: disabled ?? this.disabled,
+      border: border ?? this.border,
       gradientFirst: gradientFirst ?? this.gradientFirst,
       gradientSecond: gradientSecond ?? this.gradientSecond,
       borderGradientFirst: borderGradientFirst ?? this.borderGradientFirst,
       borderGradientSecond: borderGradientSecond ?? this.borderGradientSecond,
-      iconColor: iconColor ?? this.iconColor,
+      icon: icon ?? this.icon,
       iconBackground: iconBackground ?? this.iconBackground,
-      shadowColor: shadowColor ?? this.shadowColor,
+      shadow: shadow ?? this.shadow,
     );
   }
 
@@ -107,14 +111,15 @@ class UiKitColors extends ThemeExtension<UiKitColors> {
       error: Color.lerp(error, other.error, t) ?? other.error,
       transparent: Color.lerp(transparent, other.transparent, t) ?? other.transparent,
       disabled: Color.lerp(disabled, other.disabled, t) ?? other.disabled,
+      border: Color.lerp(border, other.border, t) ?? other.border,
       gradientFirst: Color.lerp(gradientFirst, other.gradientFirst, t) ?? other.gradientFirst,
       gradientSecond: Color.lerp(gradientSecond, other.gradientSecond, t) ?? other.gradientSecond,
       borderGradientFirst: Color.lerp(borderGradientFirst, other.borderGradientFirst, t) ?? other.borderGradientFirst,
       borderGradientSecond:
           Color.lerp(borderGradientSecond, other.borderGradientSecond, t) ?? other.borderGradientSecond,
-      iconColor: Color.lerp(iconColor, other.iconColor, t) ?? other.iconColor,
+      icon: Color.lerp(icon, other.icon, t) ?? other.icon,
       iconBackground: Color.lerp(iconBackground, other.iconBackground, t) ?? other.iconBackground,
-      shadowColor: Color.lerp(shadowColor, other.shadowColor, t) ?? other.shadowColor,
+      shadow: Color.lerp(shadow, other.shadow, t) ?? other.shadow,
     );
   }
 }

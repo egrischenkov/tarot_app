@@ -58,13 +58,13 @@ class MenuCardWidget extends StatelessWidget {
               borderRadius: borderRadius,
               boxShadow: [
                 BoxShadow(
-                  color: colors.shadowColor,
+                  color: colors.shadow,
                   blurRadius: 12,
                   spreadRadius: 1,
                   offset: const Offset(6, 0),
                 ),
                 BoxShadow(
-                  color: colors.shadowColor,
+                  color: colors.shadow,
                   blurRadius: 6,
                   spreadRadius: 0,
                   offset: const Offset(-2, 0),

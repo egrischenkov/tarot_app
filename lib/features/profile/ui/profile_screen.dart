@@ -61,7 +61,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
             width: UiKitSize.x5,
             height: UiKitSize.x5,
             colorFilter: ColorFilter.mode(
-              colors.iconColor,
+              colors.icon,
               BlendMode.srcIn,
             ),
           ),
@@ -73,7 +73,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
             width: UiKitSize.x5,
             height: UiKitSize.x5,
             colorFilter: ColorFilter.mode(
-              colors.iconColor,
+              colors.icon,
               BlendMode.srcIn,
             ),
           ),
