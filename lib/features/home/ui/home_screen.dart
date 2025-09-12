@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:taro/app/domain/entities/theme_option.dart';
+import 'package:taro/app/ui/bloc/language_bloc/language_bloc.dart';
 import 'package:taro/app/ui/bloc/theme_bloc/theme_bloc.dart';
 import 'package:taro/core/assets/gen/assets.gen.dart';
 import 'package:taro/core/extensions/context_extension.dart';
@@ -101,123 +102,135 @@ class _HomeScreenState extends State<HomeScreen> with TickerProviderStateMixin {
     const profileIconVerticalPadding = UiKitSpacing.x2;
     final cardScreenTopPadding = profileIconSize + profileIconVerticalPadding + MediaQuery.of(context).padding.top;
 
-    return AnnotatedRegion<SystemUiOverlayStyle>(
-      value: SystemUiOverlayStyle(
-        statusBarColor: colors.transparent,
-        statusBarIconBrightness: switch (themeOption) {
-          ThemeOption.light => Brightness.dark,
-          ThemeOption.dark => Brightness.light,
-          ThemeOption.system => null,
-        },
-      ),
-      child: Scaffold(
-        body: AutoTabsRouter(
-          duration: _pageChangingDuration,
-          transitionBuilder: (context, child, animation) => FadeTransition(
-            opacity: animation,
-            child: child,
-          ),
-          routes: const [
-            DailyCardRoute(),
-            CardsCatalogRoute(),
-            YesNoRoute(),
-          ],
-          builder: (context, child) {
-            final tabsRouter = AutoTabsRouter.of(context);
+    return BlocListener<LanguageBloc, LanguageState>(
+      listener: (context, _) {
+        setState(() {
+          _isTitleAnimationTrigger = false;
+          Future.delayed(_pageChangingDuration).then((_) {
+            setState(() {
+              _visibleTitle = _selectedCard.getName(context);
+              _isTitleAnimationTrigger = true;
+            });
+          });
+        });
+      },
+      child: AnnotatedRegion<SystemUiOverlayStyle>(
+        value: SystemUiOverlayStyle(
+          statusBarColor: colors.transparent,
+          statusBarIconBrightness: switch (themeOption) {
+            ThemeOption.light => Brightness.dark,
+            ThemeOption.dark => Brightness.light,
+            ThemeOption.system => null,
+          },
+        ),
+        child: Scaffold(
+          body: AutoTabsRouter(
+            duration: _pageChangingDuration,
+            transitionBuilder: (context, child, animation) => FadeTransition(
+              opacity: animation,
+              child: child,
+            ),
+            routes: const [
+              DailyCardRoute(),
+              CardsCatalogRoute(),
+              YesNoRoute(),
+            ],
+            builder: (context, child) {
+              final tabsRouter = AutoTabsRouter.of(context);
 
-            return Container(
-              padding: MediaQuery.of(context).padding,
-              decoration: BoxDecoration(
-                gradient: LinearGradient(
-                  begin: Alignment.topLeft,
-                  end: Alignment.bottomRight,
-                  colors: [colors.gradientFirst, colors.gradientSecond],
+              return Container(
+                padding: MediaQuery.of(context).padding,
+                decoration: BoxDecoration(
+                  gradient: LinearGradient(
+                    begin: Alignment.topLeft,
+                    end: Alignment.bottomRight,
+                    colors: [colors.gradientFirst, colors.gradientSecond],
+                  ),
                 ),
-              ),
-              child: Stack(
-                children: [
-                  Align(
-                    alignment: Alignment.topCenter,
-                    child: Container(
-                      padding: const EdgeInsets.all(UiKitSpacing.x4),
-                      child: Row(
-                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                        crossAxisAlignment: CrossAxisAlignment.center,
-                        children: [
-                          EnhancedTextRevealEffect(
-                            // text: _selectedCard.getName(context),
-                            text: _visibleTitle,
-                            trigger: _isTitleAnimationTrigger,
-                            duration: _pageChangingDuration,
-                            style: fonts.largeTitleEmphasized,
-                          ),
-                          Hero(
-                            tag: ProfileWidget.heroTag,
-                            child: ProfileWidget(
-                              size: UiKitSize.x10,
-                              onTap: _onProfileTap,
-                              child: Assets.icons.ava1.svg(
-                                height: UiKitSize.x10,
-                                width: UiKitSize.x10,
+                child: Stack(
+                  children: [
+                    Align(
+                      alignment: Alignment.topCenter,
+                      child: Container(
+                        padding: const EdgeInsets.all(UiKitSpacing.x4),
+                        child: Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                          crossAxisAlignment: CrossAxisAlignment.center,
+                          children: [
+                            EnhancedTextRevealEffect(
+                              text: _visibleTitle,
+                              trigger: _isTitleAnimationTrigger,
+                              duration: _pageChangingDuration,
+                              style: fonts.largeTitleEmphasized,
+                            ),
+                            Hero(
+                              tag: ProfileWidget.heroTag,
+                              child: ProfileWidget(
+                                size: UiKitSize.x10,
+                                onTap: _onProfileTap,
+                                child: Assets.icons.ava1.svg(
+                                  height: UiKitSize.x10,
+                                  width: UiKitSize.x10,
+                                ),
                               ),
                             ),
-                          ),
-                        ],
+                          ],
+                        ),
                       ),
                     ),
-                  ),
-                  AnimatedBuilder(
-                    animation: _animations.controller,
-                    builder: (context, _) {
-                      return Positioned.fill(
-                        top: cardScreenTopPadding,
-                        child: Stack(
-                          children: _menuCards.mapWithIndex((index, card, _, __) {
-                            final animationValues = CardAnimationCalculator(
-                              context: context,
-                              animations: _animations,
-                              cardWidth: _cardWidth,
-                              cardHeight: _cardHeight,
-                              selectedCardIndex: _selectedCardIndex,
-                              selectedCard: _selectedCard,
-                              previousSelectedCard: _previousSelectedCard,
-                              menuCards: _menuCards,
-                              deckOrder: _deckOrder,
-                              isStackReordered: _isStackReordered,
-                            ).calculate(index, card);
+                    AnimatedBuilder(
+                      animation: _animations.controller,
+                      builder: (context, _) {
+                        return Positioned.fill(
+                          top: cardScreenTopPadding,
+                          child: Stack(
+                            children: _menuCards.mapWithIndex((index, card, _, __) {
+                              final animationValues = CardAnimationCalculator(
+                                context: context,
+                                animations: _animations,
+                                cardWidth: _cardWidth,
+                                cardHeight: _cardHeight,
+                                selectedCardIndex: _selectedCardIndex,
+                                selectedCard: _selectedCard,
+                                previousSelectedCard: _previousSelectedCard,
+                                menuCards: _menuCards,
+                                deckOrder: _deckOrder,
+                                isStackReordered: _isStackReordered,
+                              ).calculate(index, card);
 
-                            final isPreviousSelected = card.id == _previousSelectedCard?.id;
+                              final isPreviousSelected = card.id == _previousSelectedCard?.id;
 
-                            return MenuCardWidget(
-                              name: card.getName(context),
-                              verticalOffset: animationValues.verticalOffset,
-                              horizontalOffset: animationValues.horizontalOffset,
-                              height: animationValues.height,
-                              width: animationValues.width,
-                              heightFactor: animationValues.heightFactor,
-                              angle: animationValues.angle,
-                              yAngle: animationValues.yAngle,
-                              borderRadius:
-                                  (_animations.controller.value >= 0.3 && _animations.controller.value <= 5.0) &&
-                                          (isPreviousSelected || _isSelectedCard(card))
-                                      ? BorderRadius.circular(24)
-                                      : const BorderRadius.vertical(top: Radius.circular(24)),
-                              icon: Icon(
-                                card.icon,
-                                color: Colors.blueAccent,
-                              ),
-                              onTap: () => _onCardTap(card, index, tabsRouter),
-                              backSideWidget: child,
-                            );
-                          }).toList(),
-                        ),
-                      );
-                    },
-                  ),
-                ],
-              ),
-            );
-          },
+                              return MenuCardWidget(
+                                name: card.getName(context),
+                                verticalOffset: animationValues.verticalOffset,
+                                horizontalOffset: animationValues.horizontalOffset,
+                                height: animationValues.height,
+                                width: animationValues.width,
+                                heightFactor: animationValues.heightFactor,
+                                angle: animationValues.angle,
+                                yAngle: animationValues.yAngle,
+                                borderRadius:
+                                    (_animations.controller.value >= 0.3 && _animations.controller.value <= 5.0) &&
+                                            (isPreviousSelected || _isSelectedCard(card))
+                                        ? BorderRadius.circular(24)
+                                        : const BorderRadius.vertical(top: Radius.circular(24)),
+                                icon: Icon(
+                                  card.icon,
+                                  color: Colors.blueAccent,
+                                ),
+                                onTap: () => _onCardTap(card, index, tabsRouter),
+                                backSideWidget: child,
+                              );
+                            }).toList(),
+                          ),
+                        );
+                      },
+                    ),
+                  ],
+                ),
+              );
+            },
+          ),
         ),
       ),
     );
