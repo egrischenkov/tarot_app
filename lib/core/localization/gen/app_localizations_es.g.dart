@@ -166,4 +166,13 @@ class AppLocalizationsEs extends AppLocalizations {
 
   @override
   String get feedbackFromScreen$CommentHint => 'Describe tu experiencia con la aplicación';
+
+  @override
+  String get aboutScreen$Title => 'Acerca de';
+
+  @override
+  String get aboutScreen$PrivacyPolicy => 'Política de privacidad';
+
+  @override
+  String get aboutScreen$TermsOfService => 'Términos de servicio';
 }

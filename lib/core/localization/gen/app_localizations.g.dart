@@ -426,6 +426,24 @@ abstract class AppLocalizations {
   /// In ru, this message translates to:
   /// **'Опишите ваш опыт использования приложения'**
   String get feedbackFromScreen$CommentHint;
+
+  /// No description provided for @aboutScreen$Title.
+  ///
+  /// In ru, this message translates to:
+  /// **'О приложении'**
+  String get aboutScreen$Title;
+
+  /// No description provided for @aboutScreen$PrivacyPolicy.
+  ///
+  /// In ru, this message translates to:
+  /// **'Политика конфиденциальности'**
+  String get aboutScreen$PrivacyPolicy;
+
+  /// No description provided for @aboutScreen$TermsOfService.
+  ///
+  /// In ru, this message translates to:
+  /// **'Условия использования'**
+  String get aboutScreen$TermsOfService;
 }
 
 class _AppLocalizationsDelegate extends LocalizationsDelegate<AppLocalizations> {

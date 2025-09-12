@@ -75,5 +75,19 @@
     "feedbackFormScreen$FeedbackCategory$Other": "Autre",
     "feedbackFormScreen$Send": "Envoyer",
     "feedbackFromScreen$YourComment": "Ton commentaire (optionnel)",
-    "feedbackFromScreen$CommentHint": "Décris ton expérience avec l’application"
+    "feedbackFromScreen$CommentHint": "Décris ton expérience avec l’application",
+    "@segmentAboutScreen": {
+        "---------": "---------",
+        "description": "About screen"
+    },
+    "aboutScreen$Title": "À propos",
+    "aboutScreen$PrivacyPolicy": "Politique de confidentialité",
+    "aboutScreen$TermsOfService": "Conditions d’utilisation",
+    "@segmentAboutScreen": {
+        "---------": "---------",
+        "description": "About screen"
+    },
+    "aboutScreen$Title": "ऐप के बारे में",
+    "aboutScreen$PrivacyPolicy": "गोपनीयता नीति",
+    "aboutScreen$TermsOfService": "सेवा की शर्तें"
 }

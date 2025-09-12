@@ -75,5 +75,12 @@
     "feedbackFormScreen$FeedbackCategory$Other": "Sonstiges",
     "feedbackFormScreen$Send": "Senden",
     "feedbackFromScreen$YourComment": "Dein Kommentar (optional)",
-    "feedbackFromScreen$CommentHint": "Beschreibe deine Erfahrung mit der App"
+    "feedbackFromScreen$CommentHint": "Beschreibe deine Erfahrung mit der App",
+    "@segmentAboutScreen": {
+        "---------": "---------",
+        "description": "About screen"
+    },
+    "aboutScreen$Title": "Über die App",
+    "aboutScreen$PrivacyPolicy": "Datenschutzrichtlinie",
+    "aboutScreen$TermsOfService": "Nutzungsbedingungen"
 }

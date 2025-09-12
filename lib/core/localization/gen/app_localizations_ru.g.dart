@@ -166,4 +166,13 @@ class AppLocalizationsRu extends AppLocalizations {
 
   @override
   String get feedbackFromScreen$CommentHint => 'Опишите ваш опыт использования приложения';
+
+  @override
+  String get aboutScreen$Title => 'О приложении';
+
+  @override
+  String get aboutScreen$PrivacyPolicy => 'Политика конфиденциальности';
+
+  @override
+  String get aboutScreen$TermsOfService => 'Условия использования';
 }

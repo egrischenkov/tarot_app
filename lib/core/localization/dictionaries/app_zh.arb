@@ -75,5 +75,12 @@
     "feedbackFormScreen$FeedbackCategory$Other": "其他",
     "feedbackFormScreen$Send": "发送",
     "feedbackFromScreen$YourComment": "你的评论（可选）",
-    "feedbackFromScreen$CommentHint": "描述你使用应用的体验"
+    "feedbackFromScreen$CommentHint": "描述你使用应用的体验",
+    "@segmentAboutScreen": {
+        "---------": "---------",
+        "description": "About screen"
+    },
+    "aboutScreen$Title": "关于",
+    "aboutScreen$PrivacyPolicy": "隐私政策",
+    "aboutScreen$TermsOfService": "服务条款"
 }

@@ -166,4 +166,13 @@ class AppLocalizationsZh extends AppLocalizations {
 
   @override
   String get feedbackFromScreen$CommentHint => '描述你使用应用的体验';
+
+  @override
+  String get aboutScreen$Title => '关于';
+
+  @override
+  String get aboutScreen$PrivacyPolicy => '隐私政策';
+
+  @override
+  String get aboutScreen$TermsOfService => '服务条款';
 }

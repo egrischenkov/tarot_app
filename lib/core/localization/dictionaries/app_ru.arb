@@ -75,5 +75,12 @@
     "feedbackFormScreen$FeedbackCategory$Other": "Другое",
     "feedbackFormScreen$Send": "Отправить",
     "feedbackFromScreen$YourComment": "Ваш комментарий (необязательно)",
-    "feedbackFromScreen$CommentHint": "Опишите ваш опыт использования приложения"
+    "feedbackFromScreen$CommentHint": "Опишите ваш опыт использования приложения",
+    "@segmentAboutScreen": {
+        "---------": "---------",
+        "description": "About screen"
+    },
+    "aboutScreen$Title": "О приложении",
+    "aboutScreen$PrivacyPolicy": "Политика конфиденциальности",
+    "aboutScreen$TermsOfService": "Условия использования"
 }
