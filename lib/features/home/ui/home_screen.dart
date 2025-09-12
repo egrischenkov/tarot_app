@@ -36,6 +36,8 @@ class _HomeScreenState extends State<HomeScreen> with TickerProviderStateMixin {
   static const _cardsCatalogId = 'cards_catalog';
   static const _yesNoId = 'yes_no';
 
+  static const _pageChangingDuration = Duration(milliseconds: 400);
+
   late final HomeScreenAnimations _animations;
   late double _cardWidth;
   late double _cardHeight;
@@ -43,6 +45,7 @@ class _HomeScreenState extends State<HomeScreen> with TickerProviderStateMixin {
   late var _selectedCard = _menuCards.first;
   int _selectedCardIndex = 0;
   MenuCardModel? _previousSelectedCard;
+  late String _visibleTitle = _menuCards.first.getName(context);
 
   final _menuCards = [
     MenuCardModel(id: _HomeScreenState._dailyCardId),
@@ -57,6 +60,7 @@ class _HomeScreenState extends State<HomeScreen> with TickerProviderStateMixin {
   ];
 
   bool _isStackReordered = false;
+  bool _isTitleAnimationTrigger = true;
 
   @override
   void initState() {
@@ -108,7 +112,7 @@ class _HomeScreenState extends State<HomeScreen> with TickerProviderStateMixin {
       ),
       child: Scaffold(
         body: AutoTabsRouter(
-          duration: const Duration(milliseconds: 400),
+          duration: _pageChangingDuration,
           transitionBuilder: (context, child, animation) => FadeTransition(
             opacity: animation,
             child: child,
@@ -140,8 +144,11 @@ class _HomeScreenState extends State<HomeScreen> with TickerProviderStateMixin {
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         crossAxisAlignment: CrossAxisAlignment.center,
                         children: [
-                          Text(
-                            _selectedCard.getName(context),
+                          EnhancedTextRevealEffect(
+                            // text: _selectedCard.getName(context),
+                            text: _visibleTitle,
+                            trigger: _isTitleAnimationTrigger,
+                            duration: _pageChangingDuration,
                             style: fonts.largeTitleEmphasized,
                           ),
                           Hero(
@@ -247,6 +254,7 @@ class _HomeScreenState extends State<HomeScreen> with TickerProviderStateMixin {
       _previousSelectedCard = _selectedCard;
       _selectedCard = card;
       _selectedCardIndex = index;
+      _isTitleAnimationTrigger = false;
     });
     _animations.controller.forward();
     _animations.controller.addListener(() {
@@ -256,6 +264,13 @@ class _HomeScreenState extends State<HomeScreen> with TickerProviderStateMixin {
           tabsRouter.setActiveIndex(searchedIndex);
         });
       }
+    });
+
+    Future.delayed(_pageChangingDuration).then((_) {
+      setState(() {
+        _isTitleAnimationTrigger = true;
+        _visibleTitle = card.getName(context);
+      });
     });
   }
 
