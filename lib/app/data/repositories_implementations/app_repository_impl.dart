@@ -1,5 +1,3 @@
-import 'dart:ui';
-
 import 'package:taro/app/data/services/language_service.dart';
 import 'package:taro/app/data/services/theme_service.dart';
 import 'package:taro/app/domain/entities/language_option.dart';
@@ -7,16 +5,6 @@ import 'package:taro/app/domain/entities/theme_option.dart';
 import 'package:taro/app/domain/repositories/app_repository.dart';
 
 class AppRepositoryImpl implements AppRepository {
-  static const _russianLanguageCode = 'ru';
-  static const _englishLanguageCode = 'en';
-  static const _germanLanguageCode = 'de';
-  static const _spanishLanguageCode = 'es';
-  static const _frenchLanguageCode = 'fr';
-  static const _hindiLanguageCode = 'hi';
-  static const _italianLanguageCode = 'it';
-  static const _portugueseLanguageCode = 'pt';
-  static const _chineseLanguageCode = 'zh';
-
   final LanguageService _localeService;
   final ThemeService _themeService;
 
@@ -28,12 +16,12 @@ class AppRepositoryImpl implements AppRepository {
 
   @override
   LanguageOption getCurrentLanguageOption() {
-    return _localeService.currentLocale._toLanguageOption;
+    return _localeService.currentLocaleCode._toLanguageOption;
   }
 
   @override
   Future<void> setCurrentLanguage({required LanguageOption languageOption}) {
-    return _localeService.selectNewLocale(languageOption.toLocale);
+    return _localeService.selectNewLocale(languageOption.name);
   }
 
   @override
@@ -47,37 +35,18 @@ class AppRepositoryImpl implements AppRepository {
   }
 }
 
-// TODO(egrischenkov): need to refactor. Locale must be in the UI layer.
-// So LanguageService also must be refactored.
-// I think data layer must work only with String language code
-extension LanguageOptionX on LanguageOption {
-  Locale get toLocale {
-    return switch (this) {
-      LanguageOption.russian => const Locale(AppRepositoryImpl._russianLanguageCode),
-      LanguageOption.english => const Locale(AppRepositoryImpl._englishLanguageCode),
-      LanguageOption.german => const Locale(AppRepositoryImpl._germanLanguageCode),
-      LanguageOption.spanish => const Locale(AppRepositoryImpl._spanishLanguageCode),
-      LanguageOption.french => const Locale(AppRepositoryImpl._frenchLanguageCode),
-      LanguageOption.hindi => const Locale(AppRepositoryImpl._hindiLanguageCode),
-      LanguageOption.italian => const Locale(AppRepositoryImpl._italianLanguageCode),
-      LanguageOption.portuguese => const Locale(AppRepositoryImpl._portugueseLanguageCode),
-      LanguageOption.chinese => const Locale(AppRepositoryImpl._chineseLanguageCode),
-    };
-  }
-}
-
-extension on Locale {
+extension on String {
   LanguageOption get _toLanguageOption {
-    return switch (languageCode) {
-      AppRepositoryImpl._russianLanguageCode => LanguageOption.russian,
-      AppRepositoryImpl._englishLanguageCode => LanguageOption.english,
-      AppRepositoryImpl._germanLanguageCode => LanguageOption.german,
-      AppRepositoryImpl._spanishLanguageCode => LanguageOption.spanish,
-      AppRepositoryImpl._frenchLanguageCode => LanguageOption.french,
-      AppRepositoryImpl._hindiLanguageCode => LanguageOption.hindi,
-      AppRepositoryImpl._italianLanguageCode => LanguageOption.italian,
-      AppRepositoryImpl._portugueseLanguageCode => LanguageOption.portuguese,
-      AppRepositoryImpl._chineseLanguageCode => LanguageOption.chinese,
+    return switch (this) {
+      LanguageService.russianLanguageCode => LanguageOption.russian,
+      LanguageService.englishLanguageCode => LanguageOption.english,
+      LanguageService.germanLanguageCode => LanguageOption.german,
+      LanguageService.spanishLanguageCode => LanguageOption.spanish,
+      LanguageService.frenchLanguageCode => LanguageOption.french,
+      LanguageService.hindiLanguageCode => LanguageOption.hindi,
+      LanguageService.italianLanguageCode => LanguageOption.italian,
+      LanguageService.portugueseLanguageCode => LanguageOption.portuguese,
+      LanguageService.chineseLanguageCode => LanguageOption.chinese,
       _ => LanguageOption.english,
     };
   }
