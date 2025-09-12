@@ -22,6 +22,7 @@ class UiKitTextField extends StatelessWidget {
 
     return TextField(
       controller: controller,
+      style: fonts.bodyRegular,
       decoration: InputDecoration(
         disabledBorder: OutlineInputBorder(
           borderRadius: BorderRadius.circular(UiKitRadius.x3),
