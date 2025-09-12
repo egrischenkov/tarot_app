@@ -71,7 +71,7 @@ class _SettingsScreenState extends State<SettingsScreen> {
                 ),
                 UiKitLineItem(
                   label: l10n.settingsScreen$AboutApp,
-                  onTap: () {},
+                  onTap: _onAboutTap,
                 ),
               ],
             ),
@@ -100,5 +100,9 @@ class _SettingsScreenState extends State<SettingsScreen> {
 
   void _onFeedbackFormTap() {
     context.router.push(const FeedbackFormRoute());
+  }
+
+  void _onAboutTap() {
+    context.router.push(const AboutRoute());
   }
 }

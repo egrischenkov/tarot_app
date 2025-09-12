@@ -3,7 +3,8 @@
         "---------": "---------",
         "description": "Common"
     },
-    "appName": "Tarot",
+    "appName": "Stary",
+    "companyName": "Tarot Band",
     "@segmentOnboarding": {
         "---------": "---------",
         "description": "Onboarding"

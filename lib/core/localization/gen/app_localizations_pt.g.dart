@@ -9,7 +9,10 @@ class AppLocalizationsPt extends AppLocalizations {
   AppLocalizationsPt([String locale = 'pt']) : super(locale);
 
   @override
-  String get appName => 'Tarot';
+  String get appName => 'Stary';
+
+  @override
+  String get companyName => 'Tarot Band';
 
   @override
   String get onboarding$Path => 'A jornada começa aqui';

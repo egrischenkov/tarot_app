@@ -22,6 +22,7 @@ class UiKitColors extends ThemeExtension<UiKitColors> {
   final Color icon;
   final Color iconBackground;
   final Color shadow;
+  final Color link;
 
   const UiKitColors({
     required this.accent,
@@ -44,6 +45,7 @@ class UiKitColors extends ThemeExtension<UiKitColors> {
     required this.icon,
     required this.iconBackground,
     required this.shadow,
+    required this.link,
   });
 
   @override
@@ -68,6 +70,7 @@ class UiKitColors extends ThemeExtension<UiKitColors> {
     Color? icon,
     Color? iconBackground,
     Color? shadow,
+    Color? link,
   }) {
     return UiKitColors(
       accentTertiary: accentTertiary ?? this.accentTertiary,
@@ -90,6 +93,7 @@ class UiKitColors extends ThemeExtension<UiKitColors> {
       icon: icon ?? this.icon,
       iconBackground: iconBackground ?? this.iconBackground,
       shadow: shadow ?? this.shadow,
+      link: link ?? this.link,
     );
   }
 
@@ -120,6 +124,7 @@ class UiKitColors extends ThemeExtension<UiKitColors> {
       icon: Color.lerp(icon, other.icon, t) ?? other.icon,
       iconBackground: Color.lerp(iconBackground, other.iconBackground, t) ?? other.iconBackground,
       shadow: Color.lerp(shadow, other.shadow, t) ?? other.shadow,
+      link: Color.lerp(link, other.link, t) ?? other.link,
     );
   }
 }

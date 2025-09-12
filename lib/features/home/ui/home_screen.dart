@@ -157,7 +157,7 @@ class _HomeScreenState extends State<HomeScreen> with TickerProviderStateMixin {
                           mainAxisAlignment: MainAxisAlignment.spaceBetween,
                           crossAxisAlignment: CrossAxisAlignment.center,
                           children: [
-                            EnhancedTextRevealEffect(
+                            UiKitEnhancedTextRevealEffect(
                               text: _visibleTitle,
                               trigger: _isTitleAnimationTrigger,
                               duration: _pageChangingDuration,

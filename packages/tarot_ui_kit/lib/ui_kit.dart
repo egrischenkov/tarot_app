@@ -12,6 +12,7 @@ export 'src/components/line_items/checkbox_line_item.dart';
 export 'src/components/line_items/line_item.dart';
 export 'src/components/line_items/line_items_group.dart';
 export 'src/components/text/text_field.dart';
+export 'src/components/text/text_link.dart';
 export 'src/components/text/text_reveal/text_reveal.dart';
 export 'src/theme/colors/colors.dart';
 export 'src/theme/context_extensions/context_extension.dart';

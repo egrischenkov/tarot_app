@@ -27,7 +27,7 @@ class UiKitBaseScreen extends StatelessWidget {
 
     return Scaffold(
       extendBodyBehindAppBar: true,
-      backgroundColor: backgroundColor,
+      backgroundColor: backgroundColor ?? context.colors.backgroundSecondary,
       appBar: UiKitAppBar(
         title: title,
         actions: actions,

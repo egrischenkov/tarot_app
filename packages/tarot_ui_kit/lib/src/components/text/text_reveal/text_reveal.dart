@@ -69,7 +69,7 @@ enum AnimationUnit {
 }
 
 // Enhanced Animation Manager
-class EnhancedTextAnimationManager {
+class _EnhancedTextAnimationManager {
   final AnimationController controller;
   final String text;
   final Curve curve;
@@ -79,7 +79,7 @@ class EnhancedTextAnimationManager {
   late final List<Animation<double>> _animations;
   late final List<String> _units;
 
-  EnhancedTextAnimationManager({
+  _EnhancedTextAnimationManager({
     required this.controller,
     required this.text,
     required this.curve,
@@ -159,7 +159,7 @@ class EnhancedTextAnimationManager {
 }
 
 // Enhanced Text Reveal Widget
-class EnhancedTextRevealEffect extends StatefulWidget {
+class UiKitEnhancedTextRevealEffect extends StatefulWidget {
   final String text;
   final TextStyle? style;
   final Duration duration;
@@ -169,7 +169,7 @@ class EnhancedTextRevealEffect extends StatefulWidget {
   final TextAnimationStrategy strategy;
   final AnimationDirection direction;
 
-  const EnhancedTextRevealEffect({
+  const UiKitEnhancedTextRevealEffect({
     required this.text,
     required this.trigger,
     this.style,
@@ -182,12 +182,13 @@ class EnhancedTextRevealEffect extends StatefulWidget {
   });
 
   @override
-  State<EnhancedTextRevealEffect> createState() => _EnhancedTextRevealEffectState();
+  State<UiKitEnhancedTextRevealEffect> createState() => _UiKitEnhancedTextRevealEffectState();
 }
 
-class _EnhancedTextRevealEffectState extends State<EnhancedTextRevealEffect> with SingleTickerProviderStateMixin {
+class _UiKitEnhancedTextRevealEffectState extends State<UiKitEnhancedTextRevealEffect>
+    with SingleTickerProviderStateMixin {
   late final AnimationController _controller;
-  late EnhancedTextAnimationManager _animationManager;
+  late _EnhancedTextAnimationManager _animationManager;
   bool _isVisible = false;
 
   @override
@@ -217,7 +218,7 @@ class _EnhancedTextRevealEffectState extends State<EnhancedTextRevealEffect> wit
   }
 
   void _initializeAnimationManager() {
-    _animationManager = EnhancedTextAnimationManager(
+    _animationManager = _EnhancedTextAnimationManager(
       controller: _controller,
       text: widget.text,
       curve: widget.curve,
@@ -227,7 +228,7 @@ class _EnhancedTextRevealEffectState extends State<EnhancedTextRevealEffect> wit
   }
 
   @override
-  void didUpdateWidget(EnhancedTextRevealEffect oldWidget) {
+  void didUpdateWidget(UiKitEnhancedTextRevealEffect oldWidget) {
     super.didUpdateWidget(oldWidget);
 
     // Handle trigger changes

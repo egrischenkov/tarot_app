@@ -112,8 +112,14 @@ abstract class AppLocalizations {
   /// No description provided for @appName.
   ///
   /// In ru, this message translates to:
-  /// **'Tarot'**
+  /// **'Stary'**
   String get appName;
+
+  /// No description provided for @companyName.
+  ///
+  /// In ru, this message translates to:
+  /// **'Tarot Band'**
+  String get companyName;
 
   /// No description provided for @onboarding$Path.
   ///
