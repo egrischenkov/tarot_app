@@ -1,8 +1,8 @@
 import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:taro/app/ui/bloc/language_bloc/language_bloc.dart';
-import 'package:taro/app/ui/bloc/theme_bloc/theme_bloc.dart';
+import 'package:taro/app/ui/bloc/language/language_bloc.dart';
+import 'package:taro/app/ui/bloc/theme/theme_bloc.dart';
 import 'package:taro/core/extensions/context_extension.dart';
 import 'package:taro/core/routing/app_router.dart';
 import 'package:taro/features/settings/ui/extensions/language_option_extension.dart';

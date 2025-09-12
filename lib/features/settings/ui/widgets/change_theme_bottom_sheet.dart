@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:taro/app/domain/entities/theme_option.dart';
-import 'package:taro/app/ui/bloc/theme_bloc/theme_bloc.dart';
+import 'package:taro/app/ui/bloc/theme/theme_bloc.dart';
 import 'package:taro/features/settings/ui/extensions/theme_option_extension.dart';
 import 'package:tarot_ui_kit/ui_kit.dart';
 
