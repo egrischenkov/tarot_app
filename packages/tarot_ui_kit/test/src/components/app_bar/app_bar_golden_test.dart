@@ -7,37 +7,24 @@ import '../../utils/ui_kit_golden_test_wrapper.dart';
 
 void main() {
   const testTitle = 'test';
-  final body = Column(
-    children: [
-      const Text('test'),
-      UiKitSpacing.x4.h,
-      Container(
-        height: 50,
-        width: double.infinity,
-        color: Colors.red,
-      ),
-    ],
-  );
   const actions = [
     Icon(Icons.abc, color: Colors.red),
     Icon(Icons.abc_outlined, color: Colors.red),
   ];
 
-  group('Base screen', () {
+  group('App bar', () {
     goldenTest(
       'light with offset',
-      fileName: 'base_screen_with_offset_light',
+      fileName: 'app_bar_with_offset_light',
       constraints: const BoxConstraints(
         maxWidth: 600,
-        maxHeight: 800,
+        maxHeight: 200,
       ),
       builder: () => UiKitGoldenTestWrapper(
         themeData: UiKitTheme.lightThemeData,
-        child: UiKitBaseScreen(
+        child: const UiKitAppBar(
           title: testTitle,
-          body: body,
           actions: actions,
-          bodyWithAppBarOffset: true,
           scrollOffset: 150,
         ),
       ),
@@ -45,37 +32,32 @@ void main() {
 
     goldenTest(
       'light without offset',
-      fileName: 'base_screen_without_offset_light',
+      fileName: 'app_bar_without_offset_light',
       constraints: const BoxConstraints(
         maxWidth: 600,
-        maxHeight: 800,
+        maxHeight: 200,
       ),
       builder: () => UiKitGoldenTestWrapper(
         themeData: UiKitTheme.lightThemeData,
-        child: UiKitBaseScreen(
+        child: const UiKitAppBar(
           title: testTitle,
-          body: body,
           actions: actions,
-          bodyWithAppBarOffset: false,
-          scrollOffset: 150,
         ),
       ),
     );
 
     goldenTest(
       'dark with offset',
-      fileName: 'base_screen_with_offset_dark',
+      fileName: 'app_bar_with_offset_dark',
       constraints: const BoxConstraints(
         maxWidth: 600,
-        maxHeight: 800,
+        maxHeight: 200,
       ),
       builder: () => UiKitGoldenTestWrapper(
         themeData: UiKitTheme.darkThemeData,
-        child: UiKitBaseScreen(
+        child: const UiKitAppBar(
           title: testTitle,
-          body: body,
           actions: actions,
-          bodyWithAppBarOffset: true,
           scrollOffset: 150,
         ),
       ),
@@ -83,19 +65,16 @@ void main() {
 
     goldenTest(
       'dark without offset',
-      fileName: 'base_screen_without_offset_dark',
+      fileName: 'app_bar_without_offset_dark',
       constraints: const BoxConstraints(
         maxWidth: 600,
-        maxHeight: 800,
+        maxHeight: 200,
       ),
       builder: () => UiKitGoldenTestWrapper(
         themeData: UiKitTheme.darkThemeData,
-        child: UiKitBaseScreen(
+        child: const UiKitAppBar(
           title: testTitle,
-          body: body,
           actions: actions,
-          bodyWithAppBarOffset: false,
-          scrollOffset: 150,
         ),
       ),
     );
