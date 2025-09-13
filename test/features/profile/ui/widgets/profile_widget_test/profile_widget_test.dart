@@ -15,7 +15,7 @@ void main() {
         maxWidth: 600,
         maxHeight: 800,
       ),
-      builder: () => TestWidgetWrapper(
+      builder: () => GoldenTestWidgetWrapper(
         child: ProfileWidget(
           size: 64,
           child: Assets.icons.ava1.svg(),

@@ -15,7 +15,7 @@ void main() {
         maxWidth: 600,
         maxHeight: 800,
       ),
-      builder: () => TestWidgetWrapper(
+      builder: () => GoldenTestWidgetWrapper(
         themeData: UiKitTheme.lightThemeData,
         child: const AboutScreen(),
       ),
@@ -27,7 +27,7 @@ void main() {
         maxWidth: 600,
         maxHeight: 800,
       ),
-      builder: () => TestWidgetWrapper(
+      builder: () => GoldenTestWidgetWrapper(
         themeData: UiKitTheme.darkThemeData,
         child: const AboutScreen(),
       ),

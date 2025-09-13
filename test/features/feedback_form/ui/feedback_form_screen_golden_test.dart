@@ -15,7 +15,7 @@ void main() {
         maxWidth: 600,
         maxHeight: 1600,
       ),
-      builder: () => TestWidgetWrapper(
+      builder: () => GoldenTestWidgetWrapper(
         themeData: UiKitTheme.lightThemeData,
         child: const FeedbackFormScreen(),
       ),
@@ -27,7 +27,7 @@ void main() {
         maxWidth: 600,
         maxHeight: 1600,
       ),
-      builder: () => TestWidgetWrapper(
+      builder: () => GoldenTestWidgetWrapper(
         themeData: UiKitTheme.darkThemeData,
         child: const FeedbackFormScreen(),
       ),

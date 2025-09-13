@@ -14,7 +14,7 @@ void main() {
         maxWidth: 600,
         maxHeight: 800,
       ),
-      builder: () => TestWidgetWrapper(
+      builder: () => GoldenTestWidgetWrapper(
         child: Container(
           width: 600,
           padding: const EdgeInsets.symmetric(horizontal: 16),
