@@ -14,6 +14,7 @@ class UiKitGoldenTestWrapper extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      debugShowCheckedModeBanner: false,
       theme: themeData ?? UiKitTheme.lightThemeData,
       home: Scaffold(
         body: child,
