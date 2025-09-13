@@ -6,71 +6,72 @@ import 'package:tarot_ui_kit/ui_kit.dart';
 import '../../../utils/ui_kit_golden_test_wrapper.dart';
 
 void main() {
-  const title = 'test';
+  const label = 'test';
+  const valueLabel = 'test value label';
 
-  group('Check box line item', () {
+  group('Line item', () {
     goldenTest(
-      'light selected',
-      fileName: 'check_box_line_item_light_selected',
+      'light with value label',
+      fileName: 'line_item_light_with_value_label',
       constraints: const BoxConstraints(
         maxWidth: 600,
         maxHeight: 600,
       ),
       builder: () => UiKitGoldenTestWrapper(
         themeData: UiKitTheme.lightThemeData,
-        child: UiKitCheckboxLineItem(
-          title: title,
-          onChanged: (_) {},
-          isSelected: true,
+        child: UiKitLineItem(
+          label: label,
+          onTap: () {},
+          valueLabel: valueLabel,
         ),
       ),
     );
 
     goldenTest(
-      'light unselected',
-      fileName: 'check_box_line_item_light_unselected',
+      'light without value label',
+      fileName: 'line_item_light_without_value_label',
       constraints: const BoxConstraints(
         maxWidth: 600,
         maxHeight: 600,
       ),
       builder: () => UiKitGoldenTestWrapper(
         themeData: UiKitTheme.lightThemeData,
-        child: UiKitCheckboxLineItem(
-          title: title,
-          onChanged: (_) {},
-          isSelected: false,
+        child: UiKitLineItem(
+          label: label,
+          onTap: () {},
+          valueLabel: null,
         ),
       ),
     );
     goldenTest(
-      'dark selected',
-      fileName: 'check_box_line_item_dark_selected',
+      'dark with value label',
+      fileName: 'line_item_dark_with_value_label',
       constraints: const BoxConstraints(
         maxWidth: 600,
         maxHeight: 600,
       ),
       builder: () => UiKitGoldenTestWrapper(
         themeData: UiKitTheme.darkThemeData,
-        child: UiKitCheckboxLineItem(
-          title: title,
-          onChanged: (_) {},
-          isSelected: true,
+        child: UiKitLineItem(
+          label: label,
+          onTap: () {},
+          valueLabel: valueLabel,
         ),
       ),
     );
     goldenTest(
-      'dark unselected',
-      fileName: 'check_box_line_item_light_unselected',
+      'dark without value label',
+      fileName: 'line_item_dark_without_value_label',
       constraints: const BoxConstraints(
         maxWidth: 600,
         maxHeight: 600,
       ),
       builder: () => UiKitGoldenTestWrapper(
         themeData: UiKitTheme.darkThemeData,
-        child: UiKitCheckboxLineItem(
-          title: title,
-          onChanged: (_) {},
-          isSelected: false,
+        child: UiKitLineItem(
+          label: label,
+          onTap: () {},
+          valueLabel: null,
         ),
       ),
     );
