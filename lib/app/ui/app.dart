@@ -77,6 +77,7 @@ class _AppState extends State<App> {
             builder: (_, themeState) {
               return MaterialApp.router(
                 locale: Locale(languageState.languageOption.languageCode),
+                debugShowCheckedModeBanner: false,
                 localizationsDelegates: AppLocalizations.localizationsDelegates,
                 supportedLocales: AppLocalizations.supportedLocales,
                 routerConfig: widget._router.config(navigatorObservers: () => [HeroController()]),

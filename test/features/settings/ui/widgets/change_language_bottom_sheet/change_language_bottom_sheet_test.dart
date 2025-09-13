@@ -10,8 +10,8 @@ import 'package:taro/app/ui/bloc/language/language_bloc.dart';
 import 'package:taro/features/settings/ui/widgets/change_language_bottom_sheet.dart';
 import 'package:tarot_ui_kit/ui_kit.dart';
 
-import '../../../../app/data/mocks.dart';
-import '../../../../utils/golden_test_widget_wrapper.dart';
+import '../../../../../app/data/mocks.dart';
+import '../../../../../utils/golden_test_widget_wrapper.dart';
 
 void main() {
   late final AppRepositoryMock appRepositoryMock;

@@ -19,6 +19,9 @@ class ChangeThemeBottomSheet extends StatelessWidget {
     );
   }
 
+  @visibleForTesting
+  static Widget getBodyForTest() => const ChangeThemeBottomSheet._();
+
   @override
   Widget build(BuildContext context) {
     final colors = context.colors;
