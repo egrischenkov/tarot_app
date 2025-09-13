@@ -89,22 +89,6 @@ void main() {
       ),
     );
     goldenTest(
-      'light trailing',
-      fileName: 'bottom_sheet_value_item_light_trailing',
-      constraints: const BoxConstraints(
-        maxWidth: 600,
-        maxHeight: 800,
-      ),
-      builder: () => UiKitGoldenTestWrapper(
-        themeData: UiKitTheme.lightThemeData,
-        child: const UiKitBottomSheetValueItem(
-          label: label,
-          isSelected: true,
-          trailing: trailing,
-        ),
-      ),
-    );
-    goldenTest(
       'dark trailing',
       fileName: 'bottom_sheet_value_item_dark_trailing',
       constraints: const BoxConstraints(

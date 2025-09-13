@@ -60,7 +60,7 @@ void main() {
     );
     goldenTest(
       'dark unselected',
-      fileName: 'check_box_line_item_light_unselected',
+      fileName: 'check_box_line_item_dark_unselected',
       constraints: const BoxConstraints(
         maxWidth: 600,
         maxHeight: 600,
