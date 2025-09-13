@@ -17,6 +17,9 @@ class ChangeLanguageBottomSheet extends StatelessWidget {
     );
   }
 
+  @visibleForTesting
+  static Widget getBodyForTest() => const ChangeLanguageBottomSheet._();
+
   const ChangeLanguageBottomSheet._();
 
   @override
