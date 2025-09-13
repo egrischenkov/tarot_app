@@ -35,6 +35,12 @@ void main() {
             ),
           ),
           GoldenTestScenario(
+            name: 'Button-Text',
+            child: _ColorTile(
+              color: UiKitTheme.lightThemeColors.buttonText,
+            ),
+          ),
+          GoldenTestScenario(
             name: 'Text-Disabled',
             child: _ColorTile(
               color: UiKitTheme.lightThemeColors.textDisabled,
@@ -89,6 +95,12 @@ void main() {
             ),
           ),
           GoldenTestScenario(
+            name: 'Border',
+            child: _ColorTile(
+              color: UiKitTheme.lightThemeColors.border,
+            ),
+          ),
+          GoldenTestScenario(
             name: 'Border-Gradient-First',
             child: _ColorTile(
               color: UiKitTheme.lightThemeColors.borderGradientFirst,
@@ -98,6 +110,36 @@ void main() {
             name: 'Border-Gradient-Second',
             child: _ColorTile(
               color: UiKitTheme.lightThemeColors.borderGradientSecond,
+            ),
+          ),
+          GoldenTestScenario(
+            name: 'Border-Gradient-Second',
+            child: _ColorTile(
+              color: UiKitTheme.lightThemeColors.borderGradientSecond,
+            ),
+          ),
+          GoldenTestScenario(
+            name: 'Icon',
+            child: _ColorTile(
+              color: UiKitTheme.lightThemeColors.icon,
+            ),
+          ),
+          GoldenTestScenario(
+            name: 'Icon-Background',
+            child: _ColorTile(
+              color: UiKitTheme.lightThemeColors.iconBackground,
+            ),
+          ),
+          GoldenTestScenario(
+            name: 'Shadow',
+            child: _ColorTile(
+              color: UiKitTheme.lightThemeColors.shadow,
+            ),
+          ),
+          GoldenTestScenario(
+            name: 'Link',
+            child: _ColorTile(
+              color: UiKitTheme.lightThemeColors.link,
             ),
           ),
         ],
