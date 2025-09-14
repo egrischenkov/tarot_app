@@ -23,7 +23,7 @@ class UiKitBaseScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    const appBarOffset = UiKitAppBar.height + UiKitSpacing.x6;
+    final appBarOffset = MediaQuery.of(context).padding.top + UiKitAppBar.height;
 
     return Scaffold(
       extendBodyBehindAppBar: true,

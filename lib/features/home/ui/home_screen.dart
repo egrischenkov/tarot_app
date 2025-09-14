@@ -143,7 +143,9 @@ class _HomeScreenState extends State<HomeScreen> with TickerProviderStateMixin {
               final tabsRouter = AutoTabsRouter.of(context);
 
               return Container(
-                padding: EdgeInsets.only(top: MediaQuery.of(context).padding.bottom),
+                padding: EdgeInsets.only(
+                  top: MediaQuery.of(context).padding.bottom + UiKitSpacing.x4,
+                ),
                 decoration: BoxDecoration(
                   gradient: LinearGradient(
                     begin: Alignment.topLeft,
