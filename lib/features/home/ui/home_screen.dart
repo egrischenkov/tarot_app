@@ -39,6 +39,8 @@ class _HomeScreenState extends State<HomeScreen> with TickerProviderStateMixin {
 
   static const _pageChangingDuration = Duration(milliseconds: 400);
 
+  late final deviceInfoService = context.appDependenciesContainer.deviceInfoService;
+
   late final HomeScreenAnimations _animations;
   late double _cardWidth;
   late double _cardHeight;
@@ -100,7 +102,9 @@ class _HomeScreenState extends State<HomeScreen> with TickerProviderStateMixin {
 
     const profileIconSize = UiKitSize.x10;
     const profileIconVerticalPadding = UiKitSpacing.x2;
-    final cardScreenTopPadding = profileIconSize + profileIconVerticalPadding + MediaQuery.of(context).padding.top;
+    final cardScreenTopPadding = (deviceInfoService.isIPhoneSE() ? profileIconSize : 0) +
+        profileIconVerticalPadding +
+        MediaQuery.of(context).padding.top;
 
     return BlocListener<LanguageBloc, LanguageState>(
       listener: (context, _) {
@@ -139,7 +143,7 @@ class _HomeScreenState extends State<HomeScreen> with TickerProviderStateMixin {
               final tabsRouter = AutoTabsRouter.of(context);
 
               return Container(
-                padding: MediaQuery.of(context).padding,
+                padding: EdgeInsets.only(top: MediaQuery.of(context).padding.bottom),
                 decoration: BoxDecoration(
                   gradient: LinearGradient(
                     begin: Alignment.topLeft,
