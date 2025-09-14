@@ -1,3 +1,5 @@
+import 'dart:io';
+
 import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
@@ -102,7 +104,7 @@ class _HomeScreenState extends State<HomeScreen> with TickerProviderStateMixin {
 
     const profileIconSize = UiKitSize.x10;
     const profileIconVerticalPadding = UiKitSpacing.x2;
-    final cardScreenTopPadding = (deviceInfoService.isIPhoneSE() ? profileIconSize : 0) +
+    final cardScreenTopPadding = (deviceInfoService.isIPhoneSE() || Platform.isAndroid ? profileIconSize : 0) +
         profileIconVerticalPadding +
         MediaQuery.of(context).padding.top;
 
