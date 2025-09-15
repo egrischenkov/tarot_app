@@ -37,6 +37,8 @@ class MenuCardWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final colors = context.colors;
+
     return Transform(
       alignment: Alignment.topCenter,
       transform: Matrix4.identity()
@@ -50,17 +52,22 @@ class MenuCardWidget extends StatelessWidget {
           child: Container(
             width: width,
             height: height,
-            padding: const EdgeInsets.all(UiKitSpacing.x3),
             clipBehavior: Clip.hardEdge,
             decoration: BoxDecoration(
-              color: context.colors.whiteBgSecondary,
+              color: context.colors.background,
               borderRadius: borderRadius,
               boxShadow: [
                 BoxShadow(
-                  color: Colors.black.withValues(alpha: .4),
-                  blurRadius: 15,
+                  color: colors.shadow,
+                  blurRadius: 12,
                   spreadRadius: 1,
-                  offset: const Offset(3, 5),
+                  offset: const Offset(6, 0),
+                ),
+                BoxShadow(
+                  color: colors.shadow,
+                  blurRadius: 6,
+                  spreadRadius: 0,
+                  offset: const Offset(-2, 0),
                 ),
               ],
             ),
@@ -72,17 +79,20 @@ class MenuCardWidget extends StatelessWidget {
                     child: Align(
                       alignment: Alignment.topLeft,
                       heightFactor: heightFactor,
-                      child: Column(
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: [
-                          icon,
-                          Text(
-                            name,
-                            style: context.fonts.xsLabel.copyWith(
-                              fontSize: width * 0.07,
+                      child: Padding(
+                        padding: const EdgeInsets.all(UiKitSpacing.x3),
+                        child: Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            icon,
+                            Text(
+                              name,
+                              style: context.fonts.xsLabel.copyWith(
+                                fontSize: width * 0.07,
+                              ),
                             ),
-                          ),
-                        ],
+                          ],
+                        ),
                       ),
                     ),
                   ),

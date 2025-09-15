@@ -23,9 +23,9 @@ class UiKitBigButton extends StatefulWidget {
   }) =>
       UiKitBigButton._(
         label: label,
-        backgroundColor: context.colors.accentYellow,
-        labelColor: context.colors.itsyBitsyBlack,
-        pressedColor: context.colors.accentYellowSec.withBrightness(1.5),
+        backgroundColor: context.colors.accent,
+        labelColor: context.colors.buttonText,
+        pressedColor: context.colors.accentSecondary.withBrightness(1.5),
         title: title,
         suffix: suffix,
         isLoading: isLoading,
@@ -44,9 +44,9 @@ class UiKitBigButton extends StatefulWidget {
   }) =>
       UiKitBigButton._(
         label: label,
-        backgroundColor: context.colors.grey,
-        labelColor: context.colors.itsyBitsyBlack,
-        pressedColor: context.colors.grey.withBrightness(0.8),
+        backgroundColor: context.colors.disabled,
+        labelColor: context.colors.text,
+        pressedColor: context.colors.disabled.withBrightness(0.8),
         title: title,
         suffix: suffix,
         isLoading: isLoading,
@@ -88,6 +88,8 @@ class _UiKitBigButtonState extends State<UiKitBigButton> {
 
   @override
   Widget build(BuildContext context) {
+    final colors = context.colors;
+
     return GestureDetector(
       onTapDown: (_) => setState(() {
         _isPressed = true;
@@ -111,8 +113,11 @@ class _UiKitBigButtonState extends State<UiKitBigButton> {
             padding: _padding,
             child: widget.isLoading
                 ? Center(
-                    child: CupertinoActivityIndicator(
-                      color: widget.labelColor,
+                    child: SizedBox(
+                      height: 19,
+                      child: CupertinoActivityIndicator(
+                        color: widget.labelColor,
+                      ),
                     ),
                   )
                 : Row(
@@ -128,7 +133,9 @@ class _UiKitBigButtonState extends State<UiKitBigButton> {
                           if (widget.title != null)
                             Text(
                               widget.title!,
-                              style: context.fonts.xsLabel,
+                              style: context.fonts.xsLabel.copyWith(
+                                color: colors.buttonText,
+                              ),
                               maxLines: 1,
                               overflow: TextOverflow.ellipsis,
                             ),

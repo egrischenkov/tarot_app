@@ -3,11 +3,9 @@ import 'package:tarot_ui_kit/ui_kit.dart';
 
 class UiKitForwardButton extends StatelessWidget {
   final VoidCallback? onTap;
-  final Color? backgroundColor;
 
   const UiKitForwardButton({
     this.onTap,
-    this.backgroundColor,
     super.key,
   });
 
@@ -21,12 +19,13 @@ class UiKitForwardButton extends StatelessWidget {
       child: Container(
         padding: const EdgeInsets.all(UiKitSpacing.base),
         decoration: BoxDecoration(
-          color: backgroundColor ?? colors.whiteBgSecondary,
+          color: colors.iconBackground,
           shape: BoxShape.circle,
         ),
-        child: const Icon(
+        child: Icon(
           Icons.arrow_forward_ios,
           size: UiKitSize.x4,
+          color: colors.icon,
         ),
       ),
     );

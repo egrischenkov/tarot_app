@@ -59,9 +59,9 @@ class _UiKitBorderBeamState extends State<UiKitBorderBeam> with SingleTickerProv
           painter: BorderBeamPainter(
             progress: _animation.value,
             borderWidth: widget.borderWidth,
-            colorFrom: widget.colorFrom ?? context.colors.accentYellow,
-            colorTo: widget.colorTo ?? context.colors.accentPurple,
-            staticBorderColor: widget.staticBorderColor ?? context.colors.lightYellow,
+            colorFrom: widget.colorFrom ?? context.colors.borderGradientFirst,
+            colorTo: widget.colorTo ?? context.colors.borderGradientSecond,
+            staticBorderColor: widget.staticBorderColor ?? context.colors.borderGradientFirst,
             borderRadius: widget.borderRadius ?? BorderRadius.circular(UiKitSpacing.x4),
           ),
           child: Padding(

@@ -101,8 +101,8 @@ class _StarCirclePainter extends CustomPainter {
   void paint(Canvas canvas, Size size) {
     final Paint paint = Paint()
       ..color = Color.lerp(
-        colors.yellow,
-        colors.deepOrange,
+        colors.accent,
+        colors.accentTertiary,
         progress,
       )!
       ..style = PaintingStyle.fill;

@@ -11,6 +11,38 @@
 part of 'app_router.dart';
 
 /// generated route for
+/// [AboutScreen]
+class AboutRoute extends PageRouteInfo<void> {
+  const AboutRoute({List<PageRouteInfo>? children})
+    : super(AboutRoute.name, initialChildren: children);
+
+  static const String name = 'AboutRoute';
+
+  static PageInfo page = PageInfo(
+    name,
+    builder: (data) {
+      return const AboutScreen();
+    },
+  );
+}
+
+/// generated route for
+/// [CardsCatalogScreen]
+class CardsCatalogRoute extends PageRouteInfo<void> {
+  const CardsCatalogRoute({List<PageRouteInfo>? children})
+    : super(CardsCatalogRoute.name, initialChildren: children);
+
+  static const String name = 'CardsCatalogRoute';
+
+  static PageInfo page = PageInfo(
+    name,
+    builder: (data) {
+      return const CardsCatalogScreen();
+    },
+  );
+}
+
+/// generated route for
 /// [DailyCardScreen]
 class DailyCardRoute extends PageRouteInfo<void> {
   const DailyCardRoute({List<PageRouteInfo>? children})
@@ -59,33 +91,17 @@ class DebugWrapperRoute extends PageRouteInfo<void> {
 }
 
 /// generated route for
-/// [DecksScreen]
-class DecksRoute extends PageRouteInfo<void> {
-  const DecksRoute({List<PageRouteInfo>? children})
-    : super(DecksRoute.name, initialChildren: children);
+/// [FeedbackFormScreen]
+class FeedbackFormRoute extends PageRouteInfo<void> {
+  const FeedbackFormRoute({List<PageRouteInfo>? children})
+    : super(FeedbackFormRoute.name, initialChildren: children);
 
-  static const String name = 'DecksRoute';
-
-  static PageInfo page = PageInfo(
-    name,
-    builder: (data) {
-      return const DecksScreen();
-    },
-  );
-}
-
-/// generated route for
-/// [FunnyScreen]
-class FunnyRoute extends PageRouteInfo<void> {
-  const FunnyRoute({List<PageRouteInfo>? children})
-    : super(FunnyRoute.name, initialChildren: children);
-
-  static const String name = 'FunnyRoute';
+  static const String name = 'FeedbackFormRoute';
 
   static PageInfo page = PageInfo(
     name,
     builder: (data) {
-      return const FunnyScreen();
+      return const FeedbackFormScreen();
     },
   );
 }
@@ -162,17 +178,33 @@ class ProfileRoute extends PageRouteInfo<void> {
 }
 
 /// generated route for
-/// [YammyScreen]
-class YammyRoute extends PageRouteInfo<void> {
-  const YammyRoute({List<PageRouteInfo>? children})
-    : super(YammyRoute.name, initialChildren: children);
+/// [SettingsScreen]
+class SettingsRoute extends PageRouteInfo<void> {
+  const SettingsRoute({List<PageRouteInfo>? children})
+    : super(SettingsRoute.name, initialChildren: children);
 
-  static const String name = 'YammyRoute';
+  static const String name = 'SettingsRoute';
 
   static PageInfo page = PageInfo(
     name,
     builder: (data) {
-      return const YammyScreen();
+      return const SettingsScreen();
+    },
+  );
+}
+
+/// generated route for
+/// [YesNoScreen]
+class YesNoRoute extends PageRouteInfo<void> {
+  const YesNoRoute({List<PageRouteInfo>? children})
+    : super(YesNoRoute.name, initialChildren: children);
+
+  static const String name = 'YesNoRoute';
+
+  static PageInfo page = PageInfo(
+    name,
+    builder: (data) {
+      return const YesNoScreen();
     },
   );
 }

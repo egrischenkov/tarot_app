@@ -5,7 +5,15 @@ import 'package:flutter/widgets.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:intl/intl.dart' as intl;
 
+import 'app_localizations_de.g.dart';
+import 'app_localizations_en.g.dart';
+import 'app_localizations_es.g.dart';
+import 'app_localizations_fr.g.dart';
+import 'app_localizations_hi.g.dart';
+import 'app_localizations_it.g.dart';
+import 'app_localizations_pt.g.dart';
 import 'app_localizations_ru.g.dart';
+import 'app_localizations_zh.g.dart';
 
 // ignore_for_file: type=lint
 
@@ -90,14 +98,28 @@ abstract class AppLocalizations {
 
   /// A list of this localizations delegate's supported locales.
   static const List<Locale> supportedLocales = <Locale>[
-    Locale('ru')
+    Locale('de'),
+    Locale('en'),
+    Locale('es'),
+    Locale('fr'),
+    Locale('hi'),
+    Locale('it'),
+    Locale('pt'),
+    Locale('ru'),
+    Locale('zh')
   ];
 
   /// No description provided for @appName.
   ///
   /// In ru, this message translates to:
-  /// **'Tarot'**
+  /// **'Stary'**
   String get appName;
+
+  /// No description provided for @companyName.
+  ///
+  /// In ru, this message translates to:
+  /// **'Tarot Band'**
+  String get companyName;
 
   /// No description provided for @onboarding$Path.
   ///
@@ -129,29 +151,23 @@ abstract class AppLocalizations {
   /// **'Вперёд'**
   String get onboarding$Start;
 
-  /// No description provided for @homeScreen$MenuDailyCard.
+  /// No description provided for @homeScreen$Menu$DailyCard.
   ///
   /// In ru, this message translates to:
   /// **'Карта дня'**
-  String get homeScreen$MenuDailyCard;
+  String get homeScreen$Menu$DailyCard;
 
-  /// No description provided for @homeScreen$MenuFunny.
+  /// No description provided for @homeScreen$Menu$CardsCatalog.
   ///
   /// In ru, this message translates to:
-  /// **'Приколики'**
-  String get homeScreen$MenuFunny;
+  /// **'Узнай карты'**
+  String get homeScreen$Menu$CardsCatalog;
 
-  /// No description provided for @homeScreen$MenuSpreads.
+  /// No description provided for @homeScreen$Menu$YesNo.
   ///
   /// In ru, this message translates to:
-  /// **'Расклады'**
-  String get homeScreen$MenuSpreads;
-
-  /// No description provided for @homeScreen$MenuYammy.
-  ///
-  /// In ru, this message translates to:
-  /// **'Вкусняшки'**
-  String get homeScreen$MenuYammy;
+  /// **'Да или Нет'**
+  String get homeScreen$Menu$YesNo;
 
   /// No description provided for @profileScreen$Title.
   ///
@@ -176,6 +192,264 @@ abstract class AppLocalizations {
   /// In ru, this message translates to:
   /// **'Нет подписки? Давай подберем'**
   String get profileScreen$SuggestSubscription;
+
+  /// No description provided for @settingsScreen$Title.
+  ///
+  /// In ru, this message translates to:
+  /// **'Настройки'**
+  String get settingsScreen$Title;
+
+  /// No description provided for @settingsScreen$EditProfile.
+  ///
+  /// In ru, this message translates to:
+  /// **'Редактировать профиль'**
+  String get settingsScreen$EditProfile;
+
+  /// No description provided for @settingsScreen$ManageSubscription.
+  ///
+  /// In ru, this message translates to:
+  /// **'Управление подпиской'**
+  String get settingsScreen$ManageSubscription;
+
+  /// No description provided for @settingsScreen$App.
+  ///
+  /// In ru, this message translates to:
+  /// **'Приложение'**
+  String get settingsScreen$App;
+
+  /// No description provided for @settingsScreen$ChangeLanguage.
+  ///
+  /// In ru, this message translates to:
+  /// **'Изменить язык'**
+  String get settingsScreen$ChangeLanguage;
+
+  /// No description provided for @settingsScreen$ChangeTheme.
+  ///
+  /// In ru, this message translates to:
+  /// **'Тема оформления'**
+  String get settingsScreen$ChangeTheme;
+
+  /// No description provided for @settingsScreen$AboutApp.
+  ///
+  /// In ru, this message translates to:
+  /// **'О приложении'**
+  String get settingsScreen$AboutApp;
+
+  /// No description provided for @settingsScreen$FeedbackForm.
+  ///
+  /// In ru, this message translates to:
+  /// **'Форма обратной связи'**
+  String get settingsScreen$FeedbackForm;
+
+  /// No description provided for @settingsScreen$LogOut.
+  ///
+  /// In ru, this message translates to:
+  /// **'Выйти из аккаунта'**
+  String get settingsScreen$LogOut;
+
+  /// No description provided for @settingsScreen$Theme$Light.
+  ///
+  /// In ru, this message translates to:
+  /// **'Всегда светлая'**
+  String get settingsScreen$Theme$Light;
+
+  /// No description provided for @settingsScreen$Theme$Dark.
+  ///
+  /// In ru, this message translates to:
+  /// **'Всегда тёмная'**
+  String get settingsScreen$Theme$Dark;
+
+  /// No description provided for @settingsScreen$Theme$System.
+  ///
+  /// In ru, this message translates to:
+  /// **'Как в системе'**
+  String get settingsScreen$Theme$System;
+
+  /// No description provided for @settingsScreen$Language$Ru.
+  ///
+  /// In ru, this message translates to:
+  /// **'Русский'**
+  String get settingsScreen$Language$Ru;
+
+  /// No description provided for @settingsScreen$Language$En.
+  ///
+  /// In ru, this message translates to:
+  /// **'English'**
+  String get settingsScreen$Language$En;
+
+  /// No description provided for @settingsScreen$Language$De.
+  ///
+  /// In ru, this message translates to:
+  /// **'Deutsch'**
+  String get settingsScreen$Language$De;
+
+  /// No description provided for @settingsScreen$Language$Es.
+  ///
+  /// In ru, this message translates to:
+  /// **'Español'**
+  String get settingsScreen$Language$Es;
+
+  /// No description provided for @settingsScreen$Language$Fr.
+  ///
+  /// In ru, this message translates to:
+  /// **'Français'**
+  String get settingsScreen$Language$Fr;
+
+  /// No description provided for @settingsScreen$Language$Hi.
+  ///
+  /// In ru, this message translates to:
+  /// **'हिन्दी'**
+  String get settingsScreen$Language$Hi;
+
+  /// No description provided for @settingsScreen$Language$It.
+  ///
+  /// In ru, this message translates to:
+  /// **'Italiano'**
+  String get settingsScreen$Language$It;
+
+  /// No description provided for @settingsScreen$Language$Pt.
+  ///
+  /// In ru, this message translates to:
+  /// **'Português'**
+  String get settingsScreen$Language$Pt;
+
+  /// No description provided for @settingsScreen$Language$Zh.
+  ///
+  /// In ru, this message translates to:
+  /// **'中文'**
+  String get settingsScreen$Language$Zh;
+
+  /// No description provided for @feedbackFormScreen$Title.
+  ///
+  /// In ru, this message translates to:
+  /// **'Форма обратной связи'**
+  String get feedbackFormScreen$Title;
+
+  /// No description provided for @feedbackFormScreen$ShareYourFeedback.
+  ///
+  /// In ru, this message translates to:
+  /// **'Поделитесь вашим фидбеком'**
+  String get feedbackFormScreen$ShareYourFeedback;
+
+  /// No description provided for @feedbackFormScreen$RateYourExperience.
+  ///
+  /// In ru, this message translates to:
+  /// **'Ваше впечатление'**
+  String get feedbackFormScreen$RateYourExperience;
+
+  /// No description provided for @feedbackFormScreen$TerribleRate.
+  ///
+  /// In ru, this message translates to:
+  /// **'Ужасно'**
+  String get feedbackFormScreen$TerribleRate;
+
+  /// No description provided for @feedbackFormScreen$BadRate.
+  ///
+  /// In ru, this message translates to:
+  /// **'Плохо'**
+  String get feedbackFormScreen$BadRate;
+
+  /// No description provided for @feedbackFormScreen$OkayRate.
+  ///
+  /// In ru, this message translates to:
+  /// **'Нормально'**
+  String get feedbackFormScreen$OkayRate;
+
+  /// No description provided for @feedbackFormScreen$GoodRate.
+  ///
+  /// In ru, this message translates to:
+  /// **'Хорошо'**
+  String get feedbackFormScreen$GoodRate;
+
+  /// No description provided for @feedbackFormScreen$AwesomeRate.
+  ///
+  /// In ru, this message translates to:
+  /// **'Отлично!'**
+  String get feedbackFormScreen$AwesomeRate;
+
+  /// No description provided for @feedbackFormScreen$WhatDidYouLike.
+  ///
+  /// In ru, this message translates to:
+  /// **'Что вам понравилось?'**
+  String get feedbackFormScreen$WhatDidYouLike;
+
+  /// No description provided for @feedbackFormScreen$FeedbackCategory$CardInterpretations.
+  ///
+  /// In ru, this message translates to:
+  /// **'Интерпретация карт'**
+  String get feedbackFormScreen$FeedbackCategory$CardInterpretations;
+
+  /// No description provided for @feedbackFormScreen$FeedbackCategory$AppDesign.
+  ///
+  /// In ru, this message translates to:
+  /// **'Атмосфера и дизайн приложения'**
+  String get feedbackFormScreen$FeedbackCategory$AppDesign;
+
+  /// No description provided for @feedbackFormScreen$FeedbackCategory$Accuracy.
+  ///
+  /// In ru, this message translates to:
+  /// **'Точность раскладов'**
+  String get feedbackFormScreen$FeedbackCategory$Accuracy;
+
+  /// No description provided for @feedbackFormScreen$FeedbackCategory$Usability.
+  ///
+  /// In ru, this message translates to:
+  /// **'Удобство использования'**
+  String get feedbackFormScreen$FeedbackCategory$Usability;
+
+  /// No description provided for @feedbackFormScreen$FeedbackCategory$Variety.
+  ///
+  /// In ru, this message translates to:
+  /// **'Разнообразие раскладов'**
+  String get feedbackFormScreen$FeedbackCategory$Variety;
+
+  /// No description provided for @feedbackFormScreen$FeedbackCategory$Inspiration.
+  ///
+  /// In ru, this message translates to:
+  /// **'Вдохновение и личное развитие'**
+  String get feedbackFormScreen$FeedbackCategory$Inspiration;
+
+  /// No description provided for @feedbackFormScreen$FeedbackCategory$Other.
+  ///
+  /// In ru, this message translates to:
+  /// **'Другое'**
+  String get feedbackFormScreen$FeedbackCategory$Other;
+
+  /// No description provided for @feedbackFormScreen$Send.
+  ///
+  /// In ru, this message translates to:
+  /// **'Отправить'**
+  String get feedbackFormScreen$Send;
+
+  /// No description provided for @feedbackFromScreen$YourComment.
+  ///
+  /// In ru, this message translates to:
+  /// **'Ваш комментарий (необязательно)'**
+  String get feedbackFromScreen$YourComment;
+
+  /// No description provided for @feedbackFromScreen$CommentHint.
+  ///
+  /// In ru, this message translates to:
+  /// **'Опишите ваш опыт использования приложения'**
+  String get feedbackFromScreen$CommentHint;
+
+  /// No description provided for @aboutScreen$Title.
+  ///
+  /// In ru, this message translates to:
+  /// **'О приложении'**
+  String get aboutScreen$Title;
+
+  /// No description provided for @aboutScreen$PrivacyPolicy.
+  ///
+  /// In ru, this message translates to:
+  /// **'Политика конфиденциальности'**
+  String get aboutScreen$PrivacyPolicy;
+
+  /// No description provided for @aboutScreen$TermsOfService.
+  ///
+  /// In ru, this message translates to:
+  /// **'Условия использования'**
+  String get aboutScreen$TermsOfService;
 }
 
 class _AppLocalizationsDelegate extends LocalizationsDelegate<AppLocalizations> {
@@ -187,7 +461,7 @@ class _AppLocalizationsDelegate extends LocalizationsDelegate<AppLocalizations> 
   }
 
   @override
-  bool isSupported(Locale locale) => <String>['ru'].contains(locale.languageCode);
+  bool isSupported(Locale locale) => <String>['de', 'en', 'es', 'fr', 'hi', 'it', 'pt', 'ru', 'zh'].contains(locale.languageCode);
 
   @override
   bool shouldReload(_AppLocalizationsDelegate old) => false;
@@ -198,7 +472,15 @@ AppLocalizations lookupAppLocalizations(Locale locale) {
 
   // Lookup logic when only language code is specified.
   switch (locale.languageCode) {
+    case 'de': return AppLocalizationsDe();
+    case 'en': return AppLocalizationsEn();
+    case 'es': return AppLocalizationsEs();
+    case 'fr': return AppLocalizationsFr();
+    case 'hi': return AppLocalizationsHi();
+    case 'it': return AppLocalizationsIt();
+    case 'pt': return AppLocalizationsPt();
     case 'ru': return AppLocalizationsRu();
+    case 'zh': return AppLocalizationsZh();
   }
 
   throw FlutterError(

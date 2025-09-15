@@ -64,12 +64,12 @@ android {
         dev {
             dimension "tarot"
             applicationIdSuffix ".dev"
-            resValue "string", "app_name", "Tarot band (Test)"
+            resValue "string", "app_name", "Stary (dev)"
         }
         prod {
             dimension "tarot"
             applicationIdSuffix ".prod"
-            resValue "string", "app_name", "Tarot band"
+            resValue "string", "app_name", "Stary"
         }
     }
 }

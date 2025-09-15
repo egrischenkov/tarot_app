@@ -2,6 +2,7 @@ import 'dart:math';
 import 'dart:ui';
 
 import 'package:flutter/material.dart';
+import 'package:taro/core/extensions/context_extension.dart';
 import 'package:taro/features/home/domain/entities/menu_card_model.dart';
 
 import '../animations/home_screen_animations.dart';
@@ -50,12 +51,14 @@ class CardAnimationCalculator {
   CalculationValues calculate(int index, MenuCardModel card) {
     final isSelected = _isSelected(card);
     final isPreviouslySelected = !isSelected && card.id == previousSelectedCard?.id;
+    final isIphoneSE = context.appDependenciesContainer.deviceInfoService.isIPhoneSE();
 
     const baseAngle = -0.12;
     const angleStep = 0.12;
     const heightFactorDefault = 0.33;
     final screen = MediaQuery.of(context).size;
-    final baseVerticalOffset = screen.height - cardHeight * 0.9;
+
+    final baseVerticalOffset = screen.height - cardHeight * (isIphoneSE ? .65 : .8);
 
     final defaultVertical = baseVerticalOffset + (index - 1) * 3;
     final defaultHorizontal = (cardWidth / 2) * (index - 1) + 32;

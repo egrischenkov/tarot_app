@@ -2,7 +2,7 @@ import 'package:flutter/foundation.dart';
 import 'package:tarot_logger/src/observers/log_observer.dart';
 
 /// Logger class, that manages the logging of messages
-abstract base class Logger {
+abstract class Logger {
   final List<LogObserver> _observers;
 
   /// {@macro logger}

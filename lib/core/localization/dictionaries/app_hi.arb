@@ -1,0 +1,80 @@
+{
+    "@segmentCommon": {
+        "---------": "---------",
+        "description": "Common"
+    },
+    "appName": "Stary",
+    "companyName": "Tarot Band",
+    "@segmentOnboarding": {
+        "---------": "---------",
+        "description": "Onboarding"
+    },
+    "onboarding$Path": "यात्रा यहाँ से शुरू होती है",
+    "onboarding$Answer": "उत्तर पहले से ही\nआपके भीतर है",
+    "onboarding$Cards": "कार्ड आपको इसे\nदेखने में मदद करेंगे",
+    "onboarding$Skip": "स्किप करें",
+    "onboarding$Start": "शुरू करें",
+    "@segmentHomeScreen": {
+        "---------": "---------",
+        "description": "Home screen"
+    },
+    "homeScreen$Menu$DailyCard": "आज का कार्ड",
+    "homeScreen$Menu$CardsCatalog": "कार्ड्स जानें",
+    "homeScreen$Menu$YesNo": "हाँ या नहीं",
+    "@segmentProfileScreen": {
+        "---------": "---------",
+        "description": "Profile screen"
+    },
+    "profileScreen$Title": "प्रोफ़ाइल",
+    "profileScreen$Subscription": "सदस्यता",
+    "profileScreen$ChooseSubscription": "सदस्यता चुनें",
+    "profileScreen$SuggestSubscription": "कोई सदस्यता नहीं? चलो एक ढूँढते हैं",
+    "@segmentSettingsScreen": {
+        "---------": "---------",
+        "description": "Settings screen"
+    },
+    "settingsScreen$Title": "सेटिंग्स",
+    "settingsScreen$EditProfile": "प्रोफ़ाइल संपादित करें",
+    "settingsScreen$ManageSubscription": "सदस्यता प्रबंधित करें",
+    "settingsScreen$App": "ऐप",
+    "settingsScreen$ChangeLanguage": "भाषा बदलें",
+    "settingsScreen$ChangeTheme": "थीम",
+    "settingsScreen$AboutApp": "ऐप के बारे में",
+    "settingsScreen$FeedbackForm": "फ़ीडबैक फ़ॉर्म",
+    "settingsScreen$LogOut": "लॉग आउट करें",
+    "settingsScreen$Theme$Light": "हमेशा हल्का",
+    "settingsScreen$Theme$Dark": "हमेशा गहरा",
+    "settingsScreen$Theme$System": "सिस्टम के अनुसार",
+    "settingsScreen$Language$Ru": "Русский",
+    "settingsScreen$Language$En": "English",
+    "settingsScreen$Language$De": "Deutsch",
+    "settingsScreen$Language$Es": "Español",
+    "settingsScreen$Language$Fr": "Français",
+    "settingsScreen$Language$Hi": "हिन्दी",
+    "settingsScreen$Language$It": "Italiano",
+    "settingsScreen$Language$Pt": "Português",
+    "settingsScreen$Language$Zh": "中文",
+    "@segmentFeedbackFormScreen": {
+        "---------": "---------",
+        "description": "Feedback form screen"
+    },
+    "feedbackFormScreen$Title": "फ़ीडबैक फ़ॉर्म",
+    "feedbackFormScreen$ShareYourFeedback": "अपना फ़ीडबैक साझा करें",
+    "feedbackFormScreen$RateYourExperience": "आपका अनुभव",
+    "feedbackFormScreen$TerribleRate": "भयानक",
+    "feedbackFormScreen$BadRate": "खराब",
+    "feedbackFormScreen$OkayRate": "ठीक-ठाक",
+    "feedbackFormScreen$GoodRate": "अच्छा",
+    "feedbackFormScreen$AwesomeRate": "शानदार!",
+    "feedbackFormScreen$WhatDidYouLike": "आपको क्या पसंद आया?",
+    "feedbackFormScreen$FeedbackCategory$CardInterpretations": "कार्ड की व्याख्या",
+    "feedbackFormScreen$FeedbackCategory$AppDesign": "ऐप का वातावरण और डिज़ाइन",
+    "feedbackFormScreen$FeedbackCategory$Accuracy": "स्प्रेड्स की सटीकता",
+    "feedbackFormScreen$FeedbackCategory$Usability": "उपयोग में आसानी",
+    "feedbackFormScreen$FeedbackCategory$Variety": "स्प्रेड्स की विविधता",
+    "feedbackFormScreen$FeedbackCategory$Inspiration": "प्रेरणा और व्यक्तिगत विकास",
+    "feedbackFormScreen$FeedbackCategory$Other": "अन्य",
+    "feedbackFormScreen$Send": "भेजें",
+    "feedbackFromScreen$YourComment": "आपकी टिप्पणी (वैकल्पिक)",
+    "feedbackFromScreen$CommentHint": "ऐप उपयोग करने का अपना अनुभव लिखें"
+}

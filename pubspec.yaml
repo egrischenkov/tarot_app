@@ -30,8 +30,11 @@ dependencies:
   firebase_crashlytics: ^4.3.5
 
   # BLoC
+  bloc: ^9.0.0
   flutter_bloc: ^9.1.1
   bloc_concurrency: ^0.3.0
+  bloc_test: ^10.0.0
+  provider: ^6.1.5+1
 
   # Storage
   shared_preferences: ^2.5.3
@@ -39,6 +42,8 @@ dependencies:
   # Other
   intl: ^0.19.0
   package_info_plus: ^8.3.0
+  device_info_plus: ^12.1.0
+  equatable: ^2.0.7
 
   # Workspaces
   tarot_analytics:
@@ -76,6 +81,7 @@ flutter:
     - assets/images/
     - assets/icons/
     - assets/lottie/
+    - assets/app_icons/
 
 workspace:
   - packages/tarot_analytics

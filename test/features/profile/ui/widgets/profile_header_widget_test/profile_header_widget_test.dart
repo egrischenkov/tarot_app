@@ -14,7 +14,7 @@ void main() {
         maxWidth: 600,
         maxHeight: 800,
       ),
-      builder: () => const TestWidgetWrapper(
+      builder: () => const GoldenTestWidgetWrapper(
         child: ProfileHeaderWidget(
           name: 'test',
         ),

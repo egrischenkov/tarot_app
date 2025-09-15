@@ -12,8 +12,27 @@ import 'package:flutter/widgets.dart';
 import 'package:flutter_svg/flutter_svg.dart' as _svg;
 import 'package:vector_graphics/vector_graphics.dart' as _vg;
 
+class $AssetsAppIconsGen {
+  const $AssetsAppIconsGen();
+
+  /// File path: assets/app_icons/android_app_icon.png
+  AssetGenImage get androidAppIcon => const AssetGenImage('assets/app_icons/android_app_icon.png');
+
+  /// File path: assets/app_icons/android_foreground.png
+  AssetGenImage get androidForeground => const AssetGenImage('assets/app_icons/android_foreground.png');
+
+  /// File path: assets/app_icons/ios_app_icon.png
+  AssetGenImage get iosAppIcon => const AssetGenImage('assets/app_icons/ios_app_icon.png');
+
+  /// List of all assets
+  List<AssetGenImage> get values => [androidAppIcon, androidForeground, iosAppIcon];
+}
+
 class $AssetsIconsGen {
   const $AssetsIconsGen();
+
+  /// File path: assets/icons/about_icon.svg
+  SvgGenImage get aboutIcon => const SvgGenImage('assets/icons/about_icon.svg');
 
   /// File path: assets/icons/ava_1.svg
   SvgGenImage get ava1 => const SvgGenImage('assets/icons/ava_1.svg');
@@ -25,7 +44,7 @@ class $AssetsIconsGen {
   SvgGenImage get share => const SvgGenImage('assets/icons/share.svg');
 
   /// List of all assets
-  List<SvgGenImage> get values => [ava1, settings, share];
+  List<SvgGenImage> get values => [aboutIcon, ava1, settings, share];
 }
 
 class $AssetsImagesGen {
@@ -58,6 +77,7 @@ class Assets {
   const Assets._();
 
   static const AssetGenImage tarotMeets = AssetGenImage('assets/TarotMeets.png');
+  static const $AssetsAppIconsGen appIcons = $AssetsAppIconsGen();
   static const $AssetsIconsGen icons = $AssetsIconsGen();
   static const $AssetsImagesGen images = $AssetsImagesGen();
   static const $AssetsLottieGen lottie = $AssetsLottieGen();

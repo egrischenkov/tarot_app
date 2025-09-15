@@ -4,7 +4,10 @@ import 'package:tarot_ui_kit/ui_kit.dart';
 class UiKitBackButton extends StatelessWidget {
   final VoidCallback? onTap;
 
-  const UiKitBackButton({this.onTap, super.key});
+  const UiKitBackButton({
+    this.onTap,
+    super.key,
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -16,12 +19,13 @@ class UiKitBackButton extends StatelessWidget {
       child: Container(
         padding: const EdgeInsets.all(UiKitSpacing.base),
         decoration: BoxDecoration(
-          color: colors.whiteBgSecondary,
+          color: colors.iconBackground,
           shape: BoxShape.circle,
         ),
-        child: const Icon(
+        child: Icon(
           Icons.arrow_back_ios_new,
           size: UiKitSize.x4,
+          color: colors.icon,
         ),
       ),
     );

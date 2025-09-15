@@ -1,0 +1,87 @@
+{
+    "@segmentCommon": {
+        "---------": "---------",
+        "description": "Common"
+    },
+    "appName": "Stary",
+    "companyName": "Tarot Band",
+    "@segmentOnboarding": {
+        "---------": "---------",
+        "description": "Onboarding"
+    },
+    "onboarding$Path": "A jornada começa aqui",
+    "onboarding$Answer": "A resposta já está\ndentro de você",
+    "onboarding$Cards": "As cartas vão te ajudar\na enxergá-la",
+    "onboarding$Skip": "Pular",
+    "onboarding$Start": "Começar",
+    "@segmentHomeScreen": {
+        "---------": "---------",
+        "description": "Home screen"
+    },
+    "homeScreen$Menu$DailyCard": "Carta do dia",
+    "homeScreen$Menu$CardsCatalog": "Conheça as cartas",
+    "homeScreen$Menu$YesNo": "Sim ou Não",
+    "@segmentProfileScreen": {
+        "---------": "---------",
+        "description": "Profile screen"
+    },
+    "profileScreen$Title": "Perfil",
+    "profileScreen$Subscription": "Assinatura",
+    "profileScreen$ChooseSubscription": "Escolher assinatura",
+    "profileScreen$SuggestSubscription": "Sem assinatura? Vamos encontrar uma",
+    "@segmentSettingsScreen": {
+        "---------": "---------",
+        "description": "Settings screen"
+    },
+    "settingsScreen$Title": "Configurações",
+    "settingsScreen$EditProfile": "Editar perfil",
+    "settingsScreen$ManageSubscription": "Gerenciar assinatura",
+    "settingsScreen$App": "Aplicativo",
+    "settingsScreen$ChangeLanguage": "Mudar idioma",
+    "settingsScreen$ChangeTheme": "Tema",
+    "settingsScreen$AboutApp": "Sobre o app",
+    "settingsScreen$FeedbackForm": "Formulário de feedback",
+    "settingsScreen$LogOut": "Sair",
+    "settingsScreen$Theme$Light": "Sempre claro",
+    "settingsScreen$Theme$Dark": "Sempre escuro",
+    "settingsScreen$Theme$System": "Como o sistema",
+    "settingsScreen$Language$Ru": "Русский",
+    "settingsScreen$Language$En": "English",
+    "settingsScreen$Language$De": "Deutsch",
+    "settingsScreen$Language$Es": "Español",
+    "settingsScreen$Language$Fr": "Français",
+    "settingsScreen$Language$Hi": "हिन्दी",
+    "settingsScreen$Language$It": "Italiano",
+    "settingsScreen$Language$Pt": "Português",
+    "settingsScreen$Language$Zh": "中文",
+    "@segmentFeedbackFormScreen": {
+        "---------": "---------",
+        "description": "Feedback form screen"
+    },
+    "feedbackFormScreen$Title": "Formulário de feedback",
+    "feedbackFormScreen$ShareYourFeedback": "Compartilhe seu feedback",
+    "feedbackFormScreen$RateYourExperience": "Sua experiência",
+    "feedbackFormScreen$TerribleRate": "Terrível",
+    "feedbackFormScreen$BadRate": "Ruim",
+    "feedbackFormScreen$OkayRate": "Regular",
+    "feedbackFormScreen$GoodRate": "Bom",
+    "feedbackFormScreen$AwesomeRate": "Incrível!",
+    "feedbackFormScreen$WhatDidYouLike": "O que você gostou?",
+    "feedbackFormScreen$FeedbackCategory$CardInterpretations": "Interpretação das cartas",
+    "feedbackFormScreen$FeedbackCategory$AppDesign": "Atmosfera e design do app",
+    "feedbackFormScreen$FeedbackCategory$Accuracy": "Precisão das tiragens",
+    "feedbackFormScreen$FeedbackCategory$Usability": "Facilidade de uso",
+    "feedbackFormScreen$FeedbackCategory$Variety": "Variedade de tiragens",
+    "feedbackFormScreen$FeedbackCategory$Inspiration": "Inspiração e crescimento pessoal",
+    "feedbackFormScreen$FeedbackCategory$Other": "Outro",
+    "feedbackFormScreen$Send": "Enviar",
+    "feedbackFromScreen$YourComment": "Seu comentário (opcional)",
+    "feedbackFromScreen$CommentHint": "Descreva sua experiência com o app",
+    "@segmentAboutScreen": {
+        "---------": "---------",
+        "description": "About screen"
+    },
+    "aboutScreen$Title": "Sobre",
+    "aboutScreen$PrivacyPolicy": "Política de Privacidade",
+    "aboutScreen$TermsOfService": "Termos de Serviço"
+}

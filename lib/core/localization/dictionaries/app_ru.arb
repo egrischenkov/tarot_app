@@ -3,7 +3,8 @@
         "---------": "---------",
         "description": "Common"
     },
-    "appName": "Tarot",
+    "appName": "Stary",
+    "companyName": "Tarot Band",
     "@segmentOnboarding": {
         "---------": "---------",
         "description": "Onboarding"
@@ -17,10 +18,9 @@
         "---------": "---------",
         "description": "Home screen"
     },
-    "homeScreen$MenuDailyCard": "Карта дня",
-    "homeScreen$MenuFunny": "Приколики",
-    "homeScreen$MenuSpreads": "Расклады",
-    "homeScreen$MenuYammy": "Вкусняшки",
+    "homeScreen$Menu$DailyCard": "Карта дня",
+    "homeScreen$Menu$CardsCatalog": "Узнай карты",
+    "homeScreen$Menu$YesNo": "Да или Нет",
     "@segmentProfileScreen": {
         "---------": "---------",
         "description": "Profile screen"
@@ -28,5 +28,60 @@
     "profileScreen$Title": "Профиль",
     "profileScreen$Subscription": "Подписка",
     "profileScreen$ChooseSubscription": "Выбрать подписку",
-    "profileScreen$SuggestSubscription": "Нет подписки? Давай подберем"
+    "profileScreen$SuggestSubscription": "Нет подписки? Давай подберем",
+    "@segmentSettingsScreen": {
+        "---------": "---------",
+        "description": "Settings screen"
+    },
+    "settingsScreen$Title": "Настройки",
+    "settingsScreen$EditProfile": "Редактировать профиль",
+    "settingsScreen$ManageSubscription": "Управление подпиской",
+    "settingsScreen$App": "Приложение",
+    "settingsScreen$ChangeLanguage": "Изменить язык",
+    "settingsScreen$ChangeTheme": "Тема оформления",
+    "settingsScreen$AboutApp": "О приложении",
+    "settingsScreen$FeedbackForm": "Форма обратной связи",
+    "settingsScreen$LogOut": "Выйти из аккаунта",
+    "settingsScreen$Theme$Light": "Всегда светлая",
+    "settingsScreen$Theme$Dark": "Всегда тёмная",
+    "settingsScreen$Theme$System": "Как в системе",
+    "settingsScreen$Language$Ru": "Русский",
+    "settingsScreen$Language$En": "English",
+    "settingsScreen$Language$De": "Deutsch",
+    "settingsScreen$Language$Es": "Español",
+    "settingsScreen$Language$Fr": "Français",
+    "settingsScreen$Language$Hi": "हिन्दी",
+    "settingsScreen$Language$It": "Italiano",
+    "settingsScreen$Language$Pt": "Português",
+    "settingsScreen$Language$Zh": "中文",
+    "@segmentFeedbackFormScreen": {
+        "---------": "---------",
+        "description": "Feedback form screen"
+    },
+    "feedbackFormScreen$Title": "Форма обратной связи",
+    "feedbackFormScreen$ShareYourFeedback": "Поделитесь вашим фидбеком",
+    "feedbackFormScreen$RateYourExperience": "Ваше впечатление",
+    "feedbackFormScreen$TerribleRate": "Ужасно",
+    "feedbackFormScreen$BadRate": "Плохо",
+    "feedbackFormScreen$OkayRate": "Нормально",
+    "feedbackFormScreen$GoodRate": "Хорошо",
+    "feedbackFormScreen$AwesomeRate": "Отлично!",
+    "feedbackFormScreen$WhatDidYouLike": "Что вам понравилось?",
+    "feedbackFormScreen$FeedbackCategory$CardInterpretations": "Интерпретация карт",
+    "feedbackFormScreen$FeedbackCategory$AppDesign": "Атмосфера и дизайн приложения",
+    "feedbackFormScreen$FeedbackCategory$Accuracy": "Точность раскладов",
+    "feedbackFormScreen$FeedbackCategory$Usability": "Удобство использования",
+    "feedbackFormScreen$FeedbackCategory$Variety": "Разнообразие раскладов",
+    "feedbackFormScreen$FeedbackCategory$Inspiration": "Вдохновение и личное развитие",
+    "feedbackFormScreen$FeedbackCategory$Other": "Другое",
+    "feedbackFormScreen$Send": "Отправить",
+    "feedbackFromScreen$YourComment": "Ваш комментарий (необязательно)",
+    "feedbackFromScreen$CommentHint": "Опишите ваш опыт использования приложения",
+    "@segmentAboutScreen": {
+        "---------": "---------",
+        "description": "About screen"
+    },
+    "aboutScreen$Title": "О приложении",
+    "aboutScreen$PrivacyPolicy": "Политика конфиденциальности",
+    "aboutScreen$TermsOfService": "Условия использования"
 }

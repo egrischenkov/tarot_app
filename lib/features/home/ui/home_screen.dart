@@ -1,6 +1,10 @@
 import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:taro/app/domain/entities/theme_option.dart';
+import 'package:taro/app/ui/bloc/language/language_bloc.dart';
+import 'package:taro/app/ui/bloc/theme/theme_bloc.dart';
 import 'package:taro/core/assets/gen/assets.gen.dart';
 import 'package:taro/core/extensions/context_extension.dart';
 import 'package:taro/core/routing/app_router.dart';
@@ -29,6 +33,14 @@ class HomeScreen extends StatefulWidget {
 }
 
 class _HomeScreenState extends State<HomeScreen> with TickerProviderStateMixin {
+  static const _dailyCardId = 'daily_card';
+  static const _cardsCatalogId = 'cards_catalog';
+  static const _yesNoId = 'yes_no';
+
+  static const _pageChangingDuration = Duration(milliseconds: 400);
+
+  late final deviceInfoService = context.appDependenciesContainer.deviceInfoService;
+
   late final HomeScreenAnimations _animations;
   late double _cardWidth;
   late double _cardHeight;
@@ -36,22 +48,22 @@ class _HomeScreenState extends State<HomeScreen> with TickerProviderStateMixin {
   late var _selectedCard = _menuCards.first;
   int _selectedCardIndex = 0;
   MenuCardModel? _previousSelectedCard;
+  late String _visibleTitle = _menuCards.first.getName(context);
 
   final _menuCards = [
-    MenuCardModel(id: 'daily_card'),
-    MenuCardModel(id: 'spreads'),
-    MenuCardModel(id: 'funny'),
-    MenuCardModel(id: 'yammy'),
+    MenuCardModel(id: _HomeScreenState._dailyCardId),
+    MenuCardModel(id: _HomeScreenState._cardsCatalogId),
+    MenuCardModel(id: _HomeScreenState._yesNoId),
   ];
 
   final List<String> _deckOrder = [
-    'daily_card',
-    'spreads',
-    'funny',
-    'yammy',
+    _HomeScreenState._dailyCardId,
+    _HomeScreenState._cardsCatalogId,
+    _HomeScreenState._yesNoId,
   ];
 
   bool _isStackReordered = false;
+  bool _isTitleAnimationTrigger = true;
 
   @override
   void initState() {
@@ -84,102 +96,146 @@ class _HomeScreenState extends State<HomeScreen> with TickerProviderStateMixin {
   @override
   Widget build(BuildContext context) {
     final colors = context.colors;
+    final fonts = context.fonts;
 
-    return Scaffold(
-      body: AutoTabsRouter(
-        duration: const Duration(milliseconds: 400),
-        transitionBuilder: (context, child, animation) => FadeTransition(
-          opacity: animation,
-          child: child,
+    final themeOption = context.read<ThemeBloc>().state.themeOption;
+
+    const profileIconSize = UiKitSize.x10;
+    const headerPadding = UiKitSpacing.x4;
+    const cardScreenTopPadding = profileIconSize + headerPadding;
+
+    return BlocListener<LanguageBloc, LanguageState>(
+      listener: (context, _) {
+        setState(() {
+          _isTitleAnimationTrigger = false;
+          Future.delayed(_pageChangingDuration).then((_) {
+            setState(() {
+              _visibleTitle = _selectedCard.getName(context);
+              _isTitleAnimationTrigger = true;
+            });
+          });
+        });
+      },
+      child: AnnotatedRegion<SystemUiOverlayStyle>(
+        value: SystemUiOverlayStyle(
+          statusBarColor: colors.transparent,
+          statusBarIconBrightness: switch (themeOption) {
+            ThemeOption.light => Brightness.dark,
+            ThemeOption.dark => Brightness.light,
+            ThemeOption.system => null,
+          },
         ),
-        routes: const [
-          DailyCardRoute(),
-          DecksRoute(),
-          FunnyRoute(),
-          YammyRoute(),
-        ],
-        builder: (context, child) {
-          final tabsRouter = AutoTabsRouter.of(context);
+        child: Scaffold(
+          body: AutoTabsRouter(
+            duration: _pageChangingDuration,
+            transitionBuilder: (context, child, animation) => FadeTransition(
+              opacity: animation,
+              child: child,
+            ),
+            routes: const [
+              DailyCardRoute(),
+              CardsCatalogRoute(),
+              YesNoRoute(),
+            ],
+            builder: (context, child) {
+              final tabsRouter = AutoTabsRouter.of(context);
 
-          return Padding(
-            padding: const EdgeInsets.only(top: kToolbarHeight),
-            child: Stack(
-              children: [
-                Align(
-                  alignment: Alignment.topCenter,
-                  child: Container(
-                    padding: const EdgeInsets.symmetric(horizontal: 20),
-                    height: UiKitAppBar.height,
-                    color: colors.whiteBgWhite,
-                    child: Row(
-                      mainAxisAlignment: MainAxisAlignment.end,
-                      children: [
-                        Hero(
-                          tag: ProfileWidget.heroTag,
-                          child: ProfileWidget(
-                            onTap: _onProfileTap,
-                            child: Assets.icons.ava1.svg(
-                              height: 64,
-                              width: 64,
-                            ),
-                          ),
-                        ),
-                      ],
-                    ),
+              return DecoratedBox(
+                decoration: BoxDecoration(
+                  gradient: LinearGradient(
+                    begin: Alignment.topLeft,
+                    end: Alignment.bottomRight,
+                    colors: [colors.gradientFirst, colors.gradientSecond],
                   ),
                 ),
-                AnimatedBuilder(
-                  animation: _animations.controller,
-                  builder: (context, _) {
-                    return Positioned.fill(
-                      top: UiKitAppBar.height,
-                      child: Stack(
-                        children: _menuCards.mapWithIndex((index, card, _, __) {
-                          final animationValues = CardAnimationCalculator(
-                            context: context,
-                            animations: _animations,
-                            cardWidth: _cardWidth,
-                            cardHeight: _cardHeight,
-                            selectedCardIndex: _selectedCardIndex,
-                            selectedCard: _selectedCard,
-                            previousSelectedCard: _previousSelectedCard,
-                            menuCards: _menuCards,
-                            deckOrder: _deckOrder,
-                            isStackReordered: _isStackReordered,
-                          ).calculate(index, card);
-
-                          final isPreviousSelected = card.id == _previousSelectedCard?.id;
-
-                          return MenuCardWidget(
-                            name: card.getName(context),
-                            verticalOffset: animationValues.verticalOffset,
-                            horizontalOffset: animationValues.horizontalOffset,
-                            height: animationValues.height,
-                            width: animationValues.width,
-                            heightFactor: animationValues.heightFactor,
-                            angle: animationValues.angle,
-                            yAngle: animationValues.yAngle,
-                            borderRadius:
-                                (_animations.controller.value >= 0.3 && _animations.controller.value <= 5.0) &&
-                                        (isPreviousSelected || _isSelectedCard(card))
-                                    ? BorderRadius.circular(24)
-                                    : const BorderRadius.vertical(top: Radius.circular(24)),
-                            icon: Icon(
-                              card.icon,
-                              color: Colors.blueAccent,
-                            ),
-                            onTap: () => _onCardTap(card, index, tabsRouter),
-                            backSideWidget: child,
-                          );
-                        }).toList(),
+                child: SafeArea(
+                  bottom: false,
+                  child: Stack(
+                    children: [
+                      Align(
+                        alignment: Alignment.topCenter,
+                        child: Padding(
+                          padding: const EdgeInsets.symmetric(horizontal: headerPadding),
+                          child: Row(
+                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                            crossAxisAlignment: CrossAxisAlignment.center,
+                            children: [
+                              UiKitEnhancedTextRevealEffect(
+                                text: _visibleTitle,
+                                trigger: _isTitleAnimationTrigger,
+                                duration: _pageChangingDuration,
+                                style: fonts.largeTitleEmphasized,
+                              ),
+                              Hero(
+                                tag: ProfileWidget.heroTag,
+                                child: ProfileWidget(
+                                  size: profileIconSize,
+                                  onTap: _onProfileTap,
+                                  child: Assets.icons.ava1.svg(
+                                    height: profileIconSize,
+                                    width: profileIconSize,
+                                  ),
+                                ),
+                              ),
+                            ],
+                          ),
+                        ),
                       ),
-                    );
-                  },
+                      AnimatedBuilder(
+                        animation: _animations.controller,
+                        builder: (context, _) {
+                          return Positioned(
+                            top: cardScreenTopPadding,
+                            child: Stack(
+                              children: _menuCards.mapWithIndex((index, card, _, __) {
+                                final animationValues = CardAnimationCalculator(
+                                  context: context,
+                                  animations: _animations,
+                                  cardWidth: _cardWidth,
+                                  cardHeight: _cardHeight,
+                                  selectedCardIndex: _selectedCardIndex,
+                                  selectedCard: _selectedCard,
+                                  previousSelectedCard: _previousSelectedCard,
+                                  menuCards: _menuCards,
+                                  deckOrder: _deckOrder,
+                                  isStackReordered: _isStackReordered,
+                                ).calculate(index, card);
+
+                                final isPreviousSelected = card.id == _previousSelectedCard?.id;
+
+                                return MenuCardWidget(
+                                  name: card.getName(context),
+                                  verticalOffset: animationValues.verticalOffset,
+                                  horizontalOffset: animationValues.horizontalOffset,
+                                  height: animationValues.height,
+                                  width: animationValues.width,
+                                  heightFactor: animationValues.heightFactor,
+                                  angle: animationValues.angle,
+                                  yAngle: animationValues.yAngle,
+                                  borderRadius:
+                                      (_animations.controller.value >= 0.3 && _animations.controller.value <= 5.0) &&
+                                              (isPreviousSelected || _isSelectedCard(card))
+                                          ? BorderRadius.circular(24)
+                                          : const BorderRadius.vertical(top: Radius.circular(24)),
+                                  icon: Icon(
+                                    card.icon,
+                                    color: Colors.blueAccent,
+                                  ),
+                                  onTap: () => _onCardTap(card, index, tabsRouter),
+                                  backSideWidget: child,
+                                );
+                              }).toList(),
+                            ),
+                          );
+                        },
+                      ),
+                    ],
+                  ),
                 ),
-              ],
-            ),
-          );
-        },
+              );
+            },
+          ),
+        ),
       ),
     );
   }
@@ -215,6 +271,7 @@ class _HomeScreenState extends State<HomeScreen> with TickerProviderStateMixin {
       _previousSelectedCard = _selectedCard;
       _selectedCard = card;
       _selectedCardIndex = index;
+      _isTitleAnimationTrigger = false;
     });
     _animations.controller.forward();
     _animations.controller.addListener(() {
@@ -224,6 +281,13 @@ class _HomeScreenState extends State<HomeScreen> with TickerProviderStateMixin {
           tabsRouter.setActiveIndex(searchedIndex);
         });
       }
+    });
+
+    Future.delayed(_pageChangingDuration).then((_) {
+      setState(() {
+        _isTitleAnimationTrigger = true;
+        _visibleTitle = card.getName(context);
+      });
     });
   }
 
@@ -235,10 +299,9 @@ class _HomeScreenState extends State<HomeScreen> with TickerProviderStateMixin {
 extension on MenuCardModel {
   IconData get icon {
     return switch (id) {
-      'daily_card' => Icons.calendar_month,
-      'funny' => Icons.celebration,
-      'yammy' => Icons.food_bank,
-      'spreads' => Icons.card_giftcard,
+      _HomeScreenState._dailyCardId => Icons.calendar_month,
+      _HomeScreenState._cardsCatalogId => Icons.celebration,
+      _HomeScreenState._yesNoId => Icons.food_bank,
       _ => Icons.face,
     };
   }
@@ -246,10 +309,9 @@ extension on MenuCardModel {
   String getName(BuildContext context) {
     final l10n = context.l10n;
     return switch (id) {
-      'daily_card' => l10n.homeScreen$MenuDailyCard,
-      'funny' => l10n.homeScreen$MenuFunny,
-      'yammy' => l10n.homeScreen$MenuYammy,
-      'spreads' => l10n.homeScreen$MenuSpreads,
+      _HomeScreenState._dailyCardId => l10n.homeScreen$Menu$DailyCard,
+      _HomeScreenState._cardsCatalogId => l10n.homeScreen$Menu$CardsCatalog,
+      _HomeScreenState._yesNoId => l10n.homeScreen$Menu$YesNo,
       _ => '',
     };
   }

@@ -30,7 +30,7 @@ class DebugOptionButton extends StatelessWidget {
               : Text(
                   title,
                   style: TextStyle(
-                    color: context.colors.whiteBgWhite,
+                    color: context.colors.background,
                   ),
                 ),
         ),

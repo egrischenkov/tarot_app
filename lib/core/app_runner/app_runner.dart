@@ -7,7 +7,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:intl/date_symbol_data_local.dart';
-import 'package:taro/core/app_runner/app.dart';
+import 'package:taro/app/ui/app.dart';
 import 'package:taro/core/app_runner/flavor.dart';
 import 'package:taro/core/di/app_dependencies_creator.dart';
 import 'package:taro/core/firebase/tarot_firebase_options.dart';
