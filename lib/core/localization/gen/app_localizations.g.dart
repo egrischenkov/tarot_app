@@ -454,8 +454,14 @@ abstract class AppLocalizations {
   /// No description provided for @share$Suggest.
   ///
   /// In ru, this message translates to:
-  /// **'Попробуй {appName}! Скачай здесь: {appLink}'**
+  /// **'Попробуй {appName}! Скачай здесь:\n{appLink}'**
   String share$Suggest(Object appLink, Object appName);
+
+  /// No description provided for @share$Title.
+  ///
+  /// In ru, this message translates to:
+  /// **'Поделитесь нашим приложением'**
+  String get share$Title;
 }
 
 class _AppLocalizationsDelegate extends LocalizationsDelegate<AppLocalizations> {

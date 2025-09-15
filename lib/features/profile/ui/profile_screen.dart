@@ -208,7 +208,18 @@ class _ProfileScreenState extends State<ProfileScreen> {
   }
 
   void _onShareTap() {
-    SharePlus.instance.share(ShareParams(title: ,subject: ));
+    final l10n = context.l10n;
+    const link = 'https://www.kinopoisk.ru/film/868675/';
+
+    SharePlus.instance.share(
+      ShareParams(
+        title: l10n.share$Title,
+        text: l10n.share$Suggest(
+          link,
+          l10n.appName,
+        ),
+      ),
+    );
   }
 
   void _onSettingsTap() {

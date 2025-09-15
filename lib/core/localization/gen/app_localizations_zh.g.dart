@@ -181,6 +181,9 @@ class AppLocalizationsZh extends AppLocalizations {
 
   @override
   String share$Suggest(Object appLink, Object appName) {
-    return '试试 $appName！在这里下载: $appLink';
+    return '试试 $appName！在这里下载:\n$appLink';
   }
+
+  @override
+  String get share$Title => '分享我们的应用';
 }

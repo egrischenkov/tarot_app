@@ -88,5 +88,6 @@
         "---------": "---------",
         "description": "Share feature"
     },
-    "share$Suggest": "试试 {appName}！在这里下载: {appLink}"
+    "share$Suggest": "试试 {appName}！在这里下载:\n{appLink}",
+    "share$Title": "分享我们的应用"
 }

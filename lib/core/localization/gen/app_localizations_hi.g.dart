@@ -181,6 +181,9 @@ class AppLocalizationsHi extends AppLocalizations {
 
   @override
   String share$Suggest(Object appLink, Object appName) {
-    return '$appName आज़माएं! यहाँ डाउनलोड करें: $appLink';
+    return '$appName आज़माएं! यहाँ डाउनलोड करें:\n$appLink';
   }
+
+  @override
+  String get share$Title => 'हमारे ऐप को साझा करें';
 }

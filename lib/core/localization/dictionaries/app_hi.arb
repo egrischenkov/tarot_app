@@ -88,5 +88,6 @@
         "---------": "---------",
         "description": "Share feature"
     },
-    "share$Suggest": "{appName} आज़माएं! यहाँ डाउनलोड करें: {appLink}"
+    "share$Suggest": "{appName} आज़माएं! यहाँ डाउनलोड करें:\n{appLink}",
+    "share$Title": "हमारे ऐप को साझा करें"
 }

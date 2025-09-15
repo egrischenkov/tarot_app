@@ -181,6 +181,9 @@ class AppLocalizationsFr extends AppLocalizations {
 
   @override
   String share$Suggest(Object appLink, Object appName) {
-    return 'Essaie $appName ! Télécharge-le ici : $appLink';
+    return 'Essaie $appName ! Télécharge-le ici :\n$appLink';
   }
+
+  @override
+  String get share$Title => 'Partagez notre application';
 }

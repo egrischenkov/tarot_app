@@ -95,5 +95,6 @@
         "---------": "---------",
         "description": "Share feature"
     },
-    "share$Suggest": "Essaie {appName} ! Télécharge-le ici : {appLink}"
+    "share$Suggest": "Essaie {appName} ! Télécharge-le ici :\n{appLink}",
+    "share$Title": "Partagez notre application"
 }

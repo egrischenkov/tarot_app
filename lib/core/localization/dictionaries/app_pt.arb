@@ -88,5 +88,6 @@
         "---------": "---------",
         "description": "Share feature"
     },
-    "share$Suggest": "Experimente {appName}! Baixe aqui: {appLink}"
+    "share$Suggest": "Experimente {appName}! Baixe aqui:\n{appLink}",
+    "share$Title": "Compartilhe nosso app"
 }
