@@ -58,7 +58,7 @@ class _SettingsScreenState extends State<SettingsScreen> {
                 UiKitLineItem(
                   label: l10n.settingsScreen$ChangeTheme,
                   onTap: _onChangeThemeTap,
-                  valueLabel: context.read<ThemeBloc>().state.themeOption.getLabel(context),
+                  valueLabel: context.watch<ThemeBloc>().state.themeOption.getLabel(context),
                 ),
                 UiKitLineItem(
                   label: l10n.settingsScreen$ChangeLanguage,
