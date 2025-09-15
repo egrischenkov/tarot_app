@@ -171,11 +171,19 @@ class AppLocalizationsHi extends AppLocalizations {
   String get feedbackFromScreen$CommentHint => 'ऐप उपयोग करने का अपना अनुभव लिखें';
 
   @override
-  String get aboutScreen$Title => 'О приложении';
+  String get aboutScreen$Title => 'ऐप के बारे में';
 
   @override
-  String get aboutScreen$PrivacyPolicy => 'Политика конфиденциальности';
+  String get aboutScreen$PrivacyPolicy => 'गोपनीयता नीति';
 
   @override
-  String get aboutScreen$TermsOfService => 'Условия использования';
+  String get aboutScreen$TermsOfService => 'सेवा की शर्तें';
+
+  @override
+  String share$Suggest(Object appLink, Object appName) {
+    return '$appName आज़माएं! यहाँ डाउनलोड करें:\n$appLink';
+  }
+
+  @override
+  String get share$Title => 'हमारे ऐप को साझा करें';
 }

@@ -83,5 +83,11 @@
     },
     "aboutScreen$Title": "Informazioni",
     "aboutScreen$PrivacyPolicy": "Informativa sulla privacy",
-    "aboutScreen$TermsOfService": "Termini di servizio"
+    "aboutScreen$TermsOfService": "Termini di servizio",
+    "@segmentShareFeature": {
+        "---------": "---------",
+        "description": "Share feature"
+    },
+    "share$Suggest": "Prova {appName}! Scaricalo qui:\n{appLink}",
+    "share$Title": "Condividi la nostra app"
 }

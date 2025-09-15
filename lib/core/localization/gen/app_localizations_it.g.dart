@@ -178,4 +178,12 @@ class AppLocalizationsIt extends AppLocalizations {
 
   @override
   String get aboutScreen$TermsOfService => 'Termini di servizio';
+
+  @override
+  String share$Suggest(Object appLink, Object appName) {
+    return 'Prova $appName! Scaricalo qui:\n$appLink';
+  }
+
+  @override
+  String get share$Title => 'Condividi la nostra app';
 }

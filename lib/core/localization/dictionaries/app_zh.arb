@@ -83,5 +83,11 @@
     },
     "aboutScreen$Title": "关于",
     "aboutScreen$PrivacyPolicy": "隐私政策",
-    "aboutScreen$TermsOfService": "服务条款"
+    "aboutScreen$TermsOfService": "服务条款",
+    "@segmentShareFeature": {
+        "---------": "---------",
+        "description": "Share feature"
+    },
+    "share$Suggest": "试试 {appName}！在这里下载:\n{appLink}",
+    "share$Title": "分享我们的应用"
 }

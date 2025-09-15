@@ -76,5 +76,18 @@
     "feedbackFormScreen$FeedbackCategory$Other": "अन्य",
     "feedbackFormScreen$Send": "भेजें",
     "feedbackFromScreen$YourComment": "आपकी टिप्पणी (वैकल्पिक)",
-    "feedbackFromScreen$CommentHint": "ऐप उपयोग करने का अपना अनुभव लिखें"
+    "feedbackFromScreen$CommentHint": "ऐप उपयोग करने का अपना अनुभव लिखें",
+    "@segmentAboutScreen": {
+        "---------": "---------",
+        "description": "About screen"
+    },
+    "aboutScreen$Title": "ऐप के बारे में",
+    "aboutScreen$PrivacyPolicy": "गोपनीयता नीति",
+    "aboutScreen$TermsOfService": "सेवा की शर्तें",
+    "@segmentShareFeature": {
+        "---------": "---------",
+        "description": "Share feature"
+    },
+    "share$Suggest": "{appName} आज़माएं! यहाँ डाउनलोड करें:\n{appLink}",
+    "share$Title": "हमारे ऐप को साझा करें"
 }

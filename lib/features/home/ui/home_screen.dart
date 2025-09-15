@@ -39,8 +39,6 @@ class _HomeScreenState extends State<HomeScreen> with TickerProviderStateMixin {
 
   static const _pageChangingDuration = Duration(milliseconds: 400);
 
-  late final deviceInfoService = context.appDependenciesContainer.deviceInfoService;
-
   late final HomeScreenAnimations _animations;
   late double _cardWidth;
   late double _cardHeight;
