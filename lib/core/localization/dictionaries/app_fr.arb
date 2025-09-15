@@ -90,5 +90,10 @@
     },
     "aboutScreen$Title": "ऐप के बारे में",
     "aboutScreen$PrivacyPolicy": "गोपनीयता नीति",
-    "aboutScreen$TermsOfService": "सेवा की शर्तें"
+    "aboutScreen$TermsOfService": "सेवा की शर्तें",
+    "@segmentShareFeature": {
+        "---------": "---------",
+        "description": "Share feature"
+    },
+    "share$Suggest": "Essaie {appName} ! Télécharge-le ici : {appLink}"
 }

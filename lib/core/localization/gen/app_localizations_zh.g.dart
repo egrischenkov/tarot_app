@@ -178,4 +178,9 @@ class AppLocalizationsZh extends AppLocalizations {
 
   @override
   String get aboutScreen$TermsOfService => '服务条款';
+
+  @override
+  String share$Suggest(Object appLink, Object appName) {
+    return '试试 $appName！在这里下载: $appLink';
+  }
 }

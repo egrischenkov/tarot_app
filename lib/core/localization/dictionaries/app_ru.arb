@@ -83,5 +83,10 @@
     },
     "aboutScreen$Title": "О приложении",
     "aboutScreen$PrivacyPolicy": "Политика конфиденциальности",
-    "aboutScreen$TermsOfService": "Условия использования"
+    "aboutScreen$TermsOfService": "Условия использования",
+    "@segmentShareFeature": {
+        "---------": "---------",
+        "description": "Share feature"
+    },
+    "share$Suggest": "Попробуй {appName}! Скачай здесь: {appLink}"
 }

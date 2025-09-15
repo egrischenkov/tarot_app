@@ -450,6 +450,12 @@ abstract class AppLocalizations {
   /// In ru, this message translates to:
   /// **'Условия использования'**
   String get aboutScreen$TermsOfService;
+
+  /// No description provided for @share$Suggest.
+  ///
+  /// In ru, this message translates to:
+  /// **'Попробуй {appName}! Скачай здесь: {appLink}'**
+  String share$Suggest(Object appLink, Object appName);
 }
 
 class _AppLocalizationsDelegate extends LocalizationsDelegate<AppLocalizations> {

@@ -178,4 +178,9 @@ class AppLocalizationsFr extends AppLocalizations {
 
   @override
   String get aboutScreen$TermsOfService => 'सेवा की शर्तें';
+
+  @override
+  String share$Suggest(Object appLink, Object appName) {
+    return 'Essaie $appName ! Télécharge-le ici : $appLink';
+  }
 }
