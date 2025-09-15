@@ -1,5 +1,3 @@
-import 'dart:io';
-
 import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
@@ -103,10 +101,8 @@ class _HomeScreenState extends State<HomeScreen> with TickerProviderStateMixin {
     final themeOption = context.read<ThemeBloc>().state.themeOption;
 
     const profileIconSize = UiKitSize.x10;
-    const profileIconVerticalPadding = UiKitSpacing.x2;
-    final cardScreenTopPadding = (deviceInfoService.isIPhoneSE() || Platform.isAndroid ? profileIconSize : 0) +
-        profileIconVerticalPadding +
-        MediaQuery.of(context).padding.top;
+    const headerPadding = UiKitSpacing.x4;
+    const cardScreenTopPadding = profileIconSize + headerPadding;
 
     return BlocListener<LanguageBloc, LanguageState>(
       listener: (context, _) {
@@ -144,10 +140,7 @@ class _HomeScreenState extends State<HomeScreen> with TickerProviderStateMixin {
             builder: (context, child) {
               final tabsRouter = AutoTabsRouter.of(context);
 
-              return Container(
-                padding: EdgeInsets.only(
-                  top: MediaQuery.of(context).padding.bottom + UiKitSpacing.x4,
-                ),
+              return DecoratedBox(
                 decoration: BoxDecoration(
                   gradient: LinearGradient(
                     begin: Alignment.topLeft,
@@ -155,86 +148,89 @@ class _HomeScreenState extends State<HomeScreen> with TickerProviderStateMixin {
                     colors: [colors.gradientFirst, colors.gradientSecond],
                   ),
                 ),
-                child: Stack(
-                  children: [
-                    Align(
-                      alignment: Alignment.topCenter,
-                      child: Container(
-                        padding: const EdgeInsets.all(UiKitSpacing.x4),
-                        child: Row(
-                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                          crossAxisAlignment: CrossAxisAlignment.center,
-                          children: [
-                            UiKitEnhancedTextRevealEffect(
-                              text: _visibleTitle,
-                              trigger: _isTitleAnimationTrigger,
-                              duration: _pageChangingDuration,
-                              style: fonts.largeTitleEmphasized,
-                            ),
-                            Hero(
-                              tag: ProfileWidget.heroTag,
-                              child: ProfileWidget(
-                                size: UiKitSize.x10,
-                                onTap: _onProfileTap,
-                                child: Assets.icons.ava1.svg(
-                                  height: UiKitSize.x10,
-                                  width: UiKitSize.x10,
+                child: SafeArea(
+                  bottom: false,
+                  child: Stack(
+                    children: [
+                      Align(
+                        alignment: Alignment.topCenter,
+                        child: Padding(
+                          padding: const EdgeInsets.symmetric(horizontal: headerPadding),
+                          child: Row(
+                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                            crossAxisAlignment: CrossAxisAlignment.center,
+                            children: [
+                              UiKitEnhancedTextRevealEffect(
+                                text: _visibleTitle,
+                                trigger: _isTitleAnimationTrigger,
+                                duration: _pageChangingDuration,
+                                style: fonts.largeTitleEmphasized,
+                              ),
+                              Hero(
+                                tag: ProfileWidget.heroTag,
+                                child: ProfileWidget(
+                                  size: profileIconSize,
+                                  onTap: _onProfileTap,
+                                  child: Assets.icons.ava1.svg(
+                                    height: profileIconSize,
+                                    width: profileIconSize,
+                                  ),
                                 ),
                               ),
-                            ),
-                          ],
+                            ],
+                          ),
                         ),
                       ),
-                    ),
-                    AnimatedBuilder(
-                      animation: _animations.controller,
-                      builder: (context, _) {
-                        return Positioned.fill(
-                          top: cardScreenTopPadding,
-                          child: Stack(
-                            children: _menuCards.mapWithIndex((index, card, _, __) {
-                              final animationValues = CardAnimationCalculator(
-                                context: context,
-                                animations: _animations,
-                                cardWidth: _cardWidth,
-                                cardHeight: _cardHeight,
-                                selectedCardIndex: _selectedCardIndex,
-                                selectedCard: _selectedCard,
-                                previousSelectedCard: _previousSelectedCard,
-                                menuCards: _menuCards,
-                                deckOrder: _deckOrder,
-                                isStackReordered: _isStackReordered,
-                              ).calculate(index, card);
+                      AnimatedBuilder(
+                        animation: _animations.controller,
+                        builder: (context, _) {
+                          return Positioned(
+                            top: cardScreenTopPadding,
+                            child: Stack(
+                              children: _menuCards.mapWithIndex((index, card, _, __) {
+                                final animationValues = CardAnimationCalculator(
+                                  context: context,
+                                  animations: _animations,
+                                  cardWidth: _cardWidth,
+                                  cardHeight: _cardHeight,
+                                  selectedCardIndex: _selectedCardIndex,
+                                  selectedCard: _selectedCard,
+                                  previousSelectedCard: _previousSelectedCard,
+                                  menuCards: _menuCards,
+                                  deckOrder: _deckOrder,
+                                  isStackReordered: _isStackReordered,
+                                ).calculate(index, card);
 
-                              final isPreviousSelected = card.id == _previousSelectedCard?.id;
+                                final isPreviousSelected = card.id == _previousSelectedCard?.id;
 
-                              return MenuCardWidget(
-                                name: card.getName(context),
-                                verticalOffset: animationValues.verticalOffset,
-                                horizontalOffset: animationValues.horizontalOffset,
-                                height: animationValues.height,
-                                width: animationValues.width,
-                                heightFactor: animationValues.heightFactor,
-                                angle: animationValues.angle,
-                                yAngle: animationValues.yAngle,
-                                borderRadius:
-                                    (_animations.controller.value >= 0.3 && _animations.controller.value <= 5.0) &&
-                                            (isPreviousSelected || _isSelectedCard(card))
-                                        ? BorderRadius.circular(24)
-                                        : const BorderRadius.vertical(top: Radius.circular(24)),
-                                icon: Icon(
-                                  card.icon,
-                                  color: Colors.blueAccent,
-                                ),
-                                onTap: () => _onCardTap(card, index, tabsRouter),
-                                backSideWidget: child,
-                              );
-                            }).toList(),
-                          ),
-                        );
-                      },
-                    ),
-                  ],
+                                return MenuCardWidget(
+                                  name: card.getName(context),
+                                  verticalOffset: animationValues.verticalOffset,
+                                  horizontalOffset: animationValues.horizontalOffset,
+                                  height: animationValues.height,
+                                  width: animationValues.width,
+                                  heightFactor: animationValues.heightFactor,
+                                  angle: animationValues.angle,
+                                  yAngle: animationValues.yAngle,
+                                  borderRadius:
+                                      (_animations.controller.value >= 0.3 && _animations.controller.value <= 5.0) &&
+                                              (isPreviousSelected || _isSelectedCard(card))
+                                          ? BorderRadius.circular(24)
+                                          : const BorderRadius.vertical(top: Radius.circular(24)),
+                                  icon: Icon(
+                                    card.icon,
+                                    color: Colors.blueAccent,
+                                  ),
+                                  onTap: () => _onCardTap(card, index, tabsRouter),
+                                  backSideWidget: child,
+                                );
+                              }).toList(),
+                            ),
+                          );
+                        },
+                      ),
+                    ],
+                  ),
                 ),
               );
             },
