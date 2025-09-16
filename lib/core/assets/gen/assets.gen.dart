@@ -37,6 +37,12 @@ class $AssetsIconsGen {
   /// File path: assets/icons/ava_1.svg
   SvgGenImage get ava1 => const SvgGenImage('assets/icons/ava_1.svg');
 
+  /// File path: assets/icons/onboarding_1.svg
+  SvgGenImage get onboarding1 => const SvgGenImage('assets/icons/onboarding_1.svg');
+
+  /// File path: assets/icons/onboarding_2.svg
+  SvgGenImage get onboarding2 => const SvgGenImage('assets/icons/onboarding_2.svg');
+
   /// File path: assets/icons/settings.svg
   SvgGenImage get settings => const SvgGenImage('assets/icons/settings.svg');
 
@@ -44,33 +50,29 @@ class $AssetsIconsGen {
   SvgGenImage get share => const SvgGenImage('assets/icons/share.svg');
 
   /// List of all assets
-  List<SvgGenImage> get values => [aboutIcon, ava1, settings, share];
-}
-
-class $AssetsImagesGen {
-  const $AssetsImagesGen();
-
-  /// File path: assets/images/welcome_1.png
-  AssetGenImage get welcome1 => const AssetGenImage('assets/images/welcome_1.png');
-
-  /// File path: assets/images/welcome_2.png
-  AssetGenImage get welcome2 => const AssetGenImage('assets/images/welcome_2.png');
-
-  /// File path: assets/images/welcome_3.png
-  AssetGenImage get welcome3 => const AssetGenImage('assets/images/welcome_3.png');
-
-  /// List of all assets
-  List<AssetGenImage> get values => [welcome1, welcome2, welcome3];
+  List<SvgGenImage> get values => [aboutIcon, ava1, onboarding1, onboarding2, settings, share];
 }
 
 class $AssetsLottieGen {
   const $AssetsLottieGen();
 
+  /// File path: assets/lottie/onboarding_bg_1.json
+  String get onboardingBg1 => 'assets/lottie/onboarding_bg_1.json';
+
+  /// File path: assets/lottie/onboarding_bg_2.json
+  String get onboardingBg2 => 'assets/lottie/onboarding_bg_2.json';
+
+  /// File path: assets/lottie/onboarding_bg_3.json
+  String get onboardingBg3 => 'assets/lottie/onboarding_bg_3.json';
+
   /// File path: assets/lottie/sandy_loading.json
   String get sandyLoading => 'assets/lottie/sandy_loading.json';
 
+  /// File path: assets/lottie/sun_breathing.json
+  String get sunBreathing => 'assets/lottie/sun_breathing.json';
+
   /// List of all assets
-  List<String> get values => [sandyLoading];
+  List<String> get values => [onboardingBg1, onboardingBg2, onboardingBg3, sandyLoading, sunBreathing];
 }
 
 class Assets {
@@ -79,7 +81,6 @@ class Assets {
   static const AssetGenImage tarotMeets = AssetGenImage('assets/TarotMeets.png');
   static const $AssetsAppIconsGen appIcons = $AssetsAppIconsGen();
   static const $AssetsIconsGen icons = $AssetsIconsGen();
-  static const $AssetsImagesGen images = $AssetsImagesGen();
   static const $AssetsLottieGen lottie = $AssetsLottieGen();
 
   /// List of all assets
