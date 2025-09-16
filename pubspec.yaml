@@ -79,7 +79,6 @@ flutter:
   generate: true
   assets:
     - assets/
-    - assets/images/
     - assets/icons/
     - assets/lottie/
     - assets/app_icons/
