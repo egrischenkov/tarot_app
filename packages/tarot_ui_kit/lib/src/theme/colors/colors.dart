@@ -23,6 +23,9 @@ class UiKitColors extends ThemeExtension<UiKitColors> {
   final Color iconBackground;
   final Color shadow;
   final Color link;
+  final Color onboardingBackground1;
+  final Color onboardingBackground2;
+  final Color onboardingBackground3;
 
   const UiKitColors({
     required this.accent,
@@ -46,6 +49,9 @@ class UiKitColors extends ThemeExtension<UiKitColors> {
     required this.iconBackground,
     required this.shadow,
     required this.link,
+    required this.onboardingBackground1,
+    required this.onboardingBackground2,
+    required this.onboardingBackground3,
   });
 
   @override
@@ -71,6 +77,9 @@ class UiKitColors extends ThemeExtension<UiKitColors> {
     Color? iconBackground,
     Color? shadow,
     Color? link,
+    Color? onboardingBackground1,
+    Color? onboardingBackground2,
+    Color? onboardingBackground3,
   }) {
     return UiKitColors(
       accentTertiary: accentTertiary ?? this.accentTertiary,
@@ -94,6 +103,9 @@ class UiKitColors extends ThemeExtension<UiKitColors> {
       iconBackground: iconBackground ?? this.iconBackground,
       shadow: shadow ?? this.shadow,
       link: link ?? this.link,
+      onboardingBackground1: onboardingBackground1 ?? this.onboardingBackground1,
+      onboardingBackground2: onboardingBackground2 ?? this.onboardingBackground2,
+      onboardingBackground3: onboardingBackground3 ?? this.onboardingBackground3,
     );
   }
 
@@ -125,6 +137,12 @@ class UiKitColors extends ThemeExtension<UiKitColors> {
       iconBackground: Color.lerp(iconBackground, other.iconBackground, t) ?? other.iconBackground,
       shadow: Color.lerp(shadow, other.shadow, t) ?? other.shadow,
       link: Color.lerp(link, other.link, t) ?? other.link,
+      onboardingBackground1:
+          Color.lerp(onboardingBackground1, other.onboardingBackground1, t) ?? other.onboardingBackground1,
+      onboardingBackground2:
+          Color.lerp(onboardingBackground2, other.onboardingBackground2, t) ?? other.onboardingBackground2,
+      onboardingBackground3:
+          Color.lerp(onboardingBackground3, other.onboardingBackground3, t) ?? other.onboardingBackground3,
     );
   }
 }

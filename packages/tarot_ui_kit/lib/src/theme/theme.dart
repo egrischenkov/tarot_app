@@ -44,6 +44,9 @@ class UiKitTheme {
     iconBackground: const Color(0xFFF4F1F8),
     shadow: Colors.grey.withValues(alpha: .9).withValues(alpha: .4),
     link: Colors.blue,
+    onboardingBackground1: const Color(0xFFFFF8E7),
+    onboardingBackground2: const Color(0xFFE3F2FD),
+    onboardingBackground3: const Color(0xFFFFF9C4),
   );
 
   static final darkThemeColors = UiKitColors(
@@ -68,6 +71,9 @@ class UiKitTheme {
     iconBackground: const Color(0xFF86848B).withValues(alpha: .3),
     shadow: const Color(0xFF010101).withValues(alpha: .4),
     link: Colors.blue,
+    onboardingBackground1: const Color(0xFF0F0F0F),
+    onboardingBackground2: const Color(0xFF262626),
+    onboardingBackground3: const Color(0xFF333333),
   );
 
   static UiKitFonts fonts(UiKitColors colors) => UiKitFonts(
