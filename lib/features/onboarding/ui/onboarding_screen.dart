@@ -1,8 +1,11 @@
 import 'package:auto_route/auto_route.dart';
+import 'package:concentric_transition/page_view.dart';
 import 'package:flutter/material.dart';
+import 'package:lottie/lottie.dart';
 import 'package:taro/core/assets/gen/assets.gen.dart';
 import 'package:taro/core/extensions/context_extension.dart';
 import 'package:taro/core/routing/app_router.dart';
+import 'package:taro/features/onboarding/ui/widgets/onboarding_page_widget.dart';
 import 'package:tarot_ui_kit/ui_kit.dart';
 
 @RoutePage()
@@ -21,149 +24,75 @@ class OnboardingScreen extends StatefulWidget {
 }
 
 class _OnboardingScreenState extends State<OnboardingScreen> {
-  int _pageIndicatorIndex = 0;
-  late final PageController _pageController;
+  late int _selectedIndex = widget._initialPage;
+  late final _pageController = PageController(initialPage: _selectedIndex);
+
+  late final List<OnboardingPageData> _pagesData = [
+    OnboardingPageData(
+      title: context.l10n.onboarding$Title$First(context.l10n.appName),
+      subtitle: context.l10n.onboarding$Subtitle$First,
+      image: Assets.icons.onboarding1.svg(),
+      backgroundColor: context.colors.onboardingBackground1,
+      background: LottieBuilder.asset(Assets.lottie.onboardingBg1),
+    ),
+    OnboardingPageData(
+      title: context.l10n.onboarding$Title$Second,
+      subtitle: context.l10n.onboarding$Subtitle$Second,
+      image: Assets.icons.onboarding2.svg(),
+      backgroundColor: context.colors.onboardingBackground2,
+      background: LottieBuilder.asset(Assets.lottie.onboardingBg2),
+    ),
+    OnboardingPageData(
+      title: context.l10n.onboarding$Title$Third,
+      subtitle: context.l10n.onboarding$Subtitle$Third,
+      image: LottieBuilder.asset(Assets.lottie.sunBreathing),
+      backgroundColor: context.colors.onboardingBackground3,
+      background: LottieBuilder.asset(Assets.lottie.onboardingBg3),
+    ),
+  ];
 
   @override
   void initState() {
     super.initState();
 
-    _pageController = PageController(
-      initialPage: widget._initialPage,
-    );
-    _pageIndicatorIndex = widget._initialPage;
-  }
-
-  @override
-  void dispose() {
-    _pageController.dispose();
-
-    super.dispose();
-  }
-
-  List<_PageWidget> get _pages => [
-        _PageWidget(
-          image: Assets.images.welcome1.image(),
-          title: context.l10n.onboarding$Path,
-        ),
-        _PageWidget(
-          image: Assets.images.welcome2.image(),
-          title: context.l10n.onboarding$Answer,
-        ),
-        _PageWidget(
-          image: Assets.images.welcome3.image(),
-          title: context.l10n.onboarding$Cards,
-        ),
-      ];
-
-  @override
-  Widget build(BuildContext context) {
-    final l10n = context.l10n;
-    final fonts = context.fonts;
-    final colors = context.colors;
-
-    final isLastPage = _pageIndicatorIndex == _pages.length - 1;
-
-    return Scaffold(
-      appBar: AppBar(
-        backgroundColor: colors.background,
-        title: Text(l10n.appName, style: fonts.largeTitleRegular),
-        centerTitle: false,
-        actions: [
-          Padding(
-            padding: const EdgeInsets.only(right: UiKitSpacing.x4),
-            child: TextButton(
-              onPressed: () => _onNextTap(isLastPage),
-              child: AnimatedDefaultTextStyle(
-                duration: const Duration(milliseconds: 300),
-                curve: Curves.easeInOut,
-                style: isLastPage
-                    ? fonts.largeTitleRegular.copyWith(
-                        color: colors.accentTertiary,
-                      )
-                    : fonts.largeTitleRegular.copyWith(
-                        color: colors.gradientFirst.withValues(alpha: 0.8),
-                      ),
-                child: Text(
-                  isLastPage ? l10n.onboarding$Start : l10n.onboarding$Skip,
-                ),
-              ),
-            ),
-          ),
-        ],
-      ),
-      backgroundColor: colors.background,
-      body: SafeArea(
-        child: Column(
-          children: [
-            Expanded(
-              child: PageView(
-                controller: _pageController,
-                onPageChanged: _onPageChanged,
-                children: _pages,
-              ),
-            ),
-            UiKitSpacing.x6.h,
-            UiKitPageIndicator(
-              count: _pages.length,
-              selectedIndex: _pageIndicatorIndex,
-            ),
-          ],
-        ),
-      ),
-    );
-  }
-
-  void _onPageChanged(int index) {
-    setState(() {
-      _pageIndicatorIndex = index;
+    _pageController.addListener(() {
+      if ((_selectedIndex + 1) == _pagesData.length) {
+        setState(() {});
+      }
     });
   }
 
-  void _onNextTap(bool isLastPage) {
-    if (isLastPage) {
-      context.router.replace(const HomeRoute());
-      context.appDependenciesContainer.appConfigurationsStorage.setOnboardingCompleted(value: true);
-
-      return;
-    }
-
-    _pageController.animateToPage(
-      duration: const Duration(milliseconds: 300),
-      _pages.length - 1,
-      curve: Curves.easeInOut,
-    );
-  }
-}
-
-class _PageWidget extends StatelessWidget {
-  final Image image;
-  final String title;
-
-  const _PageWidget({
-    required this.image,
-    required this.title,
-  });
-
   @override
   Widget build(BuildContext context) {
-    return Column(
-      crossAxisAlignment: CrossAxisAlignment.start,
-      children: [
-        Expanded(child: image),
-        UiKitSpacing.x6.h,
-        Padding(
-          padding: const EdgeInsets.symmetric(
-            horizontal: UiKitSpacing.x4,
-          ),
-          child: Text(
-            title,
-            style: context.fonts.headlineLarge.copyWith(
-              color: context.colors.textDisabled,
-            ),
-          ),
-        ),
-      ],
+    return Scaffold(
+      body: ConcentricPageView(
+        pageController: _pageController,
+        onChange: (index) {
+          _selectedIndex = index;
+        },
+        duration: const Duration(milliseconds: 600),
+        colors: _pagesData.map((e) => e.backgroundColor).toList(),
+        itemCount: _pagesData.length,
+        nextButtonBuilder: (context) {
+          return (_selectedIndex + 1) == _pagesData.length
+              ? UiKitBigButton.regular(
+                  context: context,
+                  label: context.l10n.onboarding$Button$Label,
+                  onTap: _onFinish,
+                )
+              : const SizedBox.shrink();
+        },
+        itemBuilder: (index) {
+          final pageData = _pagesData[index];
+
+          return OnboardingPageWidget(data: pageData);
+        },
+      ),
     );
+  }
+
+  void _onFinish() {
+    context.router.replace(const HomeRoute());
+    context.appDependenciesContainer.appConfigurationsStorage.setOnboardingCompleted(value: true);
   }
 }
