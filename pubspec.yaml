@@ -21,6 +21,7 @@ dependencies:
   lottie: ^3.3.1
   custom_refresh_indicator: ^4.0.1
   concentric_transition: ^1.0.3
+  flutter_native_splash: ^2.4.6
 
   # Routing
   auto_route: ^10.0.1
@@ -82,6 +83,7 @@ flutter:
     - assets/icons/
     - assets/lottie/
     - assets/app_icons/
+    - assets/splash_image/
 
 workspace:
   - packages/tarot_analytics
@@ -98,3 +100,13 @@ flutter_launcher_icons:
   image_path_ios: assets/ios_app_icon.png
   remove_alpha_ios: true
   min_sdk_android: 21
+
+flutter_native_splash:
+  color: "#A378FD"
+  image: assets/icons/autospot_logo_with_text.png
+  android_12:
+    color: "#A378FD"
+    color_dark: "#A378FD"
+    icon_background_color: "#A378FD"
+    icon_background_color_dark: "#A378FD"
+    image: assets/icons/autospot_logo_with_text_android_12.png
