@@ -39,13 +39,14 @@ class AppRouter extends RootStackRouter {
               guards: [_onboardingGuard],
             ),
             AutoRoute(page: DebugRoute.page),
-            AutoRoute(
+            CustomRoute(
               page: HomeRoute.page,
               children: [
                 AutoRoute(page: DailyCardRoute.page),
                 AutoRoute(page: CardsCatalogRoute.page),
                 AutoRoute(page: YesNoRoute.page),
               ],
+              transitionsBuilder: TransitionsBuilders.fadeIn,
             ),
             AutoRoute(page: ProfileRoute.page),
             AutoRoute(page: SettingsRoute.page),
