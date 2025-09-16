@@ -121,35 +121,47 @@ abstract class AppLocalizations {
   /// **'Tarot Band'**
   String get companyName;
 
-  /// No description provided for @onboarding$Path.
+  /// No description provided for @onboarding$Title$First.
   ///
   /// In ru, this message translates to:
-  /// **'Путь начинается здесь'**
-  String get onboarding$Path;
+  /// **'Добро пожаловать в мир {appName}'**
+  String onboarding$Title$First(Object appName);
 
-  /// No description provided for @onboarding$Answer.
+  /// No description provided for @onboarding$Subtitle$First.
   ///
   /// In ru, this message translates to:
-  /// **'Ответ уже\nвнутри тебя'**
-  String get onboarding$Answer;
+  /// **'Откройте карты, чтобы лучше понять себя, услышать подсказки Вселенной и найти ответы на важные вопросы.'**
+  String get onboarding$Subtitle$First;
 
-  /// No description provided for @onboarding$Cards.
+  /// No description provided for @onboarding$Title$Second.
   ///
   /// In ru, this message translates to:
-  /// **'Карты помогут\nего увидеть'**
-  String get onboarding$Cards;
+  /// **'Начинайте утро с подсказки'**
+  String get onboarding$Title$Second;
 
-  /// No description provided for @onboarding$Skip.
+  /// No description provided for @onboarding$Subtitle$Second.
   ///
   /// In ru, this message translates to:
-  /// **'Пропустить'**
-  String get onboarding$Skip;
+  /// **'Тяните карту дня — и получайте вдохновение, совет или предостережение.'**
+  String get onboarding$Subtitle$Second;
 
-  /// No description provided for @onboarding$Start.
+  /// No description provided for @onboarding$Title$Third.
   ///
   /// In ru, this message translates to:
-  /// **'Вперёд'**
-  String get onboarding$Start;
+  /// **'Ваш личный проводник'**
+  String get onboarding$Title$Third;
+
+  /// No description provided for @onboarding$Subtitle$Third.
+  ///
+  /// In ru, this message translates to:
+  /// **'Получайте ежедневные расклады, советы для принятия решений и глубже исследуйте свою интуицию.'**
+  String get onboarding$Subtitle$Third;
+
+  /// No description provided for @onboarding$Button$Label.
+  ///
+  /// In ru, this message translates to:
+  /// **'Поехали'**
+  String get onboarding$Button$Label;
 
   /// No description provided for @homeScreen$Menu$DailyCard.
   ///

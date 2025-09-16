@@ -9,11 +9,13 @@
         "---------": "---------",
         "description": "Onboarding"
     },
-    "onboarding$Path": "यात्रा यहाँ से शुरू होती है",
-    "onboarding$Answer": "उत्तर पहले से ही\nआपके भीतर है",
-    "onboarding$Cards": "कार्ड आपको इसे\nदेखने में मदद करेंगे",
-    "onboarding$Skip": "स्किप करें",
-    "onboarding$Start": "शुरू करें",
+    "onboarding$Title$First": "स्वागत है {appName} की दुनिया में",
+    "onboarding$Subtitle$First": "कार्ड्स खोलें ताकि आप खुद को बेहतर समझ सकें, ब्रह्मांड की संकेत सुन सकें और महत्वपूर्ण सवालों के जवाब पा सकें।",
+    "onboarding$Title$Second": "सुबह की शुरुआत करें एक संकेत से",
+    "onboarding$Subtitle$Second": "दिन का कार्ड निकालें — प्रेरणा, सलाह या चेतावनी पाएं।",
+    "onboarding$Title$Third": "आपका निजी मार्गदर्शक",
+    "onboarding$Subtitle$Third": "दैनिक रीडिंग्स पाएं, निर्णय लेने के सुझाव और अपनी अंतर्ज्ञान को और गहराई से खोजें।",
+    "onboarding$Button$Label": "चलो!",
     "@segmentHomeScreen": {
         "---------": "---------",
         "description": "Home screen"

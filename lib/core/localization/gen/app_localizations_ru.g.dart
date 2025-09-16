@@ -15,19 +15,27 @@ class AppLocalizationsRu extends AppLocalizations {
   String get companyName => 'Tarot Band';
 
   @override
-  String get onboarding$Path => 'Путь начинается здесь';
+  String onboarding$Title$First(Object appName) {
+    return 'Добро пожаловать в мир $appName';
+  }
 
   @override
-  String get onboarding$Answer => 'Ответ уже\nвнутри тебя';
+  String get onboarding$Subtitle$First => 'Откройте карты, чтобы лучше понять себя, услышать подсказки Вселенной и найти ответы на важные вопросы.';
 
   @override
-  String get onboarding$Cards => 'Карты помогут\nего увидеть';
+  String get onboarding$Title$Second => 'Начинайте утро с подсказки';
 
   @override
-  String get onboarding$Skip => 'Пропустить';
+  String get onboarding$Subtitle$Second => 'Тяните карту дня — и получайте вдохновение, совет или предостережение.';
 
   @override
-  String get onboarding$Start => 'Вперёд';
+  String get onboarding$Title$Third => 'Ваш личный проводник';
+
+  @override
+  String get onboarding$Subtitle$Third => 'Получайте ежедневные расклады, советы для принятия решений и глубже исследуйте свою интуицию.';
+
+  @override
+  String get onboarding$Button$Label => 'Поехали';
 
   @override
   String get homeScreen$Menu$DailyCard => 'Карта дня';

@@ -9,11 +9,13 @@
         "---------": "---------",
         "description": "Onboarding"
     },
-    "onboarding$Path": "Der Weg beginnt hier",
-    "onboarding$Answer": "Die Antwort liegt bereits\nin dir",
-    "onboarding$Cards": "Die Karten helfen dir,\nsie zu erkennen",
-    "onboarding$Skip": "Überspringen",
-    "onboarding$Start": "Los geht’s",
+    "onboarding$Title$First": "Willkommen in der Welt von {appName}",
+    "onboarding$Subtitle$First": "Entdecke die Karten, um dich selbst besser zu verstehen, Hinweise des Universums zu hören und Antworten auf wichtige Fragen zu finden.",
+    "onboarding$Title$Second": "Beginne deinen Morgen mit einer Botschaft",
+    "onboarding$Subtitle$Second": "Ziehe die Karte des Tages — erhalte Inspiration, Rat oder eine Warnung.",
+    "onboarding$Title$Third": "Dein persönlicher Begleiter",
+    "onboarding$Subtitle$Third": "Erhalte tägliche Legungen, Entscheidungshilfen und erforsche deine Intuition tiefer.",
+    "onboarding$Button$Label": "Los!",
     "@segmentHomeScreen": {
         "---------": "---------",
         "description": "Home screen"
