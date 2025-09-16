@@ -75,16 +75,23 @@ class $AssetsLottieGen {
   List<String> get values => [onboardingBg1, onboardingBg2, onboardingBg3, sandyLoading, sunBreathing];
 }
 
+class $AssetsSplashImageGen {
+  const $AssetsSplashImageGen();
+
+  /// File path: assets/splash_image/splash.png
+  AssetGenImage get splash => const AssetGenImage('assets/splash_image/splash.png');
+
+  /// List of all assets
+  List<AssetGenImage> get values => [splash];
+}
+
 class Assets {
   const Assets._();
 
-  static const AssetGenImage tarotMeets = AssetGenImage('assets/TarotMeets.png');
   static const $AssetsAppIconsGen appIcons = $AssetsAppIconsGen();
   static const $AssetsIconsGen icons = $AssetsIconsGen();
   static const $AssetsLottieGen lottie = $AssetsLottieGen();
-
-  /// List of all assets
-  static List<AssetGenImage> get values => [tarotMeets];
+  static const $AssetsSplashImageGen splashImage = $AssetsSplashImageGen();
 }
 
 class AssetGenImage {

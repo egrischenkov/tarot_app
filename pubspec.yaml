@@ -102,11 +102,12 @@ flutter_launcher_icons:
   min_sdk_android: 21
 
 flutter_native_splash:
-  color: "#A378FD"
-  image: assets/icons/autospot_logo_with_text.png
+  color: "#FFF8E7"
+  image: assets/splash_image/splash.png
+
   android_12:
-    color: "#A378FD"
-    color_dark: "#A378FD"
-    icon_background_color: "#A378FD"
-    icon_background_color_dark: "#A378FD"
-    image: assets/icons/autospot_logo_with_text_android_12.png
+    color: "#FFF8E7"
+    color_dark: "#FFF8E7"
+    icon_background_color: "#FFF8E7"
+    icon_background_color_dark: "#FFF8E7"
+    image: assets/splash_image/splash.png
