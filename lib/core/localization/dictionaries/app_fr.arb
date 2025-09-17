@@ -9,11 +9,13 @@
         "---------": "---------",
         "description": "Onboarding"
     },
-    "onboarding$Path": "Le chemin commence ici",
-    "onboarding$Answer": "La réponse est déjà\nen toi",
-    "onboarding$Cards": "Les cartes t’aideront\nà la voir",
-    "onboarding$Skip": "Passer",
-    "onboarding$Start": "Commencer",
+    "onboarding$Title$First": "Bienvenue dans l’univers de {appName}",
+    "onboarding$Subtitle$First": "Découvrez les cartes pour mieux vous comprendre, entendre les messages de l’Univers et trouver des réponses à vos questions importantes.",
+    "onboarding$Title$Second": "Commencez la matinée avec un conseil",
+    "onboarding$Subtitle$Second": "Tirez la carte du jour — recevez inspiration, conseils ou avertissements.",
+    "onboarding$Title$Third": "Votre guide personnel",
+    "onboarding$Subtitle$Third": "Recevez des tirages quotidiens, des conseils pour vos décisions et explorez plus profondément votre intuition.",
+    "onboarding$Button$Label": "Allez!",
     "@segmentHomeScreen": {
         "---------": "---------",
         "description": "Home screen"
@@ -90,5 +92,11 @@
     },
     "aboutScreen$Title": "ऐप के बारे में",
     "aboutScreen$PrivacyPolicy": "गोपनीयता नीति",
-    "aboutScreen$TermsOfService": "सेवा की शर्तें"
+    "aboutScreen$TermsOfService": "सेवा की शर्तें",
+    "@segmentShareFeature": {
+        "---------": "---------",
+        "description": "Share feature"
+    },
+    "share$Suggest": "Essaie {appName} ! Télécharge-le ici :\n{appLink}",
+    "share$Title": "Partagez notre application"
 }

@@ -15,19 +15,27 @@ class AppLocalizationsDe extends AppLocalizations {
   String get companyName => 'Tarot Band';
 
   @override
-  String get onboarding$Path => 'Der Weg beginnt hier';
+  String onboarding$Title$First(Object appName) {
+    return 'Willkommen in der Welt von $appName';
+  }
 
   @override
-  String get onboarding$Answer => 'Die Antwort liegt bereits\nin dir';
+  String get onboarding$Subtitle$First => 'Entdecke die Karten, um dich selbst besser zu verstehen, Hinweise des Universums zu hören und Antworten auf wichtige Fragen zu finden.';
 
   @override
-  String get onboarding$Cards => 'Die Karten helfen dir,\nsie zu erkennen';
+  String get onboarding$Title$Second => 'Beginne deinen Morgen mit einer Botschaft';
 
   @override
-  String get onboarding$Skip => 'Überspringen';
+  String get onboarding$Subtitle$Second => 'Ziehe die Karte des Tages — erhalte Inspiration, Rat oder eine Warnung.';
 
   @override
-  String get onboarding$Start => 'Los geht’s';
+  String get onboarding$Title$Third => 'Dein persönlicher Begleiter';
+
+  @override
+  String get onboarding$Subtitle$Third => 'Erhalte tägliche Legungen, Entscheidungshilfen und erforsche deine Intuition tiefer.';
+
+  @override
+  String get onboarding$Button$Label => 'Los!';
 
   @override
   String get homeScreen$Menu$DailyCard => 'Tageskarte';
@@ -178,4 +186,12 @@ class AppLocalizationsDe extends AppLocalizations {
 
   @override
   String get aboutScreen$TermsOfService => 'Nutzungsbedingungen';
+
+  @override
+  String share$Suggest(Object appLink, Object appName) {
+    return 'Probiere $appName aus! Lade es hier herunter:\n$appLink';
+  }
+
+  @override
+  String get share$Title => 'Teile unsere App';
 }

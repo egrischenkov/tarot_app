@@ -9,11 +9,13 @@
         "---------": "---------",
         "description": "Onboarding"
     },
-    "onboarding$Path": "旅程从这里开始",
-    "onboarding$Answer": "答案早已在你心中",
-    "onboarding$Cards": "卡牌会帮助你\n看见它",
-    "onboarding$Skip": "跳过",
-    "onboarding$Start": "开始",
+    "onboarding$Title$First": "欢迎来到 {appName} 的世界",
+    "onboarding$Subtitle$First": "翻开卡牌，更好地了解自己，聆听宇宙的指引，找到重要问题的答案。",
+    "onboarding$Title$Second": "用提示开始你的早晨",
+    "onboarding$Subtitle$Second": "抽取今日卡牌 —— 获得启发、建议或警示。",
+    "onboarding$Title$Third": "你的私人向导",
+    "onboarding$Subtitle$Third": "获取每日牌阵、决策建议，更深入探索你的直觉。",
+    "onboarding$Button$Label": "开始!",
     "@segmentHomeScreen": {
         "---------": "---------",
         "description": "Home screen"
@@ -83,5 +85,11 @@
     },
     "aboutScreen$Title": "关于",
     "aboutScreen$PrivacyPolicy": "隐私政策",
-    "aboutScreen$TermsOfService": "服务条款"
+    "aboutScreen$TermsOfService": "服务条款",
+    "@segmentShareFeature": {
+        "---------": "---------",
+        "description": "Share feature"
+    },
+    "share$Suggest": "试试 {appName}！在这里下载:\n{appLink}",
+    "share$Title": "分享我们的应用"
 }

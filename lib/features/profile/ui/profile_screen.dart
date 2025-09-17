@@ -7,6 +7,7 @@ import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:lottie/lottie.dart';
+import 'package:share_plus/share_plus.dart';
 import 'package:taro/core/assets/gen/assets.gen.dart';
 import 'package:taro/core/extensions/context_extension.dart';
 import 'package:taro/core/routing/app_router.dart';
@@ -206,7 +207,20 @@ class _ProfileScreenState extends State<ProfileScreen> {
     );
   }
 
-  void _onShareTap() {}
+  void _onShareTap() {
+    final l10n = context.l10n;
+    const link = 'https://www.kinopoisk.ru/film/868675/';
+
+    SharePlus.instance.share(
+      ShareParams(
+        title: l10n.share$Title,
+        text: l10n.share$Suggest(
+          link,
+          l10n.appName,
+        ),
+      ),
+    );
+  }
 
   void _onSettingsTap() {
     context.router.push(const SettingsRoute());

@@ -15,19 +15,27 @@ class AppLocalizationsHi extends AppLocalizations {
   String get companyName => 'Tarot Band';
 
   @override
-  String get onboarding$Path => 'यात्रा यहाँ से शुरू होती है';
+  String onboarding$Title$First(Object appName) {
+    return 'स्वागत है $appName की दुनिया में';
+  }
 
   @override
-  String get onboarding$Answer => 'उत्तर पहले से ही\nआपके भीतर है';
+  String get onboarding$Subtitle$First => 'कार्ड्स खोलें ताकि आप खुद को बेहतर समझ सकें, ब्रह्मांड की संकेत सुन सकें और महत्वपूर्ण सवालों के जवाब पा सकें।';
 
   @override
-  String get onboarding$Cards => 'कार्ड आपको इसे\nदेखने में मदद करेंगे';
+  String get onboarding$Title$Second => 'सुबह की शुरुआत करें एक संकेत से';
 
   @override
-  String get onboarding$Skip => 'स्किप करें';
+  String get onboarding$Subtitle$Second => 'दिन का कार्ड निकालें — प्रेरणा, सलाह या चेतावनी पाएं।';
 
   @override
-  String get onboarding$Start => 'शुरू करें';
+  String get onboarding$Title$Third => 'आपका निजी मार्गदर्शक';
+
+  @override
+  String get onboarding$Subtitle$Third => 'दैनिक रीडिंग्स पाएं, निर्णय लेने के सुझाव और अपनी अंतर्ज्ञान को और गहराई से खोजें।';
+
+  @override
+  String get onboarding$Button$Label => 'चलो!';
 
   @override
   String get homeScreen$Menu$DailyCard => 'आज का कार्ड';
@@ -171,11 +179,19 @@ class AppLocalizationsHi extends AppLocalizations {
   String get feedbackFromScreen$CommentHint => 'ऐप उपयोग करने का अपना अनुभव लिखें';
 
   @override
-  String get aboutScreen$Title => 'О приложении';
+  String get aboutScreen$Title => 'ऐप के बारे में';
 
   @override
-  String get aboutScreen$PrivacyPolicy => 'Политика конфиденциальности';
+  String get aboutScreen$PrivacyPolicy => 'गोपनीयता नीति';
 
   @override
-  String get aboutScreen$TermsOfService => 'Условия использования';
+  String get aboutScreen$TermsOfService => 'सेवा की शर्तें';
+
+  @override
+  String share$Suggest(Object appLink, Object appName) {
+    return '$appName आज़माएं! यहाँ डाउनलोड करें:\n$appLink';
+  }
+
+  @override
+  String get share$Title => 'हमारे ऐप को साझा करें';
 }

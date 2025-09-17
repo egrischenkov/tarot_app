@@ -20,6 +20,8 @@ dependencies:
   flutter_svg: ^2.1.0
   lottie: ^3.3.1
   custom_refresh_indicator: ^4.0.1
+  concentric_transition: ^1.0.3
+  flutter_native_splash: ^2.4.6
 
   # Routing
   auto_route: ^10.0.1
@@ -42,8 +44,8 @@ dependencies:
   # Other
   intl: ^0.19.0
   package_info_plus: ^8.3.0
-  device_info_plus: ^12.1.0
   equatable: ^2.0.7
+  share_plus: ^12.0.0
 
   # Workspaces
   tarot_analytics:
@@ -78,10 +80,10 @@ flutter:
   generate: true
   assets:
     - assets/
-    - assets/images/
     - assets/icons/
     - assets/lottie/
     - assets/app_icons/
+    - assets/splash_image/
 
 workspace:
   - packages/tarot_analytics
@@ -98,3 +100,14 @@ flutter_launcher_icons:
   image_path_ios: assets/ios_app_icon.png
   remove_alpha_ios: true
   min_sdk_android: 21
+
+flutter_native_splash:
+  color: "#FFF8E7"
+  image: assets/splash_image/splash.png
+
+  android_12:
+    color: "#FFF8E7"
+    color_dark: "#FFF8E7"
+    icon_background_color: "#FFF8E7"
+    icon_background_color_dark: "#FFF8E7"
+    image: assets/splash_image/splash.png

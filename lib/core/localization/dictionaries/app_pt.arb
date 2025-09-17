@@ -9,11 +9,13 @@
         "---------": "---------",
         "description": "Onboarding"
     },
-    "onboarding$Path": "A jornada começa aqui",
-    "onboarding$Answer": "A resposta já está\ndentro de você",
-    "onboarding$Cards": "As cartas vão te ajudar\na enxergá-la",
-    "onboarding$Skip": "Pular",
-    "onboarding$Start": "Começar",
+    "onboarding$Title$First": "Bem-vindo ao mundo de {appName}",
+    "onboarding$Subtitle$First": "Revele as cartas para se entender melhor, ouvir os sinais do Universo e encontrar respostas para questões importantes.",
+    "onboarding$Title$Second": "Comece sua manhã com uma dica",
+    "onboarding$Subtitle$Second": "Tire a carta do dia — receba inspiração, conselho ou alerta.",
+    "onboarding$Title$Third": "Seu guia pessoal",
+    "onboarding$Subtitle$Third": "Receba tiragens diárias, dicas para decisões e explore mais a sua intuição.",
+    "onboarding$Button$Label": "Bora!",
     "@segmentHomeScreen": {
         "---------": "---------",
         "description": "Home screen"
@@ -83,5 +85,11 @@
     },
     "aboutScreen$Title": "Sobre",
     "aboutScreen$PrivacyPolicy": "Política de Privacidade",
-    "aboutScreen$TermsOfService": "Termos de Serviço"
+    "aboutScreen$TermsOfService": "Termos de Serviço",
+    "@segmentShareFeature": {
+        "---------": "---------",
+        "description": "Share feature"
+    },
+    "share$Suggest": "Experimente {appName}! Baixe aqui:\n{appLink}",
+    "share$Title": "Compartilhe nosso app"
 }

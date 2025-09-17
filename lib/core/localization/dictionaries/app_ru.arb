@@ -9,11 +9,13 @@
         "---------": "---------",
         "description": "Onboarding"
     },
-    "onboarding$Path": "Путь начинается здесь",
-    "onboarding$Answer": "Ответ уже\nвнутри тебя",
-    "onboarding$Cards": "Карты помогут\nего увидеть",
-    "onboarding$Skip": "Пропустить",
-    "onboarding$Start": "Вперёд",
+    "onboarding$Title$First": "Добро пожаловать в мир {appName}",
+    "onboarding$Subtitle$First": "Откройте карты, чтобы лучше понять себя, услышать подсказки Вселенной и найти ответы на важные вопросы.",
+    "onboarding$Title$Second": "Начинайте утро с подсказки",
+    "onboarding$Subtitle$Second": "Тяните карту дня — и получайте вдохновение, совет или предостережение.",
+    "onboarding$Title$Third": "Ваш личный проводник",
+    "onboarding$Subtitle$Third": "Получайте ежедневные расклады, советы для принятия решений и глубже исследуйте свою интуицию.",
+    "onboarding$Button$Label": "Поехали",
     "@segmentHomeScreen": {
         "---------": "---------",
         "description": "Home screen"
@@ -83,5 +85,11 @@
     },
     "aboutScreen$Title": "О приложении",
     "aboutScreen$PrivacyPolicy": "Политика конфиденциальности",
-    "aboutScreen$TermsOfService": "Условия использования"
+    "aboutScreen$TermsOfService": "Условия использования",
+    "@segmentShareFeature": {
+        "---------": "---------",
+        "description": "Share feature"
+    },
+    "share$Suggest": "Попробуй {appName}! Скачай здесь:\n{appLink}",
+    "share$Title": "Поделитесь нашим приложением"
 }

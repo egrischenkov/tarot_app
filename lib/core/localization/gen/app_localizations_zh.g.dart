@@ -15,19 +15,27 @@ class AppLocalizationsZh extends AppLocalizations {
   String get companyName => 'Tarot Band';
 
   @override
-  String get onboarding$Path => '旅程从这里开始';
+  String onboarding$Title$First(Object appName) {
+    return '欢迎来到 $appName 的世界';
+  }
 
   @override
-  String get onboarding$Answer => '答案早已在你心中';
+  String get onboarding$Subtitle$First => '翻开卡牌，更好地了解自己，聆听宇宙的指引，找到重要问题的答案。';
 
   @override
-  String get onboarding$Cards => '卡牌会帮助你\n看见它';
+  String get onboarding$Title$Second => '用提示开始你的早晨';
 
   @override
-  String get onboarding$Skip => '跳过';
+  String get onboarding$Subtitle$Second => '抽取今日卡牌 —— 获得启发、建议或警示。';
 
   @override
-  String get onboarding$Start => '开始';
+  String get onboarding$Title$Third => '你的私人向导';
+
+  @override
+  String get onboarding$Subtitle$Third => '获取每日牌阵、决策建议，更深入探索你的直觉。';
+
+  @override
+  String get onboarding$Button$Label => '开始!';
 
   @override
   String get homeScreen$Menu$DailyCard => '今日卡牌';
@@ -178,4 +186,12 @@ class AppLocalizationsZh extends AppLocalizations {
 
   @override
   String get aboutScreen$TermsOfService => '服务条款';
+
+  @override
+  String share$Suggest(Object appLink, Object appName) {
+    return '试试 $appName！在这里下载:\n$appLink';
+  }
+
+  @override
+  String get share$Title => '分享我们的应用';
 }
