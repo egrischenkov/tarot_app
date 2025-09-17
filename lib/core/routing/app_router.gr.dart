@@ -162,7 +162,7 @@ class OnboardingRouteArgs {
 }
 
 /// generated route for
-/// [ProfileScreen]
+/// [ProfileEntry]
 class ProfileRoute extends PageRouteInfo<void> {
   const ProfileRoute({List<PageRouteInfo>? children})
     : super(ProfileRoute.name, initialChildren: children);
@@ -172,7 +172,7 @@ class ProfileRoute extends PageRouteInfo<void> {
   static PageInfo page = PageInfo(
     name,
     builder: (data) {
-      return const ProfileScreen();
+      return WrappedRoute(child: const ProfileEntry());
     },
   );
 }

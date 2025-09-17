@@ -5,6 +5,11 @@ typedef AuthStateMatch<T, S extends AuthState> = T Function(S state);
 sealed class AuthState extends Equatable {
   const AuthState();
 
+  UserAuthenticationStatus get authStatus => maybeMap(
+        success: (state) => state.authStatus,
+        orElse: () => UserAuthenticationStatus.unauthenticated,
+      );
+
   const factory AuthState.error() = AuthState$Error;
 
   const factory AuthState.loading() = AuthState$Loading;
