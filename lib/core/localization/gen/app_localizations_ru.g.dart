@@ -59,6 +59,9 @@ class AppLocalizationsRu extends AppLocalizations {
   String get profileScreen$SuggestSubscription => 'Нет подписки? Давай подберем';
 
   @override
+  String get profileScreen$LoginButton$Label => 'Вход';
+
+  @override
   String get settingsScreen$Title => 'Настройки';
 
   @override

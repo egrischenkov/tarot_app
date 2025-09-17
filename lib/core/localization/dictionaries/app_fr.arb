@@ -31,6 +31,7 @@
     "profileScreen$Subscription": "Abonnement",
     "profileScreen$ChooseSubscription": "Choisir un abonnement",
     "profileScreen$SuggestSubscription": "Pas d’abonnement ? Trouvons-en un",
+    "profileScreen$LoginButton$Label": "Connexion",
     "@segmentSettingsScreen": {
         "---------": "---------",
         "description": "Settings screen"

@@ -59,6 +59,9 @@ class AppLocalizationsHi extends AppLocalizations {
   String get profileScreen$SuggestSubscription => 'कोई सदस्यता नहीं? चलो एक ढूँढते हैं';
 
   @override
+  String get profileScreen$LoginButton$Label => 'लॉगिन';
+
+  @override
   String get settingsScreen$Title => 'सेटिंग्स';
 
   @override

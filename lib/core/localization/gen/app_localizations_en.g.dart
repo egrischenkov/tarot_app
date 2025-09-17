@@ -59,6 +59,9 @@ class AppLocalizationsEn extends AppLocalizations {
   String get profileScreen$SuggestSubscription => 'No subscription? Let’s find one';
 
   @override
+  String get profileScreen$LoginButton$Label => 'Login';
+
+  @override
   String get settingsScreen$Title => 'Settings';
 
   @override

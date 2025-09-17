@@ -59,6 +59,9 @@ class AppLocalizationsZh extends AppLocalizations {
   String get profileScreen$SuggestSubscription => '没有订阅？我们来帮你选一个';
 
   @override
+  String get profileScreen$LoginButton$Label => '登录';
+
+  @override
   String get settingsScreen$Title => '设置';
 
   @override

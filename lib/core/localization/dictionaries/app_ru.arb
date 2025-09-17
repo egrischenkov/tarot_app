@@ -31,6 +31,7 @@
     "profileScreen$Subscription": "Подписка",
     "profileScreen$ChooseSubscription": "Выбрать подписку",
     "profileScreen$SuggestSubscription": "Нет подписки? Давай подберем",
+    "profileScreen$LoginButton$Label": "Вход",
     "@segmentSettingsScreen": {
         "---------": "---------",
         "description": "Settings screen"

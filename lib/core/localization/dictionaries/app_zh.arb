@@ -31,6 +31,7 @@
     "profileScreen$Subscription": "订阅",
     "profileScreen$ChooseSubscription": "选择订阅",
     "profileScreen$SuggestSubscription": "没有订阅？我们来帮你选一个",
+    "profileScreen$LoginButton$Label": "登录",
     "@segmentSettingsScreen": {
         "---------": "---------",
         "description": "Settings screen"

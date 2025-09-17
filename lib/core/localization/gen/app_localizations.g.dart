@@ -205,6 +205,12 @@ abstract class AppLocalizations {
   /// **'Нет подписки? Давай подберем'**
   String get profileScreen$SuggestSubscription;
 
+  /// No description provided for @profileScreen$LoginButton$Label.
+  ///
+  /// In ru, this message translates to:
+  /// **'Вход'**
+  String get profileScreen$LoginButton$Label;
+
   /// No description provided for @settingsScreen$Title.
   ///
   /// In ru, this message translates to:
