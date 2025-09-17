@@ -56,6 +56,9 @@ class $AssetsIconsGen {
 class $AssetsLottieGen {
   const $AssetsLottieGen();
 
+  /// File path: assets/lottie/coming_soon.json
+  String get comingSoon => 'assets/lottie/coming_soon.json';
+
   /// File path: assets/lottie/onboarding_bg_1.json
   String get onboardingBg1 => 'assets/lottie/onboarding_bg_1.json';
 
@@ -68,11 +71,22 @@ class $AssetsLottieGen {
   /// File path: assets/lottie/sandy_loading.json
   String get sandyLoading => 'assets/lottie/sandy_loading.json';
 
+  /// File path: assets/lottie/sign_up.json
+  String get signUp => 'assets/lottie/sign_up.json';
+
   /// File path: assets/lottie/sun_breathing.json
   String get sunBreathing => 'assets/lottie/sun_breathing.json';
 
   /// List of all assets
-  List<String> get values => [onboardingBg1, onboardingBg2, onboardingBg3, sandyLoading, sunBreathing];
+  List<String> get values => [
+        comingSoon,
+        onboardingBg1,
+        onboardingBg2,
+        onboardingBg3,
+        sandyLoading,
+        signUp,
+        sunBreathing,
+      ];
 }
 
 class $AssetsSplashImageGen {
