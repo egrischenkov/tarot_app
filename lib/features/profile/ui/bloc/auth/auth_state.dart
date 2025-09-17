@@ -5,29 +5,29 @@ typedef AuthStateMatch<T, S extends AuthState> = T Function(S state);
 sealed class AuthState extends Equatable {
   const AuthState();
 
-  const factory AuthState.loading() = AuthStateLoading;
+  const factory AuthState.error() = AuthState$Error;
+
+  const factory AuthState.loading() = AuthState$Loading;
 
   const factory AuthState.success({
-    required Object data,
-  }) = AuthStateSuccess;
-
-  const factory AuthState.error() = AuthStateError;
+    required UserAuthenticationStatus authStatus,
+  }) = AuthState$Success;
 
   T map<T>({
-    required AuthStateMatch<T, AuthStateLoading> loading,
-    required AuthStateMatch<T, AuthStateSuccess> success,
-    required AuthStateMatch<T, AuthStateError> error,
+    required AuthStateMatch<T, AuthState$Loading> loading,
+    required AuthStateMatch<T, AuthState$Success> success,
+    required AuthStateMatch<T, AuthState$Error> error,
   }) =>
       switch (this) {
-        final AuthStateLoading state => loading(state),
-        final AuthStateSuccess state => success(state),
-        final AuthStateError state => error(state),
+        final AuthState$Loading state => loading(state),
+        final AuthState$Success state => success(state),
+        final AuthState$Error state => error(state),
       };
 
   T? mapOrNull<T>({
-    AuthStateMatch<T, AuthStateLoading>? loading,
-    AuthStateMatch<T, AuthStateSuccess>? success,
-    AuthStateMatch<T, AuthStateError>? error,
+    AuthStateMatch<T, AuthState$Loading>? loading,
+    AuthStateMatch<T, AuthState$Success>? success,
+    AuthStateMatch<T, AuthState$Error>? error,
   }) =>
       map<T?>(
         loading: loading ?? (_) => null,
@@ -37,9 +37,9 @@ sealed class AuthState extends Equatable {
 
   T maybeMap<T>({
     required T Function() orElse,
-    AuthStateMatch<T, AuthStateLoading>? loading,
-    AuthStateMatch<T, AuthStateSuccess>? success,
-    AuthStateMatch<T, AuthStateError>? error,
+    AuthStateMatch<T, AuthState$Loading>? loading,
+    AuthStateMatch<T, AuthState$Success>? success,
+    AuthStateMatch<T, AuthState$Error>? error,
   }) =>
       map<T>(
         loading: loading ?? (_) => orElse(),
@@ -50,26 +50,26 @@ sealed class AuthState extends Equatable {
 
 /// States
 
-final class AuthStateLoading extends AuthState {
-  const AuthStateLoading();
+final class AuthState$Loading extends AuthState {
+  const AuthState$Loading();
 
   @override
   List<Object?> get props => [];
 }
 
-final class AuthStateSuccess extends AuthState {
-  final Object data;
+final class AuthState$Success extends AuthState {
+  final UserAuthenticationStatus authStatus;
 
-  const AuthStateSuccess({
-    required this.data,
+  const AuthState$Success({
+    required this.authStatus,
   });
 
   @override
-  List<Object?> get props => [data];
+  List<Object?> get props => [authStatus];
 }
 
-final class AuthStateError extends AuthState {
-  const AuthStateError();
+final class AuthState$Error extends AuthState {
+  const AuthState$Error();
 
   @override
   List<Object?> get props => [];
