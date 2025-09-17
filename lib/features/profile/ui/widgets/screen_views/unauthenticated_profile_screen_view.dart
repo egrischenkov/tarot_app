@@ -19,21 +19,24 @@ class _UnauthenticatedProfileScreenViewState extends State<UnauthenticatedProfil
       body: Padding(
         padding: const EdgeInsets.symmetric(horizontal: UiKitSize.x2),
         child: Column(
-          children: [
+          children: intersperse(
             UiKitSpacing.x4.h,
-            LottieBuilder.asset(Assets.lottie.signUp),
-            UiKitSpacing.x4.h,
-            UiKitBorderBeam(
-              child: UiKitBaseSectionWrapper(
-                child: UiKitBigButton.regular(
-                  context: context,
-                  label: l10n.profileScreen$LoginButton$Label,
-                  isExpanded: true,
-                  onTap: _onLoginButtonTap,
+            [
+              LottieBuilder.asset(Assets.lottie.signUp),
+              UiKitBorderBeam(
+                child: UiKitBaseSectionWrapper(
+                  child: UiKitBigButton.regular(
+                    context: context,
+                    label: l10n.profileScreen$LoginButton$Label,
+                    isExpanded: true,
+                    onTap: _onLoginButtonTap,
+                  ),
                 ),
               ),
-            ),
-          ],
+              const SettingsSectionWidget(isAuthenticated: false),
+            ],
+            insertFirst: true,
+          ).toList(),
         ),
       ),
     );

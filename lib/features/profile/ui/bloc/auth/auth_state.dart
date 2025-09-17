@@ -63,6 +63,7 @@ final class AuthState$Loading extends AuthState {
 }
 
 final class AuthState$Success extends AuthState {
+  @override
   final UserAuthenticationStatus authStatus;
 
   const AuthState$Success({

@@ -15,6 +15,7 @@ import 'package:taro/core/routing/app_router.dart';
 import 'package:taro/features/profile/domain/entities/user_authentication_status.dart';
 import 'package:taro/features/profile/ui/bloc/auth/auth_bloc.dart';
 import 'package:taro/features/profile/ui/widgets/profile_widget.dart';
+import 'package:taro/features/settings/ui/widgets/settings_section_widget.dart';
 import 'package:tarot_ui_kit/ui_kit.dart';
 
 part 'widgets/profile_header_widget.dart';
