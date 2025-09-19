@@ -267,4 +267,7 @@ class AppLocalizationsZh extends AppLocalizations {
 
   @override
   String get authScreen$Error$AtLeastOneSpecCharacter => '密码必须包含至少一个特殊字符';
+
+  @override
+  String get authScreen$Error$Title => '错误';
 }

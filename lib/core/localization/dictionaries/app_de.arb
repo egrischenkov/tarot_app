@@ -117,5 +117,6 @@
     "authScreen$Error$AtLeastOneUpper": "Passwort muss mindestens einen Großbuchstaben enthalten",
     "authScreen$Error$AtLeastOneLower": "Passwort muss mindestens einen Kleinbuchstaben enthalten",
     "authScreen$Error$AtLeastOneNumber": "Passwort muss mindestens eine Zahl enthalten",
-    "authScreen$Error$AtLeastOneSpecCharacter": "Passwort muss mindestens ein Sonderzeichen enthalten"
+    "authScreen$Error$AtLeastOneSpecCharacter": "Passwort muss mindestens ein Sonderzeichen enthalten",
+    "authScreen$Error$Title": "Fehler"
 }

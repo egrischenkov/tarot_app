@@ -118,5 +118,6 @@
     "authScreen$Error$AtLeastOneUpper": "Пароль должен содержать хотя бы одну заглавную букву",
     "authScreen$Error$AtLeastOneLower": "Пароль должен содержать хотя бы одну строчную букву",
     "authScreen$Error$AtLeastOneNumber": "Пароль должен содержать хотя бы одну цифру",
-    "authScreen$Error$AtLeastOneSpecCharacter": "Пароль должен содержать хотя бы один специальный символ"
+    "authScreen$Error$AtLeastOneSpecCharacter": "Пароль должен содержать хотя бы один специальный символ",
+    "authScreen$Error$Title": "Ошибка"
 }

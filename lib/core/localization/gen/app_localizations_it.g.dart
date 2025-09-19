@@ -267,4 +267,7 @@ class AppLocalizationsIt extends AppLocalizations {
 
   @override
   String get authScreen$Error$AtLeastOneSpecCharacter => 'La password deve contenere almeno un carattere speciale';
+
+  @override
+  String get authScreen$Error$Title => 'Errore';
 }

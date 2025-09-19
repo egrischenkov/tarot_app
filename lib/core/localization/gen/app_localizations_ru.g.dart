@@ -267,4 +267,7 @@ class AppLocalizationsRu extends AppLocalizations {
 
   @override
   String get authScreen$Error$AtLeastOneSpecCharacter => 'Пароль должен содержать хотя бы один специальный символ';
+
+  @override
+  String get authScreen$Error$Title => 'Ошибка';
 }

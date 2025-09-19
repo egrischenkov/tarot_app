@@ -267,4 +267,7 @@ class AppLocalizationsPt extends AppLocalizations {
 
   @override
   String get authScreen$Error$AtLeastOneSpecCharacter => 'A senha deve conter pelo menos um caractere especial';
+
+  @override
+  String get authScreen$Error$Title => 'Erro';
 }

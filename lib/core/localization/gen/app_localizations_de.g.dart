@@ -267,4 +267,7 @@ class AppLocalizationsDe extends AppLocalizations {
 
   @override
   String get authScreen$Error$AtLeastOneSpecCharacter => 'Passwort muss mindestens ein Sonderzeichen enthalten';
+
+  @override
+  String get authScreen$Error$Title => 'Fehler';
 }

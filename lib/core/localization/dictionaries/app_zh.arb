@@ -117,5 +117,6 @@
     "authScreen$Error$AtLeastOneUpper": "密码必须包含至少一个大写字母",
     "authScreen$Error$AtLeastOneLower": "密码必须包含至少一个小写字母",
     "authScreen$Error$AtLeastOneNumber": "密码必须包含至少一个数字",
-    "authScreen$Error$AtLeastOneSpecCharacter": "密码必须包含至少一个特殊字符"
+    "authScreen$Error$AtLeastOneSpecCharacter": "密码必须包含至少一个特殊字符",
+    "authScreen$Error$Title": "错误"
 }

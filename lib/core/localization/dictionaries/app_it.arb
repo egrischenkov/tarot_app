@@ -117,5 +117,6 @@
     "authScreen$Error$AtLeastOneUpper": "La password deve contenere almeno una lettera maiuscola",
     "authScreen$Error$AtLeastOneLower": "La password deve contenere almeno una lettera minuscola",
     "authScreen$Error$AtLeastOneNumber": "La password deve contenere almeno un numero",
-    "authScreen$Error$AtLeastOneSpecCharacter": "La password deve contenere almeno un carattere speciale"
+    "authScreen$Error$AtLeastOneSpecCharacter": "La password deve contenere almeno un carattere speciale",
+    "authScreen$Error$Title": "Errore"
 }

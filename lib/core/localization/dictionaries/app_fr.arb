@@ -124,5 +124,6 @@
     "authScreen$Error$AtLeastOneUpper": "Le mot de passe doit contenir au moins une majuscule",
     "authScreen$Error$AtLeastOneLower": "Le mot de passe doit contenir au moins une minuscule",
     "authScreen$Error$AtLeastOneNumber": "Le mot de passe doit contenir au moins un chiffre",
-    "authScreen$Error$AtLeastOneSpecCharacter": "Le mot de passe doit contenir au moins un caractère spécial"
+    "authScreen$Error$AtLeastOneSpecCharacter": "Le mot de passe doit contenir au moins un caractère spécial",
+    "authScreen$Error$Title": "Erreur"
 }

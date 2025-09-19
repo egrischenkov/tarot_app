@@ -267,4 +267,7 @@ class AppLocalizationsHi extends AppLocalizations {
 
   @override
   String get authScreen$Error$AtLeastOneSpecCharacter => 'पासवर्ड में कम से कम एक विशेष वर्ण होना चाहिए';
+
+  @override
+  String get authScreen$Error$Title => 'त्रुटि';
 }

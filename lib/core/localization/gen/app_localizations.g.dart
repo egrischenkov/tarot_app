@@ -612,6 +612,12 @@ abstract class AppLocalizations {
   /// In ru, this message translates to:
   /// **'Пароль должен содержать хотя бы один специальный символ'**
   String get authScreen$Error$AtLeastOneSpecCharacter;
+
+  /// No description provided for @authScreen$Error$Title.
+  ///
+  /// In ru, this message translates to:
+  /// **'Ошибка'**
+  String get authScreen$Error$Title;
 }
 
 class _AppLocalizationsDelegate extends LocalizationsDelegate<AppLocalizations> {

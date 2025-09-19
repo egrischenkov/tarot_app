@@ -119,5 +119,6 @@
     "authScreen$Error$AtLeastOneUpper": "Password must contain at least one uppercase letter",
     "authScreen$Error$AtLeastOneLower": "Password must contain at least one lowercase letter",
     "authScreen$Error$AtLeastOneNumber": "Password must contain at least one number",
-    "authScreen$Error$AtLeastOneSpecCharacter": "Password must contain at least one special character"
+    "authScreen$Error$AtLeastOneSpecCharacter": "Password must contain at least one special character",
+    "authScreen$Error$Title": "Error"
 }

@@ -117,5 +117,6 @@
     "authScreen$Error$AtLeastOneUpper": "पासवर्ड में कम से कम एक बड़ा अक्षर होना चाहिए",
     "authScreen$Error$AtLeastOneLower": "पासवर्ड में कम से कम एक छोटा अक्षर होना चाहिए",
     "authScreen$Error$AtLeastOneNumber": "पासवर्ड में कम से कम एक अंक होना चाहिए",
-    "authScreen$Error$AtLeastOneSpecCharacter": "पासवर्ड में कम से कम एक विशेष वर्ण होना चाहिए"
+    "authScreen$Error$AtLeastOneSpecCharacter": "पासवर्ड में कम से कम एक विशेष वर्ण होना चाहिए",
+    "authScreen$Error$Title": "त्रुटि"
 }
