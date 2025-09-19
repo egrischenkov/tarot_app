@@ -1,11 +1,13 @@
 import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_login/flutter_login.dart';
+import 'package:taro/core/extensions/context_extension.dart';
 import 'package:taro/features/profile/ui/bloc/auth/auth_bloc.dart';
+import 'package:taro/features/profile/ui/utils/auth_fields_validator.dart';
 import 'package:tarot_ui_kit/ui_kit.dart';
 
 @RoutePage()
-class AuthScreen extends StatelessWidget {
+class AuthScreen extends StatefulWidget {
   final AuthBloc authBloc;
 
   const AuthScreen({
@@ -14,14 +16,24 @@ class AuthScreen extends StatelessWidget {
   });
 
   @override
+  State<AuthScreen> createState() => _AuthScreenState();
+}
+
+class _AuthScreenState extends State<AuthScreen> {
+  late final fieldsValidator = AuthFieldsValidator(context: context);
+
+  @override
   Widget build(BuildContext context) {
     final colors = context.colors;
     final fonts = context.fonts;
+    final l10n = context.l10n;
 
     return Stack(
       children: [
         FlutterLogin(
+          title: l10n.authScreen$Title,
           theme: LoginTheme(
+            titleStyle: fonts.largeTitleEmphasized,
             prefixIconColor: colors.icon,
             suffixIconColor: colors.icon,
             labelStyle: context.fonts.bodyRegular.copyWith(
@@ -89,12 +101,24 @@ class AuthScreen extends StatelessWidget {
               errorStyle: fonts.xsLabel.copyWith(color: colors.error, fontWeight: FontWeight.w600),
             ),
           ),
-          // messages: LoginMessages(
-          //   loginButton: 'lolkek',
-          //   userHint: 'lolkek',
-          //   passwordHint: 'lolkek',
-          //   forgotPasswordButton: 'lolkek',
-          // ),
+          messages: LoginMessages(
+            loginButton: l10n.authScreen$Label$Login,
+            userHint: l10n.authScreen$Hint$Email,
+            passwordHint: l10n.authScreen$Hint$Password,
+            confirmPasswordHint: l10n.authScreen$Hint$ConfirmPassword,
+            forgotPasswordButton: l10n.authScreen$Label$ForgotPassword,
+            signupButton: l10n.authScreen$Label$SignUp,
+            recoverPasswordIntro: l10n.authScreen$Title$ResetYourPassword,
+            recoverPasswordDescription: l10n.authScreen$Subtitle$WeWillSendYouPass,
+            recoverPasswordButton: l10n.authScreen$Label$Recover,
+            goBackButton: l10n.authScreen$Label$Back,
+            signUpSuccess: l10n.authScreen$Success$Success,
+            flushbarTitleSuccess: l10n.authScreen$Success$Success,
+            recoverPasswordSuccess: l10n.authScreen$Success$AnEmailSent,
+            confirmPasswordError: l10n.authScreen$Error$PasswordDoNotMatch,
+          ),
+          userValidator: fieldsValidator.userFieldValidator,
+          passwordValidator: fieldsValidator.passwordFieldValidator,
           onLogin: (_) {
             return Future.value();
           },

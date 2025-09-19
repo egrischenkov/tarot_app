@@ -515,9 +515,9 @@ class FlutterLogin extends StatefulWidget {
   /// Default email validator used when none is supplied.
   ///
   /// Returns `'Invalid email!'` if the value is null, empty, or doesn't match a basic email regex.
-  static String? defaultEmailValidator(String? value) {
+  static String? defaultEmailValidator(String? value, [String? error]) {
     if (value == null || value.isEmpty || !email.hasMatch(value)) {
-      return 'Invalid email!';
+      return error ?? 'Invalid email!';
     }
     return null;
   }
