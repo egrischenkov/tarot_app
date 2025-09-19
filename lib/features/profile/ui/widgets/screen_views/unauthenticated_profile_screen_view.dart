@@ -1,4 +1,4 @@
-part of '../../profile_screen.dart';
+part of '../../screens/profile_screen.dart';
 
 class UnauthenticatedProfileScreenView extends StatefulWidget {
   const UnauthenticatedProfileScreenView({super.key});
@@ -42,5 +42,10 @@ class _UnauthenticatedProfileScreenViewState extends State<UnauthenticatedProfil
     );
   }
 
-  void _onLoginButtonTap() {}
+  void _onLoginButtonTap() {
+    final authBloc = context.read<AuthBloc>();
+    final router = context.router;
+
+    router.push(AuthRoute(authBloc: authBloc));
+  }
 }

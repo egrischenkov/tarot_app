@@ -213,8 +213,10 @@ class _HomeScreenState extends State<HomeScreen> with TickerProviderStateMixin {
                                   borderRadius:
                                       (_animations.controller.value >= 0.3 && _animations.controller.value <= 5.0) &&
                                               (isPreviousSelected || _isSelectedCard(card))
-                                          ? BorderRadius.circular(24)
-                                          : const BorderRadius.vertical(top: Radius.circular(24)),
+                                          ? BorderRadius.circular(UiKitRadius.x6)
+                                          : const BorderRadius.vertical(
+                                              top: Radius.circular(UiKitRadius.x6),
+                                            ),
                                   icon: Icon(
                                     card.icon,
                                     color: Colors.blueAccent,

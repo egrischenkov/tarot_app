@@ -6,7 +6,7 @@ import 'package:taro/features/profile/data/repositories_implementations/profile_
 import 'package:taro/features/profile/domain/use_cases/get_current_user_authentication_status.dart';
 import 'package:taro/features/profile/domain/use_cases/set_current_user_authentication_status_use_case.dart';
 import 'package:taro/features/profile/ui/bloc/auth/auth_bloc.dart';
-import 'package:taro/features/profile/ui/profile_screen.dart';
+import 'package:taro/features/profile/ui/screens/profile_screen.dart';
 
 @RoutePage()
 class ProfileEntry extends StatelessWidget implements AutoRouteWrapper {

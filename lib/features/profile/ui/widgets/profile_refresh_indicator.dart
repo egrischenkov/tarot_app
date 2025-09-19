@@ -1,4 +1,4 @@
-part of '../profile_screen.dart';
+part of '../screens/profile_screen.dart';
 
 class ProfileRefreshIndicator extends StatefulWidget {
   final AsyncCallback onRefresh;

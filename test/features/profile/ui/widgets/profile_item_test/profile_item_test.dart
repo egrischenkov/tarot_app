@@ -1,7 +1,7 @@
 import 'package:alchemist/alchemist.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
-import 'package:taro/features/profile/ui/profile_screen.dart';
+import 'package:taro/features/profile/ui/screens/profile_screen.dart';
 
 import '../../../../../utils/golden_test_widget_wrapper.dart';
 

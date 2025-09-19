@@ -1,4 +1,4 @@
-part of '../profile_screen.dart';
+part of '../screens/profile_screen.dart';
 
 class ProfileItem extends StatelessWidget {
   final Widget child;

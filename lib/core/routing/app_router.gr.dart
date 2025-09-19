@@ -27,6 +27,43 @@ class AboutRoute extends PageRouteInfo<void> {
 }
 
 /// generated route for
+/// [AuthScreen]
+class AuthRoute extends PageRouteInfo<AuthRouteArgs> {
+  AuthRoute({
+    required AuthBloc authBloc,
+    Key? key,
+    List<PageRouteInfo>? children,
+  }) : super(
+         AuthRoute.name,
+         args: AuthRouteArgs(authBloc: authBloc, key: key),
+         initialChildren: children,
+       );
+
+  static const String name = 'AuthRoute';
+
+  static PageInfo page = PageInfo(
+    name,
+    builder: (data) {
+      final args = data.argsAs<AuthRouteArgs>();
+      return AuthScreen(authBloc: args.authBloc, key: args.key);
+    },
+  );
+}
+
+class AuthRouteArgs {
+  const AuthRouteArgs({required this.authBloc, this.key});
+
+  final AuthBloc authBloc;
+
+  final Key? key;
+
+  @override
+  String toString() {
+    return 'AuthRouteArgs{authBloc: $authBloc, key: $key}';
+  }
+}
+
+/// generated route for
 /// [CardsCatalogScreen]
 class CardsCatalogRoute extends PageRouteInfo<void> {
   const CardsCatalogRoute({List<PageRouteInfo>? children})
