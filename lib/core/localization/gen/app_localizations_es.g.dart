@@ -197,4 +197,74 @@ class AppLocalizationsEs extends AppLocalizations {
 
   @override
   String get share$Title => 'Comparte nuestra aplicación';
+
+  @override
+  String get authScreen$Hint$Email => 'Correo electrónico';
+
+  @override
+  String get authScreen$Hint$Password => 'Contraseña';
+
+  @override
+  String get authScreen$Hint$ConfirmPassword => 'Confirmar contraseña';
+
+  @override
+  String get authScreen$Label$ForgotPassword => '¿Olvidaste tu contraseña?';
+
+  @override
+  String get authScreen$Label$Login => 'Acceder';
+
+  @override
+  String get authScreen$Label$SignUp => 'Registrarse';
+
+  @override
+  String get authScreen$Label$Recover => 'Recuperar';
+
+  @override
+  String get authScreen$Label$Back => 'Atrás';
+
+  @override
+  String get authScreen$Title$ResetYourPassword => 'Restablecer contraseña';
+
+  @override
+  String get authScreen$Subtitle$WeWillSendYouPass => 'Enviaremos tu contraseña a este correo';
+
+  @override
+  String get authScreen$Error$InvalidEmail => '¡Correo no válido!';
+
+  @override
+  String get authScreen$Error$PasswordIsTooShort => 'Пароль слишком короткий!';
+
+  @override
+  String get authScreen$Error$PasswordDoNotMatch => '¡Las contraseñas no coinciden!';
+
+  @override
+  String get authScreen$Success$Success => 'Éxito';
+
+  @override
+  String get authScreen$Success$AnEmailSent => 'Se ha enviado un correo';
+
+  @override
+  String get authScreen$Title => '¡Bienvenido!';
+
+  @override
+  String authScreen$Error$TooLong(Object count) {
+    return 'La contraseña es demasiado larga — máximo $count caracteres';
+  }
+
+  @override
+  String authScreen$Error$TooShort(Object count) {
+    return 'La contraseña es demasiado corta — mínimo $count caracteres';
+  }
+
+  @override
+  String get authScreen$Error$AtLeastOneUpper => 'La contraseña debe contener al menos una letra mayúscula';
+
+  @override
+  String get authScreen$Error$AtLeastOneLower => 'La contraseña debe contener al menos una letra minúscula';
+
+  @override
+  String get authScreen$Error$AtLeastOneNumber => 'La contraseña debe contener al menos un número';
+
+  @override
+  String get authScreen$Error$AtLeastOneSpecCharacter => 'La contraseña debe contener al menos un carácter especial';
 }

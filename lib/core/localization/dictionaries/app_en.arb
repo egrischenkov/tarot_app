@@ -92,5 +92,32 @@
         "description": "Share feature"
     },
     "share$Suggest": "Try {appName}! Download here:\n{appLink}",
-    "share$Title": "Share our app"
+    "share$Title": "Share our app",
+    "share$Suggest": "Попробуй {appName}! Скачай здесь:\n{appLink}",
+    "share$Title": "Поделитесь нашим приложением",
+    "@segmentAuthScreen": {
+        "---------": "---------",
+        "description": "Auth screen"
+    },
+    "authScreen$Hint$Email": "Email",
+    "authScreen$Hint$Password": "Password",
+    "authScreen$Hint$ConfirmPassword": "Confirm Password",
+    "authScreen$$Label$ForgotPassword": "Forgot Password?",
+    "authScreen$Label$Login": "Login",
+    "authScreen$Label$SignUp": "Sign Up",
+    "authScreen$Label$Recover": "Recover",
+    "authScreen$Label$Back": "Back",
+    "authScreen$Title$ResetYourPassword": "Reset your password here",
+    "authScreen$Subtitle$WeWillSendYouPass": "We will send your plain-text password to this email account",
+    "authScreen$Error$InvalidEmail": "Invalid email!",
+    "authScreen$Error$PasswordDoNotMatch": "Password do not match!",
+    "authScreen$Success$Success": "Success",
+    "authScreen$Success$AnEmailSent": "An email has been sent",
+    "authScreen$Title": "Welcome!",
+    "authScreen$Error$TooLong": "Password is too long — maximum {count} characters",
+    "authScreen$Error$TooShort": "Password is too short — minimum {count} characters",
+    "authScreen$Error$AtLeastOneUpper": "Password must contain at least one uppercase letter",
+    "authScreen$Error$AtLeastOneLower": "Password must contain at least one lowercase letter",
+    "authScreen$Error$AtLeastOneNumber": "Password must contain at least one number",
+    "authScreen$Error$AtLeastOneSpecCharacter": "Password must contain at least one special character"
 }

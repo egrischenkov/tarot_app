@@ -92,5 +92,30 @@
         "description": "Share feature"
     },
     "share$Suggest": "¡Prueba {appName}! Descárgalo aquí:\n{appLink}",
-    "share$Title": "Comparte nuestra aplicación"
+    "share$Title": "Comparte nuestra aplicación",
+    "@segmentAuthScreen": {
+        "---------": "---------",
+        "description": "Auth screen"
+    },
+    "authScreen$Hint$Email": "Correo electrónico",
+    "authScreen$Hint$Password": "Contraseña",
+    "authScreen$Hint$ConfirmPassword": "Confirmar contraseña",
+    "authScreen$Label$ForgotPassword": "¿Olvidaste tu contraseña?",
+    "authScreen$Label$Login": "Acceder",
+    "authScreen$Label$SignUp": "Registrarse",
+    "authScreen$Label$Recover": "Recuperar",
+    "authScreen$Label$Back": "Atrás",
+    "authScreen$Title$ResetYourPassword": "Restablecer contraseña",
+    "authScreen$Subtitle$WeWillSendYouPass": "Enviaremos tu contraseña a este correo",
+    "authScreen$Error$InvalidEmail": "¡Correo no válido!",
+    "authScreen$Error$PasswordDoNotMatch": "¡Las contraseñas no coinciden!",
+    "authScreen$Success$Success": "Éxito",
+    "authScreen$Success$AnEmailSent": "Se ha enviado un correo",
+    "authScreen$Title": "¡Bienvenido!",
+    "authScreen$Error$TooLong": "La contraseña es demasiado larga — máximo {count} caracteres",
+    "authScreen$Error$TooShort": "La contraseña es demasiado corta — mínimo {count} caracteres",
+    "authScreen$Error$AtLeastOneUpper": "La contraseña debe contener al menos una letra mayúscula",
+    "authScreen$Error$AtLeastOneLower": "La contraseña debe contener al menos una letra minúscula",
+    "authScreen$Error$AtLeastOneNumber": "La contraseña debe contener al menos un número",
+    "authScreen$Error$AtLeastOneSpecCharacter": "La contraseña debe contener al menos un carácter especial"
 }

@@ -192,9 +192,79 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String share$Suggest(Object appLink, Object appName) {
-    return 'Try $appName! Download here:\n$appLink';
+    return 'Попробуй $appName! Скачай здесь:\n$appLink';
   }
 
   @override
-  String get share$Title => 'Share our app';
+  String get share$Title => 'Поделитесь нашим приложением';
+
+  @override
+  String get authScreen$Hint$Email => 'Email';
+
+  @override
+  String get authScreen$Hint$Password => 'Password';
+
+  @override
+  String get authScreen$Hint$ConfirmPassword => 'Confirm Password';
+
+  @override
+  String get authScreen$Label$ForgotPassword => 'Забыли пароль?';
+
+  @override
+  String get authScreen$Label$Login => 'Login';
+
+  @override
+  String get authScreen$Label$SignUp => 'Sign Up';
+
+  @override
+  String get authScreen$Label$Recover => 'Recover';
+
+  @override
+  String get authScreen$Label$Back => 'Back';
+
+  @override
+  String get authScreen$Title$ResetYourPassword => 'Reset your password here';
+
+  @override
+  String get authScreen$Subtitle$WeWillSendYouPass => 'We will send your plain-text password to this email account';
+
+  @override
+  String get authScreen$Error$InvalidEmail => 'Invalid email!';
+
+  @override
+  String get authScreen$Error$PasswordIsTooShort => 'Пароль слишком короткий!';
+
+  @override
+  String get authScreen$Error$PasswordDoNotMatch => 'Password do not match!';
+
+  @override
+  String get authScreen$Success$Success => 'Success';
+
+  @override
+  String get authScreen$Success$AnEmailSent => 'An email has been sent';
+
+  @override
+  String get authScreen$Title => 'Welcome!';
+
+  @override
+  String authScreen$Error$TooLong(Object count) {
+    return 'Password is too long — maximum $count characters';
+  }
+
+  @override
+  String authScreen$Error$TooShort(Object count) {
+    return 'Password is too short — minimum $count characters';
+  }
+
+  @override
+  String get authScreen$Error$AtLeastOneUpper => 'Password must contain at least one uppercase letter';
+
+  @override
+  String get authScreen$Error$AtLeastOneLower => 'Password must contain at least one lowercase letter';
+
+  @override
+  String get authScreen$Error$AtLeastOneNumber => 'Password must contain at least one number';
+
+  @override
+  String get authScreen$Error$AtLeastOneSpecCharacter => 'Password must contain at least one special character';
 }

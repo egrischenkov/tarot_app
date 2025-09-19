@@ -92,5 +92,31 @@
         "description": "Share feature"
     },
     "share$Suggest": "Попробуй {appName}! Скачай здесь:\n{appLink}",
-    "share$Title": "Поделитесь нашим приложением"
+    "share$Title": "Поделитесь нашим приложением",
+    "@segmentAuthScreen": {
+        "---------": "---------",
+        "description": "Auth screen"
+    },
+    "authScreen$Hint$Email": "Email",
+    "authScreen$Hint$Password": "Пароль",
+    "authScreen$Hint$ConfirmPassword": "Подтвердите пароль",
+    "authScreen$Label$ForgotPassword": "Забыли пароль?",
+    "authScreen$Label$Login": "Вход",
+    "authScreen$Label$SignUp": "Регистрация",
+    "authScreen$Label$Recover": "Восстановить",
+    "authScreen$Label$Back": "Назад",
+    "authScreen$Title$ResetYourPassword": "Сбросьте пароль",
+    "authScreen$Subtitle$WeWillSendYouPass": "Мы отправим ваш пароль на этот email",
+    "authScreen$Error$InvalidEmail": "Некорректный email!",
+    "authScreen$Error$PasswordIsTooShort": "Пароль слишком короткий!",
+    "authScreen$Error$PasswordDoNotMatch": "Пароли не совпадают!",
+    "authScreen$Success$Success": "Успех",
+    "authScreen$Success$AnEmailSent": "Письмо отправлено",
+    "authScreen$Title": "Добро пожаловать!",
+    "authScreen$Error$TooLong": "Пароль слишком длинный — максимум {count} символа",
+    "authScreen$Error$TooShort": "Пароль слишком короткий — минимум {count} символов",
+    "authScreen$Error$AtLeastOneUpper": "Пароль должен содержать хотя бы одну заглавную букву",
+    "authScreen$Error$AtLeastOneLower": "Пароль должен содержать хотя бы одну строчную букву",
+    "authScreen$Error$AtLeastOneNumber": "Пароль должен содержать хотя бы одну цифру",
+    "authScreen$Error$AtLeastOneSpecCharacter": "Пароль должен содержать хотя бы один специальный символ"
 }

@@ -480,6 +480,138 @@ abstract class AppLocalizations {
   /// In ru, this message translates to:
   /// **'Поделитесь нашим приложением'**
   String get share$Title;
+
+  /// No description provided for @authScreen$Hint$Email.
+  ///
+  /// In ru, this message translates to:
+  /// **'Email'**
+  String get authScreen$Hint$Email;
+
+  /// No description provided for @authScreen$Hint$Password.
+  ///
+  /// In ru, this message translates to:
+  /// **'Пароль'**
+  String get authScreen$Hint$Password;
+
+  /// No description provided for @authScreen$Hint$ConfirmPassword.
+  ///
+  /// In ru, this message translates to:
+  /// **'Подтвердите пароль'**
+  String get authScreen$Hint$ConfirmPassword;
+
+  /// No description provided for @authScreen$Label$ForgotPassword.
+  ///
+  /// In ru, this message translates to:
+  /// **'Забыли пароль?'**
+  String get authScreen$Label$ForgotPassword;
+
+  /// No description provided for @authScreen$Label$Login.
+  ///
+  /// In ru, this message translates to:
+  /// **'Вход'**
+  String get authScreen$Label$Login;
+
+  /// No description provided for @authScreen$Label$SignUp.
+  ///
+  /// In ru, this message translates to:
+  /// **'Регистрация'**
+  String get authScreen$Label$SignUp;
+
+  /// No description provided for @authScreen$Label$Recover.
+  ///
+  /// In ru, this message translates to:
+  /// **'Восстановить'**
+  String get authScreen$Label$Recover;
+
+  /// No description provided for @authScreen$Label$Back.
+  ///
+  /// In ru, this message translates to:
+  /// **'Назад'**
+  String get authScreen$Label$Back;
+
+  /// No description provided for @authScreen$Title$ResetYourPassword.
+  ///
+  /// In ru, this message translates to:
+  /// **'Сбросьте пароль'**
+  String get authScreen$Title$ResetYourPassword;
+
+  /// No description provided for @authScreen$Subtitle$WeWillSendYouPass.
+  ///
+  /// In ru, this message translates to:
+  /// **'Мы отправим ваш пароль на этот email'**
+  String get authScreen$Subtitle$WeWillSendYouPass;
+
+  /// No description provided for @authScreen$Error$InvalidEmail.
+  ///
+  /// In ru, this message translates to:
+  /// **'Некорректный email!'**
+  String get authScreen$Error$InvalidEmail;
+
+  /// No description provided for @authScreen$Error$PasswordIsTooShort.
+  ///
+  /// In ru, this message translates to:
+  /// **'Пароль слишком короткий!'**
+  String get authScreen$Error$PasswordIsTooShort;
+
+  /// No description provided for @authScreen$Error$PasswordDoNotMatch.
+  ///
+  /// In ru, this message translates to:
+  /// **'Пароли не совпадают!'**
+  String get authScreen$Error$PasswordDoNotMatch;
+
+  /// No description provided for @authScreen$Success$Success.
+  ///
+  /// In ru, this message translates to:
+  /// **'Успех'**
+  String get authScreen$Success$Success;
+
+  /// No description provided for @authScreen$Success$AnEmailSent.
+  ///
+  /// In ru, this message translates to:
+  /// **'Письмо отправлено'**
+  String get authScreen$Success$AnEmailSent;
+
+  /// No description provided for @authScreen$Title.
+  ///
+  /// In ru, this message translates to:
+  /// **'Добро пожаловать!'**
+  String get authScreen$Title;
+
+  /// No description provided for @authScreen$Error$TooLong.
+  ///
+  /// In ru, this message translates to:
+  /// **'Пароль слишком длинный — максимум {count} символа'**
+  String authScreen$Error$TooLong(Object count);
+
+  /// No description provided for @authScreen$Error$TooShort.
+  ///
+  /// In ru, this message translates to:
+  /// **'Пароль слишком короткий — минимум {count} символов'**
+  String authScreen$Error$TooShort(Object count);
+
+  /// No description provided for @authScreen$Error$AtLeastOneUpper.
+  ///
+  /// In ru, this message translates to:
+  /// **'Пароль должен содержать хотя бы одну заглавную букву'**
+  String get authScreen$Error$AtLeastOneUpper;
+
+  /// No description provided for @authScreen$Error$AtLeastOneLower.
+  ///
+  /// In ru, this message translates to:
+  /// **'Пароль должен содержать хотя бы одну строчную букву'**
+  String get authScreen$Error$AtLeastOneLower;
+
+  /// No description provided for @authScreen$Error$AtLeastOneNumber.
+  ///
+  /// In ru, this message translates to:
+  /// **'Пароль должен содержать хотя бы одну цифру'**
+  String get authScreen$Error$AtLeastOneNumber;
+
+  /// No description provided for @authScreen$Error$AtLeastOneSpecCharacter.
+  ///
+  /// In ru, this message translates to:
+  /// **'Пароль должен содержать хотя бы один специальный символ'**
+  String get authScreen$Error$AtLeastOneSpecCharacter;
 }
 
 class _AppLocalizationsDelegate extends LocalizationsDelegate<AppLocalizations> {

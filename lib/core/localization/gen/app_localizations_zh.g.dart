@@ -197,4 +197,74 @@ class AppLocalizationsZh extends AppLocalizations {
 
   @override
   String get share$Title => '分享我们的应用';
+
+  @override
+  String get authScreen$Hint$Email => '邮箱';
+
+  @override
+  String get authScreen$Hint$Password => '密码';
+
+  @override
+  String get authScreen$Hint$ConfirmPassword => '确认密码';
+
+  @override
+  String get authScreen$Label$ForgotPassword => '忘记密码？';
+
+  @override
+  String get authScreen$Label$Login => '登录';
+
+  @override
+  String get authScreen$Label$SignUp => '注册';
+
+  @override
+  String get authScreen$Label$Recover => '找回';
+
+  @override
+  String get authScreen$Label$Back => '返回';
+
+  @override
+  String get authScreen$Title$ResetYourPassword => '重置密码';
+
+  @override
+  String get authScreen$Subtitle$WeWillSendYouPass => '我们会将密码发送到此邮箱';
+
+  @override
+  String get authScreen$Error$InvalidEmail => '邮箱无效！';
+
+  @override
+  String get authScreen$Error$PasswordIsTooShort => 'Пароль слишком короткий!';
+
+  @override
+  String get authScreen$Error$PasswordDoNotMatch => '两次输入的密码不一致！';
+
+  @override
+  String get authScreen$Success$Success => '成功';
+
+  @override
+  String get authScreen$Success$AnEmailSent => '邮件已发送';
+
+  @override
+  String get authScreen$Title => '欢迎！';
+
+  @override
+  String authScreen$Error$TooLong(Object count) {
+    return '密码太长 — 最多 $count 个字符';
+  }
+
+  @override
+  String authScreen$Error$TooShort(Object count) {
+    return '密码太短 — 最少 $count 个字符';
+  }
+
+  @override
+  String get authScreen$Error$AtLeastOneUpper => '密码必须包含至少一个大写字母';
+
+  @override
+  String get authScreen$Error$AtLeastOneLower => '密码必须包含至少一个小写字母';
+
+  @override
+  String get authScreen$Error$AtLeastOneNumber => '密码必须包含至少一个数字';
+
+  @override
+  String get authScreen$Error$AtLeastOneSpecCharacter => '密码必须包含至少一个特殊字符';
 }

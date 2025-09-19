@@ -92,5 +92,30 @@
         "description": "Share feature"
     },
     "share$Suggest": "{appName} आज़माएं! यहाँ डाउनलोड करें:\n{appLink}",
-    "share$Title": "हमारे ऐप को साझा करें"
+    "share$Title": "हमारे ऐप को साझा करें",
+    "@segmentAuthScreen": {
+        "---------": "---------",
+        "description": "Auth screen"
+    },
+    "authScreen$Hint$Email": "ईमेल",
+    "authScreen$Hint$Password": "पासवर्ड",
+    "authScreen$Hint$ConfirmPassword": "पासवर्ड की पुष्टि करें",
+    "authScreen$Label$ForgotPassword": "पासवर्ड भूल गए?",
+    "authScreen$Label$Login": "लॉगिन",
+    "authScreen$Label$SignUp": "साइन अप",
+    "authScreen$Label$Recover": "रिकवर",
+    "authScreen$Label$Back": "वापस",
+    "authScreen$Title$ResetYourPassword": "पासवर्ड रीसेट करें",
+    "authScreen$Subtitle$WeWillSendYouPass": "हम आपका पासवर्ड इस ईमेल पर भेजेंगे",
+    "authScreen$Error$InvalidEmail": "अमान्य ईमेल!",
+    "authScreen$Error$PasswordDoNotMatch": "पासवर्ड मेल नहीं खाते!",
+    "authScreen$Success$Success": "सफलता",
+    "authScreen$Success$AnEmailSent": "ईमेल भेजा गया",
+    "authScreen$Title": "स्वागत है!",
+    "authScreen$Error$TooLong": "पासवर्ड बहुत लंबा है — अधिकतम {count} अक्षर",
+    "authScreen$Error$TooShort": "पासवर्ड बहुत छोटा है — न्यूनतम {count} अक्षर",
+    "authScreen$Error$AtLeastOneUpper": "पासवर्ड में कम से कम एक बड़ा अक्षर होना चाहिए",
+    "authScreen$Error$AtLeastOneLower": "पासवर्ड में कम से कम एक छोटा अक्षर होना चाहिए",
+    "authScreen$Error$AtLeastOneNumber": "पासवर्ड में कम से कम एक अंक होना चाहिए",
+    "authScreen$Error$AtLeastOneSpecCharacter": "पासवर्ड में कम से कम एक विशेष वर्ण होना चाहिए"
 }

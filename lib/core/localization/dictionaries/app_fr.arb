@@ -99,5 +99,30 @@
         "description": "Share feature"
     },
     "share$Suggest": "Essaie {appName} ! Télécharge-le ici :\n{appLink}",
-    "share$Title": "Partagez notre application"
+    "share$Title": "Partagez notre application",
+    "@segmentAuthScreen": {
+        "---------": "---------",
+        "description": "Auth screen"
+    },
+    "authScreen$Hint$Email": "Email",
+    "authScreen$Hint$Password": "Mot de passe",
+    "authScreen$Hint$ConfirmPassword": "Confirmer le mot de passe",
+    "authScreen$Label$ForgotPassword": "Mot de passe oublié ?",
+    "authScreen$Label$Login": "Connexion",
+    "authScreen$Label$SignUp": "Inscription",
+    "authScreen$Label$Recover": "Récupérer",
+    "authScreen$Label$Back": "Retour",
+    "authScreen$Title$ResetYourPassword": "Réinitialiser le mot de passe",
+    "authScreen$Subtitle$WeWillSendYouPass": "Nous enverrons votre mot de passe à cet email",
+    "authScreen$Error$InvalidEmail": "Email invalide !",
+    "authScreen$Error$PasswordDoNotMatch": "Les mots de passe ne correspondent pas !",
+    "authScreen$Success$Success": "Succès",
+    "authScreen$Success$AnEmailSent": "Un email a été envoyé",
+    "authScreen$Title": "Bienvenue !",
+    "authScreen$Error$TooLong": "Le mot de passe est trop long — maximum {count} caractères",
+    "authScreen$Error$TooShort": "Le mot de passe est trop court — minimum {count} caractères",
+    "authScreen$Error$AtLeastOneUpper": "Le mot de passe doit contenir au moins une majuscule",
+    "authScreen$Error$AtLeastOneLower": "Le mot de passe doit contenir au moins une minuscule",
+    "authScreen$Error$AtLeastOneNumber": "Le mot de passe doit contenir au moins un chiffre",
+    "authScreen$Error$AtLeastOneSpecCharacter": "Le mot de passe doit contenir au moins un caractère spécial"
 }

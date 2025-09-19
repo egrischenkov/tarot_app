@@ -197,4 +197,74 @@ class AppLocalizationsPt extends AppLocalizations {
 
   @override
   String get share$Title => 'Compartilhe nosso app';
+
+  @override
+  String get authScreen$Hint$Email => 'Email';
+
+  @override
+  String get authScreen$Hint$Password => 'Senha';
+
+  @override
+  String get authScreen$Hint$ConfirmPassword => 'Confirmar senha';
+
+  @override
+  String get authScreen$Label$ForgotPassword => 'Esqueceu a senha?';
+
+  @override
+  String get authScreen$Label$Login => 'Entrar';
+
+  @override
+  String get authScreen$Label$SignUp => 'Cadastrar-se';
+
+  @override
+  String get authScreen$Label$Recover => 'Recuperar';
+
+  @override
+  String get authScreen$Label$Back => 'Voltar';
+
+  @override
+  String get authScreen$Title$ResetYourPassword => 'Redefina sua senha';
+
+  @override
+  String get authScreen$Subtitle$WeWillSendYouPass => 'Enviaremos sua senha para este email';
+
+  @override
+  String get authScreen$Error$InvalidEmail => 'Email inválido!';
+
+  @override
+  String get authScreen$Error$PasswordIsTooShort => 'Пароль слишком короткий!';
+
+  @override
+  String get authScreen$Error$PasswordDoNotMatch => 'As senhas não coincidem!';
+
+  @override
+  String get authScreen$Success$Success => 'Sucesso';
+
+  @override
+  String get authScreen$Success$AnEmailSent => 'Um email foi enviado';
+
+  @override
+  String get authScreen$Title => 'Bem-vindo!';
+
+  @override
+  String authScreen$Error$TooLong(Object count) {
+    return 'A senha é muito longa — máximo de $count caracteres';
+  }
+
+  @override
+  String authScreen$Error$TooShort(Object count) {
+    return 'A senha é muito curta — mínimo de $count caracteres';
+  }
+
+  @override
+  String get authScreen$Error$AtLeastOneUpper => 'A senha deve conter pelo menos uma letra maiúscula';
+
+  @override
+  String get authScreen$Error$AtLeastOneLower => 'A senha deve conter pelo menos uma letra minúscula';
+
+  @override
+  String get authScreen$Error$AtLeastOneNumber => 'A senha deve conter pelo menos um número';
+
+  @override
+  String get authScreen$Error$AtLeastOneSpecCharacter => 'A senha deve conter pelo menos um caractere especial';
 }

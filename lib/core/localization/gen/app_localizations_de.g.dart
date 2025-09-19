@@ -197,4 +197,74 @@ class AppLocalizationsDe extends AppLocalizations {
 
   @override
   String get share$Title => 'Teile unsere App';
+
+  @override
+  String get authScreen$Hint$Email => 'E-Mail';
+
+  @override
+  String get authScreen$Hint$Password => 'Passwort';
+
+  @override
+  String get authScreen$Hint$ConfirmPassword => 'Passwort bestätigen';
+
+  @override
+  String get authScreen$Label$ForgotPassword => 'Passwort vergessen?';
+
+  @override
+  String get authScreen$Label$Login => 'Login';
+
+  @override
+  String get authScreen$Label$SignUp => 'Registrieren';
+
+  @override
+  String get authScreen$Label$Recover => 'Wiederherstellen';
+
+  @override
+  String get authScreen$Label$Back => 'Zurück';
+
+  @override
+  String get authScreen$Title$ResetYourPassword => 'Passwort zurücksetzen';
+
+  @override
+  String get authScreen$Subtitle$WeWillSendYouPass => 'Wir senden Ihr Passwort an diese E-Mail';
+
+  @override
+  String get authScreen$Error$InvalidEmail => 'Ungültige E-Mail!';
+
+  @override
+  String get authScreen$Error$PasswordIsTooShort => 'Пароль слишком короткий!';
+
+  @override
+  String get authScreen$Error$PasswordDoNotMatch => 'Passwörter stimmen nicht überein!';
+
+  @override
+  String get authScreen$Success$Success => 'Erfolg';
+
+  @override
+  String get authScreen$Success$AnEmailSent => 'Eine E-Mail wurde gesendet';
+
+  @override
+  String get authScreen$Title => 'Willkommen!';
+
+  @override
+  String authScreen$Error$TooLong(Object count) {
+    return 'Passwort ist zu lang — maximal $count Zeichen';
+  }
+
+  @override
+  String authScreen$Error$TooShort(Object count) {
+    return 'Passwort ist zu kurz — mindestens $count Zeichen';
+  }
+
+  @override
+  String get authScreen$Error$AtLeastOneUpper => 'Passwort muss mindestens einen Großbuchstaben enthalten';
+
+  @override
+  String get authScreen$Error$AtLeastOneLower => 'Passwort muss mindestens einen Kleinbuchstaben enthalten';
+
+  @override
+  String get authScreen$Error$AtLeastOneNumber => 'Passwort muss mindestens eine Zahl enthalten';
+
+  @override
+  String get authScreen$Error$AtLeastOneSpecCharacter => 'Passwort muss mindestens ein Sonderzeichen enthalten';
 }

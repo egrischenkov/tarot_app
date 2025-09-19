@@ -197,4 +197,74 @@ class AppLocalizationsFr extends AppLocalizations {
 
   @override
   String get share$Title => 'Partagez notre application';
+
+  @override
+  String get authScreen$Hint$Email => 'Email';
+
+  @override
+  String get authScreen$Hint$Password => 'Mot de passe';
+
+  @override
+  String get authScreen$Hint$ConfirmPassword => 'Confirmer le mot de passe';
+
+  @override
+  String get authScreen$Label$ForgotPassword => 'Mot de passe oublié ?';
+
+  @override
+  String get authScreen$Label$Login => 'Connexion';
+
+  @override
+  String get authScreen$Label$SignUp => 'Inscription';
+
+  @override
+  String get authScreen$Label$Recover => 'Récupérer';
+
+  @override
+  String get authScreen$Label$Back => 'Retour';
+
+  @override
+  String get authScreen$Title$ResetYourPassword => 'Réinitialiser le mot de passe';
+
+  @override
+  String get authScreen$Subtitle$WeWillSendYouPass => 'Nous enverrons votre mot de passe à cet email';
+
+  @override
+  String get authScreen$Error$InvalidEmail => 'Email invalide !';
+
+  @override
+  String get authScreen$Error$PasswordIsTooShort => 'Пароль слишком короткий!';
+
+  @override
+  String get authScreen$Error$PasswordDoNotMatch => 'Les mots de passe ne correspondent pas !';
+
+  @override
+  String get authScreen$Success$Success => 'Succès';
+
+  @override
+  String get authScreen$Success$AnEmailSent => 'Un email a été envoyé';
+
+  @override
+  String get authScreen$Title => 'Bienvenue !';
+
+  @override
+  String authScreen$Error$TooLong(Object count) {
+    return 'Le mot de passe est trop long — maximum $count caractères';
+  }
+
+  @override
+  String authScreen$Error$TooShort(Object count) {
+    return 'Le mot de passe est trop court — minimum $count caractères';
+  }
+
+  @override
+  String get authScreen$Error$AtLeastOneUpper => 'Le mot de passe doit contenir au moins une majuscule';
+
+  @override
+  String get authScreen$Error$AtLeastOneLower => 'Le mot de passe doit contenir au moins une minuscule';
+
+  @override
+  String get authScreen$Error$AtLeastOneNumber => 'Le mot de passe doit contenir au moins un chiffre';
+
+  @override
+  String get authScreen$Error$AtLeastOneSpecCharacter => 'Le mot de passe doit contenir au moins un caractère spécial';
 }
