@@ -1,6 +1,8 @@
 import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_login/flutter_login.dart';
+import 'package:lottie/lottie.dart';
+import 'package:taro/core/assets/gen/assets.gen.dart';
 import 'package:taro/core/extensions/context_extension.dart';
 import 'package:taro/features/profile/ui/bloc/auth/auth_bloc.dart';
 import 'package:taro/features/profile/ui/utils/auth_fields_validator.dart';
@@ -116,6 +118,7 @@ class _AuthScreenState extends State<AuthScreen> {
             flushbarTitleSuccess: l10n.authScreen$Success$Success,
             recoverPasswordSuccess: l10n.authScreen$Success$AnEmailSent,
             confirmPasswordError: l10n.authScreen$Error$PasswordDoNotMatch,
+            flushbarTitleError: l10n.authScreen$Error$Title,
           ),
           userValidator: fieldsValidator.userFieldValidator,
           passwordValidator: fieldsValidator.passwordFieldValidator,
@@ -128,6 +131,7 @@ class _AuthScreenState extends State<AuthScreen> {
           onSignup: (_) {
             return Future.value();
           },
+          headerWidget: LottieBuilder.asset(Assets.lottie.signUp),
         ),
         Positioned(
           left: UiKitSpacing.x4,
