@@ -315,6 +315,7 @@ class _AnimatedTextFormFieldState extends State<AnimatedTextFormField> {
     return InputDecoration(
       labelText: widget.labelText,
       labelStyle: widget.labelStyle,
+      errorMaxLines: 2,
       prefixIcon: _buildInertiaAnimation(widget.prefixIcon),
       suffixIcon: _buildInertiaAnimation(
         widget.loadingController != null
