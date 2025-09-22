@@ -121,6 +121,12 @@ abstract class AppLocalizations {
   /// **'Tarot Band'**
   String get companyName;
 
+  /// No description provided for @common$Error.
+  ///
+  /// In ru, this message translates to:
+  /// **'Что-то пошло не так. Пожалуйста, попробуйте позже.'**
+  String get common$Error;
+
   /// No description provided for @onboarding$Title$First.
   ///
   /// In ru, this message translates to:

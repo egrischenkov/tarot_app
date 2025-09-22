@@ -5,6 +5,7 @@
     },
     "appName": "Stary",
     "companyName": "Tarot Band",
+    "common$Error": "Qualcosa è andato storto. Per favore riprova più tardi.",
     "@segmentOnboarding": {
         "---------": "---------",
         "description": "Onboarding"

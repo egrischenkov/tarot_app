@@ -15,6 +15,9 @@ class AppLocalizationsZh extends AppLocalizations {
   String get companyName => 'Tarot Band';
 
   @override
+  String get common$Error => '出了点问题。请稍后再试。';
+
+  @override
   String onboarding$Title$First(Object appName) {
     return '欢迎来到 $appName 的世界';
   }

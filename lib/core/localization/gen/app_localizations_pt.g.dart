@@ -15,6 +15,9 @@ class AppLocalizationsPt extends AppLocalizations {
   String get companyName => 'Tarot Band';
 
   @override
+  String get common$Error => 'Algo deu errado. Por favor, tente novamente mais tarde.';
+
+  @override
   String onboarding$Title$First(Object appName) {
     return 'Bem-vindo ao mundo de $appName';
   }
