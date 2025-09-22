@@ -6,7 +6,12 @@ sealed class ProfileState extends Equatable {
   const ProfileState();
 
   bool get isAuthenticated => maybeMap(
-        authenticated: (state) => true,
+        authenticated: (_) => true,
+        orElse: () => false,
+      );
+
+  bool get isLoading => maybeMap(
+        loading: (_) => true,
         orElse: () => false,
       );
 
@@ -36,13 +41,13 @@ sealed class ProfileState extends Equatable {
   T? mapOrNull<T>({
     ProfileStateMatch<T, ProfileState$Idle>? idle,
     ProfileStateMatch<T, ProfileState$Loading>? loading,
-    ProfileStateMatch<T, ProfileState$Authenticated>? success,
+    ProfileStateMatch<T, ProfileState$Authenticated>? authenticated,
     ProfileStateMatch<T, ProfileState$Error>? error,
   }) =>
       map<T?>(
         idle: idle ?? (_) => null,
         loading: loading ?? (_) => null,
-        authenticated: success ?? (_) => null,
+        authenticated: authenticated ?? (_) => null,
         error: error ?? (_) => null,
       );
 

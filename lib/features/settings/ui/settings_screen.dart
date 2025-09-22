@@ -1,6 +1,8 @@
 import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:taro/core/extensions/context_extension.dart';
+import 'package:taro/features/profile/ui/bloc/profile_bloc.dart';
 import 'package:taro/features/settings/ui/widgets/settings_section_widget.dart';
 import 'package:tarot_ui_kit/ui_kit.dart';
 
@@ -42,17 +44,41 @@ class SettingsScreen extends StatelessWidget {
             UiKitSpacing.x4.h,
             const SettingsSectionWidget(isAuthenticated: true),
             UiKitSpacing.x4.h,
-            UiKitBaseSectionWrapper(
-              child: UiKitBigButton.regular(
-                context: context,
-                label: l10n.settingsScreen$LogOut,
-                isExpanded: true,
-                onTap: () {},
+            BlocConsumer<ProfileBloc, ProfileState>(
+              listener: (context, state) => state.maybeMap(
+                error: (_) {
+                  final snackBar = SnackBar(
+                    content: Text(context.l10n.common$Error),
+                  );
+
+                  ScaffoldMessenger.of(context).showSnackBar(snackBar);
+                },
+                idle: (_) {
+                  router.pop();
+                },
+                orElse: () {},
               ),
+              builder: (context, state) {
+                return UiKitBaseSectionWrapper(
+                  child: UiKitBigButton.regular(
+                    context: context,
+                    label: l10n.settingsScreen$LogOut,
+                    isLoading: state.isLoading,
+                    isExpanded: true,
+                    onTap: () => _onLoggedOut(context),
+                  ),
+                );
+              },
             ),
           ],
         ),
       ),
     );
+  }
+
+  void _onLoggedOut(BuildContext context) {
+    final profileBloc = context.read<ProfileBloc>();
+
+    profileBloc.add(const ProfileEvent.loggedOut());
   }
 }

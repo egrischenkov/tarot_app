@@ -92,6 +92,9 @@ class ProfileBloc extends Bloc<ProfileEvent, ProfileState> {
     try {
       emit(const ProfileState.loading());
 
+      // Simulates network request
+      await Future.delayed(const Duration(seconds: 4));
+
       await _setAuthStatusUseCase.setCurrentUserAuthenticationStatus(
         status: UserAuthenticationStatus.unauthenticated,
       );
