@@ -4,13 +4,13 @@ import 'package:flutter_login/flutter_login.dart';
 import 'package:lottie/lottie.dart';
 import 'package:taro/core/assets/gen/assets.gen.dart';
 import 'package:taro/core/extensions/context_extension.dart';
-import 'package:taro/features/profile/ui/bloc/auth/auth_bloc.dart';
+import 'package:taro/features/profile/ui/bloc/profile_bloc.dart';
 import 'package:taro/features/profile/ui/utils/auth_fields_validator.dart';
 import 'package:tarot_ui_kit/ui_kit.dart';
 
 @RoutePage()
 class AuthScreen extends StatefulWidget {
-  final AuthBloc authBloc;
+  final ProfileBloc authBloc;
 
   const AuthScreen({
     required this.authBloc,

@@ -13,11 +13,14 @@ abstract interface class AppConfigurationsStorage {
   String? get selectedLocaleCode;
   String get selectedTheme;
   bool get isUserAuthenticated;
+  String? get user;
 
   Future<void> setOnboardingCompleted({required bool value});
   Future<void> setSelectedLocaleCode({required String localeCode});
   Future<void> setSelectedTheme({required String theme});
   Future<void> setUserAuthenticated({required bool value});
+  Future<void> setUser({required String user});
+  Future<void> removeUser();
 
   Future<void> clear();
 }

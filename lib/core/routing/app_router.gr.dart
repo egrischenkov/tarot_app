@@ -30,7 +30,7 @@ class AboutRoute extends PageRouteInfo<void> {
 /// [AuthScreen]
 class AuthRoute extends PageRouteInfo<AuthRouteArgs> {
   AuthRoute({
-    required AuthBloc authBloc,
+    required ProfileBloc authBloc,
     Key? key,
     List<PageRouteInfo>? children,
   }) : super(
@@ -53,7 +53,7 @@ class AuthRoute extends PageRouteInfo<AuthRouteArgs> {
 class AuthRouteArgs {
   const AuthRouteArgs({required this.authBloc, this.key});
 
-  final AuthBloc authBloc;
+  final ProfileBloc authBloc;
 
   final Key? key;
 
@@ -199,7 +199,7 @@ class OnboardingRouteArgs {
 }
 
 /// generated route for
-/// [ProfileEntry]
+/// [ProfileScreen]
 class ProfileRoute extends PageRouteInfo<void> {
   const ProfileRoute({List<PageRouteInfo>? children})
     : super(ProfileRoute.name, initialChildren: children);
@@ -209,7 +209,7 @@ class ProfileRoute extends PageRouteInfo<void> {
   static PageInfo page = PageInfo(
     name,
     builder: (data) {
-      return WrappedRoute(child: const ProfileEntry());
+      return const ProfileScreen();
     },
   );
 }

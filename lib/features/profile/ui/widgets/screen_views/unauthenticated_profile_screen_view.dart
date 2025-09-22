@@ -43,7 +43,7 @@ class _UnauthenticatedProfileScreenViewState extends State<UnauthenticatedProfil
   }
 
   void _onLoginButtonTap() {
-    final authBloc = context.read<AuthBloc>();
+    final authBloc = context.read<ProfileBloc>();
     final router = context.router;
 
     router.push(AuthRoute(authBloc: authBloc));

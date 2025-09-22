@@ -12,8 +12,7 @@ import 'package:share_plus/share_plus.dart';
 import 'package:taro/core/assets/gen/assets.gen.dart';
 import 'package:taro/core/extensions/context_extension.dart';
 import 'package:taro/core/routing/app_router.dart';
-import 'package:taro/features/profile/domain/entities/user_authentication_status.dart';
-import 'package:taro/features/profile/ui/bloc/auth/auth_bloc.dart';
+import 'package:taro/features/profile/ui/bloc/profile_bloc.dart';
 import 'package:taro/features/profile/ui/widgets/profile_widget.dart';
 import 'package:taro/features/settings/ui/widgets/settings_section_widget.dart';
 import 'package:tarot_ui_kit/ui_kit.dart';
@@ -24,6 +23,7 @@ part '../widgets/profile_refresh_indicator.dart';
 part '../widgets/screen_views/authenticated_profile_screen_view.dart';
 part '../widgets/screen_views/unauthenticated_profile_screen_view.dart';
 
+@RoutePage()
 class ProfileScreen extends StatefulWidget {
   const ProfileScreen({super.key});
 
@@ -34,9 +34,9 @@ class ProfileScreen extends StatefulWidget {
 class _ProfileScreenState extends State<ProfileScreen> {
   @override
   Widget build(BuildContext context) {
-    return BlocBuilder<AuthBloc, AuthState>(
+    return BlocBuilder<ProfileBloc, ProfileState>(
       builder: (context, state) {
-        return state.authStatus.isAuthenticated
+        return state.isAuthenticated
             ? const AuthenticatedProfileScreenView()
             : const UnauthenticatedProfileScreenView();
       },

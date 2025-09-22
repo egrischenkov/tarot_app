@@ -9,9 +9,9 @@ import 'package:taro/features/debug/ui/debug_wrapper_entry.dart';
 import 'package:taro/features/feedback_form/ui/feedback_form_screen.dart';
 import 'package:taro/features/home/ui/home_screen.dart';
 import 'package:taro/features/onboarding/ui/onboarding_screen.dart';
-import 'package:taro/features/profile/di/profile_entry.dart';
-import 'package:taro/features/profile/ui/bloc/auth/auth_bloc.dart';
+import 'package:taro/features/profile/ui/bloc/profile_bloc.dart';
 import 'package:taro/features/profile/ui/screens/auth_screen.dart';
+import 'package:taro/features/profile/ui/screens/profile_screen.dart';
 import 'package:taro/features/settings/ui/settings_screen.dart';
 import 'package:taro/features/yes_no/ui/yes_no_screen.dart';
 

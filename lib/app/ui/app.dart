@@ -17,12 +17,21 @@ import 'package:taro/core/di/app_dependencies_scope.dart';
 import 'package:taro/core/localization/gen/app_localizations.g.dart';
 import 'package:taro/core/routing/app_router.dart';
 import 'package:taro/core/routing/guards/onboarding_guard.dart';
+import 'package:taro/features/profile/data/data_sources/profile_data_source.dart';
+import 'package:taro/features/profile/data/repositories_implementations/profile_repository_impl.dart';
+import 'package:taro/features/profile/domain/use_cases/delete_saved_user_use_case.dart';
+import 'package:taro/features/profile/domain/use_cases/get_current_user_authentication_status.dart';
+import 'package:taro/features/profile/domain/use_cases/get_saved_user_use_case.dart';
+import 'package:taro/features/profile/domain/use_cases/save_user_use_case.dart';
+import 'package:taro/features/profile/domain/use_cases/set_current_user_authentication_status_use_case.dart';
+import 'package:taro/features/profile/ui/bloc/profile_bloc.dart';
 import 'package:tarot_ui_kit/ui_kit.dart';
 
 class App extends StatefulWidget {
   final AppDependenciesContainer _dependenciesContainer;
   final AppRouter _router;
   final AppRepository _appRepository;
+  final ProfileDataSource _profileDataSource;
 
   App({
     required AppDependenciesContainer dependenciesContainer,
@@ -41,6 +50,9 @@ class App extends StatefulWidget {
           themeService: ThemeService(
             appConfigurationsStorage: dependenciesContainer.appConfigurationsStorage,
           ),
+        ),
+        _profileDataSource = ProfileDataSource(
+          appConfigurationsStorage: dependenciesContainer.appConfigurationsStorage,
         );
 
   @override
@@ -50,6 +62,7 @@ class App extends StatefulWidget {
 class _AppState extends State<App> {
   late final ThemeBloc _themeBloc;
   late final LanguageBloc _languageBloc;
+  late final ProfileBloc _profileBloc;
 
   @override
   void initState() {
@@ -57,6 +70,7 @@ class _AppState extends State<App> {
 
     _themeBloc = _createThemeBloc();
     _languageBloc = _createLanguageBloc();
+    _profileBloc = _createProfileBloc(widget._profileDataSource);
   }
 
   @override
@@ -70,6 +84,9 @@ class _AppState extends State<App> {
           ),
           BlocProvider.value(
             value: _languageBloc,
+          ),
+          BlocProvider.value(
+            value: _profileBloc,
           ),
         ],
         child: BlocBuilder<LanguageBloc, LanguageState>(
@@ -109,5 +126,31 @@ class _AppState extends State<App> {
       getCurrentThemeUseCase: GetCurrentThemeUseCase(appRepository: widget._appRepository),
       changeThemeUseCase: ChangeThemeUseCase(appRepository: widget._appRepository),
     );
+  }
+
+  ProfileBloc _createProfileBloc(ProfileDataSource profileDataSource) {
+    final profileRepository = ProfileRepositoryImpl(
+      profileDataSource: profileDataSource,
+    );
+
+    final profileBloc = ProfileBloc(
+      setAuthStatusUseCase: SetCurrentUserAuthenticationStatusUseCase(
+        profileRepository: profileRepository,
+      ),
+      getAuthStatusUseCase: GetCurrentUserAuthenticationStatus(
+        profileRepository: profileRepository,
+      ),
+      saveUserUseCase: SaveUserUseCase(
+        profileRepository: profileRepository,
+      ),
+      getSavedUserUseCase: GetSavedUserUseCase(
+        profileRepository: profileRepository,
+      ),
+      deleteSavedUserUseCase: DeleteSavedUserUseCase(
+        profileRepository: profileRepository,
+      ),
+    );
+
+    return profileBloc;
   }
 }
