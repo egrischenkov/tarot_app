@@ -35,6 +35,7 @@
     "profileScreen$LoginButton$Label": "लॉगिन",
     "profileScreen$AddInfo$Title": "अधिक सुविधाओं को अनलॉक करने के लिए अपनी प्रोफ़ाइल पूरी करें!",
     "profileScreen$AddInfo$Subtitle": "जन्मतिथि, लिंग, वैवाहिक स्थिति और यहाँ तक कि नौकरी की जानकारी जोड़ें — ऐप आपके लिए व्यक्तिगत दैनिक कार्ड, रीडिंग और भविष्यवाणियाँ चुनेगा।",
+    "profileScreen$JoinUs": "हमसे जुड़ें — और कार्ड्स सिर्फ आपके लिए बोलेंगे",
     "@segmentSettingsScreen": {
         "---------": "---------",
         "description": "Settings screen"

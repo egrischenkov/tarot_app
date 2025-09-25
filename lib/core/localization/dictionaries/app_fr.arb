@@ -35,6 +35,7 @@
     "profileScreen$LoginButton$Label": "Connexion",
     "profileScreen$AddInfo$Title": "Complétez votre profil pour débloquer plus de fonctionnalités !",
     "profileScreen$AddInfo$Subtitle": "Ajoutez votre date de naissance, sexe, situation familiale et même des informations professionnelles — l’application vous proposera des cartes du jour, tirages et prévisions personnalisés.",
+    "profileScreen$JoinUs": "Rejoignez-nous — et les cartes parleront rien que pour vous",
     "@segmentSettingsScreen": {
         "---------": "---------",
         "description": "Settings screen"

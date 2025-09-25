@@ -35,6 +35,7 @@
     "profileScreen$LoginButton$Label": "登录",
     "profileScreen$AddInfo$Title": "完善您的资料以解锁更多功能！",
     "profileScreen$AddInfo$Subtitle": "添加生日、性别、婚姻状况甚至工作信息 — 应用将为您挑选个性化的每日卡牌、牌阵和预测。",
+    "profileScreen$JoinUs": "加入我们 — 牌卡将只为你解读",
     "@segmentSettingsScreen": {
         "---------": "---------",
         "description": "Settings screen"

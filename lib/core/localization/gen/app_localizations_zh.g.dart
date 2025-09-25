@@ -71,6 +71,9 @@ class AppLocalizationsZh extends AppLocalizations {
   String get profileScreen$AddInfo$Subtitle => '添加生日、性别、婚姻状况甚至工作信息 — 应用将为您挑选个性化的每日卡牌、牌阵和预测。';
 
   @override
+  String get profileScreen$JoinUs => '加入我们 — 牌卡将只为你解读';
+
+  @override
   String get settingsScreen$Title => '设置';
 
   @override

@@ -35,6 +35,7 @@
     "profileScreen$LoginButton$Label": "Accedi",
     "profileScreen$AddInfo$Title": "Completa il tuo profilo per sbloccare più funzionalità!",
     "profileScreen$AddInfo$Subtitle": "Aggiungi data di nascita, sesso, stato civile e persino informazioni sul lavoro — l'app selezionerà carte del giorno, stese e previsioni personalizzate per te.",
+    "profileScreen$JoinUs": "Unisciti a noi — e le carte parleranno solo per te",
     "@segmentSettingsScreen": {
         "---------": "---------",
         "description": "Settings screen"

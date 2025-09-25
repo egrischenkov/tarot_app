@@ -11,6 +11,7 @@ class _UnauthenticatedProfileScreenViewState extends State<UnauthenticatedProfil
   @override
   Widget build(BuildContext context) {
     final l10n = context.l10n;
+    final fonts = context.fonts;
 
     return UiKitBaseScreen(
       title: l10n.profileScreen$Title,
@@ -19,17 +20,25 @@ class _UnauthenticatedProfileScreenViewState extends State<UnauthenticatedProfil
       body: Padding(
         padding: const EdgeInsets.symmetric(horizontal: UiKitSize.x2),
         child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
           children: intersperse(
             UiKitSpacing.x4.h,
             [
               LottieBuilder.asset(Assets.lottie.signUp),
+              Text(l10n.profileScreen$JoinUs, style: fonts.headlineLarge),
               UiKitBorderBeam(
                 child: UiKitBaseSectionWrapper(
-                  child: UiKitBigButton.regular(
-                    context: context,
-                    label: l10n.profileScreen$LoginButton$Label,
-                    isExpanded: true,
-                    onTap: _onLoginButtonTap,
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      UiKitSpacing.x4.h,
+                      UiKitBigButton.regular(
+                        context: context,
+                        label: l10n.profileScreen$LoginButton$Label,
+                        isExpanded: true,
+                        onTap: _onLoginButtonTap,
+                      ),
+                    ],
                   ),
                 ),
               ),

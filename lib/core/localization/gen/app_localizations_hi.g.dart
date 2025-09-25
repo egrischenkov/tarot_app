@@ -71,6 +71,9 @@ class AppLocalizationsHi extends AppLocalizations {
   String get profileScreen$AddInfo$Subtitle => 'जन्मतिथि, लिंग, वैवाहिक स्थिति और यहाँ तक कि नौकरी की जानकारी जोड़ें — ऐप आपके लिए व्यक्तिगत दैनिक कार्ड, रीडिंग और भविष्यवाणियाँ चुनेगा।';
 
   @override
+  String get profileScreen$JoinUs => 'हमसे जुड़ें — और कार्ड्स सिर्फ आपके लिए बोलेंगे';
+
+  @override
   String get settingsScreen$Title => 'सेटिंग्स';
 
   @override

@@ -71,6 +71,9 @@ class AppLocalizationsPt extends AppLocalizations {
   String get profileScreen$AddInfo$Subtitle => 'Adicione data de nascimento, gênero, estado civil e até informações de trabalho — o app selecionará cartas do dia, tiragens e previsões personalizadas para você.';
 
   @override
+  String get profileScreen$JoinUs => 'Junte-se a nós — e as cartas falarão só para você';
+
+  @override
   String get settingsScreen$Title => 'Configurações';
 
   @override

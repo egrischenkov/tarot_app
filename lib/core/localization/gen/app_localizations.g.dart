@@ -229,6 +229,12 @@ abstract class AppLocalizations {
   /// **'Добавьте дату рождения, пол, семейное положение и даже информацию о работе — и приложение будет подбирать для вас персональные карты дня, расклады и прогнозы, созданные специально под ваш профиль.'**
   String get profileScreen$AddInfo$Subtitle;
 
+  /// No description provided for @profileScreen$JoinUs.
+  ///
+  /// In ru, this message translates to:
+  /// **'Присоединяйтесь — и карты будут говорить только для вас'**
+  String get profileScreen$JoinUs;
+
   /// No description provided for @settingsScreen$Title.
   ///
   /// In ru, this message translates to:

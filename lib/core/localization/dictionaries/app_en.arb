@@ -35,6 +35,7 @@
     "profileScreen$LoginButton$Label": "Login",
     "profileScreen$AddInfo$Title": "Complete your profile to unlock more features!",
     "profileScreen$AddInfo$Subtitle": "Add your date of birth, gender, marital status, and even job information — the app will select personalized daily cards, spreads, and forecasts tailored just for you.",
+    "profileScreen$JoinUs": "Join us — and the cards will speak just for you",
     "@segmentSettingsScreen": {
         "---------": "---------",
         "description": "Settings screen"
