@@ -32,6 +32,7 @@ class _AuthenticatedProfileScreenViewState extends State<AuthenticatedProfileScr
   Widget build(BuildContext context) {
     final l10n = context.l10n;
     final colors = context.colors;
+    final fonts = context.fonts;
 
     return UiKitBaseScreen(
       title: l10n.profileScreen$Title,
@@ -70,7 +71,7 @@ class _AuthenticatedProfileScreenViewState extends State<AuthenticatedProfileScr
             decoration: BoxDecoration(
               gradient: LinearGradient(
                 begin: Alignment.topLeft,
-                end: Alignment.bottomRight,
+                end: Alignment.centerRight,
                 colors: [colors.gradientFirst, colors.gradientSecond],
               ),
             ),
@@ -119,7 +120,7 @@ class _AuthenticatedProfileScreenViewState extends State<AuthenticatedProfileScr
                                 padding: const EdgeInsets.symmetric(horizontal: UiKitSpacing.x2),
                                 child: UiKitBorderBeam(
                                   borderWidth: 3,
-                                  child: ProfileItem(
+                                  child: UiKitBaseSectionWrapper(
                                     child: Column(
                                       crossAxisAlignment: CrossAxisAlignment.start,
                                       children: [
@@ -128,7 +129,7 @@ class _AuthenticatedProfileScreenViewState extends State<AuthenticatedProfileScr
                                           children: [
                                             Text(
                                               l10n.profileScreen$Subscription,
-                                              style: context.fonts.bodyEmphasized,
+                                              style: fonts.bodyEmphasized,
                                             ),
                                             const UiKitForwardButton(),
                                           ],
@@ -136,7 +137,7 @@ class _AuthenticatedProfileScreenViewState extends State<AuthenticatedProfileScr
                                         UiKitSpacing.x3.h,
                                         Text(
                                           l10n.profileScreen$SuggestSubscription,
-                                          style: context.fonts.xsLabel,
+                                          style: fonts.xsLabel,
                                         ),
                                         UiKitSpacing.x3.h,
                                         UiKitBigButton.regular(
@@ -147,6 +148,33 @@ class _AuthenticatedProfileScreenViewState extends State<AuthenticatedProfileScr
                                         ),
                                       ],
                                     ),
+                                  ),
+                                ),
+                              ),
+                              Padding(
+                                padding: const EdgeInsets.symmetric(
+                                  horizontal: UiKitSpacing.x2,
+                                ),
+                                child: UiKitBaseSectionWrapper(
+                                  child: Column(
+                                    children: [
+                                      Text(
+                                        l10n.profileScreen$AddInfo$Title,
+                                        style: fonts.bodyEmphasized,
+                                      ),
+                                      UiKitSpacing.x3.h,
+                                      Text(
+                                        l10n.profileScreen$AddInfo$Subtitle,
+                                        style: fonts.xsLabel,
+                                      ),
+                                      UiKitSpacing.x4.h,
+                                      UiKitBigButton.regular(
+                                        context: context,
+                                        label: l10n.profileScreen$AddInfo$Button$Label,
+                                        isExpanded: true,
+                                        onTap: () {},
+                                      ),
+                                    ],
                                   ),
                                 ),
                               ),

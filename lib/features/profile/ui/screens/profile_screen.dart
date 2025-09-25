@@ -18,7 +18,6 @@ import 'package:taro/features/settings/ui/widgets/settings_section_widget.dart';
 import 'package:tarot_ui_kit/ui_kit.dart';
 
 part '../widgets/profile_header_widget.dart';
-part '../widgets/profile_item.dart';
 part '../widgets/profile_refresh_indicator.dart';
 part '../widgets/screen_views/authenticated_profile_screen_view.dart';
 part '../widgets/screen_views/unauthenticated_profile_screen_view.dart';

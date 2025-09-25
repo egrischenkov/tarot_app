@@ -35,6 +35,7 @@
     "profileScreen$LoginButton$Label": "Entrar",
     "profileScreen$AddInfo$Title": "Complete seu perfil para desbloquear mais recursos!",
     "profileScreen$AddInfo$Subtitle": "Adicione data de nascimento, gênero, estado civil e até informações de trabalho — o app selecionará cartas do dia, tiragens e previsões personalizadas para você.",
+    "profileScreen$AddInfo$Button$Label": "Completar perfil",
     "profileScreen$JoinUs": "Junte-se a nós — e as cartas falarão só para você",
     "@segmentSettingsScreen": {
         "---------": "---------",

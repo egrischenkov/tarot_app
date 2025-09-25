@@ -71,6 +71,9 @@ class AppLocalizationsFr extends AppLocalizations {
   String get profileScreen$AddInfo$Subtitle => 'Ajoutez votre date de naissance, sexe, situation familiale et même des informations professionnelles — l’application vous proposera des cartes du jour, tirages et prévisions personnalisés.';
 
   @override
+  String get profileScreen$AddInfo$Button$Label => 'Compléter le profil';
+
+  @override
   String get profileScreen$JoinUs => 'Rejoignez-nous — et les cartes parleront rien que pour vous';
 
   @override
@@ -194,13 +197,13 @@ class AppLocalizationsFr extends AppLocalizations {
   String get feedbackFromScreen$CommentHint => 'Décris ton expérience avec l’application';
 
   @override
-  String get aboutScreen$Title => 'ऐप के बारे में';
+  String get aboutScreen$Title => 'À propos';
 
   @override
-  String get aboutScreen$PrivacyPolicy => 'गोपनीयता नीति';
+  String get aboutScreen$PrivacyPolicy => 'Politique de confidentialité';
 
   @override
-  String get aboutScreen$TermsOfService => 'सेवा की शर्तें';
+  String get aboutScreen$TermsOfService => 'Conditions d’utilisation';
 
   @override
   String share$Suggest(Object appLink, Object appName) {

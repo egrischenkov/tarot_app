@@ -2,6 +2,7 @@ import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:flutter_svg/svg.dart';
 import 'package:taro/app/domain/entities/theme_option.dart';
 import 'package:taro/app/ui/bloc/language/language_bloc.dart';
 import 'package:taro/app/ui/bloc/theme/theme_bloc.dart';
@@ -142,7 +143,7 @@ class _HomeScreenState extends State<HomeScreen> with TickerProviderStateMixin {
                 decoration: BoxDecoration(
                   gradient: LinearGradient(
                     begin: Alignment.topLeft,
-                    end: Alignment.bottomRight,
+                    end: Alignment.topRight,
                     colors: [colors.gradientFirst, colors.gradientSecond],
                   ),
                 ),
@@ -202,6 +203,7 @@ class _HomeScreenState extends State<HomeScreen> with TickerProviderStateMixin {
                                 final isPreviousSelected = card.id == _previousSelectedCard?.id;
 
                                 return MenuCardWidget(
+                                  key: ValueKey(card.id),
                                   name: card.getName(context),
                                   verticalOffset: animationValues.verticalOffset,
                                   horizontalOffset: animationValues.horizontalOffset,
@@ -217,9 +219,14 @@ class _HomeScreenState extends State<HomeScreen> with TickerProviderStateMixin {
                                           : const BorderRadius.vertical(
                                               top: Radius.circular(UiKitRadius.x6),
                                             ),
-                                  icon: Icon(
-                                    card.icon,
-                                    color: Colors.blueAccent,
+                                  icon: SvgPicture.asset(
+                                    card.iconPath,
+                                    height: UiKitSize.x8,
+                                    width: UiKitSize.x8,
+                                    colorFilter: ColorFilter.mode(
+                                      colors.icon,
+                                      BlendMode.srcIn,
+                                    ),
                                   ),
                                   onTap: () => _onCardTap(card, index, tabsRouter),
                                   backSideWidget: child,
@@ -297,12 +304,12 @@ class _HomeScreenState extends State<HomeScreen> with TickerProviderStateMixin {
 }
 
 extension on MenuCardModel {
-  IconData get icon {
+  String get iconPath {
     return switch (id) {
-      _HomeScreenState._dailyCardId => Icons.calendar_month,
-      _HomeScreenState._cardsCatalogId => Icons.celebration,
-      _HomeScreenState._yesNoId => Icons.food_bank,
-      _ => Icons.face,
+      _HomeScreenState._dailyCardId => Assets.icons.menu.tarotCard.path,
+      _HomeScreenState._cardsCatalogId => Assets.icons.menu.tarotCards.path,
+      _HomeScreenState._yesNoId => Assets.icons.menu.crystalBall.path,
+      _ => Assets.icons.menu.tarotCard.path,
     };
   }
 

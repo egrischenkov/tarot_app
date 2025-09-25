@@ -56,6 +56,14 @@ class MenuCardWidget extends StatelessWidget {
             decoration: BoxDecoration(
               color: context.colors.background,
               borderRadius: borderRadius,
+              gradient: LinearGradient(
+                begin: Alignment.topCenter,
+                end: Alignment.bottomCenter,
+                colors: [
+                  colors.borderGradientFirst,
+                  colors.borderGradientSecond,
+                ],
+              ),
               boxShadow: [
                 BoxShadow(
                   color: colors.shadow,
@@ -85,10 +93,12 @@ class MenuCardWidget extends StatelessWidget {
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
                             icon,
+                            UiKitSpacing.x2.h,
                             Text(
                               name,
                               style: context.fonts.xsLabel.copyWith(
                                 fontSize: width * 0.07,
+                                fontWeight: FontWeight.bold,
                               ),
                             ),
                           ],

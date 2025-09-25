@@ -71,6 +71,9 @@ class AppLocalizationsRu extends AppLocalizations {
   String get profileScreen$AddInfo$Subtitle => 'Добавьте дату рождения, пол, семейное положение и даже информацию о работе — и приложение будет подбирать для вас персональные карты дня, расклады и прогнозы, созданные специально под ваш профиль.';
 
   @override
+  String get profileScreen$AddInfo$Button$Label => 'Заполнить профиль';
+
+  @override
   String get profileScreen$JoinUs => 'Присоединяйтесь — и карты будут говорить только для вас';
 
   @override

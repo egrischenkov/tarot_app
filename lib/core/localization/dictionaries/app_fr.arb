@@ -35,6 +35,7 @@
     "profileScreen$LoginButton$Label": "Connexion",
     "profileScreen$AddInfo$Title": "Complétez votre profil pour débloquer plus de fonctionnalités !",
     "profileScreen$AddInfo$Subtitle": "Ajoutez votre date de naissance, sexe, situation familiale et même des informations professionnelles — l’application vous proposera des cartes du jour, tirages et prévisions personnalisés.",
+    "profileScreen$AddInfo$Button$Label": "Compléter le profil",
     "profileScreen$JoinUs": "Rejoignez-nous — et les cartes parleront rien que pour vous",
     "@segmentSettingsScreen": {
         "---------": "---------",
@@ -91,13 +92,6 @@
     "aboutScreen$Title": "À propos",
     "aboutScreen$PrivacyPolicy": "Politique de confidentialité",
     "aboutScreen$TermsOfService": "Conditions d’utilisation",
-    "@segmentAboutScreen": {
-        "---------": "---------",
-        "description": "About screen"
-    },
-    "aboutScreen$Title": "ऐप के बारे में",
-    "aboutScreen$PrivacyPolicy": "गोपनीयता नीति",
-    "aboutScreen$TermsOfService": "सेवा की शर्तें",
     "@segmentShareFeature": {
         "---------": "---------",
         "description": "Share feature"
