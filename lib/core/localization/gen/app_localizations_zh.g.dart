@@ -65,6 +65,12 @@ class AppLocalizationsZh extends AppLocalizations {
   String get profileScreen$LoginButton$Label => '登录';
 
   @override
+  String get profileScreen$AddInfo$Title => '完善您的资料以解锁更多功能！';
+
+  @override
+  String get profileScreen$AddInfo$Subtitle => '添加生日、性别、婚姻状况甚至工作信息 — 应用将为您挑选个性化的每日卡牌、牌阵和预测。';
+
+  @override
   String get settingsScreen$Title => '设置';
 
   @override

@@ -65,6 +65,12 @@ class AppLocalizationsRu extends AppLocalizations {
   String get profileScreen$LoginButton$Label => 'Вход';
 
   @override
+  String get profileScreen$AddInfo$Title => 'Заполните профиль, чтобы открыть больше возможностей!';
+
+  @override
+  String get profileScreen$AddInfo$Subtitle => 'Добавьте дату рождения, пол, семейное положение и даже информацию о работе — и приложение будет подбирать для вас персональные карты дня, расклады и прогнозы, созданные специально под ваш профиль.';
+
+  @override
   String get settingsScreen$Title => 'Настройки';
 
   @override

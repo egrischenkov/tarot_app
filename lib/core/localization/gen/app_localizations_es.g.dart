@@ -65,6 +65,12 @@ class AppLocalizationsEs extends AppLocalizations {
   String get profileScreen$LoginButton$Label => 'Acceder';
 
   @override
+  String get profileScreen$AddInfo$Title => 'Completa tu perfil para desbloquear más funciones.';
+
+  @override
+  String get profileScreen$AddInfo$Subtitle => 'Agrega tu fecha de nacimiento, género, estado civil e incluso información laboral — la aplicación elegirá cartas diarias, tiradas y predicciones personalizadas para ti.';
+
+  @override
   String get settingsScreen$Title => 'Ajustes';
 
   @override

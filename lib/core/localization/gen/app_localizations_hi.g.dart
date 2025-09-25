@@ -65,6 +65,12 @@ class AppLocalizationsHi extends AppLocalizations {
   String get profileScreen$LoginButton$Label => 'लॉगिन';
 
   @override
+  String get profileScreen$AddInfo$Title => 'अधिक सुविधाओं को अनलॉक करने के लिए अपनी प्रोफ़ाइल पूरी करें!';
+
+  @override
+  String get profileScreen$AddInfo$Subtitle => 'जन्मतिथि, लिंग, वैवाहिक स्थिति और यहाँ तक कि नौकरी की जानकारी जोड़ें — ऐप आपके लिए व्यक्तिगत दैनिक कार्ड, रीडिंग और भविष्यवाणियाँ चुनेगा।';
+
+  @override
   String get settingsScreen$Title => 'सेटिंग्स';
 
   @override

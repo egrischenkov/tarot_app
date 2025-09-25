@@ -33,6 +33,8 @@
     "profileScreen$ChooseSubscription": "Elegir suscripción",
     "profileScreen$SuggestSubscription": "¿Sin suscripción? Vamos a encontrar una",
     "profileScreen$LoginButton$Label": "Acceder",
+    "profileScreen$AddInfo$Title": "Completa tu perfil para desbloquear más funciones.",
+    "profileScreen$AddInfo$Subtitle": "Agrega tu fecha de nacimiento, género, estado civil e incluso información laboral — la aplicación elegirá cartas diarias, tiradas y predicciones personalizadas para ti.",
     "@segmentSettingsScreen": {
         "---------": "---------",
         "description": "Settings screen"

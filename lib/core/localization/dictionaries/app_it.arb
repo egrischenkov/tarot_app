@@ -33,6 +33,8 @@
     "profileScreen$ChooseSubscription": "Scegli un abbonamento",
     "profileScreen$SuggestSubscription": "Nessun abbonamento? Troviamone uno",
     "profileScreen$LoginButton$Label": "Accedi",
+    "profileScreen$AddInfo$Title": "Completa il tuo profilo per sbloccare più funzionalità!",
+    "profileScreen$AddInfo$Subtitle": "Aggiungi data di nascita, sesso, stato civile e persino informazioni sul lavoro — l'app selezionerà carte del giorno, stese e previsioni personalizzate per te.",
     "@segmentSettingsScreen": {
         "---------": "---------",
         "description": "Settings screen"

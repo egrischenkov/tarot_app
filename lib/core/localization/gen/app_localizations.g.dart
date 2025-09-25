@@ -217,6 +217,18 @@ abstract class AppLocalizations {
   /// **'Вход'**
   String get profileScreen$LoginButton$Label;
 
+  /// No description provided for @profileScreen$AddInfo$Title.
+  ///
+  /// In ru, this message translates to:
+  /// **'Заполните профиль, чтобы открыть больше возможностей!'**
+  String get profileScreen$AddInfo$Title;
+
+  /// No description provided for @profileScreen$AddInfo$Subtitle.
+  ///
+  /// In ru, this message translates to:
+  /// **'Добавьте дату рождения, пол, семейное положение и даже информацию о работе — и приложение будет подбирать для вас персональные карты дня, расклады и прогнозы, созданные специально под ваш профиль.'**
+  String get profileScreen$AddInfo$Subtitle;
+
   /// No description provided for @settingsScreen$Title.
   ///
   /// In ru, this message translates to:

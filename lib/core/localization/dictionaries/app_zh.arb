@@ -33,6 +33,8 @@
     "profileScreen$ChooseSubscription": "选择订阅",
     "profileScreen$SuggestSubscription": "没有订阅？我们来帮你选一个",
     "profileScreen$LoginButton$Label": "登录",
+    "profileScreen$AddInfo$Title": "完善您的资料以解锁更多功能！",
+    "profileScreen$AddInfo$Subtitle": "添加生日、性别、婚姻状况甚至工作信息 — 应用将为您挑选个性化的每日卡牌、牌阵和预测。",
     "@segmentSettingsScreen": {
         "---------": "---------",
         "description": "Settings screen"

@@ -33,6 +33,8 @@
     "profileScreen$ChooseSubscription": "Выбрать подписку",
     "profileScreen$SuggestSubscription": "Нет подписки? Давай подберем",
     "profileScreen$LoginButton$Label": "Вход",
+    "profileScreen$AddInfo$Title": "Заполните профиль, чтобы открыть больше возможностей!",
+    "profileScreen$AddInfo$Subtitle": "Добавьте дату рождения, пол, семейное положение и даже информацию о работе — и приложение будет подбирать для вас персональные карты дня, расклады и прогнозы, созданные специально под ваш профиль.",
     "@segmentSettingsScreen": {
         "---------": "---------",
         "description": "Settings screen"
