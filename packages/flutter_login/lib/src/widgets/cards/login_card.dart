@@ -13,6 +13,7 @@ class _LoginCard extends StatefulWidget {
     required this.userValidator,
     required this.validateUserImmediately,
     required this.passwordValidator,
+    required this.nameValidator,
     required this.onSwitchRecoveryPassword,
     required this.onSwitchSignUpAdditionalData,
     required this.userType,
@@ -40,6 +41,7 @@ class _LoginCard extends StatefulWidget {
   final FormFieldValidator<String>? userValidator;
   final bool? validateUserImmediately;
   final FormFieldValidator<String>? passwordValidator;
+  final FormFieldValidator<String>? nameValidator;
   final VoidCallback onSwitchRecoveryPassword;
   final VoidCallback onSwitchSignUpAdditionalData;
   final VoidCallback onSwitchConfirmSignup;
@@ -70,9 +72,11 @@ class _LoginCardState extends State<_LoginCard> with TickerProviderStateMixin {
 
   final _userFieldKey = GlobalKey<FormFieldState<void>>();
   final _userFocusNode = FocusNode();
+  final _nameFocusNode = FocusNode();
   final _passwordFocusNode = FocusNode();
   final _confirmPasswordFocusNode = FocusNode();
 
+  late TextEditingController _emailController;
   late TextEditingController _nameController;
   late TextEditingController _passController;
   late TextEditingController _confirmPassController;
@@ -101,7 +105,8 @@ class _LoginCardState extends State<_LoginCard> with TickerProviderStateMixin {
     super.initState();
 
     final auth = Provider.of<Auth>(context, listen: false);
-    _nameController = TextEditingController(text: auth.email);
+    _emailController = TextEditingController(text: auth.email);
+    _nameController = TextEditingController(text: auth.name);
     _passController = TextEditingController(text: auth.password);
     _confirmPassController = TextEditingController(text: auth.confirmPassword);
 
@@ -172,7 +177,7 @@ class _LoginCardState extends State<_LoginCard> with TickerProviderStateMixin {
     final messages = Provider.of<LoginMessages>(context, listen: false);
     final auth = Provider.of<Auth>(context, listen: false);
 
-    if (!_formKey.currentState!.validate()) {
+    if (!(_formKey.currentState?.validate() ?? false)) {
       return false;
     }
 
@@ -190,7 +195,8 @@ class _LoginCardState extends State<_LoginCard> with TickerProviderStateMixin {
       if (!widget.requireAdditionalSignUpFields) {
         error = await auth.onSignup!(
           SignupData.fromSignupForm(
-            name: auth.email,
+            email: auth.email,
+            name: auth.name,
             password: auth.password,
             termsOfService: auth.getTermsOfServiceResults(),
           ),
@@ -199,7 +205,8 @@ class _LoginCardState extends State<_LoginCard> with TickerProviderStateMixin {
         if (auth.beforeAdditionalFieldsCallback != null) {
           error = await auth.beforeAdditionalFieldsCallback!(
             SignupData.fromSignupForm(
-              name: auth.email,
+              email: auth.email,
+              name: auth.name,
               password: auth.password,
               termsOfService: auth.getTermsOfServiceResults(),
             ),
@@ -322,7 +329,8 @@ class _LoginCardState extends State<_LoginCard> with TickerProviderStateMixin {
       if (auth.beforeAdditionalFieldsCallback != null) {
         error = await auth.beforeAdditionalFieldsCallback!(
           SignupData.fromSignupForm(
-            name: auth.email,
+            email: auth.email,
+            name: auth.name,
             password: auth.password,
             termsOfService: auth.getTermsOfServiceResults(),
             additionalSignupData: auth.additionalSignupData,
@@ -359,7 +367,7 @@ class _LoginCardState extends State<_LoginCard> with TickerProviderStateMixin {
     return AnimatedTextFormField(
       textFormFieldKey: _userFieldKey,
       userType: widget.userType,
-      controller: _nameController,
+      controller: _emailController,
       width: width,
       loadingController: widget.loadingController,
       interval: _nameTextFieldLoadingAnimationInterval,
@@ -371,10 +379,39 @@ class _LoginCardState extends State<_LoginCard> with TickerProviderStateMixin {
       autofocus: widget.autofocus,
       focusNode: _userFocusNode,
       onFieldSubmitted: (value) {
-        FocusScope.of(context).requestFocus(_passwordFocusNode);
+        FocusScope.of(context).requestFocus(_nameFocusNode);
       },
       validator: widget.userValidator,
       onSaved: (value) => auth.email = value!,
+      enabled: !_isSubmitting,
+      initialIsoCode: widget.initialIsoCode,
+      labelStyle: widget.labelStyle,
+      textStyle: widget.textStyle,
+      prefixIconColor: widget.prefixIconColor,
+      suffixIconColor: widget.suffixIconColor,
+    );
+  }
+
+  Widget _buildNameField(double width, LoginMessages messages, Auth auth) {
+    return AnimatedTextFormField(
+      userType: LoginUserType.name,
+      controller: _nameController,
+      width: width,
+      loadingController: widget.loadingController,
+      interval: _nameTextFieldLoadingAnimationInterval,
+      labelText: messages.nameHint,
+      autofillHints: _isSubmitting ? null : [getAutofillHints(widget.userType)],
+      prefixIcon: Icon(FontAwesomeIcons.circleUser, color: widget.prefixIconColor),
+      keyboardType: TextInputType.name,
+      textInputAction: TextInputAction.next,
+      autofocus: widget.autofocus,
+      focusNode: _nameFocusNode,
+      onFieldSubmitted: (value) {
+        FocusScope.of(context).requestFocus(_passwordFocusNode);
+      },
+
+      validator: auth.mode == AuthMode.signup ? widget.nameValidator : null,
+      onSaved: (value) => auth.name = value!,
       enabled: !_isSubmitting,
       initialIsoCode: widget.initialIsoCode,
       labelStyle: widget.labelStyle,
@@ -500,36 +537,6 @@ class _LoginCardState extends State<_LoginCard> with TickerProviderStateMixin {
       ),
     );
   }
-
-  // Widget _buildProvidersLogInButton(ThemeData theme, LoginMessages messages,
-  //     Auth auth, LoginTheme loginTheme) {
-  //   return Row(
-  //       mainAxisAlignment: MainAxisAlignment.center,
-  //       children: auth.loginProviders.map((loginProvider) {
-  //         var index = auth.loginProviders.indexOf(loginProvider);
-  //         return Padding(
-  //           padding: loginTheme.providerButtonPadding ??
-  //               const EdgeInsets.symmetric(horizontal: 6.0, vertical: 8.0),
-  //           child: ScaleTransition(
-  //             scale: _buttonScaleAnimation,
-  //             child: Column(
-  //               children: [
-  //                 AnimatedIconButton(
-  //                   icon: loginProvider.icon,
-  //                   controller: _providerControllerList[index],
-  //                   tooltip: '',
-  //                   onPressed: () => _loginProviderSubmit(
-  //                     animationController: _providerControllerList[index],
-  //                     loginProvider: loginProvider,
-  //                   ),
-  //                 ),
-  //                 Text(loginProvider.label),
-  //               ],
-  //             ),
-  //           ),
-  //         );
-  //       }).toList());
-  // }
 
   Widget _buildProvidersLogInButton(ThemeData theme, LoginMessages messages, Auth auth, LoginTheme loginTheme) {
     final buttonProvidersList = <LoginProvider>[];
@@ -660,7 +667,7 @@ class _LoginCardState extends State<_LoginCard> with TickerProviderStateMixin {
       child: Column(
         children: [
           Container(
-            padding: const EdgeInsets.only(left: cardPadding, right: cardPadding, top: cardPadding + 10),
+            padding: const EdgeInsets.only(top: cardPadding + 10),
             width: cardWidth,
             child: AutofillGroup(
               child: Column(
@@ -668,10 +675,33 @@ class _LoginCardState extends State<_LoginCard> with TickerProviderStateMixin {
                 children: <Widget>[
                   if (widget.introWidget != null)
                     ScaleTransition(scale: _buttonScaleAnimation, child: widget.introWidget),
-                  _buildUserField(textFieldWidth, messages, auth),
+                  Padding(
+                    padding: const EdgeInsets.symmetric(horizontal: cardPadding),
+                    child: _buildUserField(textFieldWidth, messages, auth),
+                  ),
+                  ExpandableContainer(
+                    backgroundColor: _switchAuthController.isCompleted ? null : theme.colorScheme.secondary,
+                    controller: _switchAuthController,
+                    initialState: isLogin ? ExpandableContainerState.shrunk : ExpandableContainerState.expanded,
+                    alignment: Alignment.topLeft,
+                    color: theme.cardTheme.color,
+                    width: cardWidth,
+                    padding: const EdgeInsets.symmetric(horizontal: cardPadding),
+                    onExpandCompleted: () => _postSwitchAuthController.forward(),
+                    child: Column(
+                      children: [
+                        if (!isSignup || !widget.hideSignupPasswordFields) const SizedBox(height: 10),
+                        _buildNameField(textFieldWidth, messages, auth),
+                        for (final e in auth.termsOfService) TermCheckbox(termOfService: e, validation: auth.isSignup),
+                      ],
+                    ),
+                  ),
                   if (!isSignup || !widget.hideSignupPasswordFields) ...[
                     const SizedBox(height: 20),
-                    _buildPasswordField(textFieldWidth, messages, auth),
+                    Padding(
+                      padding: const EdgeInsets.symmetric(horizontal: cardPadding),
+                      child: _buildPasswordField(textFieldWidth, messages, auth),
+                    ),
                   ],
                   const SizedBox(height: 10),
                 ],

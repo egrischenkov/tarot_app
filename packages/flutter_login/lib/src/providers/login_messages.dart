@@ -44,6 +44,7 @@ class LoginMessages with ChangeNotifier {
     this.setPasswordButton = defaultSetPasswordButton,
     this.confirmRecoverSuccess = defaultConfirmRecoverSuccess,
     this.recoverCodePasswordDescription = defaultRecoverCodePasswordDescription,
+    this.nameHint,
   });
 
   /// Default hint for password field.
@@ -144,6 +145,9 @@ class LoginMessages with ChangeNotifier {
   /// Hint text of the userHint [TextField]
   /// Default will be selected based on userType
   final String? userHint;
+
+  /// Hint text of the user name [TextField]
+  final String? nameHint;
 
   /// Additional signup form button's label
   final String additionalSignUpSubmitButton;

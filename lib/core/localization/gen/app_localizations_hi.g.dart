@@ -208,6 +208,9 @@ class AppLocalizationsHi extends AppLocalizations {
   String get authScreen$Hint$Password => 'पासवर्ड';
 
   @override
+  String get authScreen$Hint$Name => 'Имя';
+
+  @override
   String get authScreen$Hint$ConfirmPassword => 'पासवर्ड की पुष्टि करें';
 
   @override
@@ -235,9 +238,6 @@ class AppLocalizationsHi extends AppLocalizations {
   String get authScreen$Error$InvalidEmail => 'अमान्य ईमेल!';
 
   @override
-  String get authScreen$Error$PasswordIsTooShort => 'Пароль слишком короткий!';
-
-  @override
   String get authScreen$Error$PasswordDoNotMatch => 'पासवर्ड मेल नहीं खाते!';
 
   @override
@@ -250,12 +250,12 @@ class AppLocalizationsHi extends AppLocalizations {
   String get authScreen$Title => 'स्वागत है!';
 
   @override
-  String authScreen$Error$TooLong(Object count) {
-    return 'पासवर्ड बहुत लंबा है — अधिकतम $count अक्षर';
+  String authScreen$Error$PasswordTooLong(Object count) {
+    return 'Пароль слишком длинный — максимум $count символа';
   }
 
   @override
-  String authScreen$Error$TooShort(Object count) {
+  String authScreen$Error$PasswordTooShort(Object count) {
     return 'पासवर्ड बहुत छोटा है — न्यूनतम $count अक्षर';
   }
 
@@ -273,4 +273,17 @@ class AppLocalizationsHi extends AppLocalizations {
 
   @override
   String get authScreen$Error$Title => 'त्रुटि';
+
+  @override
+  String authScreen$Error$TooShort(Object count) {
+    return 'पाठ बहुत छोटा है — न्यूनतम $count अक्षर';
+  }
+
+  @override
+  String authScreen$Error$TooLong(Object count) {
+    return 'पाठ बहुत लंबा है — अधिकतम $count अक्षर';
+  }
+
+  @override
+  String get authScreen$Success$AccountCreated => 'खाता सफलतापूर्वक बनाया गया';
 }

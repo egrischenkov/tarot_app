@@ -499,6 +499,12 @@ abstract class AppLocalizations {
   /// **'Пароль'**
   String get authScreen$Hint$Password;
 
+  /// No description provided for @authScreen$Hint$Name.
+  ///
+  /// In ru, this message translates to:
+  /// **'Имя'**
+  String get authScreen$Hint$Name;
+
   /// No description provided for @authScreen$Hint$ConfirmPassword.
   ///
   /// In ru, this message translates to:
@@ -553,12 +559,6 @@ abstract class AppLocalizations {
   /// **'Некорректный email!'**
   String get authScreen$Error$InvalidEmail;
 
-  /// No description provided for @authScreen$Error$PasswordIsTooShort.
-  ///
-  /// In ru, this message translates to:
-  /// **'Пароль слишком короткий!'**
-  String get authScreen$Error$PasswordIsTooShort;
-
   /// No description provided for @authScreen$Error$PasswordDoNotMatch.
   ///
   /// In ru, this message translates to:
@@ -583,17 +583,17 @@ abstract class AppLocalizations {
   /// **'Добро пожаловать!'**
   String get authScreen$Title;
 
-  /// No description provided for @authScreen$Error$TooLong.
+  /// No description provided for @authScreen$Error$PasswordTooLong.
   ///
   /// In ru, this message translates to:
   /// **'Пароль слишком длинный — максимум {count} символа'**
-  String authScreen$Error$TooLong(Object count);
+  String authScreen$Error$PasswordTooLong(Object count);
 
-  /// No description provided for @authScreen$Error$TooShort.
+  /// No description provided for @authScreen$Error$PasswordTooShort.
   ///
   /// In ru, this message translates to:
   /// **'Пароль слишком короткий — минимум {count} символов'**
-  String authScreen$Error$TooShort(Object count);
+  String authScreen$Error$PasswordTooShort(Object count);
 
   /// No description provided for @authScreen$Error$AtLeastOneUpper.
   ///
@@ -624,6 +624,24 @@ abstract class AppLocalizations {
   /// In ru, this message translates to:
   /// **'Ошибка'**
   String get authScreen$Error$Title;
+
+  /// No description provided for @authScreen$Error$TooShort.
+  ///
+  /// In ru, this message translates to:
+  /// **'Текст слишком короткий — минимум {count} символов'**
+  String authScreen$Error$TooShort(Object count);
+
+  /// No description provided for @authScreen$Error$TooLong.
+  ///
+  /// In ru, this message translates to:
+  /// **'Текст слишком длинный — максимум {count} символов'**
+  String authScreen$Error$TooLong(Object count);
+
+  /// No description provided for @authScreen$Success$AccountCreated.
+  ///
+  /// In ru, this message translates to:
+  /// **'Аккаунт успешно создан'**
+  String get authScreen$Success$AccountCreated;
 }
 
 class _AppLocalizationsDelegate extends LocalizationsDelegate<AppLocalizations> {

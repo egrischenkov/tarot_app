@@ -302,6 +302,7 @@ class FlutterLogin extends StatefulWidget {
     this.userValidator,
     this.validateUserImmediately,
     this.passwordValidator,
+    this.nameValidator,
     this.onSubmitAnimationCompleted,
     this.logoTag,
     this.userType = LoginUserType.email,
@@ -392,6 +393,9 @@ class FlutterLogin extends StatefulWidget {
 
   /// Same as [userValidator] but for password
   final FormFieldValidator<String>? passwordValidator;
+
+  /// Same as [userValidator] but for name
+  final FormFieldValidator<String>? nameValidator;
 
   /// Called after the submit animation's completed. Put your route transition
   /// logic here. Recommend to use with [logoTag] and [titleTag]
@@ -783,6 +787,7 @@ class _FlutterLoginState extends State<FlutterLogin> with TickerProviderStateMix
     final userValidator = widget.userValidator ?? FlutterLogin.defaultEmailValidator;
     final validateUserImmediately = widget.validateUserImmediately ?? false;
     final passwordValidator = widget.passwordValidator ?? FlutterLogin.defaultPasswordValidator;
+    final nameValidator = widget.nameValidator ?? FlutterLogin.defaultPasswordValidator;
 
     Widget footerWidget = const SizedBox();
     if (widget.footer != null) {
@@ -838,6 +843,7 @@ class _FlutterLoginState extends State<FlutterLogin> with TickerProviderStateMix
                 child: Stack(
                   alignment: Alignment.center,
                   children: <Widget>[
+                    ...?widget.children,
                     Positioned(
                       child: AuthCard(
                         key: authCardKey,
@@ -848,6 +854,7 @@ class _FlutterLoginState extends State<FlutterLogin> with TickerProviderStateMix
                         userValidator: userValidator,
                         validateUserImmediately: validateUserImmediately,
                         passwordValidator: passwordValidator,
+                        nameValidator: nameValidator,
                         onSubmit: _reverseHeaderAnimation,
                         onSubmitCompleted: widget.onSubmitAnimationCompleted,
                         hideSignUpButton: widget.onSignup == null,
@@ -872,7 +879,6 @@ class _FlutterLoginState extends State<FlutterLogin> with TickerProviderStateMix
                       child: _buildHeader(headerHeight, loginTheme),
                     ),
                     Positioned.fill(child: Align(alignment: Alignment.bottomCenter, child: footerWidget)),
-                    ...?widget.children,
                   ],
                 ),
               ),

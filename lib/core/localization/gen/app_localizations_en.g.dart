@@ -195,17 +195,20 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String share$Suggest(Object appLink, Object appName) {
-    return 'Попробуй $appName! Скачай здесь:\n$appLink';
+    return 'Try $appName! Download here:\n$appLink';
   }
 
   @override
-  String get share$Title => 'Поделитесь нашим приложением';
+  String get share$Title => 'Share our app';
 
   @override
   String get authScreen$Hint$Email => 'Email';
 
   @override
   String get authScreen$Hint$Password => 'Password';
+
+  @override
+  String get authScreen$Hint$Name => 'Имя';
 
   @override
   String get authScreen$Hint$ConfirmPassword => 'Confirm Password';
@@ -235,9 +238,6 @@ class AppLocalizationsEn extends AppLocalizations {
   String get authScreen$Error$InvalidEmail => 'Invalid email!';
 
   @override
-  String get authScreen$Error$PasswordIsTooShort => 'Пароль слишком короткий!';
-
-  @override
   String get authScreen$Error$PasswordDoNotMatch => 'Password do not match!';
 
   @override
@@ -250,12 +250,12 @@ class AppLocalizationsEn extends AppLocalizations {
   String get authScreen$Title => 'Welcome!';
 
   @override
-  String authScreen$Error$TooLong(Object count) {
+  String authScreen$Error$PasswordTooLong(Object count) {
     return 'Password is too long — maximum $count characters';
   }
 
   @override
-  String authScreen$Error$TooShort(Object count) {
+  String authScreen$Error$PasswordTooShort(Object count) {
     return 'Password is too short — minimum $count characters';
   }
 
@@ -273,4 +273,17 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get authScreen$Error$Title => 'Error';
+
+  @override
+  String authScreen$Error$TooShort(Object count) {
+    return 'Text is too short — minimum $count characters';
+  }
+
+  @override
+  String authScreen$Error$TooLong(Object count) {
+    return 'Text is too long — maximum $count characters';
+  }
+
+  @override
+  String get authScreen$Success$AccountCreated => 'Account created successfully';
 }

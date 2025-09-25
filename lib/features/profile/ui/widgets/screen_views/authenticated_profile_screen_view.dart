@@ -98,7 +98,15 @@ class _AuthenticatedProfileScreenViewState extends State<AuthenticatedProfileScr
                   ),
                   shrinkWrap: true,
                   children: [
-                    const ProfileHeaderWidget(name: 'Лолкек Лолкекович'),
+                    BlocBuilder<ProfileBloc, ProfileState>(
+                      builder: (context, state) {
+                        return ProfileHeaderWidget(
+                          name: state.mapOrNull(
+                            authenticated: (state) => state.user.name,
+                          ),
+                        );
+                      },
+                    ),
                     ColoredBox(
                       color: colors.backgroundSecondary,
                       child: Column(

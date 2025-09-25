@@ -39,7 +39,11 @@ class UiKitBottomSheetWrapper extends StatelessWidget {
           ),
           UiKitSpacing.x8.h,
           body,
-          UiKitSpacing.x6.h,
+          Padding(
+            padding: EdgeInsets.only(
+              bottom: MediaQuery.of(context).padding.bottom + UiKitSpacing.x4,
+            ),
+          ),
         ],
       ),
     );

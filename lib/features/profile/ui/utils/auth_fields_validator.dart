@@ -8,11 +8,26 @@ class AuthFieldsValidator {
 
   AuthFieldsValidator({required BuildContext context}) : _l10n = context.l10n;
 
-  String? userFieldValidator(String? value) {
+  String? emailFieldValidator(String? value) {
     return FlutterLogin.defaultEmailValidator(
       value,
       _l10n.authScreen$Error$InvalidEmail,
     );
+  }
+
+  String? nameFieldValidator(String? value) {
+    const minLength = 2;
+    const maxLength = 50;
+
+    if (value == null || value.length < minLength) {
+      return _l10n.authScreen$Error$TooShort(minLength);
+    }
+
+    if (value.length > maxLength) {
+      return _l10n.authScreen$Error$TooLong(maxLength);
+    }
+
+    return null;
   }
 
   String? passwordFieldValidator(String? value) {
@@ -25,11 +40,11 @@ class AuthFieldsValidator {
     final atLeastOneSpecialCharacter = RegExp(r'[!@#$%^&*(),.?":{}|<>]');
 
     if (value == null || value.length < minLength) {
-      return _l10n.authScreen$Error$TooShort(minLength);
+      return _l10n.authScreen$Error$PasswordTooShort(minLength);
     }
 
     if (value.length > maxLength) {
-      return _l10n.authScreen$Error$TooLong(maxLength);
+      return _l10n.authScreen$Error$PasswordTooLong(maxLength);
     }
 
     if (!atLeastOneUpperCaseCharacter.hasMatch(value)) {

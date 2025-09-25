@@ -558,16 +558,16 @@ void main() {
 
       // fail at validating - confirm password not match
       await simulateOpenSoftKeyboard(tester, loginBuilder());
-      await tester.enterText(findNameTextField(), user.name!);
+      await tester.enterText(findNameTextField(), user.email);
       await tester.pumpAndSettle();
-      await tester.enterText(findPasswordTextField(), user.password!);
+      await tester.enterText(findPasswordTextField(), user.password);
       await tester.pumpAndSettle();
       await tester.enterText(findConfirmPasswordTextField(), 'not-match');
       await tester.pumpAndSettle();
       clickSubmitButton();
       await tester.pumpAndSettle();
 
-      verifyNever(mockCallback.userValidator(invalidUser.name));
+      verifyNever(mockCallback.userValidator(invalidUser.email));
       verifyNever(mockCallback.passwordValidator(invalidUser.password));
       verifyNever(mockCallback.onSignup(any));
       verifyNever(mockCallback.onSubmitAnimationCompleted());
@@ -578,9 +578,9 @@ void main() {
       await simulateOpenSoftKeyboard(tester, loginBuilder());
       await tester.enterText(findNameTextField(), 'invalid-name');
       await tester.pumpAndSettle();
-      await tester.enterText(findPasswordTextField(), user.password!);
+      await tester.enterText(findPasswordTextField(), user.password);
       await tester.pumpAndSettle();
-      await tester.enterText(findConfirmPasswordTextField(), user.password!);
+      await tester.enterText(findConfirmPasswordTextField(), user.password);
       await tester.pumpAndSettle();
       clickSubmitButton();
       await tester.pumpAndSettle();
@@ -593,17 +593,17 @@ void main() {
 
       // fail at onSignup
       await simulateOpenSoftKeyboard(tester, loginBuilder());
-      await tester.enterText(findNameTextField(), invalidUser.name!);
+      await tester.enterText(findNameTextField(), invalidUser.email);
       await tester.pumpAndSettle();
-      await tester.enterText(findPasswordTextField(), invalidUser.password!);
+      await tester.enterText(findPasswordTextField(), invalidUser.password);
       await tester.pumpAndSettle();
-      await tester.enterText(findConfirmPasswordTextField(), invalidUser.password!);
+      await tester.enterText(findConfirmPasswordTextField(), invalidUser.password);
       await tester.pumpAndSettle();
       clickSubmitButton();
       await tester.pumpAndSettle();
 
       verifyInOrder([
-        mockCallback.userValidator(invalidUser.name),
+        mockCallback.userValidator(invalidUser.email),
         mockCallback.passwordValidator(invalidUser.password),
         mockCallback.onSignup(any),
       ]);
@@ -613,17 +613,17 @@ void main() {
 
       // pass
       await simulateOpenSoftKeyboard(tester, loginBuilder());
-      await tester.enterText(findNameTextField(), user.name!);
+      await tester.enterText(findNameTextField(), user.email);
       await tester.pumpAndSettle();
-      await tester.enterText(findPasswordTextField(), user.password!);
+      await tester.enterText(findPasswordTextField(), user.password);
       await tester.pumpAndSettle();
-      await tester.enterText(findConfirmPasswordTextField(), user.password!);
+      await tester.enterText(findConfirmPasswordTextField(), user.password);
       await tester.pumpAndSettle();
       clickSubmitButton();
       await tester.pumpAndSettle();
 
       verifyInOrder([
-        mockCallback.userValidator(user.name),
+        mockCallback.userValidator(user.email),
         mockCallback.passwordValidator(user.password),
         mockCallback.onSignup(any),
         mockCallback.onSubmitAnimationCompleted(),
@@ -663,16 +663,16 @@ void main() {
 
       // fail at validating - confirm password not match
       await simulateOpenSoftKeyboard(tester, loginBuilder());
-      await tester.enterText(findNameTextField(), user.name!);
+      await tester.enterText(findNameTextField(), user.email);
       await tester.pumpAndSettle();
-      await tester.enterText(findPasswordTextField(), user.password!);
+      await tester.enterText(findPasswordTextField(), user.password);
       await tester.pumpAndSettle();
       await tester.enterText(findConfirmPasswordTextField(), 'not-match');
       await tester.pumpAndSettle();
       clickSubmitButton();
       await tester.pumpAndSettle();
 
-      verifyNever(mockCallback.userValidator(invalidUser.name));
+      verifyNever(mockCallback.userValidator(invalidUser.email));
       verifyNever(mockCallback.passwordValidator(invalidUser.password));
       verifyNever(mockCallback.onSignup(any));
       verifyNever(mockCallback.onSubmitAnimationCompleted());
@@ -683,9 +683,9 @@ void main() {
       await simulateOpenSoftKeyboard(tester, loginBuilder());
       await tester.enterText(findNameTextField(), 'invalid-name');
       await tester.pumpAndSettle();
-      await tester.enterText(findPasswordTextField(), user.password!);
+      await tester.enterText(findPasswordTextField(), user.password);
       await tester.pumpAndSettle();
-      await tester.enterText(findConfirmPasswordTextField(), user.password!);
+      await tester.enterText(findConfirmPasswordTextField(), user.password);
       await tester.pumpAndSettle();
       clickSubmitButton();
       await tester.pumpAndSettle();
@@ -698,17 +698,17 @@ void main() {
 
       // fail at onSignup
       await simulateOpenSoftKeyboard(tester, loginBuilder());
-      await tester.enterText(findNameTextField(), invalidUser.name!);
+      await tester.enterText(findNameTextField(), invalidUser.email);
       await tester.pumpAndSettle();
-      await tester.enterText(findPasswordTextField(), invalidUser.password!);
+      await tester.enterText(findPasswordTextField(), invalidUser.password);
       await tester.pumpAndSettle();
-      await tester.enterText(findConfirmPasswordTextField(), invalidUser.password!);
+      await tester.enterText(findConfirmPasswordTextField(), invalidUser.password);
       await tester.pumpAndSettle();
       clickSubmitButton();
       await tester.pumpAndSettle();
 
       verifyInOrder([
-        mockCallback.userValidator(invalidUser.name),
+        mockCallback.userValidator(invalidUser.email),
         mockCallback.passwordValidator(invalidUser.password),
       ]);
       verifyNever(mockCallback.onSignup(any));

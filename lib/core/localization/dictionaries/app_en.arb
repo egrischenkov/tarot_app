@@ -94,8 +94,6 @@
     },
     "share$Suggest": "Try {appName}! Download here:\n{appLink}",
     "share$Title": "Share our app",
-    "share$Suggest": "Попробуй {appName}! Скачай здесь:\n{appLink}",
-    "share$Title": "Поделитесь нашим приложением",
     "@segmentAuthScreen": {
         "---------": "---------",
         "description": "Auth screen"
@@ -115,11 +113,14 @@
     "authScreen$Success$Success": "Success",
     "authScreen$Success$AnEmailSent": "An email has been sent",
     "authScreen$Title": "Welcome!",
-    "authScreen$Error$TooLong": "Password is too long — maximum {count} characters",
-    "authScreen$Error$TooShort": "Password is too short — minimum {count} characters",
+    "authScreen$Error$PasswordTooLong": "Password is too long — maximum {count} characters",
+    "authScreen$Error$PasswordTooShort": "Password is too short — minimum {count} characters",
     "authScreen$Error$AtLeastOneUpper": "Password must contain at least one uppercase letter",
     "authScreen$Error$AtLeastOneLower": "Password must contain at least one lowercase letter",
     "authScreen$Error$AtLeastOneNumber": "Password must contain at least one number",
     "authScreen$Error$AtLeastOneSpecCharacter": "Password must contain at least one special character",
-    "authScreen$Error$Title": "Error"
+    "authScreen$Error$Title": "Error",
+    "authScreen$Error$TooShort": "Text is too short — minimum {count} characters",
+    "authScreen$Error$TooLong": "Text is too long — maximum {count} characters",
+    "authScreen$Success$AccountCreated": "Account created successfully"
 }

@@ -117,7 +117,8 @@ class _AdditionalSignUpCardState extends State<_AdditionalSignUpCard> with Ticke
       case AuthType.userPassword:
         error = await auth.onSignup!(
           SignupData.fromSignupForm(
-            name: auth.email,
+            email: auth.email,
+            name: auth.name,
             password: auth.password,
             additionalSignupData: auth.additionalSignupData,
             termsOfService: auth.getTermsOfServiceResults(),

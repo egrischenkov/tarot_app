@@ -10,9 +10,10 @@ import 'package:quiver/core.dart';
 class SignupData {
   /// Creates a [SignupData] instance for traditional signup forms.
   ///
-  /// Includes [name], [password], optional [additionalSignupData], and
+  /// Includes [email], [password], optional [additionalSignupData], and
   /// agreed-to [termsOfService].
   const SignupData.fromSignupForm({
+    required this.email,
     required this.name,
     required this.password,
     this.additionalSignupData,
@@ -21,21 +22,25 @@ class SignupData {
 
   /// Creates a [SignupData] instance for third-party provider signups.
   ///
-  /// Skips [name] and [password], which are expected to be handled by the provider.
+  /// Skips [email] and [password], which are expected to be handled by the provider.
   /// Includes [additionalSignupData] and [termsOfService].
   const SignupData.fromProvider({required this.additionalSignupData, this.termsOfService = const []})
-    : name = null,
-      password = null;
+    : email = '',
+      name = '',
+      password = '';
 
   /// The user's identifier (e.g. email, username).
   ///
   /// `null` when using a third-party provider.
-  final String? name;
+  final String email;
+
+  /// The user's name.
+  final String name;
 
   /// The user's password.
   ///
   /// `null` when using a third-party provider.
-  final String? password;
+  final String password;
 
   /// List of terms of service and their acceptance status.
   final List<TermOfServiceResult> termsOfService;
@@ -46,11 +51,11 @@ class SignupData {
   @override
   bool operator ==(Object other) {
     if (other is SignupData) {
-      return name == other.name && password == other.password && additionalSignupData == other.additionalSignupData;
+      return email == other.email && password == other.password && additionalSignupData == other.additionalSignupData;
     }
     return false;
   }
 
   @override
-  int get hashCode => hash3(name, password, additionalSignupData);
+  int get hashCode => hash3(email, password, additionalSignupData);
 }

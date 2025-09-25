@@ -113,11 +113,14 @@
     "authScreen$Success$Success": "सफलता",
     "authScreen$Success$AnEmailSent": "ईमेल भेजा गया",
     "authScreen$Title": "स्वागत है!",
-    "authScreen$Error$TooLong": "पासवर्ड बहुत लंबा है — अधिकतम {count} अक्षर",
-    "authScreen$Error$TooShort": "पासवर्ड बहुत छोटा है — न्यूनतम {count} अक्षर",
+    "authScreen$PasswordError$TooLong": "पासवर्ड बहुत लंबा है — अधिकतम {count} अक्षर",
+    "authScreen$Error$PasswordTooShort": "पासवर्ड बहुत छोटा है — न्यूनतम {count} अक्षर",
     "authScreen$Error$AtLeastOneUpper": "पासवर्ड में कम से कम एक बड़ा अक्षर होना चाहिए",
     "authScreen$Error$AtLeastOneLower": "पासवर्ड में कम से कम एक छोटा अक्षर होना चाहिए",
     "authScreen$Error$AtLeastOneNumber": "पासवर्ड में कम से कम एक अंक होना चाहिए",
     "authScreen$Error$AtLeastOneSpecCharacter": "पासवर्ड में कम से कम एक विशेष वर्ण होना चाहिए",
-    "authScreen$Error$Title": "त्रुटि"
+    "authScreen$Error$Title": "त्रुटि",
+    "authScreen$Error$TooShort": "पाठ बहुत छोटा है — न्यूनतम {count} अक्षर",
+    "authScreen$Error$TooLong": "पाठ बहुत लंबा है — अधिकतम {count} अक्षर",
+    "authScreen$Success$AccountCreated": "खाता सफलतापूर्वक बनाया गया"
 }

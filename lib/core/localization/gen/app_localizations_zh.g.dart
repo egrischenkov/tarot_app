@@ -208,6 +208,9 @@ class AppLocalizationsZh extends AppLocalizations {
   String get authScreen$Hint$Password => '密码';
 
   @override
+  String get authScreen$Hint$Name => 'Имя';
+
+  @override
   String get authScreen$Hint$ConfirmPassword => '确认密码';
 
   @override
@@ -235,9 +238,6 @@ class AppLocalizationsZh extends AppLocalizations {
   String get authScreen$Error$InvalidEmail => '邮箱无效！';
 
   @override
-  String get authScreen$Error$PasswordIsTooShort => 'Пароль слишком короткий!';
-
-  @override
   String get authScreen$Error$PasswordDoNotMatch => '两次输入的密码不一致！';
 
   @override
@@ -250,12 +250,12 @@ class AppLocalizationsZh extends AppLocalizations {
   String get authScreen$Title => '欢迎！';
 
   @override
-  String authScreen$Error$TooLong(Object count) {
+  String authScreen$Error$PasswordTooLong(Object count) {
     return '密码太长 — 最多 $count 个字符';
   }
 
   @override
-  String authScreen$Error$TooShort(Object count) {
+  String authScreen$Error$PasswordTooShort(Object count) {
     return '密码太短 — 最少 $count 个字符';
   }
 
@@ -273,4 +273,17 @@ class AppLocalizationsZh extends AppLocalizations {
 
   @override
   String get authScreen$Error$Title => '错误';
+
+  @override
+  String authScreen$Error$TooShort(Object count) {
+    return '文本太短 — 最少 $count 个字符';
+  }
+
+  @override
+  String authScreen$Error$TooLong(Object count) {
+    return '文本太长 — 最多 $count 个字符';
+  }
+
+  @override
+  String get authScreen$Success$AccountCreated => '账户创建成功';
 }

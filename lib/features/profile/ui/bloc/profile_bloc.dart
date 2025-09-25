@@ -53,6 +53,7 @@ class ProfileBloc extends Bloc<ProfileEvent, ProfileState> {
         loggedOut: (event) => _onLoggedOut(event, emit),
         signedUp: (event) => _onSingedUp(event, emit),
         deletedAccount: (event) => _onDeletedAccount(event, emit),
+        confirmed: (event) => _onConfirmedSignUp(event, emit),
       ),
     );
   }
@@ -72,6 +73,7 @@ class ProfileBloc extends Bloc<ProfileEvent, ProfileState> {
       );
 
       // TODO(egrischenkov): refactor it when backend will be ready
+      // change name to name from backend and other information
       final user = User(email: event.email, name: event.email);
       await _saveUserUseCase.saveUser(
         user: user,
@@ -119,12 +121,34 @@ class ProfileBloc extends Bloc<ProfileEvent, ProfileState> {
       // Simulates network request
       await Future.delayed(const Duration(seconds: 4));
 
+      // TODO(egrischenkov): refactor it when backend will be ready
+
+      emit(const ProfileState.idle());
+    } catch (e, s) {
+      addError(e, s);
+
+      emit(const ProfileState.error());
+    }
+  }
+
+  Future<void> _onConfirmedSignUp(
+    ProfileEvent$Confirmed event,
+    Emitter<ProfileState> emit,
+  ) async {
+    try {
+      emit(const ProfileState.loading());
+
+      // Simulates network request
+      await Future.delayed(const Duration(seconds: 4));
+
       await _setAuthStatusUseCase.setCurrentUserAuthenticationStatus(
         status: UserAuthenticationStatus.authenticated,
       );
 
-      // TODO(egrischenkov): refactor it when backend will be ready
-      final user = User(email: event.email, name: event.name);
+      final user = User(
+        email: event.email,
+        name: event.name,
+      );
       await _saveUserUseCase.saveUser(
         user: user,
       );

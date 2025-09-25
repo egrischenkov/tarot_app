@@ -64,7 +64,10 @@ class _ConfirmSignupCardState extends State<_ConfirmSignupCard> with SingleTicke
     _formRecoverKey.currentState!.save();
     await _fieldSubmitController.forward();
     setState(() => _isSubmitting = true);
-    final error = await auth.onConfirmSignup!(_code, LoginData(name: auth.email, password: auth.password));
+    final error = await auth.onConfirmSignup!(
+      _code,
+      SignupData.fromSignupForm(email: auth.email, name: auth.name, password: auth.password),
+    );
 
     if (error != null) {
       if (mounted) {
@@ -102,7 +105,8 @@ class _ConfirmSignupCardState extends State<_ConfirmSignupCard> with SingleTicke
     setState(() => _isSubmitting = true);
     final error = await auth.onResendCode!(
       SignupData.fromSignupForm(
-        name: auth.email,
+        email: auth.email,
+        name: auth.name,
         password: auth.password,
         termsOfService: auth.getTermsOfServiceResults(),
       ),

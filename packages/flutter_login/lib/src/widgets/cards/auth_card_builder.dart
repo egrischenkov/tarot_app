@@ -55,6 +55,7 @@ class AuthCard extends StatefulWidget {
     this.userValidator,
     this.validateUserImmediately,
     this.passwordValidator,
+    this.nameValidator,
     this.onSubmit,
     this.onSubmitCompleted,
     this.hideForgotPasswordButton = false,
@@ -83,6 +84,9 @@ class AuthCard extends StatefulWidget {
 
   /// Validator for the password input field.
   final FormFieldValidator<String>? passwordValidator;
+
+  /// Validator for the name input field.
+  final FormFieldValidator<String>? nameValidator;
 
   /// Called when the form is submitted (e.g., login/signup).
   final VoidCallback? onSubmit;
@@ -400,6 +404,7 @@ class AuthCardState extends State<AuthCard> with TickerProviderStateMixin {
             userValidator: widget.userValidator,
             validateUserImmediately: widget.validateUserImmediately,
             passwordValidator: widget.passwordValidator,
+            nameValidator: widget.nameValidator,
             requireAdditionalSignUpFields: widget.additionalSignUpFields != null,
             onSwitchRecoveryPassword: () => _changeCard(_recoveryIndex),
             onSwitchSignUpAdditionalData: () => _changeCard(_additionalSignUpIndex),

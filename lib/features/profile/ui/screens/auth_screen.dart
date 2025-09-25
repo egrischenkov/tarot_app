@@ -49,6 +49,7 @@ class _AuthScreenState extends State<AuthScreen> {
               labelStyle: context.fonts.bodyRegular.copyWith(
                 color: colors.textDisabled,
               ),
+              cardTopPosition: 200,
               pageColorDark: colors.accentTertiary,
               pageColorLight: colors.accent,
               buttonTheme: LoginButtonTheme(
@@ -127,17 +128,20 @@ class _AuthScreenState extends State<AuthScreen> {
               recoverPasswordSuccess: l10n.authScreen$Success$AnEmailSent,
               confirmPasswordError: l10n.authScreen$Error$PasswordDoNotMatch,
               flushbarTitleError: l10n.authScreen$Error$Title,
+              nameHint: l10n.authScreen$Hint$Name,
+              confirmSignupSuccess: l10n.authScreen$Success$AccountCreated,
             ),
-            userValidator: fieldsValidator.userFieldValidator,
+            userValidator: fieldsValidator.emailFieldValidator,
             passwordValidator: fieldsValidator.passwordFieldValidator,
-            onLogin: waitForLoginResult,
+            nameValidator: fieldsValidator.nameFieldValidator,
+            onLogin: _waitForLoginResult,
+            onConfirmSignup: _waitForConfirmationResult,
             onRecoverPassword: (_) {
               return Future.value();
             },
-            onSignup: (_) {
-              return Future.value();
-            },
+            onSignup: _waitForSignUpResult,
             headerWidget: LottieBuilder.asset(Assets.lottie.signUp),
+            children: [LottieBuilder.asset(Assets.lottie.onboardingBg2)],
           ),
           Positioned(
             left: UiKitSpacing.x4,
@@ -149,7 +153,7 @@ class _AuthScreenState extends State<AuthScreen> {
     );
   }
 
-  Future<String?> waitForLoginResult(LoginData data) {
+  Future<String?> _waitForLoginResult(LoginData data) {
     final completer = Completer<String?>();
 
     profileBloc.add(ProfileEvent.loggedIn(email: data.name, password: data.password));
@@ -164,7 +168,76 @@ class _AuthScreenState extends State<AuthScreen> {
         error: (state) {
           if (!completer.isCompleted) {
             // TODO(egrischenkov): pass error message from state when backend will be ready
-            // Also it's necessary to add error message to state
+            completer.complete('Error');
+          }
+        },
+      );
+    });
+
+    return completer.future
+      ..whenComplete(() {
+        subscription.cancel();
+      })
+      ..then((value) {
+        if (value == null) {
+          router.pop();
+        }
+      });
+  }
+
+  Future<String?> _waitForSignUpResult(SignupData data) {
+    final completer = Completer<String?>();
+
+    profileBloc.add(
+      ProfileEvent.signedUp(
+        email: data.name,
+        name: data.name,
+        password: data.password,
+      ),
+    );
+
+    final subscription = profileBloc.stream.listen((state) {
+      state.mapOrNull(
+        idle: (state) {
+          if (!completer.isCompleted) {
+            completer.complete(null);
+          }
+        },
+        error: (state) {
+          if (!completer.isCompleted) {
+            // TODO(egrischenkov): pass error message from state when backend will be ready
+            completer.complete('Error');
+          }
+        },
+      );
+    });
+
+    return completer.future
+      ..whenComplete(() {
+        subscription.cancel();
+      });
+  }
+
+  Future<String?> _waitForConfirmationResult(String code, SignupData data) {
+    final completer = Completer<String?>();
+
+    profileBloc.add(
+      ProfileEvent.confirmed(
+        code: code,
+        email: data.email,
+        name: data.name,
+      ),
+    );
+
+    final subscription = profileBloc.stream.listen((state) {
+      state.mapOrNull(
+        authenticated: (state) {
+          if (!completer.isCompleted) {
+            completer.complete(null);
+          }
+        },
+        error: (state) {
+          if (!completer.isCompleted) {
             completer.complete('Error');
           }
         },

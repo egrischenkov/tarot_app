@@ -113,11 +113,14 @@
     "authScreen$Success$Success": "Éxito",
     "authScreen$Success$AnEmailSent": "Se ha enviado un correo",
     "authScreen$Title": "¡Bienvenido!",
-    "authScreen$Error$TooLong": "La contraseña es demasiado larga — máximo {count} caracteres",
-    "authScreen$Error$TooShort": "La contraseña es demasiado corta — mínimo {count} caracteres",
+    "authScreen$Error$PasswordTooLong": "La contraseña es demasiado larga — máximo {count} caracteres",
+    "authScreen$Error$PasswordTooShort": "La contraseña es demasiado corta — mínimo {count} caracteres",
     "authScreen$Error$AtLeastOneUpper": "La contraseña debe contener al menos una letra mayúscula",
     "authScreen$Error$AtLeastOneLower": "La contraseña debe contener al menos una letra minúscula",
     "authScreen$Error$AtLeastOneNumber": "La contraseña debe contener al menos un número",
     "authScreen$Error$AtLeastOneSpecCharacter": "La contraseña debe contener al menos un carácter especial",
-    "authScreen$Error$Title": "Error"
+    "authScreen$Error$Title": "Error",
+    "authScreen$Error$TooShort": "El texto es demasiado corto — mínimo {count} caracteres",
+    "authScreen$Error$TooLong": "El texto es demasiado largo — máximo {count} caracteres",
+    "authScreen$Success$AccountCreated": "Cuenta creada con éxito"
 }

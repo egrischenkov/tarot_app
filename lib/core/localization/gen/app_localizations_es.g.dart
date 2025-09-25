@@ -208,6 +208,9 @@ class AppLocalizationsEs extends AppLocalizations {
   String get authScreen$Hint$Password => 'Contraseña';
 
   @override
+  String get authScreen$Hint$Name => 'Имя';
+
+  @override
   String get authScreen$Hint$ConfirmPassword => 'Confirmar contraseña';
 
   @override
@@ -235,9 +238,6 @@ class AppLocalizationsEs extends AppLocalizations {
   String get authScreen$Error$InvalidEmail => '¡Correo no válido!';
 
   @override
-  String get authScreen$Error$PasswordIsTooShort => 'Пароль слишком короткий!';
-
-  @override
   String get authScreen$Error$PasswordDoNotMatch => '¡Las contraseñas no coinciden!';
 
   @override
@@ -250,12 +250,12 @@ class AppLocalizationsEs extends AppLocalizations {
   String get authScreen$Title => '¡Bienvenido!';
 
   @override
-  String authScreen$Error$TooLong(Object count) {
+  String authScreen$Error$PasswordTooLong(Object count) {
     return 'La contraseña es demasiado larga — máximo $count caracteres';
   }
 
   @override
-  String authScreen$Error$TooShort(Object count) {
+  String authScreen$Error$PasswordTooShort(Object count) {
     return 'La contraseña es demasiado corta — mínimo $count caracteres';
   }
 
@@ -273,4 +273,17 @@ class AppLocalizationsEs extends AppLocalizations {
 
   @override
   String get authScreen$Error$Title => 'Error';
+
+  @override
+  String authScreen$Error$TooShort(Object count) {
+    return 'El texto es demasiado corto — mínimo $count caracteres';
+  }
+
+  @override
+  String authScreen$Error$TooLong(Object count) {
+    return 'El texto es demasiado largo — máximo $count caracteres';
+  }
+
+  @override
+  String get authScreen$Success$AccountCreated => 'Cuenta creada con éxito';
 }

@@ -42,10 +42,10 @@ List<LoginData> loginStubCallback(MockCallback mockCallback) {
 List<SignupData> signupStubCallback(MockCallback mockCallback) {
   reset(mockCallback);
 
-  const user = SignupData.fromSignupForm(name: 'near@gmail.com', password: '12345');
-  const invalidUser = SignupData.fromSignupForm(name: 'not.exists@gmail.com', password: '');
+  const user = SignupData.fromSignupForm(email: 'near@gmail.com', name: 'lolkek', password: '12345');
+  const invalidUser = SignupData.fromSignupForm(email: 'not.exists@gmail.com', name: 'lolkek', password: '');
 
-  when(mockCallback.userValidator(user.name)).thenReturn(null);
+  when(mockCallback.userValidator(user.email)).thenReturn(null);
   when(mockCallback.userValidator('invalid-name')).thenReturn('Invalid!');
 
   when(mockCallback.passwordValidator(user.password)).thenReturn(null);

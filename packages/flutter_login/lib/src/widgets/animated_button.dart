@@ -70,9 +70,6 @@ class _AnimatedButtonState extends State<AnimatedButton> with SingleTickerProvid
       end: 0,
     ).animate(CurvedAnimation(parent: widget.controller!, curve: const Interval(0, .25)));
 
-    // _colorAnimation
-    // _width, _sizeAnimation
-
     _buttonOpacityAnimation = Tween<double>(
       begin: 1,
       end: 0,
@@ -200,13 +197,14 @@ class _AnimatedButtonState extends State<AnimatedButton> with SingleTickerProvid
             splashColor: buttonTheme.splashColor,
             customBorder: buttonTheme.shape,
             onHighlightChanged: (value) => setState(() => _hover = value),
+
             child: SizeTransition(
               sizeFactor: _sizeAnimation,
               axis: Axis.horizontal,
               child: Container(
+                alignment: Alignment.center,
                 width: _width,
                 height: _height,
-                alignment: Alignment.center,
                 child: _buildButtonText(theme),
               ),
             ),
