@@ -181,6 +181,7 @@ class AuthCardState extends State<AuthCard> with TickerProviderStateMixin {
 
   // Card specific animations
   late Animation<double> _flipAnimation;
+  late Animation<double> _opacityAnimation;
   late Animation<double> _cardSizeAnimation;
   late Animation<double> _cardSize2AnimationX;
   late Animation<double> _cardSize2AnimationY;
@@ -203,6 +204,10 @@ class AuthCardState extends State<AuthCard> with TickerProviderStateMixin {
     _flipAnimation = Tween<double>(begin: pi / 2, end: 0).animate(
       CurvedAnimation(parent: widget.loadingController, curve: Curves.easeOutBack, reverseCurve: Curves.easeIn),
     );
+    _opacityAnimation = Tween<double>(
+      begin: 0,
+      end: 1,
+    ).animate(CurvedAnimation(parent: widget.loadingController, curve: const Interval(0, 1, curve: Curves.easeIn)));
 
     _formLoadingController = AnimationController(
       vsync: this,
@@ -349,10 +354,13 @@ class AuthCardState extends State<AuthCard> with TickerProviderStateMixin {
     card = AnimatedBuilder(
       animation: _flipAnimation,
       builder:
-          (context, child) => Transform(
-            transform: perspective()..rotateX(_flipAnimation.value),
-            alignment: Alignment.center,
-            child: child,
+          (context, child) => FadeTransition(
+            opacity: _opacityAnimation,
+            child: Transform(
+              transform: perspective()..rotateX(_flipAnimation.value),
+              alignment: Alignment.center,
+              child: child,
+            ),
           ),
       child: child,
     );
