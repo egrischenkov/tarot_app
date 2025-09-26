@@ -1,7 +1,8 @@
+import 'package:equatable/equatable.dart';
 import 'package:taro/features/profile/domain/entities/gender.dart';
 import 'package:taro/features/profile/domain/entities/marital_status.dart';
 
-class User {
+class User extends Equatable {
   final String email;
   final String name;
   final String? birthDate;
@@ -24,4 +25,14 @@ class User {
       name: '',
     );
   }
+
+  @override
+  List<Object?> get props => [
+        email,
+        name,
+        birthDate,
+        job,
+        gender,
+        maritalStatus,
+      ];
 }
