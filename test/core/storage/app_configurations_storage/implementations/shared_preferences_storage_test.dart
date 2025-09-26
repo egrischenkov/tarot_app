@@ -157,5 +157,71 @@ void main() {
         ),
       ).called(1);
     });
+
+    test('setUserAuthenticated success', () async {
+      when(() => sharedPreferencesMock.setBool('is_user_authenticated', true)).thenAnswer((_) async => true);
+
+      await sharedPreferencesStorage.setUserAuthenticated(value: true);
+
+      verify(() => sharedPreferencesMock.setBool('is_user_authenticated', true)).called(1);
+    });
+
+    test('setUserAuthenticated logs on failure', () async {
+      when(() => sharedPreferencesMock.setBool(any(), any())).thenThrow(Exception('fail'));
+
+      await sharedPreferencesStorage.setUserAuthenticated(value: true);
+
+      verify(
+        () => loggerMock.error(
+          any(),
+          error: any(named: 'error'),
+          stackTrace: any(named: 'stackTrace'),
+        ),
+      ).called(1);
+    });
+
+    test('setUser success', () async {
+      when(() => sharedPreferencesMock.setString('user', '{"name":"Test"}')).thenAnswer((_) async => true);
+
+      await sharedPreferencesStorage.setUser(user: '{"name":"Test"}');
+
+      verify(() => sharedPreferencesMock.setString('user', '{"name":"Test"}')).called(1);
+    });
+
+    test('setUser logs on failure', () async {
+      when(() => sharedPreferencesMock.setString(any(), any())).thenThrow(Exception('fail'));
+
+      await sharedPreferencesStorage.setUser(user: '{"name":"Test"}');
+
+      verify(
+        () => loggerMock.error(
+          any(),
+          error: any(named: 'error'),
+          stackTrace: any(named: 'stackTrace'),
+        ),
+      ).called(1);
+    });
+
+    test('removeUser success', () async {
+      when(() => sharedPreferencesMock.remove('user')).thenAnswer((_) async => true);
+
+      await sharedPreferencesStorage.removeUser();
+
+      verify(() => sharedPreferencesMock.remove('user')).called(1);
+    });
+
+    test('removeUser logs on failure', () async {
+      when(() => sharedPreferencesMock.remove(any())).thenThrow(Exception('fail'));
+
+      await sharedPreferencesStorage.removeUser();
+
+      verify(
+        () => loggerMock.error(
+          any(),
+          error: any(named: 'error'),
+          stackTrace: any(named: 'stackTrace'),
+        ),
+      ).called(1);
+    });
   });
 }
