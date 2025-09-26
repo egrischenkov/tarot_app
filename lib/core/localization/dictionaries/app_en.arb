@@ -105,7 +105,7 @@
     "authScreen$Hint$Email": "Email",
     "authScreen$Hint$Password": "Password",
     "authScreen$Hint$ConfirmPassword": "Confirm Password",
-    "authScreen$$Label$ForgotPassword": "Forgot Password?",
+    "authScreen$Label$ForgotPassword": "Forgot Password?",
     "authScreen$Label$Login": "Login",
     "authScreen$Label$SignUp": "Sign Up",
     "authScreen$Label$Recover": "Recover",

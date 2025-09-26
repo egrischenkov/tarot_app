@@ -226,7 +226,7 @@ class AppLocalizationsEn extends AppLocalizations {
   String get authScreen$Hint$ConfirmPassword => 'Confirm Password';
 
   @override
-  String get authScreen$Label$ForgotPassword => 'Забыли пароль?';
+  String get authScreen$Label$ForgotPassword => 'Forgot Password?';
 
   @override
   String get authScreen$Label$Login => 'Login';
