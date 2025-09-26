@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:taro/core/extensions/context_extension.dart';
 import 'package:taro/features/feedback_form/domain/entities/rate_type.dart';
 import 'package:tarot_ui_kit/ui_kit.dart';
@@ -48,6 +49,7 @@ class _RatePickerWidgetState extends State<RatePickerWidget> {
   }
 
   void _onEmojiItemTap(RateType rate) {
+    HapticFeedback.mediumImpact();
     widget.onSelect(rate);
     setState(() {
       selectedRateType = rate;

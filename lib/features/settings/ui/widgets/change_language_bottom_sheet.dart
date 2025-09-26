@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:taro/app/domain/entities/language_option.dart';
 import 'package:taro/app/ui/bloc/language/language_bloc.dart';
@@ -50,6 +51,7 @@ class ChangeLanguageBottomSheet extends StatelessWidget {
   }
 
   void _onLanguageOptionTap(BuildContext context, LanguageOption languageOption) {
+    HapticFeedback.mediumImpact();
     context.read<LanguageBloc>().add(
           LanguageEvent.languageChanged(
             languageOption: languageOption,

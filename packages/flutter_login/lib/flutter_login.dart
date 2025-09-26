@@ -567,7 +567,7 @@ class _FlutterLoginState extends State<FlutterLogin> with TickerProviderStateMix
     _logoController = AnimationController(vsync: this, duration: loadingDuration);
     _titleController = AnimationController(vsync: this, duration: loadingDuration);
 
-    Future.delayed(const Duration(seconds: 1), () {
+    Future.delayed(const Duration(milliseconds: 200), () {
       if (mounted) {
         _loadingController.forward();
       }
@@ -843,7 +843,6 @@ class _FlutterLoginState extends State<FlutterLogin> with TickerProviderStateMix
                 child: Stack(
                   alignment: Alignment.center,
                   children: <Widget>[
-                    ...?widget.children,
                     Positioned(
                       child: AuthCard(
                         key: authCardKey,
