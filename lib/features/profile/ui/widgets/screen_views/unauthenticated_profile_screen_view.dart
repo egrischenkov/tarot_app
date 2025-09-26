@@ -17,16 +17,22 @@ class _UnauthenticatedProfileScreenViewState extends State<UnauthenticatedProfil
       title: l10n.profileScreen$Title,
       bodyWithAppBarOffset: true,
       onBack: context.router.pop,
-      body: Padding(
-        padding: const EdgeInsets.symmetric(horizontal: UiKitSize.x2),
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: intersperse(
-            UiKitSpacing.x4.h,
-            [
-              LottieBuilder.asset(Assets.lottie.signUp),
-              Text(l10n.profileScreen$JoinUs, style: fonts.headlineLarge),
-              UiKitBorderBeam(
+      body: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: intersperse(
+          UiKitSpacing.x4.h,
+          [
+            Align(
+              alignment: Alignment.center,
+              child: LottieBuilder.asset(Assets.lottie.signUp),
+            ),
+            Padding(
+              padding: const EdgeInsets.symmetric(horizontal: UiKitSpacing.x2),
+              child: Text(l10n.profileScreen$JoinUs, style: fonts.headlineLarge),
+            ),
+            Padding(
+              padding: const EdgeInsets.symmetric(horizontal: UiKitSpacing.base),
+              child: UiKitBorderBeam(
                 child: UiKitBaseSectionWrapper(
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
@@ -42,11 +48,14 @@ class _UnauthenticatedProfileScreenViewState extends State<UnauthenticatedProfil
                   ),
                 ),
               ),
-              const SettingsSectionWidget(isAuthenticated: false),
-            ],
-            insertFirst: true,
-          ).toList(),
-        ),
+            ),
+            const Padding(
+              padding: EdgeInsets.symmetric(horizontal: UiKitSpacing.x2),
+              child: SettingsSectionWidget(isAuthenticated: false),
+            ),
+          ],
+          insertFirst: true,
+        ).toList(),
       ),
     );
   }
