@@ -47,6 +47,9 @@ class UiKitTheme {
     onboardingBackground1: const Color(0xFFFFF8E7),
     onboardingBackground2: const Color(0xFFE3F2FD),
     onboardingBackground3: const Color(0xFFFFF9C4),
+    menuCardGradientFirst: const Color(0xFFFFD964),
+    menuCardGradientSecond: const Color(0xFF8240E6),
+    menuCardContent: const Color(0xFF2E2E2E),
   );
 
   static final darkThemeColors = UiKitColors(
@@ -74,6 +77,9 @@ class UiKitTheme {
     onboardingBackground1: const Color(0xFF0F0F0F),
     onboardingBackground2: const Color(0xFF262626),
     onboardingBackground3: const Color(0xFF333333),
+    menuCardGradientFirst: const Color(0xFFFFD964),
+    menuCardGradientSecond: const Color(0xFF8240E6),
+    menuCardContent: const Color(0xFF2E2E2E),
   );
 
   static UiKitFonts fonts(UiKitColors colors) => UiKitFonts(

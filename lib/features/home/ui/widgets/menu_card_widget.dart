@@ -60,8 +60,8 @@ class MenuCardWidget extends StatelessWidget {
                 begin: Alignment.topCenter,
                 end: Alignment.bottomCenter,
                 colors: [
-                  colors.borderGradientFirst,
-                  colors.borderGradientSecond,
+                  colors.menuCardGradientFirst,
+                  colors.menuCardGradientSecond,
                 ],
               ),
               boxShadow: [
@@ -99,6 +99,7 @@ class MenuCardWidget extends StatelessWidget {
                               style: context.fonts.xsLabel.copyWith(
                                 fontSize: width * 0.07,
                                 fontWeight: FontWeight.bold,
+                                color: colors.menuCardContent,
                               ),
                             ),
                           ],

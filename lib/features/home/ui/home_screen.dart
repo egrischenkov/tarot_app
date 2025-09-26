@@ -224,7 +224,7 @@ class _HomeScreenState extends State<HomeScreen> with TickerProviderStateMixin {
                                     height: UiKitSize.x8,
                                     width: UiKitSize.x8,
                                     colorFilter: ColorFilter.mode(
-                                      colors.icon,
+                                      colors.menuCardContent,
                                       BlendMode.srcIn,
                                     ),
                                   ),
