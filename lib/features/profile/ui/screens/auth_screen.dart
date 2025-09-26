@@ -28,7 +28,7 @@ class _AuthScreenState extends State<AuthScreen> {
   late final profileBloc = context.read<ProfileBloc>();
   late final router = context.router;
 
-  late final fieldsValidator = AuthFieldsValidator(context: context);
+  late final fieldsValidator = AuthFieldsValidator(l10n: context.l10n);
 
   @override
   Widget build(BuildContext context) {

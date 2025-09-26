@@ -1,12 +1,10 @@
-import 'package:flutter/widgets.dart';
 import 'package:flutter_login/flutter_login.dart';
-import 'package:taro/core/extensions/context_extension.dart';
 import 'package:taro/core/localization/gen/app_localizations.g.dart';
 
 class AuthFieldsValidator {
   final AppLocalizations _l10n;
 
-  AuthFieldsValidator({required BuildContext context}) : _l10n = context.l10n;
+  AuthFieldsValidator({required AppLocalizations l10n}) : _l10n = l10n;
 
   String? emailFieldValidator(String? value) {
     return FlutterLogin.defaultEmailValidator(
