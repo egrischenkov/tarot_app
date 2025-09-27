@@ -29,7 +29,7 @@ class SettingsScreen extends StatelessWidget {
           children: [
             UiKitSpacing.x4.h,
             UiKitLineItemsGroup(
-              title: l10n.settingsScreen$Title,
+              title: l10n.profileScreen$Title,
               items: [
                 UiKitLineItem(
                   label: l10n.settingsScreen$EditProfile,
@@ -37,6 +37,10 @@ class SettingsScreen extends StatelessWidget {
                 ),
                 UiKitLineItem(
                   label: l10n.settingsScreen$ManageSubscription,
+                  onTap: () {},
+                ),
+                UiKitLineItem(
+                  label: 'Настройка уведомлений',
                   onTap: () {},
                 ),
               ],
