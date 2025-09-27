@@ -32,7 +32,7 @@ class UiKitTheme {
     background: Colors.white,
     backgroundSecondary: const Color(0xFFF4F1F8),
     success: const Color(0xFFA6E3A1),
-    error: const Color(0xFFF6A6A6),
+    error: const Color(0xFFEF6161),
     transparent: Colors.transparent,
     disabled: Colors.grey.withValues(alpha: 0.9),
     gradientFirst: const Color(0xFFfbe7aa),
@@ -47,6 +47,9 @@ class UiKitTheme {
     onboardingBackground1: const Color(0xFFFFF8E7),
     onboardingBackground2: const Color(0xFFE3F2FD),
     onboardingBackground3: const Color(0xFFFFF9C4),
+    menuCardGradientFirst: const Color(0xFFFFD964),
+    menuCardGradientSecond: const Color(0xFF8240E6),
+    menuCardContent: const Color(0xFF2E2E2E),
   );
 
   static final darkThemeColors = UiKitColors(
@@ -59,11 +62,11 @@ class UiKitTheme {
     background: const Color(0xFF1a1a1a),
     backgroundSecondary: const Color(0xFF010101),
     success: const Color(0xFFA6E3A1),
-    error: const Color(0xFFF6A6A6),
+    error: const Color(0xFFEF6161),
     transparent: Colors.transparent,
     disabled: Colors.grey.withValues(alpha: 0.9),
-    gradientFirst: const Color(0xFF7d7df6),
-    gradientSecond: const Color(0xFF3035c3),
+    gradientFirst: const Color(0xFFFFB62C),
+    gradientSecond: const Color(0xFF521DA3),
     border: const Color(0xFF86848B),
     borderGradientFirst: const Color(0xFFFFD964),
     borderGradientSecond: const Color(0xFF7d7df6),
@@ -74,6 +77,9 @@ class UiKitTheme {
     onboardingBackground1: const Color(0xFF0F0F0F),
     onboardingBackground2: const Color(0xFF262626),
     onboardingBackground3: const Color(0xFF333333),
+    menuCardGradientFirst: const Color(0xFFFFD964),
+    menuCardGradientSecond: const Color(0xFF8240E6),
+    menuCardContent: const Color(0xFF2E2E2E),
   );
 
   static UiKitFonts fonts(UiKitColors colors) => UiKitFonts(

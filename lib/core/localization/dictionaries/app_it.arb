@@ -5,6 +5,7 @@
     },
     "appName": "Stary",
     "companyName": "Tarot Band",
+    "common$Error": "Qualcosa è andato storto. Per favore riprova più tardi.",
     "@segmentOnboarding": {
         "---------": "---------",
         "description": "Onboarding"
@@ -31,6 +32,11 @@
     "profileScreen$Subscription": "Abbonamento",
     "profileScreen$ChooseSubscription": "Scegli un abbonamento",
     "profileScreen$SuggestSubscription": "Nessun abbonamento? Troviamone uno",
+    "profileScreen$LoginButton$Label": "Accedi",
+    "profileScreen$AddInfo$Title": "Completa il tuo profilo per sbloccare più funzionalità!",
+    "profileScreen$AddInfo$Subtitle": "Aggiungi data di nascita, sesso, stato civile e persino informazioni sul lavoro — l'app selezionerà carte del giorno, stese e previsioni personalizzate per te.",
+    "profileScreen$AddInfo$Button$Label": "Completa profilo",
+    "profileScreen$JoinUs": "Unisciti a noi — e le carte parleranno solo per te",
     "@segmentSettingsScreen": {
         "---------": "---------",
         "description": "Settings screen"
@@ -91,5 +97,34 @@
         "description": "Share feature"
     },
     "share$Suggest": "Prova {appName}! Scaricalo qui:\n{appLink}",
-    "share$Title": "Condividi la nostra app"
+    "share$Title": "Condividi la nostra app",
+    "@segmentAuthScreen": {
+        "---------": "---------",
+        "description": "Auth screen"
+    },
+    "authScreen$Hint$Email": "Email",
+    "authScreen$Hint$Password": "Password",
+    "authScreen$Hint$ConfirmPassword": "Conferma password",
+    "authScreen$Label$ForgotPassword": "Password dimenticata?",
+    "authScreen$Label$Login": "Accedi",
+    "authScreen$Label$SignUp": "Registrati",
+    "authScreen$Label$Recover": "Recupera",
+    "authScreen$Label$Back": "Indietro",
+    "authScreen$Title$ResetYourPassword": "Reimposta la password",
+    "authScreen$Subtitle$WeWillSendYouPass": "Invieremo la tua password a questa email",
+    "authScreen$Error$InvalidEmail": "Email non valida!",
+    "authScreen$Error$PasswordDoNotMatch": "Le password non coincidono!",
+    "authScreen$Success$Success": "Successo",
+    "authScreen$Success$AnEmailSent": "È stata inviata un'email",
+    "authScreen$Title": "Benvenuto!",
+    "authScreen$Error$PasswordTooLong": "La password è troppo lunga — massimo {count} caratteri",
+    "authScreen$Error$PasswordTooShort": "La password è troppo corta — minimo {count} caratteri",
+    "authScreen$Error$AtLeastOneUpper": "La password deve contenere almeno una lettera maiuscola",
+    "authScreen$Error$AtLeastOneLower": "La password deve contenere almeno una lettera minuscola",
+    "authScreen$Error$AtLeastOneNumber": "La password deve contenere almeno un numero",
+    "authScreen$Error$AtLeastOneSpecCharacter": "La password deve contenere almeno un carattere speciale",
+    "authScreen$Error$Title": "Errore",
+    "authScreen$Error$TooShort": "Il testo è troppo corto — minimo {count} caratteri",
+    "authScreen$Error$TooLong": "Il testo è troppo lungo — massimo {count} caratteri",
+    "authScreen$Success$AccountCreated": "Account creato con successo"
 }

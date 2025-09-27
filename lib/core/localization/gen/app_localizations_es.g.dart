@@ -15,6 +15,9 @@ class AppLocalizationsEs extends AppLocalizations {
   String get companyName => 'Tarot Band';
 
   @override
+  String get common$Error => 'Algo salió mal. Por favor, inténtalo de nuevo más tarde.';
+
+  @override
   String onboarding$Title$First(Object appName) {
     return 'Bienvenido al mundo de $appName';
   }
@@ -57,6 +60,21 @@ class AppLocalizationsEs extends AppLocalizations {
 
   @override
   String get profileScreen$SuggestSubscription => '¿Sin suscripción? Vamos a encontrar una';
+
+  @override
+  String get profileScreen$LoginButton$Label => 'Acceder';
+
+  @override
+  String get profileScreen$AddInfo$Title => 'Completa tu perfil para desbloquear más funciones.';
+
+  @override
+  String get profileScreen$AddInfo$Subtitle => 'Agrega tu fecha de nacimiento, género, estado civil e incluso información laboral — la aplicación elegirá cartas diarias, tiradas y predicciones personalizadas para ti.';
+
+  @override
+  String get profileScreen$AddInfo$Button$Label => 'Completar perfil';
+
+  @override
+  String get profileScreen$JoinUs => 'Únete — y las cartas hablarán solo para ti';
 
   @override
   String get settingsScreen$Title => 'Ajustes';
@@ -194,4 +212,90 @@ class AppLocalizationsEs extends AppLocalizations {
 
   @override
   String get share$Title => 'Comparte nuestra aplicación';
+
+  @override
+  String get authScreen$Hint$Email => 'Correo electrónico';
+
+  @override
+  String get authScreen$Hint$Password => 'Contraseña';
+
+  @override
+  String get authScreen$Hint$Name => 'Имя';
+
+  @override
+  String get authScreen$Hint$ConfirmPassword => 'Confirmar contraseña';
+
+  @override
+  String get authScreen$Label$ForgotPassword => '¿Olvidaste tu contraseña?';
+
+  @override
+  String get authScreen$Label$Login => 'Acceder';
+
+  @override
+  String get authScreen$Label$SignUp => 'Registrarse';
+
+  @override
+  String get authScreen$Label$Recover => 'Recuperar';
+
+  @override
+  String get authScreen$Label$Back => 'Atrás';
+
+  @override
+  String get authScreen$Title$ResetYourPassword => 'Restablecer contraseña';
+
+  @override
+  String get authScreen$Subtitle$WeWillSendYouPass => 'Enviaremos tu contraseña a este correo';
+
+  @override
+  String get authScreen$Error$InvalidEmail => '¡Correo no válido!';
+
+  @override
+  String get authScreen$Error$PasswordDoNotMatch => '¡Las contraseñas no coinciden!';
+
+  @override
+  String get authScreen$Success$Success => 'Éxito';
+
+  @override
+  String get authScreen$Success$AnEmailSent => 'Se ha enviado un correo';
+
+  @override
+  String get authScreen$Title => '¡Bienvenido!';
+
+  @override
+  String authScreen$Error$PasswordTooLong(Object count) {
+    return 'La contraseña es demasiado larga — máximo $count caracteres';
+  }
+
+  @override
+  String authScreen$Error$PasswordTooShort(Object count) {
+    return 'La contraseña es demasiado corta — mínimo $count caracteres';
+  }
+
+  @override
+  String get authScreen$Error$AtLeastOneUpper => 'La contraseña debe contener al menos una letra mayúscula';
+
+  @override
+  String get authScreen$Error$AtLeastOneLower => 'La contraseña debe contener al menos una letra minúscula';
+
+  @override
+  String get authScreen$Error$AtLeastOneNumber => 'La contraseña debe contener al menos un número';
+
+  @override
+  String get authScreen$Error$AtLeastOneSpecCharacter => 'La contraseña debe contener al menos un carácter especial';
+
+  @override
+  String get authScreen$Error$Title => 'Error';
+
+  @override
+  String authScreen$Error$TooShort(Object count) {
+    return 'El texto es demasiado corto — mínimo $count caracteres';
+  }
+
+  @override
+  String authScreen$Error$TooLong(Object count) {
+    return 'El texto es demasiado largo — máximo $count caracteres';
+  }
+
+  @override
+  String get authScreen$Success$AccountCreated => 'Cuenta creada con éxito';
 }

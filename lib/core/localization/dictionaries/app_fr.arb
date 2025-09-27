@@ -5,6 +5,7 @@
     },
     "appName": "Stary",
     "companyName": "Tarot Band",
+    "common$Error": "Une erreur s'est produite. Veuillez réessayer plus tard.",
     "@segmentOnboarding": {
         "---------": "---------",
         "description": "Onboarding"
@@ -31,6 +32,11 @@
     "profileScreen$Subscription": "Abonnement",
     "profileScreen$ChooseSubscription": "Choisir un abonnement",
     "profileScreen$SuggestSubscription": "Pas d’abonnement ? Trouvons-en un",
+    "profileScreen$LoginButton$Label": "Connexion",
+    "profileScreen$AddInfo$Title": "Complétez votre profil pour débloquer plus de fonctionnalités !",
+    "profileScreen$AddInfo$Subtitle": "Ajoutez votre date de naissance, sexe, situation familiale et même des informations professionnelles — l’application vous proposera des cartes du jour, tirages et prévisions personnalisés.",
+    "profileScreen$AddInfo$Button$Label": "Compléter le profil",
+    "profileScreen$JoinUs": "Rejoignez-nous — et les cartes parleront rien que pour vous",
     "@segmentSettingsScreen": {
         "---------": "---------",
         "description": "Settings screen"
@@ -86,17 +92,39 @@
     "aboutScreen$Title": "À propos",
     "aboutScreen$PrivacyPolicy": "Politique de confidentialité",
     "aboutScreen$TermsOfService": "Conditions d’utilisation",
-    "@segmentAboutScreen": {
-        "---------": "---------",
-        "description": "About screen"
-    },
-    "aboutScreen$Title": "ऐप के बारे में",
-    "aboutScreen$PrivacyPolicy": "गोपनीयता नीति",
-    "aboutScreen$TermsOfService": "सेवा की शर्तें",
     "@segmentShareFeature": {
         "---------": "---------",
         "description": "Share feature"
     },
     "share$Suggest": "Essaie {appName} ! Télécharge-le ici :\n{appLink}",
-    "share$Title": "Partagez notre application"
+    "share$Title": "Partagez notre application",
+    "@segmentAuthScreen": {
+        "---------": "---------",
+        "description": "Auth screen"
+    },
+    "authScreen$Hint$Email": "Email",
+    "authScreen$Hint$Password": "Mot de passe",
+    "authScreen$Hint$ConfirmPassword": "Confirmer le mot de passe",
+    "authScreen$Label$ForgotPassword": "Mot de passe oublié ?",
+    "authScreen$Label$Login": "Connexion",
+    "authScreen$Label$SignUp": "Inscription",
+    "authScreen$Label$Recover": "Récupérer",
+    "authScreen$Label$Back": "Retour",
+    "authScreen$Title$ResetYourPassword": "Réinitialiser le mot de passe",
+    "authScreen$Subtitle$WeWillSendYouPass": "Nous enverrons votre mot de passe à cet email",
+    "authScreen$Error$InvalidEmail": "Email invalide !",
+    "authScreen$Error$PasswordDoNotMatch": "Les mots de passe ne correspondent pas !",
+    "authScreen$Success$Success": "Succès",
+    "authScreen$Success$AnEmailSent": "Un email a été envoyé",
+    "authScreen$Title": "Bienvenue !",
+    "authScreen$Error$PasswordTooLong": "Le mot de passe est trop long — maximum {count} caractères",
+    "authScreen$Error$PasswordTooShort": "Le mot de passe est trop court — minimum {count} caractères",
+    "authScreen$Error$AtLeastOneUpper": "Le mot de passe doit contenir au moins une majuscule",
+    "authScreen$Error$AtLeastOneLower": "Le mot de passe doit contenir au moins une minuscule",
+    "authScreen$Error$AtLeastOneNumber": "Le mot de passe doit contenir au moins un chiffre",
+    "authScreen$Error$AtLeastOneSpecCharacter": "Le mot de passe doit contenir au moins un caractère spécial",
+    "authScreen$Error$Title": "Erreur",
+    "authScreen$Error$TooShort": "Le texte est trop court — minimum {count} caractères",
+    "authScreen$Error$TooLong": "Le texte est trop long — maximum {count} caractères",
+    "authScreen$Success$AccountCreated": "Compte créé avec succès"
 }

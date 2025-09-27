@@ -5,6 +5,7 @@
     },
     "appName": "Stary",
     "companyName": "Tarot Band",
+    "common$Error": "Etwas ist schiefgelaufen. Bitte versuche es später noch einmal.",
     "@segmentOnboarding": {
         "---------": "---------",
         "description": "Onboarding"
@@ -31,6 +32,11 @@
     "profileScreen$Subscription": "Abonnement",
     "profileScreen$ChooseSubscription": "Abonnement wählen",
     "profileScreen$SuggestSubscription": "Kein Abo? Lass uns eins finden",
+    "profileScreen$LoginButton$Label": "Login",
+    "profileScreen$AddInfo$Title": "Vervollständige dein Profil, um mehr Funktionen freizuschalten!",
+    "profileScreen$AddInfo$Subtitle": "Füge dein Geburtsdatum, Geschlecht, Familienstand und sogar Jobinformationen hinzu — die App wählt personalisierte Tageskarten, Legungen und Vorhersagen speziell für dich aus.",
+    "profileScreen$AddInfo$Button$Label": "Profil ausfüllen",
+    "profileScreen$JoinUs": "Mach mit — und die Karten werden nur zu dir sprechen",
     "@segmentSettingsScreen": {
         "---------": "---------",
         "description": "Settings screen"
@@ -91,5 +97,34 @@
         "description": "Share feature"
     },
     "share$Suggest": "Probiere {appName} aus! Lade es hier herunter:\n{appLink}",
-    "share$Title": "Teile unsere App"
+    "share$Title": "Teile unsere App",
+    "@segmentAuthScreen": {
+        "---------": "---------",
+        "description": "Auth screen"
+    },
+    "authScreen$Hint$Email": "E-Mail",
+    "authScreen$Hint$Password": "Passwort",
+    "authScreen$Hint$ConfirmPassword": "Passwort bestätigen",
+    "authScreen$Label$ForgotPassword": "Passwort vergessen?",
+    "authScreen$Label$Login": "Login",
+    "authScreen$Label$SignUp": "Registrieren",
+    "authScreen$Label$Recover": "Wiederherstellen",
+    "authScreen$Label$Back": "Zurück",
+    "authScreen$Title$ResetYourPassword": "Passwort zurücksetzen",
+    "authScreen$Subtitle$WeWillSendYouPass": "Wir senden Ihr Passwort an diese E-Mail",
+    "authScreen$Error$InvalidEmail": "Ungültige E-Mail!",
+    "authScreen$Error$PasswordDoNotMatch": "Passwörter stimmen nicht überein!",
+    "authScreen$Success$Success": "Erfolg",
+    "authScreen$Success$AnEmailSent": "Eine E-Mail wurde gesendet",
+    "authScreen$Title": "Willkommen!",
+    "authScreen$Error$PasswordTooLong": "Passwort ist zu lang — maximal {count} Zeichen",
+    "authScreen$Error$PasswordTooShort": "Passwort ist zu kurz — mindestens {count} Zeichen",
+    "authScreen$Error$AtLeastOneUpper": "Passwort muss mindestens einen Großbuchstaben enthalten",
+    "authScreen$Error$AtLeastOneLower": "Passwort muss mindestens einen Kleinbuchstaben enthalten",
+    "authScreen$Error$AtLeastOneNumber": "Passwort muss mindestens eine Zahl enthalten",
+    "authScreen$Error$AtLeastOneSpecCharacter": "Passwort muss mindestens ein Sonderzeichen enthalten",
+    "authScreen$Error$Title": "Fehler",
+    "authScreen$Error$TooShort": "Text ist zu kurz — mindestens {count} Zeichen",
+    "authScreen$Error$TooLong": "Text ist zu lang — maximal {count} Zeichen",
+    "authScreen$Success$AccountCreated": "Konto erfolgreich erstellt"
 }

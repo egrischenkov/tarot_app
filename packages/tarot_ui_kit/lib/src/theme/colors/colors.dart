@@ -26,6 +26,9 @@ class UiKitColors extends ThemeExtension<UiKitColors> {
   final Color onboardingBackground1;
   final Color onboardingBackground2;
   final Color onboardingBackground3;
+  final Color menuCardGradientFirst;
+  final Color menuCardGradientSecond;
+  final Color menuCardContent;
 
   const UiKitColors({
     required this.accent,
@@ -52,6 +55,9 @@ class UiKitColors extends ThemeExtension<UiKitColors> {
     required this.onboardingBackground1,
     required this.onboardingBackground2,
     required this.onboardingBackground3,
+    required this.menuCardGradientFirst,
+    required this.menuCardGradientSecond,
+    required this.menuCardContent,
   });
 
   @override
@@ -80,6 +86,9 @@ class UiKitColors extends ThemeExtension<UiKitColors> {
     Color? onboardingBackground1,
     Color? onboardingBackground2,
     Color? onboardingBackground3,
+    Color? menuCardGradientFirst,
+    Color? menuCardGradientSecond,
+    Color? menuCardContent,
   }) {
     return UiKitColors(
       accentTertiary: accentTertiary ?? this.accentTertiary,
@@ -106,6 +115,9 @@ class UiKitColors extends ThemeExtension<UiKitColors> {
       onboardingBackground1: onboardingBackground1 ?? this.onboardingBackground1,
       onboardingBackground2: onboardingBackground2 ?? this.onboardingBackground2,
       onboardingBackground3: onboardingBackground3 ?? this.onboardingBackground3,
+      menuCardGradientFirst: menuCardGradientFirst ?? this.menuCardGradientFirst,
+      menuCardGradientSecond: menuCardGradientSecond ?? this.menuCardGradientSecond,
+      menuCardContent: menuCardContent ?? this.menuCardContent,
     );
   }
 
@@ -143,6 +155,11 @@ class UiKitColors extends ThemeExtension<UiKitColors> {
           Color.lerp(onboardingBackground2, other.onboardingBackground2, t) ?? other.onboardingBackground2,
       onboardingBackground3:
           Color.lerp(onboardingBackground3, other.onboardingBackground3, t) ?? other.onboardingBackground3,
+      menuCardGradientFirst:
+          Color.lerp(menuCardGradientFirst, other.menuCardGradientFirst, t) ?? other.menuCardGradientFirst,
+      menuCardGradientSecond:
+          Color.lerp(menuCardGradientSecond, other.menuCardGradientSecond, t) ?? other.menuCardGradientSecond,
+      menuCardContent: Color.lerp(menuCardContent, other.menuCardContent, t) ?? other.menuCardContent,
     );
   }
 }

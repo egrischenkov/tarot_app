@@ -163,7 +163,7 @@ class _UiKitBigButtonState extends State<UiKitBigButton> {
   }
 }
 
-extension on Color {
+extension ColorX on Color {
   Color withBrightness(double brightnessPercent) {
     final HSLColor hslColor = HSLColor.fromColor(this);
 

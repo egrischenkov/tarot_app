@@ -15,6 +15,9 @@ class AppLocalizationsZh extends AppLocalizations {
   String get companyName => 'Tarot Band';
 
   @override
+  String get common$Error => '出了点问题。请稍后再试。';
+
+  @override
   String onboarding$Title$First(Object appName) {
     return '欢迎来到 $appName 的世界';
   }
@@ -57,6 +60,21 @@ class AppLocalizationsZh extends AppLocalizations {
 
   @override
   String get profileScreen$SuggestSubscription => '没有订阅？我们来帮你选一个';
+
+  @override
+  String get profileScreen$LoginButton$Label => '登录';
+
+  @override
+  String get profileScreen$AddInfo$Title => '完善您的资料以解锁更多功能！';
+
+  @override
+  String get profileScreen$AddInfo$Subtitle => '添加生日、性别、婚姻状况甚至工作信息 — 应用将为您挑选个性化的每日卡牌、牌阵和预测。';
+
+  @override
+  String get profileScreen$AddInfo$Button$Label => '完善资料';
+
+  @override
+  String get profileScreen$JoinUs => '加入我们 — 牌卡将只为你解读';
 
   @override
   String get settingsScreen$Title => '设置';
@@ -194,4 +212,90 @@ class AppLocalizationsZh extends AppLocalizations {
 
   @override
   String get share$Title => '分享我们的应用';
+
+  @override
+  String get authScreen$Hint$Email => '邮箱';
+
+  @override
+  String get authScreen$Hint$Password => '密码';
+
+  @override
+  String get authScreen$Hint$Name => 'Имя';
+
+  @override
+  String get authScreen$Hint$ConfirmPassword => '确认密码';
+
+  @override
+  String get authScreen$Label$ForgotPassword => '忘记密码？';
+
+  @override
+  String get authScreen$Label$Login => '登录';
+
+  @override
+  String get authScreen$Label$SignUp => '注册';
+
+  @override
+  String get authScreen$Label$Recover => '找回';
+
+  @override
+  String get authScreen$Label$Back => '返回';
+
+  @override
+  String get authScreen$Title$ResetYourPassword => '重置密码';
+
+  @override
+  String get authScreen$Subtitle$WeWillSendYouPass => '我们会将密码发送到此邮箱';
+
+  @override
+  String get authScreen$Error$InvalidEmail => '邮箱无效！';
+
+  @override
+  String get authScreen$Error$PasswordDoNotMatch => '两次输入的密码不一致！';
+
+  @override
+  String get authScreen$Success$Success => '成功';
+
+  @override
+  String get authScreen$Success$AnEmailSent => '邮件已发送';
+
+  @override
+  String get authScreen$Title => '欢迎！';
+
+  @override
+  String authScreen$Error$PasswordTooLong(Object count) {
+    return '密码太长 — 最多 $count 个字符';
+  }
+
+  @override
+  String authScreen$Error$PasswordTooShort(Object count) {
+    return '密码太短 — 最少 $count 个字符';
+  }
+
+  @override
+  String get authScreen$Error$AtLeastOneUpper => '密码必须包含至少一个大写字母';
+
+  @override
+  String get authScreen$Error$AtLeastOneLower => '密码必须包含至少一个小写字母';
+
+  @override
+  String get authScreen$Error$AtLeastOneNumber => '密码必须包含至少一个数字';
+
+  @override
+  String get authScreen$Error$AtLeastOneSpecCharacter => '密码必须包含至少一个特殊字符';
+
+  @override
+  String get authScreen$Error$Title => '错误';
+
+  @override
+  String authScreen$Error$TooShort(Object count) {
+    return '文本太短 — 最少 $count 个字符';
+  }
+
+  @override
+  String authScreen$Error$TooLong(Object count) {
+    return '文本太长 — 最多 $count 个字符';
+  }
+
+  @override
+  String get authScreen$Success$AccountCreated => '账户创建成功';
 }

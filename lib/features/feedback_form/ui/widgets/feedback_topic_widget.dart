@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:taro/core/extensions/context_extension.dart';
 import 'package:taro/features/feedback_form/domain/entities/feedback_category.dart';
 import 'package:tarot_ui_kit/ui_kit.dart';
@@ -32,6 +33,8 @@ class _FeedbackTopicWidgetState extends State<FeedbackTopicWidget> {
   }
 
   void _onCategorySelect(FeedbackCategory category, bool? value) {
+    HapticFeedback.mediumImpact();
+
     setState(() {
       value == true ? selectedCategories.add(category) : selectedCategories.remove(category);
     });

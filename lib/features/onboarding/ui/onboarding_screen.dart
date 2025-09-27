@@ -26,6 +26,7 @@ class OnboardingScreen extends StatefulWidget {
 class _OnboardingScreenState extends State<OnboardingScreen> {
   late int _selectedIndex = widget._initialPage;
   late final _pageController = PageController(initialPage: _selectedIndex);
+  bool isNextButtonVisible = false;
 
   late final List<OnboardingPageData> _pagesData = [
     OnboardingPageData(
@@ -58,6 +59,13 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
     _pageController.addListener(() {
       if ((_selectedIndex + 1) == _pagesData.length) {
         setState(() {});
+        Future.delayed(const Duration(milliseconds: 500)).then((_) {
+          if (mounted) {
+            setState(() => isNextButtonVisible = true);
+          }
+        });
+      } else {
+        setState(() => isNextButtonVisible = false);
       }
     });
   }
@@ -74,13 +82,20 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
         colors: _pagesData.map((e) => e.backgroundColor).toList(),
         itemCount: _pagesData.length,
         nextButtonBuilder: (context) {
-          return (_selectedIndex + 1) == _pagesData.length
-              ? UiKitBigButton.regular(
-                  context: context,
-                  label: context.l10n.onboarding$Button$Label,
-                  onTap: _onFinish,
-                )
-              : const SizedBox.shrink();
+          return AnimatedContainer(
+            duration: const Duration(milliseconds: 1500),
+            child: (_selectedIndex + 1) == _pagesData.length
+                ? AnimatedOpacity(
+                    duration: const Duration(milliseconds: 1500),
+                    opacity: isNextButtonVisible ? 1.0 : 0.0,
+                    child: UiKitBigButton.regular(
+                      context: context,
+                      label: context.l10n.onboarding$Button$Label,
+                      onTap: _onFinish,
+                    ),
+                  )
+                : const SizedBox.shrink(),
+          );
         },
         itemBuilder: (index) {
           final pageData = _pagesData[index];

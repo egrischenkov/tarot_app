@@ -15,6 +15,9 @@ class AppLocalizationsFr extends AppLocalizations {
   String get companyName => 'Tarot Band';
 
   @override
+  String get common$Error => 'Une erreur s\'est produite. Veuillez réessayer plus tard.';
+
+  @override
   String onboarding$Title$First(Object appName) {
     return 'Bienvenue dans l’univers de $appName';
   }
@@ -57,6 +60,21 @@ class AppLocalizationsFr extends AppLocalizations {
 
   @override
   String get profileScreen$SuggestSubscription => 'Pas d’abonnement ? Trouvons-en un';
+
+  @override
+  String get profileScreen$LoginButton$Label => 'Connexion';
+
+  @override
+  String get profileScreen$AddInfo$Title => 'Complétez votre profil pour débloquer plus de fonctionnalités !';
+
+  @override
+  String get profileScreen$AddInfo$Subtitle => 'Ajoutez votre date de naissance, sexe, situation familiale et même des informations professionnelles — l’application vous proposera des cartes du jour, tirages et prévisions personnalisés.';
+
+  @override
+  String get profileScreen$AddInfo$Button$Label => 'Compléter le profil';
+
+  @override
+  String get profileScreen$JoinUs => 'Rejoignez-nous — et les cartes parleront rien que pour vous';
 
   @override
   String get settingsScreen$Title => 'Paramètres';
@@ -179,13 +197,13 @@ class AppLocalizationsFr extends AppLocalizations {
   String get feedbackFromScreen$CommentHint => 'Décris ton expérience avec l’application';
 
   @override
-  String get aboutScreen$Title => 'ऐप के बारे में';
+  String get aboutScreen$Title => 'À propos';
 
   @override
-  String get aboutScreen$PrivacyPolicy => 'गोपनीयता नीति';
+  String get aboutScreen$PrivacyPolicy => 'Politique de confidentialité';
 
   @override
-  String get aboutScreen$TermsOfService => 'सेवा की शर्तें';
+  String get aboutScreen$TermsOfService => 'Conditions d’utilisation';
 
   @override
   String share$Suggest(Object appLink, Object appName) {
@@ -194,4 +212,90 @@ class AppLocalizationsFr extends AppLocalizations {
 
   @override
   String get share$Title => 'Partagez notre application';
+
+  @override
+  String get authScreen$Hint$Email => 'Email';
+
+  @override
+  String get authScreen$Hint$Password => 'Mot de passe';
+
+  @override
+  String get authScreen$Hint$Name => 'Имя';
+
+  @override
+  String get authScreen$Hint$ConfirmPassword => 'Confirmer le mot de passe';
+
+  @override
+  String get authScreen$Label$ForgotPassword => 'Mot de passe oublié ?';
+
+  @override
+  String get authScreen$Label$Login => 'Connexion';
+
+  @override
+  String get authScreen$Label$SignUp => 'Inscription';
+
+  @override
+  String get authScreen$Label$Recover => 'Récupérer';
+
+  @override
+  String get authScreen$Label$Back => 'Retour';
+
+  @override
+  String get authScreen$Title$ResetYourPassword => 'Réinitialiser le mot de passe';
+
+  @override
+  String get authScreen$Subtitle$WeWillSendYouPass => 'Nous enverrons votre mot de passe à cet email';
+
+  @override
+  String get authScreen$Error$InvalidEmail => 'Email invalide !';
+
+  @override
+  String get authScreen$Error$PasswordDoNotMatch => 'Les mots de passe ne correspondent pas !';
+
+  @override
+  String get authScreen$Success$Success => 'Succès';
+
+  @override
+  String get authScreen$Success$AnEmailSent => 'Un email a été envoyé';
+
+  @override
+  String get authScreen$Title => 'Bienvenue !';
+
+  @override
+  String authScreen$Error$PasswordTooLong(Object count) {
+    return 'Le mot de passe est trop long — maximum $count caractères';
+  }
+
+  @override
+  String authScreen$Error$PasswordTooShort(Object count) {
+    return 'Le mot de passe est trop court — minimum $count caractères';
+  }
+
+  @override
+  String get authScreen$Error$AtLeastOneUpper => 'Le mot de passe doit contenir au moins une majuscule';
+
+  @override
+  String get authScreen$Error$AtLeastOneLower => 'Le mot de passe doit contenir au moins une minuscule';
+
+  @override
+  String get authScreen$Error$AtLeastOneNumber => 'Le mot de passe doit contenir au moins un chiffre';
+
+  @override
+  String get authScreen$Error$AtLeastOneSpecCharacter => 'Le mot de passe doit contenir au moins un caractère spécial';
+
+  @override
+  String get authScreen$Error$Title => 'Erreur';
+
+  @override
+  String authScreen$Error$TooShort(Object count) {
+    return 'Le texte est trop court — minimum $count caractères';
+  }
+
+  @override
+  String authScreen$Error$TooLong(Object count) {
+    return 'Le texte est trop long — maximum $count caractères';
+  }
+
+  @override
+  String get authScreen$Success$AccountCreated => 'Compte créé avec succès';
 }

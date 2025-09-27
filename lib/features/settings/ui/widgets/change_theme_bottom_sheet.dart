@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:taro/app/domain/entities/theme_option.dart';
 import 'package:taro/app/ui/bloc/theme/theme_bloc.dart';
@@ -51,6 +52,7 @@ class ChangeThemeBottomSheet extends StatelessWidget {
   }
 
   void _onThemeOptionTap(BuildContext context, ThemeOption themeOption) {
+    HapticFeedback.mediumImpact();
     context.read<ThemeBloc>().add(
           ThemeEvent.themeChanged(
             themeOption: themeOption,

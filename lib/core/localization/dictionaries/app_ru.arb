@@ -5,6 +5,7 @@
     },
     "appName": "Stary",
     "companyName": "Tarot Band",
+    "common$Error": "Что-то пошло не так. Пожалуйста, попробуйте позже.",
     "@segmentOnboarding": {
         "---------": "---------",
         "description": "Onboarding"
@@ -31,6 +32,11 @@
     "profileScreen$Subscription": "Подписка",
     "profileScreen$ChooseSubscription": "Выбрать подписку",
     "profileScreen$SuggestSubscription": "Нет подписки? Давай подберем",
+    "profileScreen$LoginButton$Label": "Вход",
+    "profileScreen$AddInfo$Title": "Заполните профиль, чтобы открыть больше возможностей!",
+    "profileScreen$AddInfo$Subtitle": "Добавьте дату рождения, пол, семейное положение и даже информацию о работе — и приложение будет подбирать для вас персональные карты дня, расклады и прогнозы, созданные специально под ваш профиль.",
+    "profileScreen$AddInfo$Button$Label": "Заполнить профиль",
+    "profileScreen$JoinUs": "Присоединяйтесь — и карты будут говорить только для вас",
     "@segmentSettingsScreen": {
         "---------": "---------",
         "description": "Settings screen"
@@ -91,5 +97,35 @@
         "description": "Share feature"
     },
     "share$Suggest": "Попробуй {appName}! Скачай здесь:\n{appLink}",
-    "share$Title": "Поделитесь нашим приложением"
+    "share$Title": "Поделитесь нашим приложением",
+    "@segmentAuthScreen": {
+        "---------": "---------",
+        "description": "Auth screen"
+    },
+    "authScreen$Hint$Email": "Email",
+    "authScreen$Hint$Password": "Пароль",
+    "authScreen$Hint$Name": "Имя",
+    "authScreen$Hint$ConfirmPassword": "Подтвердите пароль",
+    "authScreen$Label$ForgotPassword": "Забыли пароль?",
+    "authScreen$Label$Login": "Вход",
+    "authScreen$Label$SignUp": "Регистрация",
+    "authScreen$Label$Recover": "Восстановить",
+    "authScreen$Label$Back": "Назад",
+    "authScreen$Title$ResetYourPassword": "Сбросьте пароль",
+    "authScreen$Subtitle$WeWillSendYouPass": "Мы отправим ваш пароль на этот email",
+    "authScreen$Error$InvalidEmail": "Некорректный email!",
+    "authScreen$Error$PasswordDoNotMatch": "Пароли не совпадают!",
+    "authScreen$Success$Success": "Успех",
+    "authScreen$Success$AnEmailSent": "Письмо отправлено",
+    "authScreen$Title": "Добро пожаловать!",
+    "authScreen$Error$PasswordTooLong": "Пароль слишком длинный — максимум {count} символа",
+    "authScreen$Error$PasswordTooShort": "Пароль слишком короткий — минимум {count} символов",
+    "authScreen$Error$AtLeastOneUpper": "Пароль должен содержать хотя бы одну заглавную букву",
+    "authScreen$Error$AtLeastOneLower": "Пароль должен содержать хотя бы одну строчную букву",
+    "authScreen$Error$AtLeastOneNumber": "Пароль должен содержать хотя бы одну цифру",
+    "authScreen$Error$AtLeastOneSpecCharacter": "Пароль должен содержать хотя бы один специальный символ",
+    "authScreen$Error$Title": "Ошибка",
+    "authScreen$Error$TooShort": "Текст слишком короткий — минимум {count} символов",
+    "authScreen$Error$TooLong": "Текст слишком длинный — максимум {count} символов",
+    "authScreen$Success$AccountCreated": "Аккаунт успешно создан"
 }

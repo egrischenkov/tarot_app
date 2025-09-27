@@ -15,6 +15,9 @@ class AppLocalizationsRu extends AppLocalizations {
   String get companyName => 'Tarot Band';
 
   @override
+  String get common$Error => 'Что-то пошло не так. Пожалуйста, попробуйте позже.';
+
+  @override
   String onboarding$Title$First(Object appName) {
     return 'Добро пожаловать в мир $appName';
   }
@@ -57,6 +60,21 @@ class AppLocalizationsRu extends AppLocalizations {
 
   @override
   String get profileScreen$SuggestSubscription => 'Нет подписки? Давай подберем';
+
+  @override
+  String get profileScreen$LoginButton$Label => 'Вход';
+
+  @override
+  String get profileScreen$AddInfo$Title => 'Заполните профиль, чтобы открыть больше возможностей!';
+
+  @override
+  String get profileScreen$AddInfo$Subtitle => 'Добавьте дату рождения, пол, семейное положение и даже информацию о работе — и приложение будет подбирать для вас персональные карты дня, расклады и прогнозы, созданные специально под ваш профиль.';
+
+  @override
+  String get profileScreen$AddInfo$Button$Label => 'Заполнить профиль';
+
+  @override
+  String get profileScreen$JoinUs => 'Присоединяйтесь — и карты будут говорить только для вас';
 
   @override
   String get settingsScreen$Title => 'Настройки';
@@ -194,4 +212,90 @@ class AppLocalizationsRu extends AppLocalizations {
 
   @override
   String get share$Title => 'Поделитесь нашим приложением';
+
+  @override
+  String get authScreen$Hint$Email => 'Email';
+
+  @override
+  String get authScreen$Hint$Password => 'Пароль';
+
+  @override
+  String get authScreen$Hint$Name => 'Имя';
+
+  @override
+  String get authScreen$Hint$ConfirmPassword => 'Подтвердите пароль';
+
+  @override
+  String get authScreen$Label$ForgotPassword => 'Забыли пароль?';
+
+  @override
+  String get authScreen$Label$Login => 'Вход';
+
+  @override
+  String get authScreen$Label$SignUp => 'Регистрация';
+
+  @override
+  String get authScreen$Label$Recover => 'Восстановить';
+
+  @override
+  String get authScreen$Label$Back => 'Назад';
+
+  @override
+  String get authScreen$Title$ResetYourPassword => 'Сбросьте пароль';
+
+  @override
+  String get authScreen$Subtitle$WeWillSendYouPass => 'Мы отправим ваш пароль на этот email';
+
+  @override
+  String get authScreen$Error$InvalidEmail => 'Некорректный email!';
+
+  @override
+  String get authScreen$Error$PasswordDoNotMatch => 'Пароли не совпадают!';
+
+  @override
+  String get authScreen$Success$Success => 'Успех';
+
+  @override
+  String get authScreen$Success$AnEmailSent => 'Письмо отправлено';
+
+  @override
+  String get authScreen$Title => 'Добро пожаловать!';
+
+  @override
+  String authScreen$Error$PasswordTooLong(Object count) {
+    return 'Пароль слишком длинный — максимум $count символа';
+  }
+
+  @override
+  String authScreen$Error$PasswordTooShort(Object count) {
+    return 'Пароль слишком короткий — минимум $count символов';
+  }
+
+  @override
+  String get authScreen$Error$AtLeastOneUpper => 'Пароль должен содержать хотя бы одну заглавную букву';
+
+  @override
+  String get authScreen$Error$AtLeastOneLower => 'Пароль должен содержать хотя бы одну строчную букву';
+
+  @override
+  String get authScreen$Error$AtLeastOneNumber => 'Пароль должен содержать хотя бы одну цифру';
+
+  @override
+  String get authScreen$Error$AtLeastOneSpecCharacter => 'Пароль должен содержать хотя бы один специальный символ';
+
+  @override
+  String get authScreen$Error$Title => 'Ошибка';
+
+  @override
+  String authScreen$Error$TooShort(Object count) {
+    return 'Текст слишком короткий — минимум $count символов';
+  }
+
+  @override
+  String authScreen$Error$TooLong(Object count) {
+    return 'Текст слишком длинный — максимум $count символов';
+  }
+
+  @override
+  String get authScreen$Success$AccountCreated => 'Аккаунт успешно создан';
 }

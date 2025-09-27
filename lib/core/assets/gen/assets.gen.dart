@@ -37,6 +37,9 @@ class $AssetsIconsGen {
   /// File path: assets/icons/ava_1.svg
   SvgGenImage get ava1 => const SvgGenImage('assets/icons/ava_1.svg');
 
+  /// Directory path: assets/icons/menu
+  $AssetsIconsMenuGen get menu => const $AssetsIconsMenuGen();
+
   /// File path: assets/icons/onboarding_1.svg
   SvgGenImage get onboarding1 => const SvgGenImage('assets/icons/onboarding_1.svg');
 
@@ -56,6 +59,9 @@ class $AssetsIconsGen {
 class $AssetsLottieGen {
   const $AssetsLottieGen();
 
+  /// File path: assets/lottie/coming_soon.json
+  String get comingSoon => 'assets/lottie/coming_soon.json';
+
   /// File path: assets/lottie/onboarding_bg_1.json
   String get onboardingBg1 => 'assets/lottie/onboarding_bg_1.json';
 
@@ -68,11 +74,22 @@ class $AssetsLottieGen {
   /// File path: assets/lottie/sandy_loading.json
   String get sandyLoading => 'assets/lottie/sandy_loading.json';
 
+  /// File path: assets/lottie/sign_up.json
+  String get signUp => 'assets/lottie/sign_up.json';
+
   /// File path: assets/lottie/sun_breathing.json
   String get sunBreathing => 'assets/lottie/sun_breathing.json';
 
   /// List of all assets
-  List<String> get values => [onboardingBg1, onboardingBg2, onboardingBg3, sandyLoading, sunBreathing];
+  List<String> get values => [
+        comingSoon,
+        onboardingBg1,
+        onboardingBg2,
+        onboardingBg3,
+        sandyLoading,
+        signUp,
+        sunBreathing,
+      ];
 }
 
 class $AssetsSplashImageGen {
@@ -83,6 +100,22 @@ class $AssetsSplashImageGen {
 
   /// List of all assets
   List<AssetGenImage> get values => [splash];
+}
+
+class $AssetsIconsMenuGen {
+  const $AssetsIconsMenuGen();
+
+  /// File path: assets/icons/menu/crystal_ball.svg
+  SvgGenImage get crystalBall => const SvgGenImage('assets/icons/menu/crystal_ball.svg');
+
+  /// File path: assets/icons/menu/tarot_card.svg
+  SvgGenImage get tarotCard => const SvgGenImage('assets/icons/menu/tarot_card.svg');
+
+  /// File path: assets/icons/menu/tarot_cards.svg
+  SvgGenImage get tarotCards => const SvgGenImage('assets/icons/menu/tarot_cards.svg');
+
+  /// List of all assets
+  List<SvgGenImage> get values => [crystalBall, tarotCard, tarotCards];
 }
 
 class Assets {

@@ -17,14 +17,19 @@ class DebugOptionButton extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return InkWell(
-      onTap: onTap?.call,
-      child: Container(
-        decoration: BoxDecoration(
-          color: backgroundColor ?? Colors.grey,
-        ),
-        padding: const EdgeInsets.symmetric(vertical: 10),
-        child: Center(
+    return Ink(
+      decoration: BoxDecoration(
+        color: backgroundColor ?? Colors.grey,
+      ),
+      child: InkWell(
+        onTap: onTap?.call,
+        child: Container(
+          width: double.infinity,
+          alignment: Alignment.center,
+          padding: const EdgeInsets.symmetric(
+            vertical: UiKitSpacing.x3,
+            horizontal: UiKitSpacing.x4,
+          ),
           child: isLoading
               ? const CircularProgressIndicator()
               : Text(

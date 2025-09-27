@@ -7,8 +7,15 @@ import 'package:taro/features/debug/ui/widgets/debug_value_widget.dart';
 import 'package:tarot_ui_kit/ui_kit.dart';
 
 @RoutePage()
-class DebugScreen extends StatelessWidget {
+class DebugScreen extends StatefulWidget {
   const DebugScreen({super.key});
+
+  @override
+  State<DebugScreen> createState() => _DebugScreenState();
+}
+
+class _DebugScreenState extends State<DebugScreen> {
+  bool _isClearing = false;
 
   @override
   Widget build(BuildContext context) {
@@ -60,12 +67,32 @@ class DebugScreen extends StatelessWidget {
               ),
               DebugOptionButton(
                 title: 'Очистить локальное хранилище',
-                onTap: context.appDependenciesContainer.appConfigurationsStorage.clear,
+                onTap: _clearStorage,
+                isLoading: _isClearing,
               ),
             ],
           ).toList(),
         ),
       ),
     );
+  }
+
+  Future<void> _clearStorage() async {
+    setState(() {
+      _isClearing = true;
+    });
+
+    await context.appDependenciesContainer.appConfigurationsStorage.clear();
+
+    setState(() {
+      _isClearing = false;
+    });
+
+    if (context.mounted) {
+      // ignore: use_build_context_synchronously
+      ScaffoldMessenger.of(context).showSnackBar(
+        const SnackBar(content: Text('Локальное хранилище очищено')),
+      );
+    }
   }
 }

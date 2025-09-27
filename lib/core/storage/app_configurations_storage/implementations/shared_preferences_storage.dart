@@ -6,6 +6,8 @@ class SharedPreferencesStorage implements AppConfigurationsStorage {
   static const _isOnboardingCompleted = 'is_onboarding_completed';
   static const _selectedLanguageOption = 'selected_language_option';
   static const _selectedTheme = 'selectedTheme';
+  static const _isUserAuthenticated = 'is_user_authenticated';
+  static const _userKey = 'user';
 
   final SharedPreferences _sharedPreferences;
   final Logger _logger;
@@ -32,6 +34,18 @@ class SharedPreferencesStorage implements AppConfigurationsStorage {
   String get selectedTheme => _getRemotePrimitiveValue<String>(
         keyName: _selectedTheme,
         defaultValue: AppConfigurationsStorage.systemThemeKey,
+      );
+
+  @override
+  bool get isUserAuthenticated => _getRemotePrimitiveValue<bool>(
+        keyName: _isUserAuthenticated,
+        defaultValue: false,
+      );
+
+  @override
+  String? get user => _getRemotePrimitiveValue<String?>(
+        keyName: _userKey,
+        defaultValue: null,
       );
 
   @override
@@ -67,6 +81,45 @@ class SharedPreferencesStorage implements AppConfigurationsStorage {
     } catch (e, s) {
       _logger.error(
         'Failed to set $_selectedTheme in SharedPreferences',
+        error: e,
+        stackTrace: s,
+      );
+    }
+  }
+
+  @override
+  Future<void> setUserAuthenticated({required bool value}) async {
+    try {
+      await _sharedPreferences.setBool(_isUserAuthenticated, value);
+    } catch (e, s) {
+      _logger.error(
+        'Failed to set $_isUserAuthenticated in SharedPreferences',
+        error: e,
+        stackTrace: s,
+      );
+    }
+  }
+
+  @override
+  Future<void> setUser({required String user}) async {
+    try {
+      await _sharedPreferences.setString(_userKey, user);
+    } catch (e, s) {
+      _logger.error(
+        'Failed to set $_userKey in SharedPreferences',
+        error: e,
+        stackTrace: s,
+      );
+    }
+  }
+
+  @override
+  Future<void> removeUser() async {
+    try {
+      await _sharedPreferences.remove(_userKey);
+    } catch (e, s) {
+      _logger.error(
+        'Failed to remove $_userKey from SharedPreferences',
         error: e,
         stackTrace: s,
       );

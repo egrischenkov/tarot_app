@@ -5,6 +5,7 @@
     },
     "appName": "Stary",
     "companyName": "Tarot Band",
+    "common$Error": "出了点问题。请稍后再试。",
     "@segmentOnboarding": {
         "---------": "---------",
         "description": "Onboarding"
@@ -31,6 +32,11 @@
     "profileScreen$Subscription": "订阅",
     "profileScreen$ChooseSubscription": "选择订阅",
     "profileScreen$SuggestSubscription": "没有订阅？我们来帮你选一个",
+    "profileScreen$LoginButton$Label": "登录",
+    "profileScreen$AddInfo$Title": "完善您的资料以解锁更多功能！",
+    "profileScreen$AddInfo$Subtitle": "添加生日、性别、婚姻状况甚至工作信息 — 应用将为您挑选个性化的每日卡牌、牌阵和预测。",
+    "profileScreen$AddInfo$Button$Label": "完善资料",
+    "profileScreen$JoinUs": "加入我们 — 牌卡将只为你解读",
     "@segmentSettingsScreen": {
         "---------": "---------",
         "description": "Settings screen"
@@ -91,5 +97,34 @@
         "description": "Share feature"
     },
     "share$Suggest": "试试 {appName}！在这里下载:\n{appLink}",
-    "share$Title": "分享我们的应用"
+    "share$Title": "分享我们的应用",
+    "@segmentAuthScreen": {
+        "---------": "---------",
+        "description": "Auth screen"
+    },
+    "authScreen$Hint$Email": "邮箱",
+    "authScreen$Hint$Password": "密码",
+    "authScreen$Hint$ConfirmPassword": "确认密码",
+    "authScreen$Label$ForgotPassword": "忘记密码？",
+    "authScreen$Label$Login": "登录",
+    "authScreen$Label$SignUp": "注册",
+    "authScreen$Label$Recover": "找回",
+    "authScreen$Label$Back": "返回",
+    "authScreen$Title$ResetYourPassword": "重置密码",
+    "authScreen$Subtitle$WeWillSendYouPass": "我们会将密码发送到此邮箱",
+    "authScreen$Error$InvalidEmail": "邮箱无效！",
+    "authScreen$Error$PasswordDoNotMatch": "两次输入的密码不一致！",
+    "authScreen$Success$Success": "成功",
+    "authScreen$Success$AnEmailSent": "邮件已发送",
+    "authScreen$Title": "欢迎！",
+    "authScreen$Error$PasswordTooLong": "密码太长 — 最多 {count} 个字符",
+    "authScreen$Error$PasswordTooShort": "密码太短 — 最少 {count} 个字符",
+    "authScreen$Error$AtLeastOneUpper": "密码必须包含至少一个大写字母",
+    "authScreen$Error$AtLeastOneLower": "密码必须包含至少一个小写字母",
+    "authScreen$Error$AtLeastOneNumber": "密码必须包含至少一个数字",
+    "authScreen$Error$AtLeastOneSpecCharacter": "密码必须包含至少一个特殊字符",
+    "authScreen$Error$Title": "错误",
+    "authScreen$Error$TooShort": "文本太短 — 最少 {count} 个字符",
+    "authScreen$Error$TooLong": "文本太长 — 最多 {count} 个字符",
+    "authScreen$Success$AccountCreated": "账户创建成功"
 }

@@ -15,6 +15,9 @@ class AppLocalizationsHi extends AppLocalizations {
   String get companyName => 'Tarot Band';
 
   @override
+  String get common$Error => 'कुछ गलत हो गया। कृपया बाद में पुनः प्रयास करें।';
+
+  @override
   String onboarding$Title$First(Object appName) {
     return 'स्वागत है $appName की दुनिया में';
   }
@@ -57,6 +60,21 @@ class AppLocalizationsHi extends AppLocalizations {
 
   @override
   String get profileScreen$SuggestSubscription => 'कोई सदस्यता नहीं? चलो एक ढूँढते हैं';
+
+  @override
+  String get profileScreen$LoginButton$Label => 'लॉगिन';
+
+  @override
+  String get profileScreen$AddInfo$Title => 'अधिक सुविधाओं को अनलॉक करने के लिए अपनी प्रोफ़ाइल पूरी करें!';
+
+  @override
+  String get profileScreen$AddInfo$Subtitle => 'जन्मतिथि, लिंग, वैवाहिक स्थिति और यहाँ तक कि नौकरी की जानकारी जोड़ें — ऐप आपके लिए व्यक्तिगत दैनिक कार्ड, रीडिंग और भविष्यवाणियाँ चुनेगा।';
+
+  @override
+  String get profileScreen$AddInfo$Button$Label => 'प्रोफ़ाइल भरें';
+
+  @override
+  String get profileScreen$JoinUs => 'हमसे जुड़ें — और कार्ड्स सिर्फ आपके लिए बोलेंगे';
 
   @override
   String get settingsScreen$Title => 'सेटिंग्स';
@@ -194,4 +212,90 @@ class AppLocalizationsHi extends AppLocalizations {
 
   @override
   String get share$Title => 'हमारे ऐप को साझा करें';
+
+  @override
+  String get authScreen$Hint$Email => 'ईमेल';
+
+  @override
+  String get authScreen$Hint$Password => 'पासवर्ड';
+
+  @override
+  String get authScreen$Hint$Name => 'Имя';
+
+  @override
+  String get authScreen$Hint$ConfirmPassword => 'पासवर्ड की पुष्टि करें';
+
+  @override
+  String get authScreen$Label$ForgotPassword => 'पासवर्ड भूल गए?';
+
+  @override
+  String get authScreen$Label$Login => 'लॉगिन';
+
+  @override
+  String get authScreen$Label$SignUp => 'साइन अप';
+
+  @override
+  String get authScreen$Label$Recover => 'रिकवर';
+
+  @override
+  String get authScreen$Label$Back => 'वापस';
+
+  @override
+  String get authScreen$Title$ResetYourPassword => 'पासवर्ड रीसेट करें';
+
+  @override
+  String get authScreen$Subtitle$WeWillSendYouPass => 'हम आपका पासवर्ड इस ईमेल पर भेजेंगे';
+
+  @override
+  String get authScreen$Error$InvalidEmail => 'अमान्य ईमेल!';
+
+  @override
+  String get authScreen$Error$PasswordDoNotMatch => 'पासवर्ड मेल नहीं खाते!';
+
+  @override
+  String get authScreen$Success$Success => 'सफलता';
+
+  @override
+  String get authScreen$Success$AnEmailSent => 'ईमेल भेजा गया';
+
+  @override
+  String get authScreen$Title => 'स्वागत है!';
+
+  @override
+  String authScreen$Error$PasswordTooLong(Object count) {
+    return 'Пароль слишком длинный — максимум $count символа';
+  }
+
+  @override
+  String authScreen$Error$PasswordTooShort(Object count) {
+    return 'पासवर्ड बहुत छोटा है — न्यूनतम $count अक्षर';
+  }
+
+  @override
+  String get authScreen$Error$AtLeastOneUpper => 'पासवर्ड में कम से कम एक बड़ा अक्षर होना चाहिए';
+
+  @override
+  String get authScreen$Error$AtLeastOneLower => 'पासवर्ड में कम से कम एक छोटा अक्षर होना चाहिए';
+
+  @override
+  String get authScreen$Error$AtLeastOneNumber => 'पासवर्ड में कम से कम एक अंक होना चाहिए';
+
+  @override
+  String get authScreen$Error$AtLeastOneSpecCharacter => 'पासवर्ड में कम से कम एक विशेष वर्ण होना चाहिए';
+
+  @override
+  String get authScreen$Error$Title => 'त्रुटि';
+
+  @override
+  String authScreen$Error$TooShort(Object count) {
+    return 'पाठ बहुत छोटा है — न्यूनतम $count अक्षर';
+  }
+
+  @override
+  String authScreen$Error$TooLong(Object count) {
+    return 'पाठ बहुत लंबा है — अधिकतम $count अक्षर';
+  }
+
+  @override
+  String get authScreen$Success$AccountCreated => 'खाता सफलतापूर्वक बनाया गया';
 }

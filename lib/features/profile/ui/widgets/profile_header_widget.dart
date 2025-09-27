@@ -1,11 +1,11 @@
-part of '../profile_screen.dart';
+part of '../screens/profile_screen.dart';
 
 class ProfileHeaderWidget extends StatelessWidget {
-  final String name;
+  final String? name;
   final Widget? content;
 
   const ProfileHeaderWidget({
-    required this.name,
+    this.name,
     this.content,
     super.key,
   });
@@ -20,6 +20,9 @@ class ProfileHeaderWidget extends StatelessWidget {
 
     const avaRadius = cutoutRadius - paddingAroundAvatar;
     const avaSize = avaRadius * 2;
+
+    final localName = name;
+    final localContent = content;
 
     return Stack(
       clipBehavior: Clip.none,
@@ -39,7 +42,13 @@ class ProfileHeaderWidget extends StatelessWidget {
           cutoutRadius: cutoutRadius,
           color: colors.background,
           child: Column(
-            children: [Text(name, style: fonts.bodyEmphasized)],
+            children: [
+              if (localName != null) Text(localName, style: fonts.bodyEmphasized),
+              if (localContent != null) ...[
+                UiKitSpacing.x4.h,
+                localContent,
+              ],
+            ],
           ),
         ),
         Positioned(
